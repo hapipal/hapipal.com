@@ -1,7 +1,14 @@
 {
-  "name": "hapi-pal",
+  "name": "hapipal.com",
   "version": "1.0.0",
+  "description": "Site for hapi pal",
+  "author": "Devin Ivy <devin@bigroomstudios.com>",
+  "license": "MIT",
   "main": "lib/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
   "scripts": {
     "start": "node server",
     "test": "lab -a code -L",
