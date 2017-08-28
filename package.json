@@ -25,6 +25,7 @@
     "haute-couture": "2.x.x",
     "inert": "4.x.x",
     "joi": "10.x.x",
+    "require-dir": "0.3.x",
     "vision": "4.x.x"
   },
   "devDependencies": {

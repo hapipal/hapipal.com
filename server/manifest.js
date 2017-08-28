@@ -29,7 +29,8 @@ module.exports = new Confidence.Store({
             plugin: {
                 register: '../lib', // Main plugin
                 options: {
-                    developmentMode: (process.env.NODE_ENV !== 'production')
+                    developmentMode: (process.env.NODE_ENV !== 'production'),
+                    githubToken: process.env.GITHUB_TOKEN
                 }
             }
         }
