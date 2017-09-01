@@ -22,7 +22,7 @@
   "dependencies": {
     "boom": "5.x.x",
     "handlebars": "4.x.x",
-    "haute-couture": "2.x.x",
+    "haute-couture": ">=2.1.0 <3",
     "inert": "4.x.x",
     "joi": "10.x.x",
     "require-dir": "0.3.x",
