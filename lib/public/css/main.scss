@@ -1,4 +1,20 @@
+@import "breakpoints";
+@import "nav";
+
 body {
-    color: white;
-    background-color: black;
+    color: black;
+    background-color: white;
+}
+
+.content-wrapper {
+    padding: 0 1.25rem;
+    margin: 0 auto;
+
+    @media #{$medium-up} {
+        width: 990px;
+    }
+
+    @media #{$large-up} {
+        width: 1200px;
+    }
 }
