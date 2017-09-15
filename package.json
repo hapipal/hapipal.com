@@ -27,7 +27,8 @@
     "joi": "10.x.x",
     "require-dir": "0.3.x",
     "semver": "5.x.x",
-    "vision": "4.x.x"
+    "vision": "4.x.x",
+    "wreck": ">=12.3.0 <13"
   },
   "devDependencies": {
     "babel-preset-es2015-node": "6.x.x",
