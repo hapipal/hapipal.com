@@ -38,10 +38,10 @@ body {
 .content-wrapper {
   padding: 0 1.25rem;
   margin: 0 auto; }
-  @media only screen and (min-width: 641px) {
+  @media only screen and (min-width: 1025px) {
     .content-wrapper {
       width: 990px; } }
-  @media only screen and (min-width: 1025px) {
+  @media only screen and (min-width: 1441px) {
     .content-wrapper {
       width: 1200px; } }
 

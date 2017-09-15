@@ -10,11 +10,11 @@ body {
     padding: 0 1.25rem;
     margin: 0 auto;
 
-    @media #{$medium-up} {
+    @media #{$large-up} {
         width: 990px;
     }
 
-    @media #{$large-up} {
+    @media #{$xlarge-up} {
         width: 1200px;
     }
 }
