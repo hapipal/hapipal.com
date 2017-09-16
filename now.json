@@ -1,0 +1,6 @@
+{
+  "dotenv": "server/.env",
+  "env": {
+    "NODE_ENV": "production"
+  }
+}
