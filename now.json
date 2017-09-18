@@ -1,5 +1,9 @@
 {
   "dotenv": "server/.env",
+  "files": [
+    "lib",
+    "server/**/!(.env)"
+  ],
   "env": {
     "NODE_ENV": "production"
   }
