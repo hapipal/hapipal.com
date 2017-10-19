@@ -1,50 +1,81 @@
+@import "colors";
+
 .nav {
-    padding: 0 3em;
-    display: flex;
+  display: flex;
+  background-color: $dark-orange;
+  border-bottom: 2px solid $yellow;
 
-    .nav__logo-wrapper {
-        display: flex;
-        align-items: center;
-        flex: auto 0;
+  @media #{$xsmall-only} {
+    display: block;
+  }
 
-        .nav__logo {
-            height: 4em;
-            margin: 1.5em 0;
-        }
+  &__logo {
+    height: 4em;
+    margin: 2em;
+
+    &-wrapper {
+      display: flex;
+      align-items: center;
+      flex: auto 0;
+
+      @media #{$xsmall-only} {
+        justify-content: center;
+      }
+
     }
 
-    .nav__item-wrapper {
+  }
+
+  &__icon {
+    width: 2rem;
+  }
+  
+  &__item {
+
+    &-dropdown {
+      display: none;
+    }
+
+    &-wrapper {
+      display: flex;
+      align-items: center;
+      flex: auto;
+
+      &-flex {
         display: flex;
-        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-end;
         flex: auto;
 
-        > div {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: flex-end;
-            flex: auto;
+        @media #{$xsmall-only} {
+          justify-content: center;
         }
 
-        a.nav__item {
-            display: inline-block;
-            padding: .5rem;
+      }
 
-            .nav__item-dropdown {
-                display: none;
-            }
-        }
     }
 
-    @media #{$xsmall-only} {
-        display: block;
+  }
 
-        .nav__logo-wrapper {
-            justify-content: center;
-        }
+  a.nav__item {
+    color: white;
+    display: inline-block;
+    padding: 0 .5rem;
+    font-size: 1.2rem;
+    font-family: 'Arial';
+    text-decoration: none;
 
-        .nav__item-wrapper  > div {
-            justify-content: center;
-        }
+    &:after {
+      content: "";
+      position: relative;
+      height: 5px;
+      margin-top: 10px;
+      display: inline-block;
+      width: 100%;
+      background-color: $yellow;
     }
+
+  }
+
 }

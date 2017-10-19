@@ -1,39 +1,57 @@
 .nav {
-  padding: 0 3em;
-  display: flex; }
-  .nav .nav__logo-wrapper {
-    display: flex;
-    align-items: center;
-    flex: auto 0; }
-    .nav .nav__logo-wrapper .nav__logo {
-      height: 4em;
-      margin: 1.5em 0; }
-  .nav .nav__item-wrapper {
+  display: flex;
+  background-color: #eb830f;
+  border-bottom: 2px solid #eecd09; }
+  @media only screen and (max-width: 480px) {
+    .nav {
+      display: block; } }
+  .nav__logo {
+    height: 4em;
+    margin: 2em; }
+    .nav__logo-wrapper {
+      display: flex;
+      align-items: center;
+      flex: auto 0; }
+      @media only screen and (max-width: 480px) {
+        .nav__logo-wrapper {
+          justify-content: center; } }
+  .nav__icon {
+    width: 2rem; }
+  .nav__item-dropdown {
+    display: none; }
+  .nav__item-wrapper {
     display: flex;
     align-items: center;
     flex: auto; }
-    .nav .nav__item-wrapper > div {
+    .nav__item-wrapper-flex {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: flex-end;
       flex: auto; }
-    .nav .nav__item-wrapper a.nav__item {
+      @media only screen and (max-width: 480px) {
+        .nav__item-wrapper-flex {
+          justify-content: center; } }
+  .nav a.nav__item {
+    color: white;
+    display: inline-block;
+    padding: 0 .5rem;
+    font-size: 1.2rem;
+    font-family: 'Arial';
+    text-decoration: none; }
+    .nav a.nav__item:after {
+      content: "";
+      position: relative;
+      height: 5px;
+      margin-top: 10px;
       display: inline-block;
-      padding: .5rem; }
-      .nav .nav__item-wrapper a.nav__item .nav__item-dropdown {
-        display: none; }
-  @media only screen and (max-width: 480px) {
-    .nav {
-      display: block; }
-      .nav .nav__logo-wrapper {
-        justify-content: center; }
-      .nav .nav__item-wrapper > div {
-        justify-content: center; } }
+      width: 100%;
+      background-color: #eecd09; }
 
 body {
   color: black;
-  background-color: white; }
+  background-color: white;
+  margin: 0; }
 
 .content-wrapper {
   padding: 0 1.25rem;
