@@ -29,8 +29,24 @@
   &__icon {
     width: 2rem;
   }
-  
+
   &__item {
+    color: white;
+    display: inline-block;
+    padding: 0 .5rem;
+    font-size: 1.2rem;
+    font-family: 'Arial';
+    text-decoration: none;
+
+    &:after {
+      content: "";
+      position: relative;
+      height: 5px;
+      margin-top: 10px;
+      display: inline-block;
+      width: 100%;
+      background-color: $yellow;
+    }
 
     &-dropdown {
       display: none;
@@ -54,26 +70,6 @@
 
       }
 
-    }
-
-  }
-
-  a.nav__item {
-    color: white;
-    display: inline-block;
-    padding: 0 .5rem;
-    font-size: 1.2rem;
-    font-family: 'Arial';
-    text-decoration: none;
-
-    &:after {
-      content: "";
-      position: relative;
-      height: 5px;
-      margin-top: 10px;
-      display: inline-block;
-      width: 100%;
-      background-color: $yellow;
     }
 
   }
