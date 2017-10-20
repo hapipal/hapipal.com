@@ -1,21 +1,24 @@
-@import "breakpoints";
-@import "nav";
+@import 'breakpoints';
+@import 'colors';
+@import 'fonts';
+@import 'nav';
 
 body {
-    color: black;
-    background-color: white;
-    margin: 0;
+  background-color: $dark-orange;
+  color: $white;
+  margin: 0;
 }
 
 .content-wrapper {
-    padding: 0 1.25rem;
-    margin: 0 auto;
+  margin: 0 auto;
+  padding: 1rem 2rem;
 
-    @media #{$large-up} {
-        width: 990px;
-    }
+  @media #{$large-up} {
+    width: 990px;
+  }
 
-    @media #{$xlarge-up} {
-        width: 1200px;
-    }
+  @media #{$xlarge-up} {
+    width: 1200px;
+  }
+
 }

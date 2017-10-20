@@ -1,9 +1,7 @@
-@import "colors";
-
 .nav {
-  display: flex;
   background-color: $dark-orange;
-  border-bottom: 2px solid $yellow;
+  border-bottom: 2px solid $tan;
+  display: flex;
 
   @media #{$xsmall-only} {
     display: block;
@@ -13,9 +11,9 @@
     height: 4em;
     margin: 2em;
 
-    &-wrapper {
-      display: flex;
+    &__wrapper {
       align-items: center;
+      display: flex;
       flex: auto 0;
 
       @media #{$xsmall-only} {
@@ -27,42 +25,85 @@
   }
 
   &__icon {
+    margin-left: 1rem;
+    position: relative;
+    top: -10px;
     width: 2rem;
+
+    @media #{$small-up} {
+      padding: .25rem 1rem 0 0;
+      top: 0;
+    }
+
   }
 
   &__item {
-    color: white;
+    color: $white;
     display: inline-block;
-    padding: 0 .5rem;
-    font-size: 1.2rem;
     font-family: 'Arial';
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    padding: 0 .25rem;
+    position: relative;
     text-decoration: none;
 
-    &:after {
-      content: "";
-      position: relative;
-      height: 5px;
-      margin-top: 10px;
-      display: inline-block;
-      width: 100%;
-      background-color: $yellow;
+    @media #{$small-up} {
+      font-size: 1rem;
+      padding: 0 .5rem 0 0;
+      top: 10px;
     }
 
-    &-dropdown {
+    @media #{$large-up} {
+      font-size: 1.2rem;
+      padding: 0 1rem 0 0;
+    }
+
+    &::after {
+      border-bottom: solid 5px transparent;
+      content: '';
+      display: inline-block;
+      position: relative;
+      top: 5px;
+      transition: ease .3s border;
+      width: 100%;
+
+      @media #{$small-up} {
+        top: 0;
+      }
+
+    }
+
+    &--active,
+    &:hover {
+
+      &::after {
+        border-bottom: solid 5px $yellow;
+      }
+
+    }
+
+    &--dropdown {
+      background-color: $dark-orange;
+      display: none;
+      font-size: 1rem;
+      margin-left: .5rem;
+    }
+
+    &:hover > &--dropdown {
       display: none;
     }
 
-    &-wrapper {
-      display: flex;
+    &__wrapper {
       align-items: center;
+      display: flex;
       flex: auto;
 
-      &-flex {
+      &--flex {
         display: flex;
+        flex: auto;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: flex-end;
-        flex: auto;
 
         @media #{$xsmall-only} {
           justify-content: center;
