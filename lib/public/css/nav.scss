@@ -41,14 +41,13 @@
     color: $white;
     display: inline-block;
     font-family: 'Arial';
-    font-size: 0.8rem;
+    font-size: 1rem;
     letter-spacing: 1px;
     padding: 0 .25rem;
     position: relative;
     text-decoration: none;
 
     @media #{$small-up} {
-      font-size: 1rem;
       padding: 0 .5rem 0 0;
       top: 10px;
     }
