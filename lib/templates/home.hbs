@@ -2,7 +2,15 @@
 
     {{#*inline "content"}}
         <div class="content-wrapper">
-            Hello, pals!  This is the homepage.
+
+            <div class="hero">
+              <div class="hero__wrapper">
+                <img class="hero__img hero__img--full" src="/public/img/pal.svg" alt="hapi pal" />
+                <img class="hero__img hero__img--mobile" src="/public/img/pal-full-logo-mobile.svg" alt="hapi pal">
+              </div>
+              <p>hapi-pal helps you build better hapi projects faster.</p>
+              <p class="code">$ npx pal new my-project</p>
+          </div>
         </div>
     {{/inline}}
 
