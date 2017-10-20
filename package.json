@@ -21,7 +21,6 @@
     "now-build": "echo 'Skip build for now'"
   },
   "dependencies": {
-    "ajv": "^5.2.3",
     "boom": "5.x.x",
     "confidence": "3.x.x",
     "dotenv": "4.x.x",
