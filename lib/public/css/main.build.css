@@ -34,8 +34,8 @@
   .nav__item {
     color: #fff;
     display: inline-block;
-    font-family: 'Arial';
-    font-size: 1rem;
+    font-size: 1.1rem;
+    font-weight: 500;
     letter-spacing: 1px;
     padding: 0 .25rem;
     position: relative;
@@ -135,7 +135,7 @@
   .highlight__wrapper {
     padding: 1rem 0; }
   .highlight h2 {
-    font-size: 2.2rem;
+    font-size: 2.1rem;
     font-weight: 500; }
   .highlight p {
     font-size: 1.2rem; }
@@ -164,6 +164,34 @@
       font-weight: 400;
       margin-left: 1rem; }
 
+.sponsor {
+  background: #fff;
+  color: #444;
+  margin: 0;
+  text-align: center; }
+  .sponsor__wrapper {
+    padding: 4rem 0; }
+  .sponsor h3 {
+    color: #e2e2e2;
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-top: 0; }
+  .sponsor p {
+    font-size: 1.2rem;
+    margin: 2rem 0; }
+  .sponsor__img {
+    width: 15rem; }
+  .sponsor__action a {
+    color: #ffa832;
+    font-size: 1.3rem;
+    font-weight: 500;
+    text-decoration: none; }
+  .sponsor__action__icon {
+    display: inline-block;
+    vertical-align: middle;
+    height: 1.3rem;
+    margin-left: 5px; }
+
 body {
   background-color: #ec870b;
   color: #fff;
@@ -173,17 +201,17 @@ body {
   margin: 0;
   padding: 0; }
 
-.wrapper, .hero__wrapper, .highlight__wrapper {
+.wrapper, .hero__wrapper, .highlight__wrapper, .sponsor__wrapper {
   margin: 0 auto;
   width: 85%; }
   @media only screen and (min-width: 481px) {
-    .wrapper, .hero__wrapper, .highlight__wrapper {
+    .wrapper, .hero__wrapper, .highlight__wrapper, .sponsor__wrapper {
       width: 75%; } }
   @media only screen and (min-width: 1025px) {
-    .wrapper, .hero__wrapper, .highlight__wrapper {
+    .wrapper, .hero__wrapper, .highlight__wrapper, .sponsor__wrapper {
       width: 990px; } }
   @media only screen and (min-width: 1441px) {
-    .wrapper, .hero__wrapper, .highlight__wrapper {
+    .wrapper, .hero__wrapper, .highlight__wrapper, .sponsor__wrapper {
       width: 1200px; } }
 
 /*# sourceMappingURL=main.build.css.map */

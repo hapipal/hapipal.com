@@ -1,0 +1,47 @@
+.sponsor {
+  background: $white;
+  color: $gray;
+  margin: 0;
+  text-align: center;
+
+  &__wrapper {
+    @extend .wrapper;
+    padding: 4rem 0;
+  }
+
+  h3 {
+    color: $light-gray;
+    font-size: $h3-font-size;
+    font-weight: 500;
+    margin-top: 0;
+
+  }
+
+  p {
+    font-size: $paragraph-font-size;
+    margin: 2rem 0;
+  }
+
+  &__img {
+    width: 15rem;
+  }
+
+  &__action {
+
+    a {
+      color: $light-orange;
+      font-size: 1.3rem;
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    &__icon {
+      display: inline-block;
+      vertical-align: middle;
+      height: 1.3rem;
+      margin-left: 5px;
+    }
+
+  }
+
+}
