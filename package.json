@@ -21,7 +21,7 @@
     "now-build": "echo 'Skip build for now'"
   },
   "dependencies": {
-    "boom": "5.x.x",
+    "boom": "6.x.x",
     "confidence": "3.x.x",
     "dotenv": "4.x.x",
     "glue": "4.x.x",
@@ -30,12 +30,12 @@
     "haute-couture": ">=2.1.0 <3",
     "hoek": "4.x.x",
     "inert": "4.x.x",
-    "joi": "10.x.x",
+    "joi": "13.x.x",
     "labbable": "2.x.x",
     "require-dir": "0.3.x",
     "semver": "5.x.x",
     "vision": "4.x.x",
-    "wreck": ">=12.3.0 <13"
+    "wreck": "14.x.x"
   },
   "devDependencies": {
     "babel-preset-es2015-node": "6.x.x",
@@ -44,7 +44,7 @@
     "browserify": "14.x.x",
     "cssnano": "3.x.x",
     "eslint": "4.x.x",
-    "eslint-config-hapi": "10.x.x",
+    "eslint-config-hapi": "11.x.x",
     "eslint-plugin-hapi": "4.x.x",
     "lab": "14.x.x",
     "node-sass": "4.x.x",

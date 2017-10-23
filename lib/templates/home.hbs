@@ -1,16 +1,50 @@
 {{#> layout title="Home" }}
 
     {{#*inline "content"}}
-        <div class="content-wrapper">
+        <div class="container">
 
             <div class="hero">
-              <div class="hero__wrapper">
-                <img class="hero__img hero__img--full" src="/public/img/pal.svg" alt="hapi pal" />
-                <img class="hero__img hero__img--mobile" src="/public/img/pal-full-logo-mobile.svg" alt="hapi pal">
-              </div>
-              <p>hapi-pal helps you build better hapi projects faster.</p>
-              <p class="code">$ npx pal new my-project</p>
+                <div class="hero__wrapper">
+                    <img class="hero__img hero__img--full" src="/public/img/pal.svg" alt="hapi pal" />
+                    <img class="hero__img hero__img--mobile" src="/public/img/pal-full-logo-mobile.svg" alt="hapi pal">
+                    <div class="hero__img__content">
+                        <p>hapi-pal helps you build better hapi projects faster.</p>
+                        <div class="code">
+                            $ npx pal new my-project
+                        </div>
+                        <img class="code--shadow" src="/public/img/dropshadow.png"/>
+
+                    </div>
+
+                </div>
+
           </div>
+
+          <div class="highlight">
+              <div class="highlight__wrapper">
+                  <h2>Super Dope Header</h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                    nisi ut aliquip ex ea commodo consequat.</p>
+
+                  <img class="highlight__img" src="/public/img/temp-highlight-img.png" alt="hapi pal" />
+                  <div class="highlight__img__content">
+                      <h5>hapi pal</h5>
+                      <h6>hapi boilerplate</h6>
+                  </div>
+
+                  <div class="highlight__action">
+                      <a href="" target="_blank">
+                          <img class="highlight__action__icon" src="/public/img/temp-button.png" alt="view all modules" />
+                          <span>View all modules</span>
+                      </a>
+                  </div>
+
+              </div>
+
+          </div>
+
         </div>
     {{/inline}}
 

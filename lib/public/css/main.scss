@@ -5,14 +5,23 @@
 @import 'home';
 
 body {
-  background-color: $dark-orange;
+  background-color: $orange;
   color: $white;
   margin: 0;
 }
 
-.content-wrapper {
+.container {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
   margin: 0 auto;
-  padding: 1rem 2rem;
+  width: 85%;
+
+  @media #{$small-up} {
+    width: 75%;
+  }
 
   @media #{$large-up} {
     width: 990px;

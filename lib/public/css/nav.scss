@@ -1,10 +1,10 @@
 .nav {
   background-color: $dark-orange;
   border-bottom: 2px solid $tan;
-  display: flex;
+  display: block;
 
-  @media #{$xsmall-only} {
-    display: block;
+  @media #{$small-up} {
+    display: flex;
   }
 
   &__logo {
@@ -15,9 +15,10 @@
       align-items: center;
       display: flex;
       flex: auto 0;
+      justify-content: center;
 
-      @media #{$xsmall-only} {
-        justify-content: center;
+      @media #{$small-up} {
+        justify-content: space-between;
       }
 
     }
@@ -31,8 +32,8 @@
     width: 2rem;
 
     @media #{$small-up} {
-      padding: .25rem 1rem 0 0;
-      top: 0;
+      margin: 0 2rem 0 .8rem;
+      top: 5px;
     }
 
   }
@@ -102,10 +103,10 @@
         flex: auto;
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content: flex-end;
+        justify-content: center;
 
-        @media #{$xsmall-only} {
-          justify-content: center;
+        @media #{$small-up} {
+          justify-content: flex-end;
         }
 
       }
