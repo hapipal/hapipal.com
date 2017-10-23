@@ -1,0 +1,71 @@
+.hero {
+  background-color: $dark-orange;
+
+  &__wrapper {
+    @extend .wrapper;
+    padding: 4rem 0;
+  }
+
+  &__img {
+    display: block;
+    margin: 0 auto;
+
+    &--mobile {
+      margin-top: 1rem;
+      width: 50vw;
+
+      @media #{$small-up} {
+        display: none;
+      }
+
+    }
+
+    &--full {
+      display: none;
+      margin-top: 2rem;
+      width: 30vw;
+
+      @media #{$small-up} {
+        display: block;
+      }
+
+    }
+
+    &__content {
+      margin: 0 auto;
+      max-width: 600px;
+
+      p {
+        font-size: 1.6rem;
+        font-weight: 300;
+        text-align: center;
+      }
+
+      .code {
+        background-color: $light-orange;
+        border-radius: 5px;
+        font-family: monospace;
+        font-size: 1.6rem;
+        font-weight: 300;
+        padding: 1rem;
+        text-align: center;
+
+        &:hover + .code--shadow {
+          opacity: 1;
+        }
+
+        &--shadow {
+          height: auto;
+          margin-top: 2rem;
+          opacity: .5;
+          transition: ease .6s opacity;
+          width: 100%;
+        }
+
+      }
+
+    }
+
+  }
+
+}

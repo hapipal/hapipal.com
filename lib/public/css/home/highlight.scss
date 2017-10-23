@@ -1,0 +1,66 @@
+.highlight {
+  background: $white;
+  border-bottom: solid 2px $light-gray;
+  color: $gray;
+  margin: 0;
+  text-align: center;
+
+  &__wrapper {
+    @extend .wrapper;
+    padding: 1rem 0;
+  }
+
+  h2 {
+    font-size: 2.2rem;
+    font-weight: 500;
+  }
+
+  p {
+    font-size: 1.2rem;
+  }
+
+  &__img {
+    width: 15rem;
+
+    &__content {
+
+      h5 {
+        font-size: 2rem;
+        font-weight: 400;
+        margin: 0;
+      }
+
+      h6 {
+        font-size: 1.2rem;
+        font-weight: 400;
+        margin: 1rem;
+      }
+
+    }
+
+  }
+
+  &__action {
+    margin: 4rem 0 3rem;
+
+    a {
+      align-items: center;
+      color: $gray;
+      display: flex;
+      justify-content: center;
+      text-decoration: none;
+    }
+
+    &__icon {
+      width: 3rem;
+    }
+
+    span {
+      font-size: 1.6rem;
+      font-weight: 400;
+      margin-left: 1rem;
+    }
+
+  }
+
+}
