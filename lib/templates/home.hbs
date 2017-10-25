@@ -1,18 +1,19 @@
 {{#> layout title="Home" }}
 
     {{#*inline "content"}}
+
         <div class="container">
 
             <div class="hero">
                 <div class="hero__wrapper">
-                    <img class="hero__img hero__img--full" src="/public/img/pal.svg" alt="hapi pal" />
-                    <img class="hero__img hero__img--mobile" src="/public/img/pal-full-logo-mobile.svg" alt="hapi pal" />
+                    <img class="hero__img hero__img--full" src="/public/img/pal-full-logo.svg" alt="hapi pal">
+                    <img class="hero__img hero__img--mobile" src="/public/img/pal-full-logo-mobile.svg" alt="hapi pal">
                     <div class="hero__img__content">
                         <p>hapi-pal helps you build better hapi projects faster.</p>
                         <div class="code">
                             $ npx pal new my-project
                         </div>
-                        <img class="code--shadow" src="/public/img/drop-shadow.png"/>
+                        <img class="code--shadow" src="/public/img/drop-shadow.png">
                     </div>
                 </div>
             </div>
@@ -25,15 +26,38 @@
                     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
                     nisi ut aliquip ex ea commodo consequat.</p>
 
-                    <img class="highlight__img" src="/public/img/temp-highlight-img.png" alt="hapi pal" />
-                    <div class="highlight__img__content">
-                        <h5>hapi pal</h5>
-                        <h6>hapi boilerplate</h6>
-                    </div>
+                    <div class="highlight__grid">
 
+                        <div class="highlight__grid__item">
+                            <img class="highlight__grid__item__img" src="/public/img/temp-highlight-img.png" alt="hapi pal">
+                            <div class="highlight__grid__item__content">
+                                <h5>hapi pal</h5>
+                                <h6>hapi boilerplate</h6>
+                            </div>
+                        </div>
+
+                        <div class="highlight__grid__item">
+                            <img class="highlight__grid__item__img" src="/public/img/temp-highlight-img.png" alt="hapi pal">
+                            <div class="highlight__grid__item__content">
+                                <h5>hapi pal</h5>
+                                <h6>hapi boilerplate</h6>
+                            </div>
+                        </div>
+
+
+                        <div class="highlight__grid__item">
+                            <img class="highlight__grid__item__img" src="/public/img/temp-highlight-img.png" alt="hapi pal">
+                            <div class="highlight__grid__item__content">
+                                <h5>hapi pal</h5>
+                                <h6>hapi boilerplate</h6>
+                            </div>
+                        </div>
+
+
+                    </div>
                     <div class="highlight__action">
                         <a href="" target="_blank">
-                            <img class="highlight__action__icon" src="/public/img/temp-button.png" alt="view all modules" />
+                            <img class="highlight__action__icon" src="/public/img/temp-button.png" alt="view all modules">
                             <span>View all modules</span>
                         </a>
                     </div>
@@ -43,16 +67,43 @@
             <div class="sponsor">
                 <div class="sponsor__wrapper">
                     <h3>Sponsored by</h3>
-                    <img class="sponsor__img" src="/public/img/big-room-studios.svg" alt="Big Room Studios" />
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                    nisi ut aliquip ex ea commodo consequat.</p>
-                    <div class="sponsor__action">
-                        <a href="https://www.bigroomstudios.com" target="_blank"> Learn more about our services
-                            <img class="sponsor__action__icon" src="/public/img/arrow-right.svg" alt="Big Room Studios" />
-                        </a>
+                    <div class="sponsor__grid">
+                        <img class="sponsor__img" src="/public/img/big-room-studios.svg" alt="Big Room Studios">
+                        <div class="sponsor__border"></div>
+                        <div class="sponsor__content">
+
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                          nisi ut aliquip ex ea commodo consequat.</p>
+
+                          <div class="sponsor__content__action">
+                              <a href="https://www.bigroomstudios.com" target="_blank"> Learn more about our services
+                                  <img class="sponsor__content__action__icon" src="/public/img/arrow-right.svg" alt="services">
+                              </a>
+                          </div>
+
+                        </div>
                     </div>
+
+                </div>
+            </div>
+
+            <div class="newsletter">
+                <div class="newsletter__wrapper">
+
+                    <img class="newsletter__img" src="/public/img/pal.svg" alt="Big Room Studios">
+
+                    <div class="newsletter__form">
+                        <p>Subscribe to our newsletter to get the latest hapi-pal updates,
+                        along with occasional tips on being a better pal.</p>
+                        <form id="newsletterForm">
+                            <input type="email" value="" name="email" placeholder="pal@hapipal.com" id="newsletterEmail" class="newsletter__input" required>
+                            <input type="submit" value="Subscribe" name="subscribe" class="newsletter__input__button">
+                        </form>
+                        <div id="newsletterMessage" class="newsletter__message">You've successfully signed up. Thanks, Pal!</div>
+                    </div>
+
                 </div>
             </div>
 

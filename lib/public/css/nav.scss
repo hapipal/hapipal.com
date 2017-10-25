@@ -8,8 +8,8 @@
   }
 
   &__logo {
-    height: 4em;
-    margin: 2em;
+    height: 3em;
+    margin: 1em;
 
     &__wrapper {
       align-items: center;
@@ -54,7 +54,6 @@
     }
 
     @media #{$large-up} {
-      font-size: 1.2rem;
       padding: 0 1rem 0 0;
     }
 
@@ -68,7 +67,7 @@
       width: 100%;
 
       @media #{$small-up} {
-        top: 0;
+        top: 15px;
       }
 
     }

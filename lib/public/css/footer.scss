@@ -1,0 +1,9 @@
+.footer {
+  background-color: $dark-gray;
+  height: 10rem;
+
+  &__wrapper {
+    @extend .wrapper;
+    padding: 4rem 0;
+  }
+}

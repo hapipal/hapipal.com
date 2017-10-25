@@ -1,39 +1,74 @@
 .highlight {
   background: $white;
-  border-bottom: solid 2px $light-gray;
   color: $gray;
   margin: 0;
   text-align: center;
 
-  &__wrapper {
-    @extend .wrapper;
-    padding: 1rem 0;
+  @media #{$xsmall-only} {
+    border-bottom: solid 2px $light-gray;
   }
 
   h2 {
     font-size: $h2-font-size;
     font-weight: 500;
+
+    @media #{$small-up} {
+      display: none;
+    }
+
   }
 
   p {
     font-size: $paragraph-font-size;
+
+    @media #{$small-up} {
+      display: none;
+    }
+
   }
 
-  &__img {
-    width: 15rem;
 
-    &__content {
+  &__wrapper {
+    @extend .wrapper;
+    padding: 1rem 0;
 
-      h5 {
-        font-size: 2rem;
-        font-weight: 400;
-        margin: 0;
+    @media #{$small-up} {
+      border-bottom: solid 2px $light-gray;
+    }
+
+  }
+
+  &__grid {
+    display: grid;
+
+
+    @media #{$small-up} {
+      grid-gap: 10px;
+      grid-template-columns: 33% 33% 33%;
+      margin-top: 4rem;
+    }
+
+    &__item {
+
+      &__img {
+        max-width: 15rem;
+        width: 100%;
       }
 
-      h6 {
-        font-size: 1.2rem;
-        font-weight: 400;
-        margin: 1rem;
+      &__content {
+
+        h5 {
+          font-size: 2rem;
+          font-weight: 400;
+          margin: 0;
+        }
+
+        h6 {
+          font-size: 1.2rem;
+          font-weight: 400;
+          margin: 1rem;
+        }
+
       }
 
     }

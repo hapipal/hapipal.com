@@ -3,7 +3,7 @@
 
   &__wrapper {
     @extend .wrapper;
-    padding: 4rem 0;
+    padding: 2rem 0;
   }
 
   &__img {
@@ -23,7 +23,8 @@
     &--full {
       display: none;
       margin-top: 2rem;
-      width: 30vw;
+      max-width: 600px;
+      width: 70vw;
 
       @media #{$small-up} {
         display: block;
@@ -33,7 +34,7 @@
 
     &__content {
       margin: 0 auto;
-      max-width: 600px;
+      max-width: 500px;
 
       p {
         font-size: 1.6rem;
