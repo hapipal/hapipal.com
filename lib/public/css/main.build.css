@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Lato:300,400,400i,700,700i");
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,400,700,700");
 * {
   font-family: 'Lato', sans-serif;
   -moz-osx-font-smoothing: grayscale;
@@ -9,7 +9,7 @@
   border-bottom: 2px solid #f3b66e;
   display: block; }
   @media only screen and (min-width: 481px) {
-    .nav {
+    .nav__wrapper {
       display: flex; } }
   .nav__logo {
     height: 3em;
@@ -71,21 +71,60 @@
       align-items: center;
       display: flex;
       flex: auto; }
-      .nav__item__wrapper--flex {
+      .nav__item__wrapper__flex {
         display: flex;
         flex: auto;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center; }
         @media only screen and (min-width: 481px) {
-          .nav__item__wrapper--flex {
+          .nav__item__wrapper__flex {
             justify-content: flex-end; } }
 
 .footer {
   background-color: #333429;
-  height: 10rem; }
+  height: 100%; }
   .footer__wrapper {
     padding: 4rem 0; }
+  @media only screen and (min-width: 641px) {
+    .footer__flex {
+      align-items: flex-start;
+      display: flex;
+      justify-content: space-between; } }
+  .footer__flex__left {
+    color: #fff; }
+  .footer__flex__right {
+    -webkit-align-self: flex-start;
+    align-self: flex-start;
+    display: flex; }
+  .footer__img {
+    width: 10rem; }
+  .footer__copyright {
+    align-items: center;
+    color: #fff;
+    justify-content: flex-end; }
+  .footer__nav {
+    margin: 2rem 0;
+    padding-right: 2rem; }
+    @media only screen and (min-width: 641px) {
+      .footer__nav {
+        margin: 0;
+        padding-right: 4rem; } }
+    .footer__nav__header {
+      font-size: 1rem;
+      font-weight: 700;
+      padding-bottom: 1rem; }
+    .footer__nav__item {
+      color: #fff;
+      display: block;
+      font-size: .9rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      padding: .5rem 0;
+      position: relative;
+      text-decoration: none; }
+      .footer__nav__item--active {
+        border: none; }
 
 .hero {
   background-color: #eb830f; }
@@ -252,20 +291,22 @@
       .newsletter__wrapper {
         padding: 3rem 0 4rem; } }
   .newsletter p {
-    font-size: 1.8rem;
-    font-weight: 300; }
+    font-size: 1.6rem;
+    font-weight: 300;
+    max-width: 85%; }
   .newsletter__img {
     display: none; }
     @media only screen and (min-width: 1025px) {
       .newsletter__img {
         display: inline;
+        margin-left: 4rem;
         width: 15%; } }
   @media only screen and (min-width: 1025px) {
     .newsletter__form {
       display: inline-block;
       margin-left: 2rem;
       vertical-align: top;
-      width: calc(84% - 2rem); } }
+      width: calc(80% - 4rem); } }
   .newsletter__message {
     display: none;
     font-size: 1.6rem;
@@ -287,6 +328,7 @@
       border: 2px solid #fff;
       border-radius: 2px;
       color: #fff;
+      cursor: pointer;
       font-size: 1.3rem;
       height: 3rem;
       margin: 1rem 0 0;
@@ -306,17 +348,17 @@ body {
   margin: 0;
   padding: 0; }
 
-.wrapper, .footer__wrapper, .hero__wrapper, .highlight__wrapper, .sponsor__wrapper, .newsletter__wrapper {
+.wrapper, .nav__wrapper, .footer__wrapper, .hero__wrapper, .highlight__wrapper, .sponsor__wrapper, .newsletter__wrapper {
   margin: 0 auto;
-  width: 85%; }
+  width: 90%; }
   @media only screen and (min-width: 481px) {
-    .wrapper, .footer__wrapper, .hero__wrapper, .highlight__wrapper, .sponsor__wrapper, .newsletter__wrapper {
-      width: 75%; } }
+    .wrapper, .nav__wrapper, .footer__wrapper, .hero__wrapper, .highlight__wrapper, .sponsor__wrapper, .newsletter__wrapper {
+      width: 85%; } }
   @media only screen and (min-width: 1025px) {
-    .wrapper, .footer__wrapper, .hero__wrapper, .highlight__wrapper, .sponsor__wrapper, .newsletter__wrapper {
+    .wrapper, .nav__wrapper, .footer__wrapper, .hero__wrapper, .highlight__wrapper, .sponsor__wrapper, .newsletter__wrapper {
       width: 990px; } }
   @media only screen and (min-width: 1441px) {
-    .wrapper, .footer__wrapper, .hero__wrapper, .highlight__wrapper, .sponsor__wrapper, .newsletter__wrapper {
+    .wrapper, .nav__wrapper, .footer__wrapper, .hero__wrapper, .highlight__wrapper, .sponsor__wrapper, .newsletter__wrapper {
       width: 1200px; } }
 
 /*# sourceMappingURL=main.build.css.map */

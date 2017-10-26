@@ -17,10 +17,10 @@ body {
 
 .wrapper {
   margin: 0 auto;
-  width: 85%;
+  width: 90%;
 
   @media #{$small-up} {
-    width: 75%;
+    width: 85%;
   }
 
   @media #{$large-up} {

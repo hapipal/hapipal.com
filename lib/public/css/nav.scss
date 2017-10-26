@@ -3,8 +3,13 @@
   border-bottom: 2px solid $tan;
   display: block;
 
-  @media #{$small-up} {
-    display: flex;
+  &__wrapper {
+    @extend .wrapper;
+
+    @media #{$small-up} {
+      display: flex;
+    }
+
   }
 
   &__logo {
@@ -97,7 +102,7 @@
       display: flex;
       flex: auto;
 
-      &--flex {
+      &__flex {
         display: flex;
         flex: auto;
         flex-direction: row;

@@ -46,8 +46,7 @@
 
   &__border {
     border-left: solid 3px;
-    border-image:
-      linear-gradient(to bottom, $mid-orange, $pink) 1 100%;
+    border-image: linear-gradient(to bottom, $mid-orange, $pink) 1 100%;
   }
 
   &__content {
