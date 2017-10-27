@@ -43,6 +43,11 @@
       .nav__icon {
         margin: 0 2rem 0 .8rem;
         top: 5px; } }
+  .nav__dropdown {
+    background-color: #eb830f;
+    display: none;
+    font-size: 1rem;
+    margin-left: .5rem; }
   .nav__item {
     color: #fff;
     display: inline-block;
@@ -73,11 +78,6 @@
           top: 15px; } }
     .nav__item--active::after, .nav__item:hover::after {
       border-bottom: solid 5px #eecd09; }
-    .nav__item--dropdown {
-      background-color: #eb830f;
-      display: none;
-      font-size: 1rem;
-      margin-left: .5rem; }
     .nav__item:hover > .nav__item--dropdown {
       display: none; }
     .nav__item__wrapper {
@@ -89,28 +89,21 @@
       display: flex;
       -webkit-box-flex: 1;
           -ms-flex: auto;
-              flex: auto; }
-      .nav__item__wrapper__flex {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-flex: 1;
-            -ms-flex: auto;
-                flex: auto;
-        -webkit-box-orient: horizontal;
-        -webkit-box-direction: normal;
-            -ms-flex-direction: row;
-                flex-direction: row;
-        -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
-        -webkit-box-pack: center;
-            -ms-flex-pack: center;
-                justify-content: center; }
-        @media only screen and (min-width: 481px) {
-          .nav__item__wrapper__flex {
-            -webkit-box-pack: end;
-                -ms-flex-pack: end;
-                    justify-content: flex-end; } }
+              flex: auto;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center; }
+      @media only screen and (min-width: 481px) {
+        .nav__item__wrapper {
+          -webkit-box-pack: end;
+              -ms-flex-pack: end;
+                  justify-content: flex-end; } }
 
 .footer {
   background-color: #333429;
@@ -131,7 +124,6 @@
   .footer__flex__left {
     color: #fff; }
   .footer__flex__right {
-    -webkit-align-self: flex-start;
     -ms-flex-item-align: start;
         align-self: flex-start;
     display: -webkit-box;
@@ -168,7 +160,7 @@
       position: relative;
       text-decoration: none; }
       .footer__nav__item--active {
-        border: none; }
+        border: 0; }
 
 .hero {
   background-color: #eb830f; }
@@ -247,17 +239,24 @@
         grid-gap: 10px;
         grid-template-columns: 33% 33% 33%;
         margin-top: 4rem; } }
-    .highlight__grid__item__img {
-      max-width: 15rem;
-      width: 100%; }
-    .highlight__grid__item__content h5 {
-      font-size: 2rem;
-      font-weight: 400;
-      margin: 0; }
-    .highlight__grid__item__content h6 {
-      font-size: 1.2rem;
-      font-weight: 400;
-      margin: 1rem; }
+    .highlight__grid__item {
+      display: none; }
+      .highlight__grid__item__img {
+        max-width: 15rem;
+        width: 100%; }
+      .highlight__grid__item__content h5 {
+        font-size: 2rem;
+        font-weight: 400;
+        margin: 0; }
+      .highlight__grid__item__content h6 {
+        font-size: 1.2rem;
+        font-weight: 400;
+        margin: 1rem; }
+      .highlight__grid__item:first-of-type {
+        display: block; }
+      @media only screen and (min-width: 481px) {
+        .highlight__grid__item {
+          display: block; } }
   .highlight__action {
     margin: 4rem 0 3rem; }
     .highlight__action a {
@@ -310,10 +309,11 @@
       .sponsor__img {
         margin-right: 3rem; } }
   .sponsor__border {
-    border-left: solid 3px;
     -o-border-image: linear-gradient(to bottom, #fbac45, #d93189) 1 100%;
        border-image: -webkit-gradient(linear, left top, left bottom, from(#fbac45), to(#d93189)) 1 100%;
-       border-image: linear-gradient(to bottom, #fbac45, #d93189) 1 100%; }
+       border-image: linear-gradient(to bottom, #fbac45, #d93189) 1 100%;
+    border-left: solid 3px;
+    border-right: 0; }
   .sponsor__content p {
     font-size: 1.2rem;
     font-weight: 300; }

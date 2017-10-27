@@ -21,7 +21,6 @@
     }
 
     &__right {
-      -webkit-align-self: flex-start;
       align-self: flex-start;
       display: flex;
     }
@@ -63,9 +62,8 @@
       position: relative;
       text-decoration: none;
 
-
       &--active {
-        border: none;
+        border: 0;
       }
 
     }

@@ -27,7 +27,6 @@
 
   }
 
-
   &__wrapper {
     @extend .wrapper;
     padding: 1rem 0;
@@ -41,7 +40,6 @@
   &__grid {
     display: grid;
 
-
     @media #{$small-up} {
       grid-gap: 10px;
       grid-template-columns: 33% 33% 33%;
@@ -49,6 +47,8 @@
     }
 
     &__item {
+
+      display: none;
 
       &__img {
         max-width: 15rem;
@@ -69,6 +69,14 @@
           margin: 1rem;
         }
 
+      }
+
+      &:first-of-type() {
+        display: block;
+      }
+
+      @media #{$small-up} {
+        display: block;
       }
 
     }
