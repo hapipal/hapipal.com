@@ -1,50 +1,117 @@
 .nav {
-    padding: 0 3em;
-    display: flex;
+  background-color: $dark-orange;
+  border-bottom: 2px solid $tan;
+  display: flex;
 
-    .nav__logo-wrapper {
-        display: flex;
-        align-items: center;
-        flex: auto 0;
+  @media #{$xsmall-only} {
+    display: block;
+  }
 
-        .nav__logo {
-            height: 4em;
-            margin: 1.5em 0;
-        }
+  &__logo {
+    height: 4em;
+    margin: 2em;
+
+    &__wrapper {
+      align-items: center;
+      display: flex;
+      flex: auto 0;
+
+      @media #{$xsmall-only} {
+        justify-content: center;
+      }
+
     }
 
-    .nav__item-wrapper {
+  }
+
+  &__icon {
+    margin-left: 1rem;
+    position: relative;
+    top: -10px;
+    width: 2rem;
+
+    @media #{$small-up} {
+      padding: .25rem 1rem 0 0;
+      top: 0;
+    }
+
+  }
+
+  &__item {
+    color: $white;
+    display: inline-block;
+    font-family: 'Arial';
+    font-size: 1rem;
+    letter-spacing: 1px;
+    padding: 0 .25rem;
+    position: relative;
+    text-decoration: none;
+
+    @media #{$small-up} {
+      padding: 0 .5rem 0 0;
+      top: 10px;
+    }
+
+    @media #{$large-up} {
+      font-size: 1.2rem;
+      padding: 0 1rem 0 0;
+    }
+
+    &::after {
+      border-bottom: solid 5px transparent;
+      content: '';
+      display: inline-block;
+      position: relative;
+      top: 5px;
+      transition: ease .3s border;
+      width: 100%;
+
+      @media #{$small-up} {
+        top: 0;
+      }
+
+    }
+
+    &--active,
+    &:hover {
+
+      &::after {
+        border-bottom: solid 5px $yellow;
+      }
+
+    }
+
+    &--dropdown {
+      background-color: $dark-orange;
+      display: none;
+      font-size: 1rem;
+      margin-left: .5rem;
+    }
+
+    &:hover > &--dropdown {
+      display: none;
+    }
+
+    &__wrapper {
+      align-items: center;
+      display: flex;
+      flex: auto;
+
+      &--flex {
         display: flex;
-        align-items: center;
         flex: auto;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-end;
 
-        > div {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: flex-end;
-            flex: auto;
+        @media #{$xsmall-only} {
+          justify-content: center;
         }
 
-        a.nav__item {
-            display: inline-block;
-            padding: .5rem;
+      }
 
-            .nav__item-dropdown {
-                display: none;
-            }
-        }
     }
 
-    @media #{$xsmall-only} {
-        display: block;
+  }
 
-        .nav__logo-wrapper {
-            justify-content: center;
-        }
-
-        .nav__item-wrapper  > div {
-            justify-content: center;
-        }
-    }
 }
