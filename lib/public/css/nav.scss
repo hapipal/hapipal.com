@@ -1,23 +1,29 @@
 .nav {
   background-color: $dark-orange;
   border-bottom: 2px solid $tan;
-  display: flex;
+  display: block;
 
-  @media #{$xsmall-only} {
-    display: block;
+  &__wrapper {
+    @extend .wrapper;
+
+    @media #{$small-up} {
+      display: flex;
+    }
+
   }
 
   &__logo {
-    height: 4em;
-    margin: 2em;
+    height: 3em;
+    margin: 1em;
 
     &__wrapper {
       align-items: center;
       display: flex;
       flex: auto 0;
+      justify-content: center;
 
-      @media #{$xsmall-only} {
-        justify-content: center;
+      @media #{$small-up} {
+        justify-content: space-between;
       }
 
     }
@@ -31,17 +37,24 @@
     width: 2rem;
 
     @media #{$small-up} {
-      padding: .25rem 1rem 0 0;
-      top: 0;
+      margin: 0 2rem 0 .8rem;
+      top: 5px;
     }
 
+  }
+
+  &__dropdown {
+    background-color: $dark-orange;
+    display: none;
+    font-size: 1rem;
+    margin-left: .5rem;
   }
 
   &__item {
     color: $white;
     display: inline-block;
-    font-family: 'Arial';
-    font-size: 1rem;
+    font-size: 1.1rem;
+    font-weight: 500;
     letter-spacing: 1px;
     padding: 0 .25rem;
     position: relative;
@@ -53,7 +66,6 @@
     }
 
     @media #{$large-up} {
-      font-size: 1.2rem;
       padding: 0 1rem 0 0;
     }
 
@@ -67,7 +79,7 @@
       width: 100%;
 
       @media #{$small-up} {
-        top: 0;
+        top: 15px;
       }
 
     }
@@ -81,13 +93,6 @@
 
     }
 
-    &--dropdown {
-      background-color: $dark-orange;
-      display: none;
-      font-size: 1rem;
-      margin-left: .5rem;
-    }
-
     &:hover > &--dropdown {
       display: none;
     }
@@ -96,18 +101,12 @@
       align-items: center;
       display: flex;
       flex: auto;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
 
-      &--flex {
-        display: flex;
-        flex: auto;
-        flex-direction: row;
-        flex-wrap: wrap;
+      @media #{$small-up} {
         justify-content: flex-end;
-
-        @media #{$xsmall-only} {
-          justify-content: center;
-        }
-
       }
 
     }

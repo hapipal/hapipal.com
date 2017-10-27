@@ -1,0 +1,81 @@
+.newsletter {
+  background-color: $dark-orange;
+
+  &__wrapper {
+    @extend .wrapper;
+    padding: 2rem 0 4rem;
+
+    @media #{$large-up} {
+      padding: 3rem 0 4rem;
+    }
+
+  }
+
+  p {
+    font-size: 1.6rem;
+    font-weight: 300;
+    max-width: 85%;
+  }
+
+  &__img {
+    display: none;
+
+    @media #{$large-up} {
+      display: inline;
+      margin-left: 4rem;
+      width: 15%;
+    }
+  }
+
+  &__form {
+    @media #{$large-up} {
+      display: inline-block;
+      margin-left: 2rem;
+      vertical-align: top;
+      width: calc(80% - 4rem);
+    }
+  }
+
+  &__message {
+    display: none;
+    font-size: 1.6rem;
+    font-weight: 400;
+  }
+
+  &__input {
+    border: 0;
+    border-radius: 2px;
+    font-size: 1.5rem;
+    height: 3rem;
+    margin: 0;
+    padding: 0 0 0 1rem;
+    width: calc(100% - 1rem);
+
+    @media #{$large-up} {
+      max-width: 450px;
+      width: 60%;
+    }
+
+    &__button {
+      background: transparent;
+      border: 2px solid $white;
+      border-radius: 2px;
+      color: $white;
+      cursor: pointer;
+      font-size: 1.3rem;
+      height: 3rem;
+      margin: 1rem 0 0;
+      padding: 0 2rem;
+      vertical-align: bottom;
+      width: 100%;
+
+      @media #{$large-up} {
+        margin-left: 1rem;
+        width: auto;
+      }
+
+    }
+
+  }
+
+}
