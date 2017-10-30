@@ -337,7 +337,9 @@
       vertical-align: middle; }
 
 .newsletter {
-  background-color: #eb830f; }
+  background-image: url("../img/newsletter-bg.jpg");
+  background-position: center;
+  background-size: cover; }
   .newsletter__wrapper {
     padding: 2rem 0 4rem; }
     @media only screen and (min-width: 1025px) {

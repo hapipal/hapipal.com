@@ -1,5 +1,7 @@
 .newsletter {
-  background-color: $dark-orange;
+  background-image: url('../img/newsletter-bg.jpg');
+  background-position: center;
+  background-size: cover;
 
   &__wrapper {
     @extend .wrapper;
