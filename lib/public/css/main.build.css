@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Lato:300,400,400,700,700");
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700");
 * {
   font-family: 'Lato', sans-serif;
   -moz-osx-font-smoothing: grayscale;
@@ -363,7 +363,8 @@
   .newsletter__message {
     display: none;
     font-size: 1.6rem;
-    font-weight: 400; }
+    font-weight: 400;
+    padding-top: 1rem; }
   .newsletter__input {
     border: 0;
     border-radius: 2px;
@@ -376,6 +377,10 @@
       .newsletter__input {
         max-width: 450px;
         width: 60%; } }
+    .newsletter__input--invalid {
+      outline-color: #af0505;
+      outline-style: auto;
+      outline-width: 5px; }
     .newsletter__input__button {
       background: transparent;
       border: 2px solid #fff;

@@ -40,6 +40,7 @@
     display: none;
     font-size: 1.6rem;
     font-weight: 400;
+    padding-top: 1rem;
   }
 
   &__input {
@@ -54,6 +55,12 @@
     @media #{$large-up} {
       max-width: 450px;
       width: 60%;
+    }
+
+    &--invalid {
+      outline-color: $red;
+      outline-style: auto;
+      outline-width: 5px;
     }
 
     &__button {
