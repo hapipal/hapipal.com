@@ -27,15 +27,18 @@
       margin-left: 4rem;
       width: 15%;
     }
+
   }
 
   &__form {
+
     @media #{$large-up} {
       display: inline-block;
       margin-left: 2rem;
       vertical-align: top;
       width: calc(80% - 4rem);
     }
+
   }
 
   &__message {
