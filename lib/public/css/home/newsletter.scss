@@ -2,6 +2,7 @@
   background-image: url('../img/newsletter-bg.jpg');
   background-position: center;
   background-size: cover;
+  color: $white;
 
   &__wrapper {
     @extend .wrapper;

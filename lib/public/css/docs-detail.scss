@@ -1,0 +1,9 @@
+.markdown-body {
+  margin: 0 auto;
+  padding: 2rem 0;
+
+  @media #{$small-up} {
+    padding: 4rem 0;
+  }
+
+}

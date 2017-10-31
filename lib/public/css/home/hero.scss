@@ -1,5 +1,6 @@
 .hero {
   background-color: $dark-orange;
+  color: $white;
 
   &__wrapper {
     @extend .wrapper;

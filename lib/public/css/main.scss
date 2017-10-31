@@ -4,9 +4,11 @@
 @import 'nav';
 @import 'footer';
 @import 'home';
+@import 'docs-list';
+@import 'docs-detail';
+@import 'primer-markdown/index';
 
 body {
-  color: $white;
   margin: 0;
 }
 
