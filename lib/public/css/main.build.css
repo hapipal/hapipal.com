@@ -356,7 +356,7 @@
     display: none; }
     @media only screen and (min-width: 1025px) {
       .newsletter__img {
-        display: inline;
+        display: inline-block;
         margin-left: 4rem;
         width: 15%; } }
   @media only screen and (min-width: 1025px) {
@@ -418,12 +418,52 @@
         font-size: 2rem;
         text-decoration: none; }
 
-.markdown-body {
-  margin: 0 auto;
-  padding: 2rem 0; }
+.docs-detail {
+  padding: 2rem 0;
+  margin: 0 auto; }
   @media only screen and (min-width: 481px) {
-    .markdown-body {
+    .docs-detail {
+      max-width: 978px;
       padding: 4rem 0; } }
+
+.markdown-body {
+  max-width: 978px; }
+  .markdown-body a {
+    color: #eb830f;
+    text-decoration: none; }
+    .markdown-body a code {
+      padding: .2rem .4rem; }
+  .markdown-body li code {
+    padding: .2rem .4rem; }
+  .markdown-body h1 > code,
+  .markdown-body h2 > code,
+  .markdown-body h3 > code,
+  .markdown-body h4 > code,
+  .markdown-body h5 > code,
+  .markdown-body h6 > code,
+  .markdown-body p > code,
+  .markdown-body pre,
+  .markdown-body code {
+    background-color: #f7f7f7;
+    color: #444;
+    padding: .2rem .4rem; }
+  .markdown-body .highlight > pre,
+  .markdown-body pre > code {
+    background-color: #f7f7f7;
+    display: block;
+    margin: 0;
+    padding: .5em;
+    text-align: left;
+    white-space: pre-wrap;
+    word-break: break-all;
+    word-wrap: break-word; }
+  .markdown-body .pl-c {
+    color: #939393;
+    font-style: italic; }
+  .markdown-body .pl-st, .markdown-body .pl-k, .markdown-body .pl-s {
+    font-weight: bold; }
+  .markdown-body .pl-c1, .markdown-body .pl-s1 {
+    color: #236c23; }
 
 .markdown-body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -796,4 +836,8 @@ body {
   @media only screen and (min-width: 1441px) {
     .wrapper, .nav__wrapper, .footer__wrapper, .hero__wrapper, .highlight__wrapper, .sponsor__wrapper, .newsletter__wrapper {
       width: 1200px; } }
+
+.error {
+  font-size: 2rem;
+  padding: 3rem 0; }
 /*# sourceMappingURL=main.build.css.map */

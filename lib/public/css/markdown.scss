@@ -1,0 +1,68 @@
+.markdown-body {
+  max-width: 978px; //github style
+
+  a {
+    color: $dark-orange;
+    text-decoration: none;
+
+    code {
+      padding: .2rem .4rem;
+    }
+
+  }
+
+  li {
+
+    code {
+      padding: .2rem .4rem;
+    }
+
+  }
+
+  h1 > code,
+  h2 > code,
+  h3 > code,
+  h4 > code,
+  h5 > code,
+  h6 > code,
+  p > code,
+  pre,
+  code {
+    background-color: $lighter-gray;
+    color: $gray;
+    padding: .2rem .4rem;
+  }
+
+  .highlight > pre,
+  pre > code {
+    background-color: $lighter-gray;
+    display: block;
+    margin: 0;
+    padding: .5em;
+    text-align: left;
+    white-space: pre-wrap;
+    word-break: break-all;
+    word-wrap: break-word;
+  }
+
+  .pl {
+
+    &-c {
+      color: $mid-gray;
+      font-style: italic;
+    }
+
+    &-st,
+    &-k,
+    &-s {
+      font-weight: bold;
+    }
+
+    &-c1,
+    &-s1 {
+      color: $green;
+    }
+
+  }
+
+}

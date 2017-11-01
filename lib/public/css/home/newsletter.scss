@@ -24,7 +24,7 @@
     display: none;
 
     @media #{$large-up} {
-      display: inline;
+      display: inline-block;
       margin-left: 4rem;
       width: 15%;
     }

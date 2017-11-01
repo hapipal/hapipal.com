@@ -1,8 +1,9 @@
-.markdown-body {
-  margin: 0 auto;
+.docs-detail {
   padding: 2rem 0;
+  margin: 0 auto;
 
   @media #{$small-up} {
+    max-width: 978px; //github style
     padding: 4rem 0;
   }
 
