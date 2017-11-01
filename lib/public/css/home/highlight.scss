@@ -38,11 +38,11 @@
   }
 
   &__grid {
-    display: grid;
 
     @media #{$small-up} {
+      display: grid;
       grid-gap: 10px;
-      grid-template-columns: 33% 33% 33%;
+      grid-template-columns: 1fr 1fr 1fr;
       margin-top: 4rem;
     }
 

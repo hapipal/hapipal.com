@@ -30,7 +30,8 @@ module.exports = new Confidence.Store({
                 register: '../lib', // Main plugin
                 options: {
                     developmentMode: (process.env.NODE_ENV !== 'production'),
-                    githubToken: process.env.GITHUB_TOKEN
+                    githubToken: process.env.GITHUB_TOKEN,
+                    mailchimpApiKey: process.env.MAILCHIMP_API_KEY
                 }
             }
         }

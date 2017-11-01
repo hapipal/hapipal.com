@@ -1,5 +1,7 @@
 .newsletter {
-  background-color: $dark-orange;
+  background-image: url('../img/newsletter-bg.jpg');
+  background-position: center;
+  background-size: cover;
 
   &__wrapper {
     @extend .wrapper;
@@ -25,21 +27,25 @@
       margin-left: 4rem;
       width: 15%;
     }
+
   }
 
   &__form {
+
     @media #{$large-up} {
       display: inline-block;
       margin-left: 2rem;
       vertical-align: top;
       width: calc(80% - 4rem);
     }
+
   }
 
   &__message {
     display: none;
     font-size: 1.6rem;
     font-weight: 400;
+    padding-top: 1rem;
   }
 
   &__input {
@@ -54,6 +60,12 @@
     @media #{$large-up} {
       max-width: 450px;
       width: 60%;
+    }
+
+    &--invalid {
+      outline-color: $red;
+      outline-style: auto;
+      outline-width: 5px;
     }
 
     &__button {
