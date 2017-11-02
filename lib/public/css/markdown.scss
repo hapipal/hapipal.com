@@ -3,46 +3,48 @@
 
   a {
     color: $dark-orange;
+  }
+
+  a,
+  li,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  pre {
     text-decoration: none;
 
     code {
+      background-color: $lighter-gray;
+      color: $gray;
+      font-family: monospace;
       padding: .2rem .4rem;
+    }
+
+    span {
+      font-family: monospace;
     }
 
   }
 
-  li {
+  .highlight {
 
-    code {
-      padding: .2rem .4rem;
+    pre,
+    pre > code {
+      background-color: $lighter-gray;
+      display: block;
+      font-family: monospace;
+      margin: 0;
+      padding: .5em;
+      text-align: left;
+      white-space: pre-wrap;
+      word-break: break-all;
+      word-wrap: break-word;
     }
 
-  }
-
-  h1 > code,
-  h2 > code,
-  h3 > code,
-  h4 > code,
-  h5 > code,
-  h6 > code,
-  p > code,
-  pre,
-  code {
-    background-color: $lighter-gray;
-    color: $gray;
-    padding: .2rem .4rem;
-  }
-
-  .highlight > pre,
-  pre > code {
-    background-color: $lighter-gray;
-    display: block;
-    margin: 0;
-    padding: .5em;
-    text-align: left;
-    white-space: pre-wrap;
-    word-break: break-all;
-    word-wrap: break-word;
   }
 
   .pl {
@@ -60,7 +62,11 @@
 
     &-c1,
     &-s1 {
-      color: $green;
+      color: $red;
+    }
+
+    &-en {
+      color: $purple;
     }
 
   }
