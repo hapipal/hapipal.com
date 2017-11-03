@@ -36,6 +36,7 @@
     &__content {
       margin: 0 auto;
       max-width: 500px;
+      padding-bottom: 2rem;
 
       p {
         font-size: 1.6rem;
@@ -50,18 +51,48 @@
         font-size: 1.6rem;
         font-weight: 300;
         padding: 1rem;
-        text-align: center;
+        padding-left: 2rem;
+        text-align: left;
+        transition: ease .6s all;
 
-        &:hover + .code--shadow {
-          opacity: 1;
+        &:hover {
+          background-color: $lighter-orange;
+          transform: translateY(-2px) scale(1.01);
         }
 
-        &--shadow {
-          height: auto;
-          margin-top: 2rem;
-          opacity: .5;
-          transition: ease .6s opacity;
+        &:hover + .code__shadow {
+          opacity: .4;
+          transform: translateY(4px);
+        }
+
+        &__shadow {
+          opacity: .6;
+          position: relative;
+          top: 2rem;
+          transition: ease .6s all;
           width: 100%;
+        }
+
+        &__cursor {
+          animation: flash;
+          animation-duration: 2.5s;
+          animation-iteration-count: infinite;
+          animation-fill-mode: both;
+          background: $white;
+          display: inline-block;
+          height: 1.6rem;
+          vertical-align: middle;
+          width: 10px;
+        }
+
+        @keyframes flash {
+          from, 50%, to {
+            opacity: 1;
+          }
+
+          25%, 75% {
+            opacity: 0;
+          }
         }
 
       }

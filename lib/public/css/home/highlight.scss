@@ -41,7 +41,6 @@
 
     @media #{$small-up} {
       display: grid;
-      grid-gap: 2rem;
       grid-template-columns: 1fr 1fr 1fr;
       margin-top: 4rem;
     }
@@ -60,10 +59,11 @@
         border-radius: 50%;
         margin: 0 auto;
         position: relative;
-        transition: box-shadow .3s ease;
+        transition: .6s ease box-shadow, .3s ease transform;
 
         &:hover {
-          box-shadow: 0 0 0 7px $dark-orange;
+          box-shadow: 0 0 0 8px $dark-orange;
+          transform: scale(.9);
         }
 
       }
