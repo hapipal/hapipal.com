@@ -35,8 +35,8 @@
               -ms-flex-pack: justify;
                   justify-content: space-between; } }
     .nav__logo:hover {
-      -webkit-animation: spin 1s;
-              animation: spin 1s; }
+      -webkit-animation: spin .3s;
+              animation: spin .3s; }
 
 @-webkit-keyframes spin {
   from {
