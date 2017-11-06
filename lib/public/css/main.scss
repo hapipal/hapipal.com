@@ -4,9 +4,12 @@
 @import 'nav';
 @import 'footer';
 @import 'home';
+@import 'docs-list';
+@import 'docs-detail';
+@import 'markdown';
+@import 'primer-markdown/index';
 
 body {
-  color: $white;
   margin: 0;
 }
 
@@ -31,4 +34,9 @@ body {
     width: 1200px;
   }
 
+}
+
+.error {
+  font-size: 2rem;
+  padding: 3rem 0;
 }

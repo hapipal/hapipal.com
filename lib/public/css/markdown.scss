@@ -1,0 +1,74 @@
+.markdown-body {
+  max-width: 978px; //github style
+
+  a {
+    color: $dark-orange;
+  }
+
+  a,
+  li,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  pre {
+    text-decoration: none;
+
+    code {
+      background-color: $lighter-gray;
+      color: $gray;
+      font-family: monospace;
+      padding: .2rem .4rem;
+    }
+
+    span {
+      font-family: monospace;
+    }
+
+  }
+
+  .highlight {
+
+    pre,
+    pre > code {
+      background-color: $lighter-gray;
+      display: block;
+      font-family: monospace;
+      margin: 0;
+      padding: .5em;
+      text-align: left;
+      white-space: pre-wrap;
+      word-break: break-all;
+      word-wrap: break-word;
+    }
+
+  }
+
+  .pl {
+
+    &-c {
+      color: $mid-gray;
+      font-style: italic;
+    }
+
+    &-st,
+    &-k,
+    &-s {
+      font-weight: bold;
+    }
+
+    &-c1,
+    &-s1 {
+      color: $red;
+    }
+
+    &-en {
+      color: $purple;
+    }
+
+  }
+
+}

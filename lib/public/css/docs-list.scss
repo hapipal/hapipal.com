@@ -1,0 +1,24 @@
+.docs-list {
+  background-color: $dark-orange;
+  color: $white;
+  display: flex;
+
+  ul {
+    padding: 2rem;
+
+    li {
+      list-style: decimal-leading-zero;
+
+      a {
+        color: $white;
+        font-size: 2rem;
+        text-decoration: none;
+      }
+
+    }
+
+  }
+
+
+
+}

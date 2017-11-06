@@ -41,7 +41,6 @@
 
     @media #{$small-up} {
       display: grid;
-      grid-gap: 10px;
       grid-template-columns: 1fr 1fr 1fr;
       margin-top: 4rem;
     }
@@ -50,9 +49,23 @@
 
       display: none;
 
+      a {
+        color: $gray;
+        text-decoration: none;
+      }
+
       &__img {
-        max-width: 15rem;
-        width: 100%;
+        backface-visibility: hidden;
+        border-radius: 50%;
+        margin: 0 auto;
+        position: relative;
+        transition: .6s ease box-shadow, .3s ease transform;
+
+        &:hover {
+          box-shadow: 0 0 0 8px $dark-orange;
+          transform: scale(.9);
+        }
+
       }
 
       &__content {

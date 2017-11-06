@@ -1,0 +1,10 @@
+.docs-detail {
+  margin: 0 auto;
+  padding: 2rem 0;
+
+  @media #{$small-up} {
+    max-width: 978px; //github style
+    padding: 4rem 0;
+  }
+
+}

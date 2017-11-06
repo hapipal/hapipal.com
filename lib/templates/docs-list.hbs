@@ -1,14 +1,16 @@
 {{#> layout title="Docs List" }}
 
     {{#*inline "content"}}
-        <div class="content-wrapper">
-            <ul>
-                {{#each list}}
-                    <li>
-                        <a href="/docs/{{this.name}}">{{this.name}}</a>
-                    </li>
-                {{/each}}
-            </ul>
+        <div class="docs-list">
+            <div class="wrapper">
+                <ul>
+                    {{#each list}}
+                        <li>
+                            <a href="/docs/{{this.name}}">{{this.name}}</a>
+                        </li>
+                    {{/each}}
+                </ul>
+            </div>
         </div>
     {{/inline}}
 
