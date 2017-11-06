@@ -10,6 +10,7 @@
   &__img {
     display: block;
     margin: 0 auto;
+    user-select: none;
 
     &--mobile {
       margin-top: 1rem;
@@ -42,18 +43,80 @@
         font-size: 1.6rem;
         font-weight: 300;
         text-align: center;
+        user-select: none;
       }
 
       .code {
         background-color: $light-orange;
         border-radius: 5px;
         font-family: monospace;
-        font-size: 1.6rem;
+        font-size: 1.1rem;
         font-weight: 300;
         padding: 1rem;
         padding-left: 2rem;
         text-align: left;
-        transition: ease .6s all;
+        transition: ease .5s transform;
+        vertical-align: middle;
+
+        @media #{$small-up} {
+          font-size: 1.3rem;
+        }
+
+        span {
+          display: inline-block;
+          font-family: monospace;
+          font-size: 1.1rem;
+          font-weight: 300;
+          user-select: none;
+          vertical-align: middle;
+
+          @media #{$small-up} {
+            font-size: 1.3rem;
+          }
+
+        }
+
+        &__value {
+          background-color: transparent;
+          border: none;
+          color: $white;
+          display: inline-block;
+          font-family: monospace;
+          font-size: 1.1rem;
+          font-weight: 300;
+          vertical-align: middle;
+
+          @media #{$small-up} {
+            font-size: 1.3rem;
+          }
+
+        }
+
+        &__copied {
+          display: none;
+
+          img {
+            height: 16px;
+            position: relative;
+            vertical-align: middle;
+
+            @media #{$small-up} {
+              font-size: 1.3rem;
+            }
+
+          }
+
+          &--success {
+            background-color: $dark-orange;
+            border-radius: 5px;
+            display: inline-block;
+            font-family: monospace;
+            font-size: 14px;
+            padding: 3px;
+            vertical-align: top;
+          }
+
+        }
 
         &:hover {
           background-color: $lighter-orange;
@@ -62,14 +125,14 @@
 
         &:hover + .code__shadow {
           opacity: .4;
-          transform: translateY(4px);
         }
 
         &__shadow {
           opacity: .6;
           position: relative;
           top: 2rem;
-          transition: ease .6s all;
+          transition: ease .5s opacity;
+          user-select: none;
           width: 100%;
         }
 
@@ -81,7 +144,8 @@
           background: $white;
           display: inline-block;
           height: 1.6rem;
-          vertical-align: middle;
+          user-select: none;
+          vertical-align: top;
           width: 10px;
         }
 
