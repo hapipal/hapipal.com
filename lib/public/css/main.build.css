@@ -35,8 +35,14 @@
               -ms-flex-pack: justify;
                   justify-content: space-between; } }
     .nav__logo:hover {
-      -webkit-animation: spin .3s;
-              animation: spin .3s; }
+      -webkit-animation-name: spin;
+              animation-name: spin;
+      -webkit-animation-duration: .3s;
+              animation-duration: .3s;
+      -webkit-animation-iteration-count: 1;
+              animation-iteration-count: 1;
+      -webkit-animation-delay: .1s;
+              animation-delay: .1s; }
 
 @-webkit-keyframes spin {
   from {
@@ -231,6 +237,10 @@
         text-align: left;
         -webkit-transition: ease .5s transform;
         transition: ease .5s transform;
+        -webkit-user-select: none;
+           -moz-user-select: none;
+            -ms-user-select: none;
+                user-select: none;
         vertical-align: middle; }
         @media only screen and (min-width: 481px) {
           .hero__img__content .code {
@@ -240,22 +250,22 @@
           font-family: monospace;
           font-size: 1.1rem;
           font-weight: 300;
-          -webkit-user-select: none;
-             -moz-user-select: none;
-              -ms-user-select: none;
-                  user-select: none;
           vertical-align: middle; }
           @media only screen and (min-width: 481px) {
             .hero__img__content .code span {
               font-size: 1.3rem; } }
         .hero__img__content .code__value {
           background-color: transparent;
-          border: none;
+          border: 0;
           color: #fff;
           display: inline-block;
           font-family: monospace;
           font-size: 1.1rem;
           font-weight: 300;
+          -webkit-user-select: text;
+             -moz-user-select: text;
+              -ms-user-select: text;
+                  user-select: text;
           vertical-align: middle; }
           @media only screen and (min-width: 481px) {
             .hero__img__content .code__value {
@@ -299,10 +309,10 @@
                   animation: flash;
           -webkit-animation-duration: 2.5s;
                   animation-duration: 2.5s;
-          -webkit-animation-iteration-count: infinite;
-                  animation-iteration-count: infinite;
           -webkit-animation-fill-mode: both;
                   animation-fill-mode: both;
+          -webkit-animation-iteration-count: infinite;
+                  animation-iteration-count: infinite;
           background: #fff;
           display: inline-block;
           height: 1.6rem;
@@ -336,14 +346,8 @@
   .highlight h2 {
     font-size: 2.1rem;
     font-weight: 500; }
-    @media only screen and (min-width: 481px) {
-      .highlight h2 {
-        display: none; } }
   .highlight p {
     font-size: 1.2rem; }
-    @media only screen and (min-width: 481px) {
-      .highlight p {
-        display: none; } }
   .highlight__wrapper {
     padding: 1rem 0; }
     @media only screen and (min-width: 481px) {

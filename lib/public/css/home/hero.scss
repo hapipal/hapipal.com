@@ -56,6 +56,7 @@
         padding-left: 2rem;
         text-align: left;
         transition: ease .5s transform;
+        user-select: none;
         vertical-align: middle;
 
         @media #{$small-up} {
@@ -67,7 +68,6 @@
           font-family: monospace;
           font-size: 1.1rem;
           font-weight: 300;
-          user-select: none;
           vertical-align: middle;
 
           @media #{$small-up} {
@@ -78,12 +78,13 @@
 
         &__value {
           background-color: transparent;
-          border: none;
+          border: 0;
           color: $white;
           display: inline-block;
           font-family: monospace;
           font-size: 1.1rem;
           font-weight: 300;
+          user-select: text;
           vertical-align: middle;
 
           @media #{$small-up} {
@@ -139,8 +140,8 @@
         &__cursor {
           animation: flash;
           animation-duration: 2.5s;
-          animation-iteration-count: infinite;
           animation-fill-mode: both;
+          animation-iteration-count: infinite;
           background: $white;
           display: inline-block;
           height: 1.6rem;
