@@ -15,6 +15,7 @@
 
   p {
     font-size: $paragraph-font-size;
+    font-weight: 300;
   }
 
   &__wrapper {
@@ -36,7 +37,6 @@
     }
 
     &__item {
-
       display: none;
 
       a {

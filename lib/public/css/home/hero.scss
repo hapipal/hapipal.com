@@ -25,7 +25,7 @@
     &--full {
       display: none;
       margin-top: 2rem;
-      max-width: 600px;
+      max-width: 650px;
       width: 70vw;
 
       @media #{$small-up} {
@@ -36,7 +36,7 @@
 
     &__content {
       margin: 0 auto;
-      max-width: 500px;
+      max-width: 550px;
       padding-bottom: 2rem;
 
       p {
@@ -148,16 +148,6 @@
           user-select: none;
           vertical-align: top;
           width: 10px;
-        }
-
-        @keyframes flash {
-          from, 50%, to {
-            opacity: 1;
-          }
-
-          25%, 75% {
-            opacity: 0;
-          }
         }
 
       }

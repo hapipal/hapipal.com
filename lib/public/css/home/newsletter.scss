@@ -17,7 +17,10 @@
   p {
     font-size: 1.6rem;
     font-weight: 300;
-    max-width: 85%;
+
+    @media #{$small-up} {
+      max-width: 85%;
+    }
   }
 
   &__img {
@@ -70,23 +73,7 @@
     }
 
     &__button {
-      background: transparent;
-      border: 2px solid $white;
-      border-radius: 2px;
-      color: $white;
-      cursor: pointer;
-      font-size: 1.3rem;
-      height: 3rem;
-      margin: 1rem 0 0;
-      padding: 0 2rem;
-      vertical-align: bottom;
-      width: 100%;
-
-      @media #{$large-up} {
-        margin-left: 1rem;
-        width: auto;
-      }
-
+      @extend %button;
     }
 
   }

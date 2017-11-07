@@ -29,21 +29,10 @@
     }
 
     &:hover {
-      animation-name: spin;
-      animation-duration: .3s;
-      animation-iteration-count: 1;
       animation-delay: .1s;
-    }
-
-    @keyframes spin {
-      from {
-        transform: rotate(0deg);
-      }
-
-      to {
-        transform: rotate(360deg);
-      }
-
+      animation-duration: .2s;
+      animation-iteration-count: 1;
+      animation-name: spin;
     }
 
   }
