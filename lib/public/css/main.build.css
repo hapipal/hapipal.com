@@ -558,6 +558,15 @@
     @media only screen and (min-width: 1025px) {
       .newsletter__wrapper {
         padding: 3rem 0 4rem; } }
+    .newsletter__wrapper:hover .newsletter__img {
+      -webkit-animation-delay: .1s;
+              animation-delay: .1s;
+      -webkit-animation-duration: .3s;
+              animation-duration: .3s;
+      -webkit-animation-iteration-count: 1;
+              animation-iteration-count: 1;
+      -webkit-animation-name: spinInOut;
+              animation-name: spinInOut; }
   .newsletter p {
     font-size: 1.6rem;
     font-weight: 300; }
@@ -570,16 +579,7 @@
       .newsletter__img {
         display: inline-block;
         margin-left: 4rem;
-        width: 15%; }
-        .newsletter__img:hover {
-          -webkit-animation-delay: .1s;
-                  animation-delay: .1s;
-          -webkit-animation-duration: .3s;
-                  animation-duration: .3s;
-          -webkit-animation-iteration-count: 1;
-                  animation-iteration-count: 1;
-          -webkit-animation-name: spinInOut;
-                  animation-name: spinInOut; } }
+        width: 15%; } }
   @media only screen and (min-width: 1025px) {
     .newsletter__form {
       display: inline-block;

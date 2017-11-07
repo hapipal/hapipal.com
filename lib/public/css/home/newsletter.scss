@@ -12,6 +12,13 @@
       padding: 3rem 0 4rem;
     }
 
+    &:hover .newsletter__img {
+      animation-delay: .1s;
+      animation-duration: .3s;
+      animation-iteration-count: 1;
+      animation-name: spinInOut;
+    }
+
   }
 
   p {
@@ -30,14 +37,6 @@
       display: inline-block;
       margin-left: 4rem;
       width: 15%;
-
-      &:hover {
-        animation-delay: .1s;
-        animation-duration: .3s;
-        animation-iteration-count: 1;
-        animation-name: spinInOut;
-      }
-
     }
 
   }
