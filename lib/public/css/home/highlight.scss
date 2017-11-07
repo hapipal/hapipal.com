@@ -39,6 +39,7 @@
     &__item {
       display: none;
 
+
       a {
         color: $gray;
         text-decoration: none;
@@ -51,8 +52,10 @@
           backface-visibility: hidden;
           border-radius: 50%;
           margin: 0 auto;
+          max-width: 10rem;
           position: relative;
           transition: .3s ease box-shadow, .2s ease transform;
+          width: 75%;
         }
 
         &:hover .image {

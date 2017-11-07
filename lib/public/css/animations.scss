@@ -8,12 +8,24 @@
   }
 }
 
-@keyframes spin {
+@keyframes spinInOut {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: rotate(0deg) scale(.3);
   }
 
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+@keyframes teeter {
+  from, 50%, to {
+    transform: rotate(-2deg);
+  }
+
+  25%, 75% {
+    transform: rotate(2deg);
   }
 }

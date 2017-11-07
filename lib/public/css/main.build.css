@@ -10,21 +10,41 @@
   25%, 75% {
     opacity: 0; } }
 
-@-webkit-keyframes spin {
+@-webkit-keyframes spinInOut {
   from {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg); }
+    opacity: 0;
+    -webkit-transform: rotate(0deg) scale(0.3);
+            transform: rotate(0deg) scale(0.3); }
   to {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg); } }
+    opacity: 1;
+    -webkit-transform: rotate(360deg) scale(1);
+            transform: rotate(360deg) scale(1); } }
 
-@keyframes spin {
+@keyframes spinInOut {
   from {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg); }
+    opacity: 0;
+    -webkit-transform: rotate(0deg) scale(0.3);
+            transform: rotate(0deg) scale(0.3); }
   to {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg); } }
+    opacity: 1;
+    -webkit-transform: rotate(360deg) scale(1);
+            transform: rotate(360deg) scale(1); } }
+
+@-webkit-keyframes teeter {
+  from, 50%, to {
+    -webkit-transform: rotate(-2deg);
+            transform: rotate(-2deg); }
+  25%, 75% {
+    -webkit-transform: rotate(2deg);
+            transform: rotate(2deg); } }
+
+@keyframes teeter {
+  from, 50%, to {
+    -webkit-transform: rotate(-2deg);
+            transform: rotate(-2deg); }
+  25%, 75% {
+    -webkit-transform: rotate(2deg);
+            transform: rotate(2deg); } }
 
 .newsletter__input__button {
   background: transparent;
@@ -80,7 +100,8 @@
               flex: auto 0;
       -webkit-box-pack: center;
           -ms-flex-pack: center;
-              justify-content: center; }
+              justify-content: center;
+      overflow: hidden; }
       @media only screen and (min-width: 481px) {
         .nav__logo__wrapper {
           -webkit-box-pack: justify;
@@ -89,12 +110,12 @@
     .nav__logo:hover {
       -webkit-animation-delay: .1s;
               animation-delay: .1s;
-      -webkit-animation-duration: .2s;
-              animation-duration: .2s;
+      -webkit-animation-duration: .3s;
+              animation-duration: .3s;
       -webkit-animation-iteration-count: 1;
               animation-iteration-count: 1;
-      -webkit-animation-name: spin;
-              animation-name: spin; }
+      -webkit-animation-name: spinInOut;
+              animation-name: spinInOut; }
   .nav__icon {
     margin-left: 1rem;
     position: relative;
@@ -184,13 +205,27 @@
           -ms-flex-pack: justify;
               justify-content: space-between; } }
   .footer__flex__left {
-    color: #fff; }
+    color: #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
   .footer__flex__right {
     -ms-flex-item-align: start;
         align-self: flex-start;
     display: -webkit-box;
     display: -ms-flexbox;
-    display: flex; }
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+    @media only screen and (min-width: 481px) {
+      .footer__flex__right {
+        -webkit-box-pack: start;
+            -ms-flex-pack: start;
+                justify-content: flex-start; } }
   .footer__img {
     width: 10rem; }
   .footer__copyright {
@@ -200,7 +235,11 @@
     color: #fff;
     -webkit-box-pack: end;
         -ms-flex-pack: end;
-            justify-content: flex-end; }
+            justify-content: flex-end;
+    text-align: center; }
+    @media only screen and (min-width: 481px) {
+      .footer__copyright {
+        text-align: left; } }
   .footer__nav {
     margin: 2rem 0;
     padding-right: 2rem; }
@@ -250,6 +289,15 @@
       @media only screen and (min-width: 481px) {
         .hero__img--full {
           display: block; } }
+      .hero__img--full:hover {
+        -webkit-animation-delay: .1s;
+                animation-delay: .1s;
+        -webkit-animation-duration: 2s;
+                animation-duration: 2s;
+        -webkit-animation-iteration-count: infinite;
+                animation-iteration-count: infinite;
+        -webkit-animation-name: teeter;
+                animation-name: teeter; }
     .hero__img__content {
       margin: 0 auto;
       max-width: 550px;
@@ -268,8 +316,8 @@
         font-family: monospace;
         font-size: 1.1rem;
         font-weight: 300;
-        padding: 1rem;
-        padding-left: 2rem;
+        padding: .5rem;
+        padding-left: 1rem;
         text-align: left;
         -webkit-transition: ease .5s transform;
         transition: ease .5s transform;
@@ -280,7 +328,9 @@
         vertical-align: middle; }
         @media only screen and (min-width: 481px) {
           .hero__img__content .code {
-            font-size: 1.3rem; } }
+            font-size: 1.3rem;
+            padding: 1rem;
+            padding-left: 2rem; } }
         .hero__img__content .code span {
           display: inline-block;
           font-family: monospace;
@@ -327,8 +377,8 @@
           background-color: #ffae41;
           -webkit-transform: translateY(-2px) scale(1.01);
                   transform: translateY(-2px) scale(1.01); }
-        .hero__img__content .code:hover + .code__shadow {
-          opacity: .4; }
+          .hero__img__content .code:hover + .code__shadow {
+            opacity: .4; }
         .hero__img__content .code__shadow {
           opacity: .6;
           position: relative;
@@ -395,9 +445,11 @@
                 backface-visibility: hidden;
         border-radius: 50%;
         margin: 0 auto;
+        max-width: 10rem;
         position: relative;
         -webkit-transition: .3s ease box-shadow, .2s ease transform;
-        transition: .3s ease box-shadow, .2s ease transform; }
+        transition: .3s ease box-shadow, .2s ease transform;
+        width: 75%; }
       .highlight__grid__item__img:hover .image {
         -webkit-box-shadow: 0 0 0 8px #eb830f;
                 box-shadow: 0 0 0 8px #eb830f;
@@ -518,7 +570,16 @@
       .newsletter__img {
         display: inline-block;
         margin-left: 4rem;
-        width: 15%; } }
+        width: 15%; }
+        .newsletter__img:hover {
+          -webkit-animation-delay: .1s;
+                  animation-delay: .1s;
+          -webkit-animation-duration: .3s;
+                  animation-duration: .3s;
+          -webkit-animation-iteration-count: 1;
+                  animation-iteration-count: 1;
+          -webkit-animation-name: spinInOut;
+                  animation-name: spinInOut; } }
   @media only screen and (min-width: 1025px) {
     .newsletter__form {
       display: inline-block;

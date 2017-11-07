@@ -32,6 +32,13 @@
         display: block;
       }
 
+      &:hover {
+        animation-delay: .1s;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-name: teeter;
+      }
+
     }
 
     &__content {
@@ -52,8 +59,8 @@
         font-family: monospace;
         font-size: 1.1rem;
         font-weight: 300;
-        padding: 1rem;
-        padding-left: 2rem;
+        padding: .5rem;
+        padding-left: 1rem;
         text-align: left;
         transition: ease .5s transform;
         user-select: none;
@@ -61,6 +68,8 @@
 
         @media #{$small-up} {
           font-size: 1.3rem;
+          padding: 1rem;
+          padding-left: 2rem;
         }
 
         span {
@@ -122,10 +131,11 @@
         &:hover {
           background-color: $lighter-orange;
           transform: translateY(-2px) scale(1.01);
-        }
 
-        &:hover + .code__shadow {
-          opacity: .4;
+          + .code__shadow {
+            opacity: .4;
+          }
+
         }
 
         &__shadow {

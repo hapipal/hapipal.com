@@ -19,11 +19,19 @@
 
     &__left {
       color: $white;
+      display: flex;
+      justify-content: center;
     }
 
     &__right {
       align-self: flex-start;
       display: flex;
+      justify-content: center;
+
+      @media #{$small-up} {
+        justify-content: flex-start;
+      }
+
     }
 
   }
@@ -36,6 +44,12 @@
     align-items: center;
     color: $white;
     justify-content: flex-end;
+    text-align: center;
+
+    @media #{$small-up} {
+      text-align: left;
+    }
+
   }
 
   &__nav {
