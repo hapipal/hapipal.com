@@ -21,9 +21,17 @@
       display: flex;
       flex: auto 0;
       justify-content: center;
+      overflow: hidden;
 
       @media #{$small-up} {
         justify-content: space-between;
+      }
+
+      &:hover img {
+        animation-delay: .3s;
+        animation-duration: .3s;
+        animation-iteration-count: 1;
+        animation-name: spinOutIn;
       }
 
     }

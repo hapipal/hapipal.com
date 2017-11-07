@@ -11,20 +11,11 @@
   h2 {
     font-size: $h2-font-size;
     font-weight: 500;
-
-    @media #{$small-up} {
-      display: none;
-    }
-
   }
 
   p {
     font-size: $paragraph-font-size;
-
-    @media #{$small-up} {
-      display: none;
-    }
-
+    font-weight: 300;
   }
 
   &__wrapper {
@@ -46,8 +37,8 @@
     }
 
     &__item {
-
       display: none;
+
 
       a {
         color: $gray;
@@ -55,13 +46,19 @@
       }
 
       &__img {
-        backface-visibility: hidden;
-        border-radius: 50%;
-        margin: 0 auto;
         position: relative;
-        transition: .6s ease box-shadow, .3s ease transform;
 
-        &:hover {
+        .image {
+          backface-visibility: hidden;
+          border-radius: 50%;
+          margin: 0 auto;
+          max-width: 10rem;
+          position: relative;
+          transition: .3s ease box-shadow, .2s ease transform;
+          width: 75%;
+        }
+
+        &:hover .image {
           box-shadow: 0 0 0 8px $dark-orange;
           transform: scale(.9);
         }

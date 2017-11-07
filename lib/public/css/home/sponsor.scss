@@ -53,7 +53,7 @@
   &__content {
 
     p {
-      font-size: 1.2rem;
+      font-size: $paragraph-font-size;
       font-weight: 300;
 
       @media #{$large-up} {

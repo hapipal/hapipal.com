@@ -1,0 +1,26 @@
+%button {
+  background: transparent;
+  border: 2px solid $white;
+  border-radius: 2px;
+  color: $white;
+  cursor: pointer;
+  font-size: 1.3rem;
+  height: 3rem;
+  margin: 1rem 0 0;
+  padding: 0 2rem;
+  transition: all ease .6s;
+  vertical-align: bottom;
+  width: 100%;
+
+  @media #{$large-up} {
+    margin-left: 1rem;
+    width: auto;
+  }
+
+  &:hover {
+    background-color: $white;
+    box-shadow: 0 0 10px 5px $dark-orange;
+    color: $dark-orange;
+  }
+
+}
