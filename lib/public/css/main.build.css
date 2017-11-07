@@ -10,41 +10,53 @@
   25%, 75% {
     opacity: 0; } }
 
-@-webkit-keyframes spinInOut {
+@-webkit-keyframes spinOutIn {
   from {
     opacity: 0;
-    -webkit-transform: rotate(0deg) scale(0.3);
-            transform: rotate(0deg) scale(0.3); }
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
   to {
     opacity: 1;
-    -webkit-transform: rotate(360deg) scale(1);
-            transform: rotate(360deg) scale(1); } }
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
 
-@keyframes spinInOut {
+@keyframes spinOutIn {
   from {
     opacity: 0;
-    -webkit-transform: rotate(0deg) scale(0.3);
-            transform: rotate(0deg) scale(0.3); }
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
   to {
     opacity: 1;
-    -webkit-transform: rotate(360deg) scale(1);
-            transform: rotate(360deg) scale(1); } }
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
 
 @-webkit-keyframes teeter {
-  from, 50%, to {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  33% {
     -webkit-transform: rotate(-2deg);
             transform: rotate(-2deg); }
-  25%, 75% {
+  66% {
     -webkit-transform: rotate(2deg);
-            transform: rotate(2deg); } }
+            transform: rotate(2deg); }
+  to {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); } }
 
 @keyframes teeter {
-  from, 50%, to {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  33% {
     -webkit-transform: rotate(-2deg);
             transform: rotate(-2deg); }
-  25%, 75% {
+  66% {
     -webkit-transform: rotate(2deg);
-            transform: rotate(2deg); } }
+            transform: rotate(2deg); }
+  to {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); } }
 
 .newsletter__input__button {
   background: transparent;
@@ -107,15 +119,15 @@
           -webkit-box-pack: justify;
               -ms-flex-pack: justify;
                   justify-content: space-between; } }
-    .nav__logo:hover {
-      -webkit-animation-delay: .1s;
-              animation-delay: .1s;
-      -webkit-animation-duration: .3s;
-              animation-duration: .3s;
-      -webkit-animation-iteration-count: 1;
-              animation-iteration-count: 1;
-      -webkit-animation-name: spinInOut;
-              animation-name: spinInOut; }
+      .nav__logo__wrapper:hover img {
+        -webkit-animation-delay: .3s;
+                animation-delay: .3s;
+        -webkit-animation-duration: .3s;
+                animation-duration: .3s;
+        -webkit-animation-iteration-count: 1;
+                animation-iteration-count: 1;
+        -webkit-animation-name: spinOutIn;
+                animation-name: spinOutIn; }
   .nav__icon {
     margin-left: 1rem;
     position: relative;
@@ -259,9 +271,13 @@
       letter-spacing: 1px;
       padding: .5rem 0;
       position: relative;
-      text-decoration: none; }
+      text-decoration: none;
+      -webkit-transition: ease .2s color;
+      transition: ease .2s color; }
       .footer__nav__item--active {
         border: 0; }
+      .footer__nav__item:hover {
+        color: #ffa832; }
 
 .hero {
   background-color: #eb830f;
@@ -290,12 +306,12 @@
         .hero__img--full {
           display: block; } }
       .hero__img--full:hover {
-        -webkit-animation-delay: .1s;
-                animation-delay: .1s;
         -webkit-animation-duration: 2s;
                 animation-duration: 2s;
         -webkit-animation-iteration-count: infinite;
                 animation-iteration-count: infinite;
+        -webkit-animation-timing-function: ease-in-out;
+                animation-timing-function: ease-in-out;
         -webkit-animation-name: teeter;
                 animation-name: teeter; }
     .hero__img__content {
@@ -565,8 +581,8 @@
               animation-duration: .3s;
       -webkit-animation-iteration-count: 1;
               animation-iteration-count: 1;
-      -webkit-animation-name: spinInOut;
-              animation-name: spinInOut; }
+      -webkit-animation-name: spinOutIn;
+              animation-name: spinOutIn; }
   .newsletter p {
     font-size: 1.6rem;
     font-weight: 300; }
