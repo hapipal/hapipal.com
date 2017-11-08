@@ -274,8 +274,6 @@
       text-decoration: none;
       -webkit-transition: ease .2s color;
       transition: ease .2s color; }
-      .footer__nav__item--active {
-        border: 0; }
       .footer__nav__item:hover {
         color: #ffa832; }
 
@@ -626,10 +624,7 @@
 
 .docs-list {
   background-color: #eb830f;
-  color: #fff;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex; }
+  color: #fff; }
   .docs-list ul {
     padding: 2rem; }
     .docs-list ul li {
@@ -1061,11 +1056,20 @@
   border-top: 0; }
 
 body {
-  margin: 0; }
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0;
+  min-height: 100vh; }
 
 .container {
-  margin: 0;
-  padding: 0; }
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1; }
 
 .wrapper, .nav__wrapper, .footer__wrapper, .hero__wrapper, .highlight__wrapper, .sponsor__wrapper, .newsletter__wrapper {
   margin: 0 auto;

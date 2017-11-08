@@ -78,10 +78,6 @@
       text-decoration: none;
       transition: ease .2s color;
 
-      &--active {
-        border: 0;
-      }
-
       &:hover {
         color: $light-orange;
       }
