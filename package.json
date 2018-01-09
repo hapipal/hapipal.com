@@ -32,6 +32,7 @@
     "joi": "13.x.x",
     "primer-markdown": ">=3.7.1 <4",
     "require-dir": "0.3.x",
+    "schmervice": "1.x.x",
     "semver": "5.x.x",
     "vision": "5.x.x",
     "wreck": "14.x.x"
@@ -43,6 +44,7 @@
     "babelify": "8.x.x",
     "browser-sync": "2.x.x",
     "browserify": "15.x.x",
+    "code": "5.x.x",
     "cssnano": "3.x.x",
     "eslint": "4.x.x",
     "eslint-config-hapi": "11.x.x",
