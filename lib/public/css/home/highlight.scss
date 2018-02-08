@@ -11,20 +11,10 @@
   h2 {
     font-size: $h2-font-size;
     font-weight: 500;
-
-    @media #{$small-up} {
-      display: none;
-    }
-
   }
 
   p {
     font-size: $paragraph-font-size;
-
-    @media #{$small-up} {
-      display: none;
-    }
-
   }
 
   &__wrapper {

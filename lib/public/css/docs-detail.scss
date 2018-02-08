@@ -7,4 +7,11 @@
     padding: 4rem 0;
   }
 
+  > .nav {
+    position: fixed;
+
+    .nav-item.navbar-active {
+      font-weight: bold;
+    }
+  }
 }
