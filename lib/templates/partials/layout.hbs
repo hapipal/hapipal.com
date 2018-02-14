@@ -15,8 +15,13 @@
             {{!-- Custom <head> content per page could be added. --}}
         {{/head-block}}
     </head>
+    
+        {{#if page}}
+            <body class="{{page}}-page">
+        {{else}}
+            <body>
+        {{/if}}
 
-    <body>
         {{> navigation}}
 
         {{#> content}}

@@ -1,17 +1,71 @@
 .docs-detail {
   margin: 0 auto;
-  padding: 2rem 0;
+  padding: 4rem 0;
 
-  @media #{$small-up} {
-    max-width: 978px; //github style
-    padding: 4rem 0;
+
+  .wrapper {
+
+    .markdown-body {
+      margin-left: 300px;
+      margin-top: 75px;
+      margin-bottom: 4rem;
+
+      @media #{$small-up} {
+        max-width: 978px; //github style
+      }
+    }
   }
 
-  > .nav {
+  .nav {
+    background-color: $white;
+    border: 2px solid $lighter-gray;
+    border-left: 0;
+    bottom: 0;
+    display: block;
+    flex: 1;
+    left: 0;
+    overflow: scroll;
     position: fixed;
+    top: 82px;
+    width: 300px;
 
-    .nav-item.navbar-active {
-      font-weight: bold;
+    .select-version {
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      border: 2px solid $lighter-gray;
+      border-right: 0;
+      border-left: 0;
+
+      p {
+        margin-right: 1rem;
+      }
+
+      select{
+        height: 25px;
+      }
+    }
+
+    ul {
+      padding: 0;
+
+      .nav-item {
+        font-size: 14px;
+        font-weight: 400;
+        padding: .5rem .25rem;
+        padding-left: 3rem;
+
+        &.navbar-active {
+          border-left: 4px solid $orange;
+          color: $orange;
+          font-weight: bold;
+        }
+
+        &:hover {
+          background-color: $orange;
+          color: white;
+        }
+      }
     }
   }
 }
