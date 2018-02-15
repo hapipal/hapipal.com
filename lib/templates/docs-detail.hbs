@@ -2,13 +2,13 @@
 
     {{#*inline "content"}}
         <div class="docs-detail">
-            <div class="nav">
+            <div class="nav markdown-body">
               <div class="select-version">
                 <p>Reference Version: </p>
-                <select class='version'>
-                  <option value="16.0.0">16.0.0</option>
-                  <option value="17.0.0">17.0.0</option>
-                  <option value="18.0.0">18.0.0</option>
+                <select class="version">
+                  {{#each versions as |ver|}}
+                  <option value="{{ver}}"{{#equals ver ../version}} selected="selected"{{/equals}}>v{{ver}}</option>
+                  {{/each}}
                 </select>
               </div>
               <!-- populated by js/docs-nav.js -->
