@@ -1,7 +1,6 @@
 .docs-detail {
   margin: 0 auto;
-  padding: 4rem 0;
-
+  padding: 2.5rem 0;
 
   .wrapper {
 
@@ -80,7 +79,25 @@
         font-size: 14px;
         font-weight: 400;
         padding: .5rem .25rem;
-        padding-left: 2rem;
+
+        &.indent {
+
+          &-1 {
+            padding-left: 2rem;
+          }
+
+          &-2 {
+            padding-left: 3rem;
+          }
+
+          &-3 {
+            padding-left: 4rem;
+          }
+
+          &-4 {
+            padding-left: 5rem;
+          }
+        }
 
         &.navbar-active {
           border-left: 4px solid $orange;
