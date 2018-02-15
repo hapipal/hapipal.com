@@ -128,12 +128,25 @@
           font-weight: 400;
           list-style: none;
           padding: .5rem 0;
-          padding-left: 2rem;
+          padding-left: .5rem;
           text-decoration: none;
+
 
           &:hover {
             background-color: $orange;
             color: $white;
+
+            img {
+              opacity: 1;
+            }
+          }
+
+          img {
+            margin-right: 2rem;
+            opacity: 0;
+            transition: linear opacity .1s;
+            transition-delay: .1s;
+            width: 20px;
           }
         }
       }
