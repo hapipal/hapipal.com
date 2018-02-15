@@ -23,6 +23,7 @@
     display: block;
     flex: 1;
     left: 0;
+    overflow-x: hidden;
     overflow-y: auto;
     position: fixed;
     top: 82px;
@@ -129,7 +130,6 @@
           padding: .5rem 0;
           padding-left: 2rem;
           text-decoration: none;
-          width: 100%;
 
           &:hover {
             background-color: $orange;

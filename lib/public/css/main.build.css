@@ -489,6 +489,7 @@
         -ms-flex: 1;
             flex: 1;
     left: 0;
+    overflow-x: hidden;
     overflow-y: auto;
     position: fixed;
     top: 82px;
@@ -565,8 +566,7 @@
         list-style: none;
         padding: .5rem 0;
         padding-left: 2rem;
-        text-decoration: none;
-        width: 100%; }
+        text-decoration: none; }
         .docs-detail .docs-nav .package-list li a:hover {
           background-color: #ec870b;
           color: #fff; }
