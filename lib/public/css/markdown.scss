@@ -2,7 +2,7 @@
   max-width: 978px; //github style
 
   a {
-    color: $dark-orange;
+    color: $md-orange;
   }
 
   a,
@@ -19,7 +19,7 @@
 
     code {
       background-color: $lighter-gray;
-      color: $gray;
+      color: $md-dark-gray;
       font-family: monospace;
       padding: .2rem .4rem;
     }
@@ -30,11 +30,23 @@
 
   }
 
+  blockquote {
+    border-left: 4px solid $md-orange !important;
+    padding: 0;
+    margin: 0;
+  }
+
+  > p {
+    padding-bottom: 1rem;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
   .highlight {
 
     pre,
     pre > code {
-      background-color: $lighter-gray;
+      background-color: $md-light-gray;
       display: block;
       font-family: monospace;
       margin: 0;
@@ -50,7 +62,7 @@
   .pl {
 
     &-c {
-      color: $mid-gray;
+      color: $md-dark-gray;
       font-style: italic;
     }
 
@@ -62,11 +74,11 @@
 
     &-c1,
     &-s1 {
-      color: $red;
+      color: $md-green;
     }
 
     &-en {
-      color: $purple;
+      color: $md-blue;
     }
 
   }

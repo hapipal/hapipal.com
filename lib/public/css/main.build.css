@@ -586,7 +586,7 @@
 .markdown-body {
   max-width: 978px; }
   .markdown-body a {
-    color: #eb830f; }
+    color: #f6901d; }
   .markdown-body a,
   .markdown-body li,
   .markdown-body h1,
@@ -609,7 +609,7 @@
     .markdown-body p code,
     .markdown-body pre code {
       background-color: #f7f7f7;
-      color: #444;
+      color: #333;
       font-family: monospace;
       padding: .2rem .4rem; }
     .markdown-body a span,
@@ -623,9 +623,17 @@
     .markdown-body p span,
     .markdown-body pre span {
       font-family: monospace; }
+  .markdown-body blockquote {
+    border-left: 4px solid #f6901d !important;
+    padding: 0;
+    margin: 0; }
+  .markdown-body > p {
+    padding-bottom: 1rem;
+    font-size: 14px;
+    font-weight: 500; }
   .markdown-body .highlight pre,
   .markdown-body .highlight pre > code {
-    background-color: #f7f7f7;
+    background-color: #676767;
     display: block;
     font-family: monospace;
     margin: 0;
@@ -635,14 +643,14 @@
     word-break: break-all;
     word-wrap: break-word; }
   .markdown-body .pl-c {
-    color: #939393;
+    color: #333;
     font-style: italic; }
   .markdown-body .pl-st, .markdown-body .pl-k, .markdown-body .pl-s {
     font-weight: bold; }
   .markdown-body .pl-c1, .markdown-body .pl-s1 {
-    color: #af0505; }
+    color: #81bc61; }
   .markdown-body .pl-en {
-    color: #6f42c1; }
+    color: #618aff; }
 
 .markdown-body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
