@@ -6,9 +6,9 @@
   .wrapper {
 
     .markdown-body {
+      margin-bottom: 4rem;
       margin-left: 300px;
       margin-top: 75px;
-      margin-bottom: 4rem;
 
       @media #{$small-up} {
         max-width: 978px; //github style
@@ -18,8 +18,8 @@
 
   .nav {
     background-color: $white;
-    border: 2px solid $lighter-gray;
-    border-left: 0;
+    border-bottom: 0;
+    border-right: 2px solid $light-gray;
     bottom: 0;
     display: block;
     flex: 1;
@@ -30,19 +30,46 @@
     width: 300px;
 
     .select-version {
-      justify-content: center;
       align-items: center;
+      border-bottom: 2px solid $light-gray;
       display: flex;
-      border: 2px solid $lighter-gray;
-      border-right: 0;
-      border-left: 0;
+      justify-content: center;
 
       p {
-        margin-right: 1rem;
+        font-weight: bold;
       }
 
-      select{
-        height: 25px;
+      select {
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        background-color: $white;
+        border: 2px solid $light-gray;
+        border-radius: 0;
+        box-sizing: border-box;
+        display: inline-block;
+        font-size: 12px;
+        line-height: 1em;
+        margin: 0;
+        margin-left: 2rem;
+        padding: .5em 3em .5em 1em;
+
+        &.version {
+          background-image: linear-gradient(45deg, transparent 50%, $orange 50%), linear-gradient(135deg, $orange 50%, transparent 50%);
+          background-position: calc(100% - 11px) calc(9px), calc(100% - 6px) calc(9px), calc(100% - 1em) 0;
+          background-repeat: no-repeat;
+          background-size: 5px 5px, 5px 5px, 1px 1.5em;
+
+          &:focus {
+            background-repeat: no-repeat;
+            background-size: 5px 5px, 5px 5px, 1px 1.5em;
+            outline: 0;
+          }
+
+          &:-moz-focusring {
+            color: transparent;
+            text-shadow: 0;
+          }
+        }
       }
     }
 
@@ -53,7 +80,7 @@
         font-size: 14px;
         font-weight: 400;
         padding: .5rem .25rem;
-        padding-left: 3rem;
+        padding-left: 2rem;
 
         &.navbar-active {
           border-left: 4px solid $orange;
@@ -63,7 +90,7 @@
 
         &:hover {
           background-color: $orange;
-          color: white;
+          color: $white;
         }
       }
     }
