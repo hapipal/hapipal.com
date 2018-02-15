@@ -106,10 +106,10 @@
                   justify-content: flex-end; } }
 
 .docs-detail-page .nav {
+  height: 80px;
   left: 0;
   position: fixed;
-  right: 0;
-  height: 80px; }
+  right: 0; }
 
 .footer {
   background-color: #333429;
@@ -552,6 +552,22 @@
           color: #ec870b;
           font-weight: bold; }
         .docs-detail .docs-nav ul .nav-item:hover {
+          background-color: #ec870b;
+          color: #fff; }
+    .docs-detail .docs-nav .package-list {
+      border-top: 2px solid #e2e2e2;
+      padding-top: 1rem; }
+      .docs-detail .docs-nav .package-list li a {
+        color: #000000;
+        display: block;
+        font-size: 14px;
+        font-weight: 400;
+        list-style: none;
+        padding: .5rem 0;
+        padding-left: 2rem;
+        text-decoration: none;
+        width: 100%; }
+        .docs-detail .docs-nav .package-list li a:hover {
           background-color: #ec870b;
           color: #fff; }
 

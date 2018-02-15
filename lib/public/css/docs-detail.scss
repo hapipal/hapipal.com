@@ -112,5 +112,31 @@
         }
       }
     }
+
+    .package-list {
+
+      border-top: 2px solid $light-gray;
+      padding-top: 1rem;
+
+      li {
+
+        a {
+          color: #000000;
+          display: block;
+          font-size: 14px;
+          font-weight: 400;
+          list-style: none;
+          padding: .5rem 0;
+          padding-left: 2rem;
+          text-decoration: none;
+          width: 100%;
+
+          &:hover {
+            background-color: $orange;
+            color: $white;
+          }
+        }
+      }
+    }
   }
 }
