@@ -2,6 +2,7 @@
   background-color: $dark-orange;
   border-bottom: 2px solid $tan;
   display: block;
+  height: 80px;
 
   &__wrapper {
     @extend .wrapper;
@@ -117,7 +118,6 @@
 
 .docs-detail-page {
   .nav {
-    height: 80px;
     left: 0;
     position: fixed;
     right: 0;

@@ -7,7 +7,8 @@
 .nav {
   background-color: #eb830f;
   border-bottom: 2px solid #f3b66e;
-  display: block; }
+  display: block;
+  height: 80px; }
   @media only screen and (min-width: 481px) {
     .nav__wrapper {
       display: -webkit-box;
@@ -106,7 +107,6 @@
                   justify-content: flex-end; } }
 
 .docs-detail-page .nav {
-  height: 80px;
   left: 0;
   position: fixed;
   right: 0; }
