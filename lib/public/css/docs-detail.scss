@@ -142,11 +142,15 @@
           }
 
           img {
-            margin-right: 2rem;
+            margin-right: 1rem;
             opacity: 0;
-            transition: linear opacity .1s;
+            transition: linear opacity .15s;
             transition-delay: .1s;
             width: 20px;
+
+            &.active {
+              opacity: 1;
+            }
           }
         }
       }

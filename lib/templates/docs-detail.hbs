@@ -13,9 +13,12 @@
               </div>
               <div class="nav-target"><!-- replaced with nav by js/docs-nav.js --></div>
               <ul class="package-list">
-                  {{#each packages}}
+                  {{#each packages as |package|}}
                       <li>
-                          <a href="/docs/{{this.name}}"><img src="/public/img/hapi-bolt.svg" /> {{this.name}}</a>
+                        <a href="/docs/{{package.name}}">
+                          <img {{#equals package.name ../pkg.name}}class="active"{{/equals}} src="/public/img/hapi-bolt{{#equals package.name ../pkg.name}}-gold{{/equals}}.svg" />
+                          {{package.name}}
+                        </a>
                       </li>
                   {{/each}}
               </ul>
