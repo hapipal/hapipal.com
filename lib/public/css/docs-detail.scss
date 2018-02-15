@@ -7,7 +7,7 @@
     .markdown-body {
       margin-bottom: 4rem;
       margin-left: 300px;
-      margin-top: 75px;
+      margin-top: 80px;
 
       @media #{$small-up} {
         max-width: 978px; //github style
@@ -15,7 +15,7 @@
     }
   }
 
-  .nav {
+  .docs-nav {
     background-color: $white;
     border-bottom: 0;
     border-right: 2px solid $light-gray;
@@ -23,7 +23,7 @@
     display: block;
     flex: 1;
     left: 0;
-    overflow: scroll;
+    overflow-y: auto;
     position: fixed;
     top: 82px;
     width: 300px;
@@ -76,6 +76,7 @@
       padding: 0;
 
       .nav-item {
+        border-left: 4px solid transparent;
         font-size: 14px;
         font-weight: 400;
         padding: .5rem .25rem;

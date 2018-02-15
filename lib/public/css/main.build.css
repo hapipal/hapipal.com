@@ -108,7 +108,8 @@
 .docs-detail-page .nav {
   left: 0;
   position: fixed;
-  right: 0; }
+  right: 0;
+  height: 80px; }
 
 .footer {
   background-color: #333429;
@@ -474,11 +475,11 @@
   .docs-detail .wrapper .markdown-body, .docs-detail .nav__wrapper .markdown-body, .docs-detail .footer__wrapper .markdown-body, .docs-detail .hero__wrapper .markdown-body, .docs-detail .highlight__wrapper .markdown-body, .docs-detail .sponsor__wrapper .markdown-body, .docs-detail .newsletter__wrapper .markdown-body {
     margin-bottom: 4rem;
     margin-left: 300px;
-    margin-top: 75px; }
+    margin-top: 80px; }
     @media only screen and (min-width: 481px) {
       .docs-detail .wrapper .markdown-body, .docs-detail .nav__wrapper .markdown-body, .docs-detail .footer__wrapper .markdown-body, .docs-detail .hero__wrapper .markdown-body, .docs-detail .highlight__wrapper .markdown-body, .docs-detail .sponsor__wrapper .markdown-body, .docs-detail .newsletter__wrapper .markdown-body {
         max-width: 978px; } }
-  .docs-detail .nav {
+  .docs-detail .docs-nav {
     background-color: #fff;
     border-bottom: 0;
     border-right: 2px solid #e2e2e2;
@@ -488,11 +489,11 @@
         -ms-flex: 1;
             flex: 1;
     left: 0;
-    overflow: scroll;
+    overflow-y: auto;
     position: fixed;
     top: 82px;
     width: 300px; }
-    .docs-detail .nav .select-version {
+    .docs-detail .docs-nav .select-version {
       -webkit-box-align: center;
           -ms-flex-align: center;
               align-items: center;
@@ -503,9 +504,9 @@
       -webkit-box-pack: center;
           -ms-flex-pack: center;
               justify-content: center; }
-      .docs-detail .nav .select-version p {
+      .docs-detail .docs-nav .select-version p {
         font-weight: bold; }
-      .docs-detail .nav .select-version select {
+      .docs-detail .docs-nav .select-version select {
         -moz-appearance: none;
         -webkit-appearance: none;
         background-color: #fff;
@@ -519,37 +520,38 @@
         margin: 0;
         margin-left: 2rem;
         padding: .5em 3em .5em 1em; }
-        .docs-detail .nav .select-version select.version {
+        .docs-detail .docs-nav .select-version select.version {
           background-image: linear-gradient(45deg, transparent 50%, #ec870b 50%), linear-gradient(135deg, #ec870b 50%, transparent 50%);
           background-position: calc(100% - 11px) calc(9px), calc(100% - 6px) calc(9px), calc(100% - 1em) 0;
           background-repeat: no-repeat;
           background-size: 5px 5px, 5px 5px, 1px 1.5em; }
-          .docs-detail .nav .select-version select.version:focus {
+          .docs-detail .docs-nav .select-version select.version:focus {
             background-repeat: no-repeat;
             background-size: 5px 5px, 5px 5px, 1px 1.5em;
             outline: 0; }
-          .docs-detail .nav .select-version select.version:-moz-focusring {
+          .docs-detail .docs-nav .select-version select.version:-moz-focusring {
             color: transparent;
             text-shadow: 0; }
-    .docs-detail .nav ul {
+    .docs-detail .docs-nav ul {
       padding: 0; }
-      .docs-detail .nav ul .nav-item {
+      .docs-detail .docs-nav ul .nav-item {
+        border-left: 4px solid transparent;
         font-size: 14px;
         font-weight: 400;
         padding: .5rem .25rem; }
-        .docs-detail .nav ul .nav-item.indent-1 {
+        .docs-detail .docs-nav ul .nav-item.indent-1 {
           padding-left: 2rem; }
-        .docs-detail .nav ul .nav-item.indent-2 {
+        .docs-detail .docs-nav ul .nav-item.indent-2 {
           padding-left: 3rem; }
-        .docs-detail .nav ul .nav-item.indent-3 {
+        .docs-detail .docs-nav ul .nav-item.indent-3 {
           padding-left: 4rem; }
-        .docs-detail .nav ul .nav-item.indent-4 {
+        .docs-detail .docs-nav ul .nav-item.indent-4 {
           padding-left: 5rem; }
-        .docs-detail .nav ul .nav-item.navbar-active {
+        .docs-detail .docs-nav ul .nav-item.navbar-active {
           border-left: 4px solid #ec870b;
           color: #ec870b;
           font-weight: bold; }
-        .docs-detail .nav ul .nav-item:hover {
+        .docs-detail .docs-nav ul .nav-item:hover {
           background-color: #ec870b;
           color: #fff; }
 
