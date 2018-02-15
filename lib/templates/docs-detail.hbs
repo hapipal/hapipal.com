@@ -2,7 +2,7 @@
 
     {{#*inline "content"}}
         <div class="docs-detail">
-            <div class="nav">
+            <nav>
               <div class="select-version">
                 <p>Reference Version: </p>
                 <select class="version">
@@ -11,8 +11,13 @@
                   {{/each}}
                 </select>
               </div>
-              <!-- populated by js/docs-nav.js -->
-            </div>
+              <div class="nav-target"><!-- replaced with nav by js/docs-nav.js --></div>
+              {{#each packages}}
+                  <li>
+                      <a href="/docs/{{this.name}}">{{this.name}}</a>
+                  </li>
+              {{/each}}
+            </nav>
             <div class="wrapper">
                 {{{html}}}
             </div>
