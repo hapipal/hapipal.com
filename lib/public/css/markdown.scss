@@ -3,6 +3,7 @@
 
   a {
     color: $md-orange;
+    padding: 0 .2rem;
   }
 
   a,
@@ -21,11 +22,11 @@
       @extend %inconsolata;
       background-color: $lighter-gray;
       color: $md-light-gray;
-      padding: .4rem .8rem;
+      padding: .3rem .8rem;
     }
 
     span {
-      font-family: monospace;
+      @extend %inconsolata;
     }
 
   }
@@ -36,7 +37,6 @@
     code {
       @extend %inconsolata;
       font-weight: 300;
-      padding: 0 .4rem;
     }
   }
 
@@ -44,16 +44,32 @@
     border: 0 !important;
   }
 
+  li {
+    font-size: 14px;
+
+    code {
+      padding: .2rem .4rem;
+    }
+  }
+
   blockquote {
     border-left: 4px solid $md-orange !important;
     margin: 0;
-    padding: 0;
+    margin: 1.5rem 0 !important;
+
+    p {
+      font-weight: 500;
+    }
   }
 
   p {
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 500;
-    padding: .6rem 0;
+    padding: .25rem;
+
+    code {
+      padding: .15rem .35rem;
+    }
   }
 
   .highlight {

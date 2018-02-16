@@ -78,7 +78,7 @@
 
       .nav-item {
         border-left: 4px solid transparent;
-        font-size: 13px;
+        font-size: 14px;
         font-weight: 400;
         padding: .5rem .25rem;
         padding-right: .75rem;
@@ -86,19 +86,22 @@
         &.indent {
 
           &-1 {
-            padding-left: 2rem;
+            padding-left: 1.5rem;
           }
 
           &-2 {
-            padding-left: 3rem;
+            font-size: 13px;
+            padding-left: 2.5rem;
           }
 
           &-3 {
-            padding-left: 4rem;
+            font-size: 12px;
+            padding-left: 3.5rem;
           }
 
           &-4 {
-            padding-left: 5rem;
+            font-size: 12px;
+            padding-left: 4.5rem;
           }
         }
 
@@ -123,15 +126,14 @@
       li {
 
         a {
-          color: #000000;
+          color: $md-orange;
           display: block;
-          font-size: 13px;
+          font-size: 14px;
           font-weight: 400;
           list-style: none;
           padding: .5rem 0;
           padding-left: .5rem;
           text-decoration: none;
-
 
           &:hover {
             background-color: $orange;

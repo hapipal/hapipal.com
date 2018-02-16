@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,700");
-@import url("https://fonts.googleapis.com/css?family=Inconsolata:400,700");
+@import url("https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,500,700");
+@import url("https://fonts.googleapis.com/css?family=Inconsolata:400,500");
 * {
   font-family: 'Nunito Sans', sans-serif; }
 
@@ -12,7 +12,16 @@
 .markdown-body h5 code,
 .markdown-body h6 code,
 .markdown-body p code,
-.markdown-body pre code, .markdown-body .highlight pre,
+.markdown-body pre code, .markdown-body a span,
+.markdown-body li span,
+.markdown-body h1 span,
+.markdown-body h2 span,
+.markdown-body h3 span,
+.markdown-body h4 span,
+.markdown-body h5 span,
+.markdown-body h6 span,
+.markdown-body p span,
+.markdown-body pre span, .markdown-body .highlight pre,
 .markdown-body .highlight pre > code {
   font-family: 'Inconsolata', monospace; }
 
@@ -553,18 +562,21 @@
       padding: 0; }
       .docs-detail .docs-nav ul .nav-item {
         border-left: 4px solid transparent;
-        font-size: 13px;
+        font-size: 14px;
         font-weight: 400;
         padding: .5rem .25rem;
         padding-right: .75rem; }
         .docs-detail .docs-nav ul .nav-item.indent-1 {
-          padding-left: 2rem; }
+          padding-left: 1.5rem; }
         .docs-detail .docs-nav ul .nav-item.indent-2 {
-          padding-left: 3rem; }
+          font-size: 13px;
+          padding-left: 2.5rem; }
         .docs-detail .docs-nav ul .nav-item.indent-3 {
-          padding-left: 4rem; }
+          font-size: 12px;
+          padding-left: 3.5rem; }
         .docs-detail .docs-nav ul .nav-item.indent-4 {
-          padding-left: 5rem; }
+          font-size: 12px;
+          padding-left: 4.5rem; }
         .docs-detail .docs-nav ul .nav-item.navbar-active {
           border-left: 4px solid #ec870b;
           color: #ec870b;
@@ -576,9 +588,9 @@
       border-top: 2px solid #e2e2e2;
       padding-top: 1rem; }
       .docs-detail .docs-nav .package-list li a {
-        color: #000000;
+        color: #f6901d;
         display: block;
-        font-size: 13px;
+        font-size: 14px;
         font-weight: 400;
         list-style: none;
         padding: .5rem 0;
@@ -603,7 +615,8 @@
 .markdown-body {
   max-width: 978px; }
   .markdown-body a {
-    color: #f6901d; }
+    color: #f6901d;
+    padding: 0 .2rem; }
   .markdown-body a,
   .markdown-body li,
   .markdown-body h1,
@@ -627,33 +640,29 @@
     .markdown-body pre code {
       background-color: #f7f7f7;
       color: #676767;
-      padding: .4rem .8rem; }
-    .markdown-body a span,
-    .markdown-body li span,
-    .markdown-body h1 span,
-    .markdown-body h2 span,
-    .markdown-body h3 span,
-    .markdown-body h4 span,
-    .markdown-body h5 span,
-    .markdown-body h6 span,
-    .markdown-body p span,
-    .markdown-body pre span {
-      font-family: monospace; }
+      padding: .3rem .8rem; }
   .markdown-body h2 code,
   .markdown-body h3 code,
   .markdown-body h4 code {
-    font-weight: 300;
-    padding: 0 .4rem; }
+    font-weight: 300; }
   .markdown-body h2 {
     border: 0 !important; }
+  .markdown-body li {
+    font-size: 14px; }
+    .markdown-body li code {
+      padding: .2rem .4rem; }
   .markdown-body blockquote {
     border-left: 4px solid #f6901d !important;
     margin: 0;
-    padding: 0; }
+    margin: 1.5rem 0 !important; }
+    .markdown-body blockquote p {
+      font-weight: 500; }
   .markdown-body p {
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 500;
-    padding: .6rem 0; }
+    padding: .25rem; }
+    .markdown-body p code {
+      padding: .15rem .35rem; }
   .markdown-body .highlight pre,
   .markdown-body .highlight pre > code {
     background-color: #676767;
