@@ -5,11 +5,13 @@
   .wrapper {
 
     .markdown-body {
-      margin-bottom: 4rem;
-      margin-left: 300px;
+      margin-bottom: calc(1rem + 60px);
+      margin-left: 0;
       margin-top: 80px;
 
-      @media #{$small-up} {
+      @media #{$medium-up} {
+        margin-bottom: 4rem;
+        margin-left: 300px;
         max-width: 978px; //github style
       }
     }
@@ -19,15 +21,71 @@
     background-color: $white;
     border-bottom: 0;
     border-right: 2px solid $light-gray;
-    bottom: 0;
-    display: block;
+    bottom: 60px;
     flex: 1;
     left: 0;
+    opacity: 0;
     overflow-x: hidden;
     overflow-y: auto;
     position: fixed;
     top: 82px;
-    width: 300px;
+    transition: ease-in-out all .2s;
+    width: 100%;
+
+    @media #{$medium-up}{
+      bottom: 0;
+      opacity: 1;
+      width: 300px;
+    }
+
+    &--open {
+      opacity: 1;
+    }
+
+    &__mobile-nav {
+      background-color: $white;
+      border-top: 1px solid $light-gray;
+      bottom: 0;
+      display: flex;
+      flex-direction: row;
+      height: 60px;
+      left: 0;
+      position: fixed;
+      right: 0;
+      width: 100%;
+
+      @media #{$medium-up}{
+        display: none;
+      }
+
+      .nav-item {
+        align-content: stretch;
+        background: none;
+        border: 0;
+        outline: none;
+
+        &__left {
+          justify-content: flex-start;
+        }
+
+        &__right {
+          margin-left: auto;
+        }
+
+
+        img {
+          height: 22px;
+          padding: 10px;
+          width: 22px;
+          
+          &:active {
+            background: rgba(0,0,0,.05);
+            border: 0;
+            border-radius: 50%;
+          }
+        }
+      }
+    }
 
     .select-version {
       align-items: center;
