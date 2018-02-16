@@ -522,14 +522,15 @@
     top: 82px;
     -webkit-transition: ease-in-out all .2s;
     transition: ease-in-out all .2s;
-    width: 100%; }
+    width: 0; }
     @media only screen and (min-width: 641px) {
       .docs-detail .docs-nav {
         bottom: 0;
         opacity: 1;
         width: 300px; } }
     .docs-detail .docs-nav--open {
-      opacity: 1; }
+      opacity: 1;
+      width: 100%; }
     .docs-detail .docs-nav__mobile-nav {
       background-color: #fff;
       border-top: 1px solid #e2e2e2;

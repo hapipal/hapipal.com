@@ -30,7 +30,7 @@
     position: fixed;
     top: 82px;
     transition: ease-in-out all .2s;
-    width: 100%;
+    width: 0;
 
     @media #{$medium-up}{
       bottom: 0;
@@ -40,6 +40,7 @@
 
     &--open {
       opacity: 1;
+      width: 100%;
     }
 
     &__mobile-nav {
@@ -72,12 +73,11 @@
           margin-left: auto;
         }
 
-
         img {
           height: 22px;
           padding: 10px;
           width: 22px;
-          
+
           &:active {
             background: rgba(0,0,0,.05);
             border: 0;
