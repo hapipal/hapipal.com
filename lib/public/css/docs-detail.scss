@@ -78,9 +78,10 @@
 
       .nav-item {
         border-left: 4px solid transparent;
-        font-size: 14px;
+        font-size: 13px;
         font-weight: 400;
         padding: .5rem .25rem;
+        padding-right: .75rem;
 
         &.indent {
 
@@ -124,7 +125,7 @@
         a {
           color: #000000;
           display: block;
-          font-size: 14px;
+          font-size: 13px;
           font-weight: 400;
           list-style: none;
           padding: .5rem 0;
