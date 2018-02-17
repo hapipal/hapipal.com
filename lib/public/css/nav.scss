@@ -54,6 +54,8 @@
   &__item {
     color: $white;
     display: inline-block;
+    box-sizing: border-box;
+    height: 100%;
     font-size: 1.1rem;
     font-weight: 500;
     letter-spacing: 1px;
@@ -69,8 +71,7 @@
       padding: .5rem 1rem 0 0;
     }
 
-    box-sizing: border-box;
-    height: 100%;
+    // https://stackoverflow.com/questions/18485378/vertically-centering-text-within-an-inline-block
     &::before {
       content: '';
       display: inline-block;

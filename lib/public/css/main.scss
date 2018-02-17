@@ -25,6 +25,10 @@ body {
   .footer {
     flex: 0;
   }
+
+  &.body--noscroll {
+    overflow: hidden;
+  }
 }
 
 span.maybe-break {

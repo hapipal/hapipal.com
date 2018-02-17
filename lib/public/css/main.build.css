@@ -79,15 +79,15 @@
   .nav__item {
     color: #fff;
     display: inline-block;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    height: 100%;
     font-size: 1.1rem;
     font-weight: 500;
     letter-spacing: 1px;
     padding: .5rem .25rem 0;
     position: relative;
-    text-decoration: none;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    height: 100%; }
+    text-decoration: none; }
     @media only screen and (min-width: 481px) {
       .nav__item {
         padding: .5rem .5rem 0 0; } }
@@ -498,11 +498,11 @@
 
 .docs-detail {
   margin: 0 auto;
-  padding: 2.5rem 0; }
+  padding: 2.5rem 0;
+  margin-top: 80px; }
   .docs-detail .wrapper .markdown-body, .docs-detail .nav__wrapper .markdown-body, .docs-detail .footer__wrapper .markdown-body, .docs-detail .hero__wrapper .markdown-body, .docs-detail .highlight__wrapper .markdown-body, .docs-detail .sponsor__wrapper .markdown-body, .docs-detail .newsletter__wrapper .markdown-body {
     margin-bottom: calc(1rem + 60px);
-    margin-left: 0;
-    margin-top: 80px; }
+    margin-left: 0; }
     @media only screen and (min-width: 641px) {
       .docs-detail .wrapper .markdown-body, .docs-detail .nav__wrapper .markdown-body, .docs-detail .footer__wrapper .markdown-body, .docs-detail .hero__wrapper .markdown-body, .docs-detail .highlight__wrapper .markdown-body, .docs-detail .sponsor__wrapper .markdown-body, .docs-detail .newsletter__wrapper .markdown-body {
         margin-bottom: 4rem;
@@ -614,6 +614,9 @@
     .docs-detail .docs-nav ul {
       padding: 0; }
       .docs-detail .docs-nav ul .nav-item {
+        display: block;
+        text-decoration: none;
+        color: inherit;
         border-left: 4px solid transparent;
         font-size: 14px;
         font-weight: 400;
@@ -1100,6 +1103,8 @@ body {
     -webkit-box-flex: 0;
         -ms-flex: 0;
             flex: 0; }
+  body.body--noscroll {
+    overflow: hidden; }
 
 span.maybe-break {
   display: inline-block; }
