@@ -80,11 +80,14 @@
       background-color: $md-light-gray;
       display: block;
       margin: 0;
-      padding: 2rem !important;
       text-align: left;
       white-space: pre;
       word-break: break-all;
       word-wrap: break-word;
+
+      @media #{$large-up} {
+        padding: 2rem !important;
+      }
     }
 
   }

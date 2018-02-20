@@ -5,7 +5,7 @@
             <nav class="docs-nav">
               <div class="select-version">
                 <p>Reference Version: </p>
-                <select class="version">
+                <select id="version" class="version">
                   {{#each versions as |ver|}}
                   <option value="{{ver}}"{{#equals ver ../version}} selected="selected"{{/equals}}>v{{ver}}</option>
                   {{/each}}

@@ -727,11 +727,14 @@
     background-color: #676767;
     display: block;
     margin: 0;
-    padding: 2rem !important;
     text-align: left;
     white-space: pre;
     word-break: break-all;
     word-wrap: break-word; }
+    @media only screen and (min-width: 1025px) {
+      .markdown-body .highlight pre,
+      .markdown-body .highlight pre > code {
+        padding: 2rem !important; } }
   .markdown-body .pl-c {
     color: #333;
     font-style: italic; }
