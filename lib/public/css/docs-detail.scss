@@ -1,7 +1,7 @@
 .docs-detail {
   margin: 0 auto;
-  padding: 2.5rem 0;
   margin-top: 80px;
+  padding: 2.5rem 0;
 
   .wrapper {
 
@@ -12,7 +12,6 @@
       @media #{$medium-up} {
         margin-bottom: 4rem;
         margin-left: 300px;
-        margin-top: 80px;
         max-width: 978px; //github style
       }
     }
