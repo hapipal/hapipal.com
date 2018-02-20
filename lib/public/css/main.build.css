@@ -626,13 +626,10 @@
         .docs-detail .docs-nav ul .nav-item.indent-1 {
           padding-left: 1.5rem; }
         .docs-detail .docs-nav ul .nav-item.indent-2 {
-          font-size: 13px;
           padding-left: 2.5rem; }
         .docs-detail .docs-nav ul .nav-item.indent-3 {
-          font-size: 12px;
           padding-left: 3.5rem; }
         .docs-detail .docs-nav ul .nav-item.indent-4 {
-          font-size: 12px;
           padding-left: 4.5rem; }
         .docs-detail .docs-nav ul .nav-item.navbar-active {
           border-left: 4px solid #ec870b;
