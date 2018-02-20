@@ -726,7 +726,7 @@
     margin: 0;
     padding: 2rem !important;
     text-align: left;
-    white-space: pre-wrap;
+    white-space: pre;
     word-break: break-all;
     word-wrap: break-word; }
   .markdown-body .pl-c {
@@ -1083,10 +1083,8 @@
   background: #f6f8fa;
   border-top: 0; }
 
-html, body {
-  height: 100%; }
-
 body {
+  min-height: 100vh;
   margin: 0;
   display: -webkit-box;
   display: -ms-flexbox;

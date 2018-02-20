@@ -50,9 +50,9 @@
     "eslint-config-hapi": "11.x.x",
     "eslint-plugin-hapi": "4.x.x",
     "lab": "15.x.x",
-    "navbar": "^2.1.0",
     "node-sass": "4.x.x",
     "postcss": "6.x.x",
-    "postcss-cli": "4.x.x"
+    "postcss-cli": "4.x.x",
+    "scroll-into-view-if-needed": ">=1.4.0 <2"
   }
 }
