@@ -2,14 +2,14 @@
 
     {{#*inline "content"}}
         <div class="docs-list">
+
             <div class="wrapper">
-                <ul>
-                    {{#each packages}}
-                        <li>
-                            <a href="/docs/{{this.name}}">{{this.name}}</a>
-                        </li>
-                    {{/each}}
-                </ul>
+                <h1>API Docs</h1>
+                {{#each list}}
+                    <a href="/docs/{{this.name}}">{{this.name}}
+                      <p><img src="/public/img/hapi-bolt-gold.svg" />{{this.subtitle}}</p>
+                    </a>
+                {{/each}}
             </div>
         </div>
     {{/inline}}
