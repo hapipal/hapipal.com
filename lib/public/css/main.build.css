@@ -34,8 +34,7 @@
   border-bottom: 2px solid #f3b66e;
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex;
-  height: 80px; }
+  display: flex; }
   @media only screen and (min-width: 481px) {
     .nav__wrapper {
       display: -webkit-box;
@@ -101,6 +100,7 @@
       height: 100%; }
     .nav__item::after {
       content: '';
+      border-bottom: 5px solid transparent;
       display: block;
       position: relative;
       top: -5px; }

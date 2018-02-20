@@ -2,7 +2,6 @@
   background-color: $dark-orange;
   border-bottom: 2px solid $tan;
   display: flex;
-  height: 80px;
 
   &__wrapper {
     @extend .wrapper;
@@ -81,6 +80,7 @@
 
     &::after {
       content: '';
+      border-bottom: 5px solid transparent;
       display: block;
       position: relative;
       top: -5px;
