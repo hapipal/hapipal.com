@@ -4,16 +4,12 @@
         <div class="docs-list">
 
             <div class="wrapper">
-
-                <ul>
-                    <h1>API Docs</h1>
-                    {{#each list}}
-                        <li>
-                            <a href="/docs/{{this.name}}">{{this.name}}</a>
-                            <p><img src="/public/img/hapi-bolt-gold.svg" />{{this.subtitle}}</p>
-                        </li>
-                    {{/each}}
-                </ul>
+                <h1>API Docs</h1>
+                {{#each list}}
+                    <a href="/docs/{{this.name}}">{{this.name}}
+                      <p><img src="/public/img/hapi-bolt-gold.svg" />{{this.subtitle}}</p>
+                    </a>
+                {{/each}}
             </div>
         </div>
     {{/inline}}
