@@ -84,6 +84,7 @@
       white-space: pre;
       word-break: break-all;
       word-wrap: break-word;
+      width: auto;
 
       @media #{$large-up} {
         padding: 2rem !important;

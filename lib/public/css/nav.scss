@@ -74,8 +74,8 @@
     &::before {
       content: '';
       display: inline-block;
-      vertical-align: middle;
       height: 100%;
+      vertical-align: middle;
     }
 
     &::after {
@@ -83,7 +83,7 @@
       border-bottom: 5px solid transparent;
       display: block;
       position: relative;
-      top: -5px;
+      top: 0;
     }
 
     &--active,
