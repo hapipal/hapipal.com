@@ -16,7 +16,12 @@
         {{/head-block}}
     </head>
 
-    <body>
+        {{#if template}}
+            <body class="{{template}}-page">
+        {{else}}
+            <body>
+        {{/if}}
+
         {{> navigation}}
 
         {{#> content}}

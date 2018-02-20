@@ -1,17 +1,162 @@
 .docs-detail {
   margin: 0 auto;
-  padding: 2rem 0;
+  padding: 2.5rem 0;
 
-  @media #{$small-up} {
-    max-width: 978px; //github style
-    padding: 4rem 0;
+  .wrapper {
+
+    .markdown-body {
+      margin-bottom: 4rem;
+      margin-left: 300px;
+      margin-top: 80px;
+
+      @media #{$small-up} {
+        max-width: 978px; //github style
+      }
+    }
   }
 
-  > .nav {
+  .docs-nav {
+    background-color: $white;
+    border-bottom: 0;
+    border-right: 2px solid $light-gray;
+    bottom: 0;
+    display: block;
+    flex: 1;
+    left: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
     position: fixed;
+    top: 82px;
+    width: 300px;
 
-    .nav-item.navbar-active {
-      font-weight: bold;
+    .select-version {
+      align-items: center;
+      border-bottom: 2px solid $light-gray;
+      display: flex;
+      justify-content: center;
+
+      p {
+        font-weight: bold;
+      }
+
+      select {
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        background-color: $white;
+        border: 2px solid $light-gray;
+        border-radius: 0;
+        box-sizing: border-box;
+        display: inline-block;
+        font-size: 12px;
+        line-height: 1em;
+        margin: 0;
+        margin-left: 2rem;
+        padding: .5em 3em .5em 1em;
+
+        &.version {
+          background-image: linear-gradient(45deg, transparent 50%, $orange 50%), linear-gradient(135deg, $orange 50%, transparent 50%);
+          background-position: calc(100% - 11px) calc(9px), calc(100% - 6px) calc(9px), calc(100% - 1em) 0;
+          background-repeat: no-repeat;
+          background-size: 5px 5px, 5px 5px, 1px 1.5em;
+
+          &:focus {
+            background-repeat: no-repeat;
+            background-size: 5px 5px, 5px 5px, 1px 1.5em;
+            outline: 0;
+          }
+
+          &:-moz-focusring {
+            color: transparent;
+            text-shadow: 0;
+          }
+        }
+      }
+    }
+
+    ul {
+      padding: 0;
+
+      .nav-item {
+        border-left: 4px solid transparent;
+        font-size: 14px;
+        font-weight: 400;
+        padding: .5rem .25rem;
+        padding-right: .75rem;
+
+        &.indent {
+
+          &-1 {
+            padding-left: 1.5rem;
+          }
+
+          &-2 {
+            font-size: 13px;
+            padding-left: 2.5rem;
+          }
+
+          &-3 {
+            font-size: 12px;
+            padding-left: 3.5rem;
+          }
+
+          &-4 {
+            font-size: 12px;
+            padding-left: 4.5rem;
+          }
+        }
+
+        &.navbar-active {
+          border-left: 4px solid $orange;
+          color: $orange;
+          font-weight: bold;
+        }
+
+        &:hover {
+          background-color: $orange;
+          color: $white;
+        }
+      }
+    }
+
+    .package-list {
+
+      border-top: 2px solid $light-gray;
+      padding-top: 1rem;
+
+      li {
+
+        a {
+          color: $md-orange;
+          display: block;
+          font-size: 14px;
+          font-weight: 400;
+          list-style: none;
+          padding: .5rem 0;
+          padding-left: .5rem;
+          text-decoration: none;
+
+          &:hover {
+            background-color: $orange;
+            color: $white;
+
+            img {
+              opacity: 1;
+            }
+          }
+
+          img {
+            margin-right: 1rem;
+            opacity: 0;
+            transition: linear opacity .15s;
+            transition-delay: .1s;
+            width: 20px;
+
+            &.active {
+              opacity: 1;
+            }
+          }
+        }
+      }
     }
   }
 }

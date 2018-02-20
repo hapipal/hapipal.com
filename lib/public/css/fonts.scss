@@ -1,7 +1,16 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,500,700');
+@import url('https://fonts.googleapis.com/css?family=Inconsolata:400,500');
+
+%nunito-sans {
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+%inconsolata {
+  font-family: 'Inconsolata', monospace;
+}
 
 * {
-  font-family: 'Lato', sans-serif;
+  @extend %nunito-sans;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 }
