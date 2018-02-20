@@ -1,8 +1,8 @@
 .docs-list {
+  align-items: center;
   background-color: $white;
   color: $gray;
   display: flex;
-  align-items: center;
 
   ul {
     padding: 0;
@@ -48,6 +48,9 @@
         margin-right: 8px;
         width: auto;
       }
+
     }
+
   }
+
 }

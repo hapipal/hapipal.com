@@ -446,14 +446,14 @@
           width: auto; } }
 
 .docs-list {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: #fff;
   color: #444;
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center; }
+  display: flex; }
   .docs-list ul {
     padding: 0; }
     @media only screen and (min-width: 481px) {
