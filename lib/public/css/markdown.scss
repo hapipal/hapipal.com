@@ -2,7 +2,8 @@
   max-width: 978px; //github style
 
   a {
-    color: $dark-orange;
+    color: $md-orange;
+    padding: 0 .2rem;
   }
 
   a,
@@ -18,27 +19,68 @@
     text-decoration: none;
 
     code {
+      @extend %inconsolata;
       background-color: $lighter-gray;
-      color: $gray;
-      font-family: monospace;
-      padding: .2rem .4rem;
+      color: $md-light-gray;
+      padding: .3rem .8rem;
     }
 
     span {
-      font-family: monospace;
+      @extend %inconsolata;
     }
 
+  }
+
+  h2,
+  h3,
+  h4 {
+    code {
+      @extend %inconsolata;
+      font-weight: 300;
+    }
+  }
+
+  h2 {
+    border: 0 !important;
+  }
+
+  li {
+    font-size: 14px;
+
+    code {
+      padding: .2rem .4rem;
+    }
+  }
+
+  blockquote {
+    border-left: 4px solid $md-orange !important;
+    margin: 0;
+    margin: 1.5rem 0 !important;
+
+    p {
+      font-weight: 500;
+    }
+  }
+
+  p {
+    font-size: 14px;
+    font-weight: 500;
+    padding: .25rem;
+
+    code {
+      padding: .15rem .35rem;
+    }
   }
 
   .highlight {
 
     pre,
     pre > code {
-      background-color: $lighter-gray;
+      @extend %inconsolata;
+      background-color: $md-light-gray;
       display: block;
-      font-family: monospace;
       margin: 0;
-      padding: .5em;
+      padding: 2rem !important;
       text-align: left;
       white-space: pre-wrap;
       word-break: break-all;
@@ -50,7 +92,7 @@
   .pl {
 
     &-c {
-      color: $mid-gray;
+      color: $md-dark-gray;
       font-style: italic;
     }
 
@@ -62,11 +104,11 @@
 
     &-c1,
     &-s1 {
-      color: $red;
+      color: $md-green;
     }
 
     &-en {
-      color: $purple;
+      color: $md-blue;
     }
 
   }

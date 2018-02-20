@@ -2,7 +2,27 @@
 
     {{#*inline "content"}}
         <div class="docs-detail">
-            <div class="nav"><!-- populated by js/docs-nav.js --></div>
+            <nav class="docs-nav">
+              <div class="select-version">
+                <p>Reference Version: </p>
+                <select class="version">
+                  {{#each versions as |ver|}}
+                  <option value="{{ver}}"{{#equals ver ../version}} selected="selected"{{/equals}}>v{{ver}}</option>
+                  {{/each}}
+                </select>
+              </div>
+              <div class="nav-target"><!-- replaced with nav by js/docs-nav.js --></div>
+              <ul class="package-list">
+                  {{#each packages as |package|}}
+                      <li>
+                        <a href="/docs/{{package.name}}">
+                          <img {{#equals package.name ../pkg.name}}class="active"{{/equals}} src="/public/img/hapi-bolt{{#equals package.name ../pkg.name}}-gold{{/equals}}.svg" />
+                          {{package.name}}
+                        </a>
+                      </li>
+                  {{/each}}
+              </ul>
+            </nav>
             <div class="wrapper">
                 {{{html}}}
             </div>
