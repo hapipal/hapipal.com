@@ -100,10 +100,9 @@
       vertical-align: middle; }
     .nav__item::after {
       content: '';
-      border-bottom: 5px solid transparent;
       display: block;
       position: relative;
-      top: 0; }
+      top: -5px; }
     .nav__item--active::after, .nav__item:hover::after {
       border-bottom: solid 5px #eecd09; }
     .nav__item:hover > .nav__item--dropdown {
