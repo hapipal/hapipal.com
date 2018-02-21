@@ -1,10 +1,11 @@
 .nav {
-  background-color: $dark-orange;
-  border-bottom: 2px solid $tan;
+  background-color: transparent;
+  border-bottom: 1px solid $tan;
   display: flex;
+  z-index: 1;
 
   &__wrapper {
-    @extend .wrapper;
+    width: 100%;
 
     @media #{$small-up} {
       display: flex;
@@ -58,7 +59,8 @@
     font-size: 1.1rem;
     font-weight: 500;
     letter-spacing: 1px;
-    padding: .5rem .25rem 0;
+    margin-left: 1rem;
+    padding: .5rem;
     position: relative;
     text-decoration: none;
 
@@ -80,9 +82,13 @@
 
     &::after {
       content: '';
+      border-bottom: solid 5px transparent;
       display: block;
       position: relative;
-      top: -5px;
+
+      @media #{$small-up} {
+          top: -5px;
+      }
     }
 
     &--active,
