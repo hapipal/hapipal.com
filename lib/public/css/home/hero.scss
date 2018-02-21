@@ -1,14 +1,11 @@
 .hero {
-  background-color: $dark-orange;
   background-position: top;
   background-size: cover;
   color: $white;
-  margin-top: -125px;
   padding-top: 125px;
 
   @media #{$small-up} {
-    margin-top: -82px;
-      padding-top: 82px;
+    padding-top: 82px;
   }
 
   &__wrapper {
@@ -60,7 +57,6 @@
         font-size: 1.4rem;
         font-weight: 300;
         padding: 1rem;
-        padding-left: 2rem;
         text-align: left;
         transition: ease .6s all;
 
