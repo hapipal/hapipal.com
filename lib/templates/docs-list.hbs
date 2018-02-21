@@ -1,11 +1,11 @@
 {{#> layout title="Docs List" }}
 
     {{#*inline "content"}}
-        <div class="docs-list">
+        <div class="main docs-list">
 
             <div class="wrapper">
                 <h1>API Docs</h1>
-                {{#each list}}
+                {{#each packages}}
                     <a href="/docs/{{this.name}}">{{this.name}}
                       <p><img src="/public/img/hapi-bolt-gold.svg" />{{this.subtitle}}</p>
                     </a>

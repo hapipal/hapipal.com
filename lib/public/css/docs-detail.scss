@@ -1,15 +1,16 @@
 .docs-detail {
-  margin: 0 auto;
+  margin-top: 100px;
   padding: 2.5rem 0;
 
   .wrapper {
 
     .markdown-body {
-      margin-bottom: 4rem;
-      margin-left: 300px;
-      margin-top: 80px;
+      margin-bottom: calc(1rem + 60px);
+      margin-left: 0;
 
-      @media #{$small-up} {
+      @media #{$medium-up} {
+        margin-bottom: 4rem;
+        margin-left: 300px;
         max-width: 978px; //github style
       }
     }
@@ -19,15 +20,75 @@
     background-color: $white;
     border-bottom: 0;
     border-right: 2px solid $light-gray;
-    bottom: 0;
-    display: block;
+    bottom: 60px;
     flex: 1;
     left: 0;
+    opacity: 0;
     overflow-x: hidden;
     overflow-y: auto;
     position: fixed;
-    top: 82px;
-    width: 300px;
+    top: 0;
+    transition: ease-in-out all .2s;
+    width: 0;
+
+    @media #{$medium-up}{
+      bottom: 0;
+      opacity: 1;
+      top: 82px;
+      width: 300px;
+    }
+
+    &--open {
+      opacity: 1;
+      width: 100%;
+
+      @media #{$medium-up}{
+        width: 300px;
+      }
+    }
+
+    &__mobile-nav {
+      background-color: $white;
+      border-top: 1px solid $light-gray;
+      bottom: 0;
+      display: flex;
+      flex-direction: row;
+      height: 60px;
+      left: 0;
+      position: fixed;
+      right: 0;
+      width: 100%;
+
+      @media #{$medium-up}{
+        display: none;
+      }
+
+      .nav-item {
+        align-content: stretch;
+        background: none;
+        border: 0;
+        outline: none;
+
+        &__left {
+          justify-content: flex-start;
+        }
+
+        &__right {
+          margin-left: auto;
+        }
+
+        img {
+          height: 24px;
+          padding: 10px;
+          width: 24px;
+
+          &:active {
+            background-color: rgba(0,0,0,.05);
+            border-radius: 50%;
+          }
+        }
+      }
+    }
 
     .select-version {
       align-items: center;
@@ -77,11 +138,17 @@
       padding: 0;
 
       .nav-item {
+        display: block;
+        text-decoration: none;
+        color: inherit;
         border-left: 4px solid transparent;
         font-size: 14px;
         font-weight: 400;
         padding: .5rem .25rem;
         padding-right: .75rem;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
 
         &.indent {
 
@@ -90,18 +157,19 @@
           }
 
           &-2 {
-            font-size: 13px;
             padding-left: 2.5rem;
           }
 
           &-3 {
-            font-size: 12px;
             padding-left: 3.5rem;
           }
 
           &-4 {
-            font-size: 12px;
             padding-left: 4.5rem;
+          }
+
+          &-5, &-6 {
+            padding-left: 5.5rem;
           }
         }
 
@@ -145,7 +213,7 @@
           }
 
           img {
-            margin-right: 1rem;
+            margin: 0 1rem;
             opacity: 0;
             transition: linear opacity .15s;
             transition-delay: .1s;

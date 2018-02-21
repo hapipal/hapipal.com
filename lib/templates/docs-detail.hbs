@@ -1,11 +1,11 @@
 {{#> layout title="Docs Detail" }}
 
     {{#*inline "content"}}
-        <div class="docs-detail">
+        <div class="main docs-detail">
             <nav class="docs-nav">
               <div class="select-version">
                 <p>Reference Version: </p>
-                <select class="version">
+                <select id="version" class="version">
                   {{#each versions as |ver|}}
                   <option value="{{ver}}"{{#equals ver ../version}} selected="selected"{{/equals}}>v{{ver}}</option>
                   {{/each}}
@@ -23,6 +23,10 @@
                   {{/each}}
               </ul>
             </nav>
+            <div class="docs-nav__mobile-nav">
+              <button class="nav-item nav-item__left"><img src="/public/img/menu-icon.svg" /></button>
+              <button class="nav-item nav-item__right"><img src="/public/img/arrow-up.svg" /></button>
+            </div>
             <div class="wrapper">
                 {{{html}}}
             </div>
