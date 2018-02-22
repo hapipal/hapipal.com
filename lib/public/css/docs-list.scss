@@ -3,7 +3,7 @@
   background-color: $white;
   color: $gray;
   display: flex;
-  padding: 2rem 0 6rem 0;
+  padding: 2rem 0 6rem;
 
   h1 {
     border-bottom: 1px solid $light-gray;
@@ -23,9 +23,14 @@
     &:hover {
       background-color: $lightest-orange;
       color: $white;
+      transition: linear background-color color .03s;
 
       p {
         color: $white;
+      }
+
+      .img {
+        background-image: url('/public/img/hapi-bolt.svg');
       }
 
     }
@@ -34,14 +39,19 @@
       color: $gray;
       font-size: 14px;
       font-weight: 500;
-      margin: 0 0 .75rem;
       letter-spacing: .25px;
+      margin: 0 0 .75rem 30px;
     }
 
-    img {
+    .img {
+      background-image: url('/public/img/hapi-bolt-gold.svg');
+      background-size: cover;
       height: 10px;
-      margin-right: 8px;
-      width: auto;
+      margin-top: 5px;
+      position: absolute;
+      transition: linear background-image .1s;
+      transition-delay: .05s;
+      width: 20px;
     }
 
   }

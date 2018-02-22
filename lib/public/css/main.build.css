@@ -49,8 +49,10 @@
         display: flex; } }
   .nav__logo {
     height: 2.5rem;
-    margin: .5rem;
-    padding-left: .5rem; }
+    margin: .5rem; }
+    @media only screen and (min-width: 481px) {
+      .nav__logo {
+        margin-left: 1rem; } }
     .nav__logo__wrapper {
       -webkit-box-align: center;
           -ms-flex-align: center;
@@ -70,14 +72,14 @@
               -ms-flex-pack: justify;
                   justify-content: space-between; } }
   .nav__icon {
-    margin-left: 1rem;
     display: inline-block;
+    margin-left: 1rem;
     top: -10px;
     width: 2rem; }
     @media only screen and (min-width: 481px) {
       .nav__icon {
+        margin: 0 1rem;
         position: relative;
-        margin: 0 2rem;
         top: 5px; } }
   .nav__dropdown {
     background-color: #eb830f;
@@ -93,17 +95,16 @@
     font-weight: 500;
     height: 100%;
     letter-spacing: .25px;
-    margin-left: 1rem;
     padding: .5rem;
     position: relative;
     text-decoration: none; }
     @media only screen and (min-width: 481px) {
       .nav__item {
-        margin-left: 2rem;
+        margin: 0 1rem;
         padding: .5rem .5rem 0 0; } }
     @media only screen and (min-width: 1025px) {
       .nav__item {
-        padding: .5rem 1rem 0 0; } }
+        padding: .5rem .5rem 0; } }
     .nav__item::before {
       content: '';
       display: inline-block;
@@ -222,6 +223,7 @@
   display: none; }
 
 .hero {
+  background-color: #fe4d00;
   background-image: url("/public/img/home-header-background.jpg");
   background-position: top;
   background-size: cover;
@@ -270,10 +272,10 @@
           background-color: #444;
           -webkit-transform: translateY(-2px) scale(1.01);
                   transform: translateY(-2px) scale(1.01); }
-        .hero__img__content .code:hover + .code__shadow {
-          opacity: .4;
-          -webkit-transform: translateY(4px);
-                  transform: translateY(4px); }
+          .hero__img__content .code:hover + .code__shadow {
+            opacity: .4;
+            -webkit-transform: translateY(4px);
+                    transform: translateY(4px); }
         .hero__img__content .code__shadow {
           opacity: .6;
           position: relative;
@@ -286,10 +288,10 @@
                   animation: flash;
           -webkit-animation-duration: 2.5s;
                   animation-duration: 2.5s;
-          -webkit-animation-iteration-count: infinite;
-                  animation-iteration-count: infinite;
           -webkit-animation-fill-mode: both;
                   animation-fill-mode: both;
+          -webkit-animation-iteration-count: infinite;
+                  animation-iteration-count: infinite;
           background: #eecd09;
           display: inline-block;
           height: 1.6rem;
@@ -512,7 +514,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 2rem 0 6rem 0; }
+  padding: 2rem 0 6rem; }
   .docs-list h1 {
     border-bottom: 1px solid #e2e2e2;
     margin: 1rem; }
@@ -527,19 +529,30 @@
     text-decoration: none; }
     .docs-list a:hover {
       background-color: #fd8b25;
-      color: #fff; }
+      color: #fff;
+      -webkit-transition: linear background-color color .03s;
+      transition: linear background-color color .03s; }
       .docs-list a:hover p {
         color: #fff; }
+      .docs-list a:hover .img {
+        background-image: url("/public/img/hapi-bolt.svg"); }
     .docs-list a p {
       color: #444;
       font-size: 14px;
       font-weight: 500;
-      margin: 0 0 .75rem;
-      letter-spacing: .25px; }
-    .docs-list a img {
+      letter-spacing: .25px;
+      margin: 0 0 .75rem 30px; }
+    .docs-list a .img {
+      background-image: url("/public/img/hapi-bolt-gold.svg");
+      background-size: cover;
       height: 10px;
-      margin-right: 8px;
-      width: auto; }
+      margin-top: 5px;
+      position: absolute;
+      -webkit-transition: linear background-image .1s;
+      transition: linear background-image .1s;
+      -webkit-transition-delay: .05s;
+              transition-delay: .05s;
+      width: 20px; }
 
 .docs-detail {
   margin-top: 40px; }
@@ -621,7 +634,7 @@
           padding: 10px;
           width: 24px; }
           .docs-detail .docs-nav__mobile-nav .nav-item img:active {
-            background-color: rgba(0, 0, 0, 0.05);
+            background-color: rgba(0, 0, 0, 0.1);
             border-radius: 50%; }
     .docs-detail .docs-nav .select-version {
       -webkit-box-align: center;
@@ -670,27 +683,26 @@
       margin: 0;
       padding: .5rem 0; }
       .docs-detail .docs-nav ul .nav-item {
-        display: block;
-        text-decoration: none;
-        color: inherit;
         border-left: 4px solid transparent;
+        color: inherit;
+        display: block;
         font-size: 14px;
         font-weight: 400;
-        padding: .75rem .25rem;
-        padding-right: 1.5rem;
-        white-space: nowrap;
+        overflow: hidden;
+        padding: .75rem 1.5rem .75rem .25rem;
+        text-decoration: none;
         text-overflow: ellipsis;
-        overflow: hidden; }
+        white-space: nowrap; }
         .docs-detail .docs-nav ul .nav-item.indent-1 {
-          padding-left: 1.5rem; }
+          padding-left: 1rem; }
         .docs-detail .docs-nav ul .nav-item.indent-2 {
-          padding-left: 2.5rem; }
+          padding-left: 2rem; }
         .docs-detail .docs-nav ul .nav-item.indent-3 {
-          padding-left: 3.5rem; }
+          padding-left: 3rem; }
         .docs-detail .docs-nav ul .nav-item.indent-4 {
-          padding-left: 4.5rem; }
+          padding-left: 4rem; }
         .docs-detail .docs-nav ul .nav-item.indent-5, .docs-detail .docs-nav ul .nav-item.indent-6 {
-          padding-left: 5.5rem; }
+          padding-left: 5rem; }
         .docs-detail .docs-nav ul .nav-item.navbar-active {
           border-left: 4px solid #ec870b;
           color: #ec870b;
@@ -698,6 +710,23 @@
         .docs-detail .docs-nav ul .nav-item:hover {
           background-color: #ec870b;
           color: #fff; }
+          .docs-detail .docs-nav ul .nav-item:hover::before {
+            background-image: url("/public/img/hapi-bolt.svg");
+            opacity: 1; }
+        .docs-detail .docs-nav ul .nav-item::before {
+          background-position: center;
+          background-size: cover;
+          content: '';
+          display: inline-block;
+          height: 10px;
+          margin-right: 10px;
+          opacity: 0;
+          -webkit-transition: linear opacity .1s;
+          transition: linear opacity .1s;
+          -webkit-transition-delay: .05s;
+                  transition-delay: .05s;
+          vertical-align: middle;
+          width: 20px; }
     .docs-detail .docs-nav .package-list {
       border-top: 1px solid #e2e2e2;
       margin: 0;
@@ -719,10 +748,10 @@
         .docs-detail .docs-nav .package-list li a img {
           margin: 0 1rem;
           opacity: 0;
-          -webkit-transition: linear opacity .15s;
-          transition: linear opacity .15s;
-          -webkit-transition-delay: .1s;
-                  transition-delay: .1s;
+          -webkit-transition: linear opacity .1s;
+          transition: linear opacity .1s;
+          -webkit-transition-delay: .05s;
+                  transition-delay: .05s;
           width: 20px; }
           .docs-detail .docs-nav .package-list li a img.active {
             opacity: 1; }
@@ -885,7 +914,7 @@
   .markdown-body h4 .octicon-link,
   .markdown-body h5 .octicon-link,
   .markdown-body h6 .octicon-link {
-    color: #1b1f23;
+    color: #000;
     vertical-align: middle;
     visibility: hidden; }
   .markdown-body h1:hover .anchor,
@@ -1078,7 +1107,7 @@
   padding: 0.2em 0.4em;
   margin: 0;
   font-size: 85%;
-  background-color: rgba(27, 31, 35, 0.05);
+  background-color: rgba(0, 0, 0, 0.05);
   border-radius: 3px; }
   .markdown-body code br,
   .markdown-body tt br {

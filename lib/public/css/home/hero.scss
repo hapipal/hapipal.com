@@ -1,4 +1,5 @@
 .hero {
+  background-color: $orange-red;
   background-image: url('/public/img/home-header-background.jpg');
   background-position: top;
   background-size: cover;
@@ -53,7 +54,7 @@
 
       .code {
         @extend %inconsolata;
-        background-color: #000;
+        background-color: $black;
         border-radius: 5px;
         font-size: 1.4rem;
         font-weight: 300;
@@ -64,11 +65,12 @@
         &:hover {
           background-color: $gray;
           transform: translateY(-2px) scale(1.01);
-        }
 
-        &:hover + .code__shadow {
-          opacity: .4;
-          transform: translateY(4px);
+          + .code__shadow {
+            opacity: .4;
+            transform: translateY(4px);
+          }
+
         }
 
         &__shadow {
@@ -82,8 +84,8 @@
         &__cursor {
           animation: flash;
           animation-duration: 2.5s;
-          animation-iteration-count: infinite;
           animation-fill-mode: both;
+          animation-iteration-count: infinite;
           background: $yellow;
           display: inline-block;
           height: 1.6rem;

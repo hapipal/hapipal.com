@@ -16,7 +16,9 @@
         margin-left: 300px;
         max-width: 978px; //github style
       }
+
     }
+
   }
 
   .docs-nav {
@@ -48,6 +50,7 @@
       @media #{$medium-up}{
         width: 300px;
       }
+
     }
 
     &__mobile-nav {
@@ -82,6 +85,7 @@
           img {
             height: 22px;
           }
+
         }
 
         img {
@@ -90,11 +94,14 @@
           width: 24px;
 
           &:active {
-            background-color: rgba(0,0,0,.05);
+            background-color: $black-opaque;
             border-radius: 50%;
           }
+
         }
+
       }
+
     }
 
     .select-version {
@@ -142,8 +149,11 @@
           &:hover {
             border: 1px solid $lighter-orange;
           }
+
         }
+
       }
+
     }
 
     ul {
@@ -151,39 +161,40 @@
       padding: .5rem 0;
 
       .nav-item {
-        display: block;
-        text-decoration: none;
-        color: inherit;
         border-left: 4px solid transparent;
+        color: inherit;
+        display: block;
         font-size: 14px;
         font-weight: 400;
-        padding: .75rem .25rem;
-        padding-right: 1.5rem;
-        white-space: nowrap;
-        text-overflow: ellipsis;
         overflow: hidden;
+        padding: .75rem 1.5rem .75rem .25rem;
+        text-decoration: none;
+        text-overflow: ellipsis;
+        white-space: nowrap;
 
         &.indent {
 
           &-1 {
-            padding-left: 1.5rem;
+            padding-left: 1rem;
           }
 
           &-2 {
-            padding-left: 2.5rem;
+            padding-left: 2rem;
           }
 
           &-3 {
-            padding-left: 3.5rem;
+            padding-left: 3rem;
           }
 
           &-4 {
-            padding-left: 4.5rem;
+            padding-left: 4rem;
           }
 
-          &-5, &-6 {
-            padding-left: 5.5rem;
+          &-5,
+          &-6 {
+            padding-left: 5rem;
           }
+
         }
 
         &.navbar-active {
@@ -195,8 +206,30 @@
         &:hover {
           background-color: $orange;
           color: $white;
+
+          &::before {
+            background-image: url('/public/img/hapi-bolt.svg');
+            opacity: 1;
+          }
+
         }
+
+        &::before {
+          background-position: center;
+          background-size: cover;
+          content: '';
+          display: inline-block;
+          height: 10px;
+          margin-right: 10px;
+          opacity: 0;
+          transition: linear opacity .1s;
+          transition-delay: .05s;
+          vertical-align: middle;
+          width: 20px;
+        }
+
       }
+
     }
 
     .package-list {
@@ -228,16 +261,22 @@
           img {
             margin: 0 1rem;
             opacity: 0;
-            transition: linear opacity .15s;
-            transition-delay: .1s;
+            transition: linear opacity .1s;
+            transition-delay: .05s;
             width: 20px;
 
             &.active {
               opacity: 1;
             }
+
           }
+
         }
+
       }
+
     }
+
   }
+
 }
