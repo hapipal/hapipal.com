@@ -1,10 +1,16 @@
 .nav {
-  background-color: $dark-orange;
-  border-bottom: 2px solid $tan;
+  background-image: url('/public/img/header-background.jpg');
+  background-size: cover;
+  border-bottom: 1px solid $tan;
   display: flex;
+  width: 100%;
+
+  @media #{$small-up} {
+    height: 60px;
+  }
 
   &__wrapper {
-    @extend .wrapper;
+    width: 100%;
 
     @media #{$small-up} {
       display: flex;
@@ -13,8 +19,9 @@
   }
 
   &__logo {
-    height: 3em;
-    margin: 1em;
+    height: 2.5rem;
+    margin: .5rem;
+    padding-left: .5rem;
 
     &__wrapper {
       align-items: center;
@@ -32,12 +39,13 @@
 
   &__icon {
     margin-left: 1rem;
-    position: relative;
+    display: inline-block;
     top: -10px;
     width: 2rem;
 
     @media #{$small-up} {
-      margin: 0 2rem 0 .8rem;
+      position: relative;
+      margin: 0 2rem;
       top: 5px;
     }
 
@@ -51,18 +59,20 @@
   }
 
   &__item {
+    box-sizing: border-box;
     color: $white;
     display: inline-block;
-    box-sizing: border-box;
-    height: 100%;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 500;
-    letter-spacing: 1px;
-    padding: .5rem .25rem 0;
+    height: 100%;
+    letter-spacing: .25px;
+    margin-left: 1rem;
+    padding: .5rem;
     position: relative;
     text-decoration: none;
 
     @media #{$small-up} {
+      margin-left: 2rem;
       padding: .5rem .5rem 0 0;
     }
 
@@ -79,10 +89,16 @@
     }
 
     &::after {
+      border-bottom: solid 5px transparent;
       content: '';
       display: block;
       position: relative;
-      top: -5px;
+      top: 8px;
+      transition: ease-in-out border-bottom .1s;
+
+      @media #{$small-up} {
+        top: -5px;
+      }
     }
 
     &--active,
@@ -119,7 +135,17 @@
 .docs-detail-page {
   .nav {
     left: 0;
-    position: fixed;
     right: 0;
+
+    @media #{$small-up}{
+      position: fixed;
+    }
+  }
+}
+
+.home-page {
+  .nav {
+    background: transparent;
+    position: absolute;
   }
 }

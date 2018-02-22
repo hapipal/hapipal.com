@@ -1,6 +1,9 @@
 .docs-detail {
-  margin-top: 100px;
-  padding: 2.5rem 0;
+  margin-top: 40px;
+
+  @media #{$small-up} {
+    margin-top: 100px;
+  }
 
   .wrapper {
 
@@ -19,7 +22,7 @@
   .docs-nav {
     background-color: $white;
     border-bottom: 0;
-    border-right: 2px solid $light-gray;
+    border-right: 1px solid $light-gray;
     bottom: 60px;
     flex: 1;
     left: 0;
@@ -28,13 +31,13 @@
     overflow-y: auto;
     position: fixed;
     top: 0;
-    transition: ease-in-out all .2s;
+    transition: ease-in-out all .02s;
     width: 0;
 
     @media #{$medium-up}{
       bottom: 0;
       opacity: 1;
-      top: 82px;
+      top: 61px;
       width: 300px;
     }
 
@@ -75,6 +78,10 @@
 
         &__right {
           margin-left: auto;
+
+          img {
+            height: 22px;
+          }
         }
 
         img {
@@ -92,7 +99,7 @@
 
     .select-version {
       align-items: center;
-      border-bottom: 2px solid $light-gray;
+      border-bottom: 1px solid $light-gray;
       display: flex;
       justify-content: center;
 
@@ -104,7 +111,7 @@
         -moz-appearance: none;
         -webkit-appearance: none;
         background-color: $white;
-        border: 2px solid $light-gray;
+        border: 1px solid $light-gray;
         border-radius: 0;
         box-sizing: border-box;
         display: inline-block;
@@ -113,6 +120,7 @@
         margin: 0;
         margin-left: 2rem;
         padding: .5em 3em .5em 1em;
+        transition: ease-in-out border .02s;
 
         &.version {
           background-image: linear-gradient(45deg, transparent 50%, $orange 50%), linear-gradient(135deg, $orange 50%, transparent 50%);
@@ -130,12 +138,17 @@
             color: transparent;
             text-shadow: 0;
           }
+
+          &:hover {
+            border: 1px solid $lighter-orange;
+          }
         }
       }
     }
 
     ul {
-      padding: 0;
+      margin: 0;
+      padding: .5rem 0;
 
       .nav-item {
         display: block;
@@ -144,8 +157,8 @@
         border-left: 4px solid transparent;
         font-size: 14px;
         font-weight: 400;
-        padding: .5rem .25rem;
-        padding-right: .75rem;
+        padding: .75rem .25rem;
+        padding-right: 1.5rem;
         white-space: nowrap;
         text-overflow: ellipsis;
         overflow: hidden;
@@ -187,17 +200,17 @@
     }
 
     .package-list {
-
-      border-top: 2px solid $light-gray;
-      padding-top: 1rem;
+      border-top: 1px solid $light-gray;
+      margin: 0;
+      padding: .5rem 0;
 
       li {
 
         a {
           color: $md-orange;
           display: block;
-          font-size: 14px;
-          font-weight: 400;
+          font-size: 15px;
+          font-weight: 600;
           list-style: none;
           padding: .5rem 0;
           padding-left: .5rem;

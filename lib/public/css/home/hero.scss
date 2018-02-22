@@ -1,6 +1,13 @@
 .hero {
-  background-color: $dark-orange;
+  background-image: url('/public/img/home-header-background.jpg');
+  background-position: top;
+  background-size: cover;
   color: $white;
+  padding-top: 125px;
+
+  @media #{$small-up} {
+    padding-top: 82px;
+  }
 
   &__wrapper {
     @extend .wrapper;
@@ -45,18 +52,17 @@
       }
 
       .code {
-        background-color: $light-orange;
+        @extend %inconsolata;
+        background-color: #000;
         border-radius: 5px;
-        font-family: monospace;
-        font-size: 1.6rem;
+        font-size: 1.4rem;
         font-weight: 300;
         padding: 1rem;
-        padding-left: 2rem;
         text-align: left;
         transition: ease .6s all;
 
         &:hover {
-          background-color: $lighter-orange;
+          background-color: $gray;
           transform: translateY(-2px) scale(1.01);
         }
 
@@ -78,7 +84,7 @@
           animation-duration: 2.5s;
           animation-iteration-count: infinite;
           animation-fill-mode: both;
-          background: $white;
+          background: $yellow;
           display: inline-block;
           height: 1.6rem;
           vertical-align: middle;

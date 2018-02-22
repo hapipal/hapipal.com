@@ -1,5 +1,6 @@
 .markdown-body {
   max-width: 978px; //github style
+  padding: 1rem 0;
 
   a {
     color: $md-orange;
@@ -16,6 +17,7 @@
   h6,
   p,
   pre {
+    color: $gray;
     text-decoration: none;
 
     code {
