@@ -2,34 +2,34 @@
 
     {{#*inline "content"}}
         <div class="main docs-detail">
-            <nav class="docs-nav">
-              <div class="select-version">
-                <p>Reference Version: </p>
-                <select id="version" class="version">
-                  {{#each versions as |ver|}}
-                  <option value="{{ver}}"{{#equals ver ../version}} selected="selected"{{/equals}}>v{{ver}}</option>
-                  {{/each}}
-                </select>
-              </div>
-              <div class="nav-target"><!-- replaced with nav by js/docs-nav.js --></div>
-              <ul class="package-list">
-                  {{#each packages as |package|}}
-                      <li>
-                        <a href="/docs/{{package.name}}">
-                          <img {{#equals package.name ../pkg.name}}class="active"{{/equals}} src="/public/img/hapi-bolt{{#equals package.name ../pkg.name}}-gold{{/equals}}.svg" />
-                          {{package.name}}
-                        </a>
-                      </li>
-                  {{/each}}
-              </ul>
-            </nav>
-            <div class="docs-nav__mobile-nav">
-              <button class="nav-item nav-item__left"><img src="/public/img/menu-icon.svg" /></button>
-              <button class="nav-item nav-item__right"><img src="/public/img/arrow-up.svg" /></button>
+          <nav class="docs-nav">
+            <div class="select-version">
+              <p>Reference Version: </p>
+              <select id="version" class="version">
+                {{#each versions as |ver|}}
+                <option value="{{ver}}"{{#equals ver ../version}} selected="selected"{{/equals}}>v{{ver}}</option>
+                {{/each}}
+              </select>
             </div>
-            <div class="wrapper">
-                {{{html}}}
-            </div>
+            <div class="nav-target"><!-- replaced with nav by js/docs-nav.js --></div>
+            <ul class="package-list">
+                {{#each packages as |package|}}
+                    <li>
+                      <a href="/docs/{{package.name}}">
+                        <img {{#equals package.name ../pkg.name}}class="active"{{/equals}} src="/public/img/hapi-bolt{{#equals package.name ../pkg.name}}-gold{{/equals}}.svg" />
+                        {{package.name}}
+                      </a>
+                    </li>
+                {{/each}}
+            </ul>
+          </nav>
+          <div class="docs-nav__mobile-nav">
+            <button class="nav-item nav-item__left"><img src="/public/img/menu-icon.svg" /></button>
+            <button class="nav-item nav-item__right"><img src="/public/img/arrow-up.svg" /></button>
+          </div>
+          <div class="wrapper">
+              {{{html}}}
+          </div>
         </div>
     {{/inline}}
 
