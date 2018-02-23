@@ -4,6 +4,7 @@
   border-bottom: 1px solid $tan;
   display: flex;
   width: 100%;
+  box-sizing: border-box;
 
   @media #{$small-up} {
     height: $fixed-header-size;
