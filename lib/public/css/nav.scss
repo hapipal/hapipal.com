@@ -6,7 +6,7 @@
   width: 100%;
 
   @media #{$small-up} {
-    height: 60px;
+    height: $fixed-header-size;
   }
 
   &__wrapper {
@@ -134,7 +134,7 @@
 
 }
 
-.docs-detail-page {
+.docs-detail-page, .best-practices-detail-page {
   .nav {
     left: 0;
     right: 0;

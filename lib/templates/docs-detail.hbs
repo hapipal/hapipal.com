@@ -1,8 +1,8 @@
 {{#> layout title="Docs Detail" }}
 
     {{#*inline "content"}}
-        <div class="main docs-detail">
-          <nav class="docs-nav">
+        <div class="main docs-detail l-navigablecontent">
+          <nav class="docs-nav l-navigablecontent__nav">
             <div class="select-version">
               <p>Reference Version: </p>
               <select id="version" class="version">
@@ -23,9 +23,13 @@
                 {{/each}}
             </ul>
           </nav>
-          <div class="docs-nav__mobile-nav">
-            <button class="nav-item nav-item__left"><img src="/public/img/menu-icon.svg" /></button>
-            <button class="nav-item nav-item__right"><img src="/public/img/arrow-up.svg" /></button>
+          <div class="l-navigablecontent__mobile-controls">
+            <button class="l-navigablecontent__control-item l-navigablecontent__control-item--left">
+                <img src="/public/img/menu-icon.svg" />
+            </button>
+            <button class="l-navigablecontent__control-item l-navigablecontent__control-item--right">
+                <img src="/public/img/arrow-up.svg" />
+            </button>
           </div>
           <div class="wrapper">
               {{{html}}}
