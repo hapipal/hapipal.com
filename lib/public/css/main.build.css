@@ -759,7 +759,8 @@
         .docs-detail .docs-nav ul .nav-item.indent-5, .docs-detail .docs-nav ul .nav-item.indent-6 {
           padding-left: 5.5rem; }
         .docs-detail .docs-nav ul .nav-item code {
-          color: #333; }
+          color: #333;
+          font-size: 100%; }
         .docs-detail .docs-nav ul .nav-item.navbar-active {
           border-left: 4px solid #ec870b;
           color: #ec870b;
