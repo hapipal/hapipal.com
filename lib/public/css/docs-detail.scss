@@ -7,14 +7,21 @@
 
   .wrapper {
 
+    .md {
+      margin: 0 auto;
+
+      @media #{$medium-up} {
+        margin-left: 300px;
+      }
+    }
+
     .markdown-body {
-      margin-bottom: calc(1rem + 60px);
-      margin-left: 0;
+      margin: 0 auto;
+      padding-bottom: calc(2rem + 60px);
 
       @media #{$medium-up} {
         margin-bottom: 4rem;
-        margin-left: 300px;
-        max-width: 978px; //github style
+        max-width: 768px;
       }
 
     }

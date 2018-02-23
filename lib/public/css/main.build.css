@@ -601,14 +601,18 @@
   @media only screen and (min-width: 481px) {
     .docs-detail {
       margin-top: 100px; } }
+  .docs-detail .wrapper .md, .docs-detail .footer__wrapper .md, .docs-detail .hero__wrapper .md, .docs-detail .highlight__wrapper .md, .docs-detail .sponsor__wrapper .md, .docs-detail .newsletter__wrapper .md {
+    margin: 0 auto; }
+    @media only screen and (min-width: 641px) {
+      .docs-detail .wrapper .md, .docs-detail .footer__wrapper .md, .docs-detail .hero__wrapper .md, .docs-detail .highlight__wrapper .md, .docs-detail .sponsor__wrapper .md, .docs-detail .newsletter__wrapper .md {
+        margin-left: 300px; } }
   .docs-detail .wrapper .markdown-body, .docs-detail .footer__wrapper .markdown-body, .docs-detail .hero__wrapper .markdown-body, .docs-detail .highlight__wrapper .markdown-body, .docs-detail .sponsor__wrapper .markdown-body, .docs-detail .newsletter__wrapper .markdown-body {
-    margin-bottom: calc(1rem + 60px);
-    margin-left: 0; }
+    margin: 0 auto;
+    padding-bottom: calc(2rem + 60px); }
     @media only screen and (min-width: 641px) {
       .docs-detail .wrapper .markdown-body, .docs-detail .footer__wrapper .markdown-body, .docs-detail .hero__wrapper .markdown-body, .docs-detail .highlight__wrapper .markdown-body, .docs-detail .sponsor__wrapper .markdown-body, .docs-detail .newsletter__wrapper .markdown-body {
         margin-bottom: 4rem;
-        margin-left: 300px;
-        max-width: 978px; } }
+        max-width: 768px; } }
   .docs-detail .docs-nav {
     background-color: #fff;
     border-bottom: 0;
