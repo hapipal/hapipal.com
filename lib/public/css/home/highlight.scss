@@ -10,7 +10,7 @@
 
   h2 {
     font-size: $h2-font-size;
-    font-weight: 500;
+    font-weight: 600;
   }
 
   p {
@@ -22,7 +22,7 @@
     padding: 1rem 0;
 
     @media #{$small-up} {
-      border-bottom: solid 2px $light-gray;
+      border-bottom: solid 1px $light-gray;
     }
 
   }
@@ -32,7 +32,7 @@
     @media #{$small-up} {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
-      margin-top: 4rem;
+      margin-top: 2rem;
     }
 
     &__item {
@@ -42,18 +42,59 @@
       a {
         color: $gray;
         text-decoration: none;
+
+        &:hover {
+
+          h5 {
+            color: $orange;
+            text-decoration: underline;
+          }
+        }
       }
 
       &__img {
-        backface-visibility: hidden;
-        border-radius: 50%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 14rem;
         margin: 0 auto;
-        position: relative;
-        transition: .6s ease box-shadow, .3s ease transform;
+        transition: linear background-image .1s;
+        width: 14rem;
 
-        &:hover {
-          box-shadow: 0 0 0 8px $dark-orange;
-          transform: scale(.9);
+        &.orange {
+          background-image: url('/public/img/orange-link.png');
+
+          &:hover {
+            background-image: url('/public/img/orange-link-hover.png');
+          }
+
+          &:active {
+            background-image: url('/public/img/orange-link-alt.png');
+          }
+        }
+
+        &.green {
+          background-image: url('/public/img/green-link.png');
+
+          &:hover {
+            background-image: url('/public/img/green-link-hover.png');
+          }
+
+          &:active {
+            background-image: url('/public/img/green-link-alt.png');
+          }
+        }
+
+        &.blue {
+          background-image: url('/public/img/blue-link.png');
+
+          &:hover {
+            background-image: url('/public/img/blue-link-hover.png');
+          }
+
+          &:active {
+            background-image: url('/public/img/blue-link-alt.png');
+          }
         }
 
       }
