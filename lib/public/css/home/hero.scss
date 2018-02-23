@@ -138,10 +138,10 @@
           }
 
           &--success {
-            background-color: $dark-orange;
+            @extend %inconsolata;
+            background-color: $yellow;
             border-radius: 5px;
             display: inline-block;
-            font-family: monospace;
             font-size: 14px;
             padding: 3px;
             vertical-align: top;

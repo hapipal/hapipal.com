@@ -3,7 +3,7 @@
 * {
   font-family: 'Nunito Sans', sans-serif; }
 
-.hero__img__content .code, .markdown-body a code,
+.hero__img__content .code, .hero__img__content .code__copied--success, .markdown-body a code,
 .markdown-body li code,
 .markdown-body h1 code,
 .markdown-body h2 code,
@@ -332,10 +332,9 @@
               .hero__img__content .code__copied img {
                 font-size: 1.3rem; } }
           .hero__img__content .code__copied--success {
-            background-color: #eb830f;
+            background-color: #eecd09;
             border-radius: 5px;
             display: inline-block;
-            font-family: monospace;
             font-size: 14px;
             padding: 3px;
             vertical-align: top; }
