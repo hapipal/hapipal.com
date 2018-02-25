@@ -2,7 +2,7 @@
 
     {{#*inline "content"}}
         <div class="main docs-detail l-navigablecontent">
-          <nav class="docs-nav l-navigablecontent__nav">
+          <nav class="l-navigablecontent__nav sidenav">
             <div class="select-version">
               <p>Reference Version: </p>
               <select id="version" class="version">
@@ -11,12 +11,12 @@
                 {{/each}}
               </select>
             </div>
-            <div class="nav-target"><!-- replaced with nav by js/docs-nav.js --></div>
-            <ul class="package-list">
+            <div class="sidenav__target"><!-- replaced with nav by js/docs-nav.js --></div>
+            <ul class="sidenav__others">
                 {{#each packages as |package|}}
-                    <li>
+                    <li class="sidenav__other-item {{#equals package.name ../pkg.name}}sidenav__other-item--active{{/equals}}">
                       <a href="/docs/{{package.name}}">
-                        <img {{#equals package.name ../pkg.name}}class="active"{{/equals}} src="/public/img/hapi-bolt{{#equals package.name ../pkg.name}}-gold{{/equals}}.svg" />
+                        <img src="/public/img/hapi-bolt{{#equals package.name ../pkg.name}}-gold{{/equals}}.svg" />
                         {{package.name}}
                       </a>
                     </li>

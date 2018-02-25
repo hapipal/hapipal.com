@@ -260,6 +260,71 @@
   background: transparent;
   position: absolute; }
 
+.sidenav .sidenav__sections {
+  padding: .75rem 0; }
+  .sidenav .sidenav__sections > ul {
+    padding: 0; }
+  .sidenav .sidenav__sections .sidenav__section-item {
+    border-left: 4px solid transparent;
+    color: inherit;
+    display: block;
+    font-size: 14px;
+    font-weight: 400;
+    overflow: hidden;
+    padding: .75rem 1.5rem .75rem .25rem;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    white-space: nowrap; }
+    .sidenav .sidenav__sections .sidenav__section-item--indent-1 {
+      padding-left: 1.5rem; }
+    .sidenav .sidenav__sections .sidenav__section-item--indent-2 {
+      padding-left: 2.5rem; }
+    .sidenav .sidenav__sections .sidenav__section-item--indent-3 {
+      padding-left: 3.5rem; }
+    .sidenav .sidenav__sections .sidenav__section-item--indent-4 {
+      padding-left: 4.5rem; }
+    .sidenav .sidenav__sections .sidenav__section-item--indent-5, .sidenav .sidenav__sections .sidenav__section-item--indent-6 {
+      padding-left: 5.5rem; }
+    .sidenav .sidenav__sections .sidenav__section-item code {
+      color: #333;
+      font-size: 100%; }
+    .sidenav .sidenav__sections .sidenav__section-item--active {
+      border-left: 4px solid #ec870b;
+      color: #ec870b;
+      font-weight: bold; }
+    .sidenav .sidenav__sections .sidenav__section-item:hover {
+      background-color: #ec870b;
+      color: #fff; }
+
+.sidenav .sidenav__others {
+  border-top: 1px solid #e2e2e2;
+  margin: 0;
+  padding: .5rem 0; }
+  .sidenav .sidenav__others .sidenav__other-item img {
+    margin: 0 1rem;
+    opacity: 0;
+    -webkit-transition: linear opacity .1s;
+    transition: linear opacity .1s;
+    -webkit-transition-delay: .05s;
+            transition-delay: .05s;
+    width: 20px; }
+  .sidenav .sidenav__others .sidenav__other-item--active img {
+    opacity: 1; }
+  .sidenav .sidenav__others .sidenav__other-item a {
+    color: #f6901d;
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    list-style: none;
+    padding: .5rem 0;
+    padding-left: .5rem;
+    text-decoration: none; }
+    .sidenav .sidenav__others .sidenav__other-item a:hover {
+      background-color: #ec870b;
+      color: #fff; }
+      .sidenav .sidenav__others .sidenav__other-item a:hover img {
+        opacity: 1; }
+
 .footer {
   background-color: #333429;
   color: #fff;
@@ -694,7 +759,7 @@
               transition-delay: .05s;
       width: 20px; }
 
-.docs-detail .docs-nav .select-version {
+.docs-detail .sidenav .select-version {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -705,9 +770,9 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center; }
-  .docs-detail .docs-nav .select-version p {
+  .docs-detail .sidenav .select-version p {
     font-weight: bold; }
-  .docs-detail .docs-nav .select-version select {
+  .docs-detail .sidenav .select-version select {
     -moz-appearance: none;
     -webkit-appearance: none;
     background-color: #fff;
@@ -723,84 +788,20 @@
     padding: .5em 3em .5em 1em;
     -webkit-transition: ease-in-out border .02s;
     transition: ease-in-out border .02s; }
-    .docs-detail .docs-nav .select-version select.version {
+    .docs-detail .sidenav .select-version select.version {
       background-image: linear-gradient(45deg, transparent 50%, #ec870b 50%), linear-gradient(135deg, #ec870b 50%, transparent 50%);
       background-position: calc(100% - 11px) calc(9px), calc(100% - 6px) calc(9px), calc(100% - 1em) 0;
       background-repeat: no-repeat;
       background-size: 5px 5px, 5px 5px, 1px 1.5em; }
-      .docs-detail .docs-nav .select-version select.version:focus {
+      .docs-detail .sidenav .select-version select.version:focus {
         background-repeat: no-repeat;
         background-size: 5px 5px, 5px 5px, 1px 1.5em;
         outline: 0; }
-      .docs-detail .docs-nav .select-version select.version:-moz-focusring {
+      .docs-detail .sidenav .select-version select.version:-moz-focusring {
         color: transparent;
         text-shadow: 0; }
-      .docs-detail .docs-nav .select-version select.version:hover {
+      .docs-detail .sidenav .select-version select.version:hover {
         border: 1px solid #ffae41; }
-
-.docs-detail .docs-nav ul {
-  margin: 0;
-  padding: .5rem 0; }
-  .docs-detail .docs-nav ul .nav-item {
-    border-left: 4px solid transparent;
-    color: inherit;
-    display: block;
-    font-size: 14px;
-    font-weight: 400;
-    overflow: hidden;
-    padding: .75rem 1.5rem .75rem .25rem;
-    text-decoration: none;
-    text-overflow: ellipsis;
-    white-space: nowrap; }
-    .docs-detail .docs-nav ul .nav-item.indent-1 {
-      padding-left: 1.5rem; }
-    .docs-detail .docs-nav ul .nav-item.indent-2 {
-      padding-left: 2.5rem; }
-    .docs-detail .docs-nav ul .nav-item.indent-3 {
-      padding-left: 3.5rem; }
-    .docs-detail .docs-nav ul .nav-item.indent-4 {
-      padding-left: 4.5rem; }
-    .docs-detail .docs-nav ul .nav-item.indent-5, .docs-detail .docs-nav ul .nav-item.indent-6 {
-      padding-left: 5.5rem; }
-    .docs-detail .docs-nav ul .nav-item code {
-      color: #333;
-      font-size: 100%; }
-    .docs-detail .docs-nav ul .nav-item.navbar-active {
-      border-left: 4px solid #ec870b;
-      color: #ec870b;
-      font-weight: bold; }
-    .docs-detail .docs-nav ul .nav-item:hover {
-      background-color: #ec870b;
-      color: #fff; }
-
-.docs-detail .docs-nav .package-list {
-  border-top: 1px solid #e2e2e2;
-  margin: 0;
-  padding: .5rem 0; }
-  .docs-detail .docs-nav .package-list li a {
-    color: #f6901d;
-    display: block;
-    font-size: 15px;
-    font-weight: 600;
-    list-style: none;
-    padding: .5rem 0;
-    padding-left: .5rem;
-    text-decoration: none; }
-    .docs-detail .docs-nav .package-list li a:hover {
-      background-color: #ec870b;
-      color: #fff; }
-      .docs-detail .docs-nav .package-list li a:hover img {
-        opacity: 1; }
-    .docs-detail .docs-nav .package-list li a img {
-      margin: 0 1rem;
-      opacity: 0;
-      -webkit-transition: linear opacity .1s;
-      transition: linear opacity .1s;
-      -webkit-transition-delay: .05s;
-              transition-delay: .05s;
-      width: 20px; }
-      .docs-detail .docs-nav .package-list li a img.active {
-        opacity: 1; }
 
 .markdown-body {
   max-width: 978px;
