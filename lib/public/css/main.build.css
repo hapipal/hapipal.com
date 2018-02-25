@@ -383,32 +383,22 @@
         color: #ec870b;
         text-decoration: underline; }
     .highlight__grid__item__img {
-      background-size: cover;
-      background-position: center;
+      background-position: 0 0, 150px 0, 300px 0;
       background-repeat: no-repeat;
-      height: 14rem;
+      background-size: cover;
+      height: 150px;
       margin: 0 auto;
-      -webkit-transition: linear background-image .1s;
-      transition: linear background-image .1s;
-      width: 14rem; }
+      width: 150px; }
+      .highlight__grid__item__img:hover {
+        background-position: -150px 0, 0 0, 150px 0; }
+      .highlight__grid__item__img:active {
+        background-position: -300px 0, -150px 0, 0 0; }
       .highlight__grid__item__img.orange {
-        background-image: url("/public/img/orange-link.png"); }
-        .highlight__grid__item__img.orange:hover {
-          background-image: url("/public/img/orange-link-hover.png"); }
-        .highlight__grid__item__img.orange:active {
-          background-image: url("/public/img/orange-link-alt.png"); }
+        background-image: url("/public/img/orange-link.png"), url("/public/img/orange-link-hover.png"), url("/public/img/orange-link-alt.png"); }
       .highlight__grid__item__img.green {
-        background-image: url("/public/img/green-link.png"); }
-        .highlight__grid__item__img.green:hover {
-          background-image: url("/public/img/green-link-hover.png"); }
-        .highlight__grid__item__img.green:active {
-          background-image: url("/public/img/green-link-alt.png"); }
+        background-image: url("/public/img/green-link.png"), url("/public/img/green-link-hover.png"), url("/public/img/green-link-alt.png"); }
       .highlight__grid__item__img.blue {
-        background-image: url("/public/img/blue-link.png"); }
-        .highlight__grid__item__img.blue:hover {
-          background-image: url("/public/img/blue-link-hover.png"); }
-        .highlight__grid__item__img.blue:active {
-          background-image: url("/public/img/blue-link-alt.png"); }
+        background-image: url("/public/img/blue-link.png"), url("/public/img/blue-link-hover.png"), url("/public/img/blue-link-alt.png"); }
     .highlight__grid__item__content h5 {
       font-size: 2rem;
       font-weight: 400;

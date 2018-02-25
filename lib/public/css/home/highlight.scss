@@ -53,48 +53,31 @@
       }
 
       &__img {
-        background-size: cover;
-        background-position: center;
+        background-position: 0 0, 150px 0, 300px 0;
         background-repeat: no-repeat;
-        height: 14rem;
+        background-size: cover;
+        height: 150px;
         margin: 0 auto;
-        transition: linear background-image .1s;
-        width: 14rem;
+        width: 150px;
+
+        &:hover {
+          background-position: -150px 0, 0 0, 150px 0;
+        }
+
+        &:active {
+          background-position: -300px 0, -150px 0, 0 0;
+        }
 
         &.orange {
-          background-image: url('/public/img/orange-link.png');
-
-          &:hover {
-            background-image: url('/public/img/orange-link-hover.png');
-          }
-
-          &:active {
-            background-image: url('/public/img/orange-link-alt.png');
-          }
+          background-image: url('/public/img/orange-link.png'), url('/public/img/orange-link-hover.png'), url('/public/img/orange-link-alt.png');
         }
 
         &.green {
-          background-image: url('/public/img/green-link.png');
-
-          &:hover {
-            background-image: url('/public/img/green-link-hover.png');
-          }
-
-          &:active {
-            background-image: url('/public/img/green-link-alt.png');
-          }
+          background-image: url('/public/img/green-link.png'), url('/public/img/green-link-hover.png'), url('/public/img/green-link-alt.png');
         }
 
         &.blue {
-          background-image: url('/public/img/blue-link.png');
-
-          &:hover {
-            background-image: url('/public/img/blue-link-hover.png');
-          }
-
-          &:active {
-            background-image: url('/public/img/blue-link-alt.png');
-          }
+          background-image: url('/public/img/blue-link.png'), url('/public/img/blue-link-hover.png'), url('/public/img/blue-link-alt.png');
         }
 
       }
