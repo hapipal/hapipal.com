@@ -10,13 +10,14 @@ $fixed-header-size: 60px;
 
   .wrapper > div {
 
-    margin-bottom: calc(1rem + $fixed-header-size);
-    margin-left: 0;
+    margin: 0 auto;
+    padding-bottom: calc(2rem + $fixed-header-size);
+    margin-bottom: calc(2rem + 60px); // 60px is size of bottom mobile controls
 
     @media #{$medium-up} {
-      margin-bottom: 4rem;
+      margin-bottom: 2rem;
       margin-left: 300px;
-      max-width: 978px; //github style
+      max-width: 768px;
     }
 
   }

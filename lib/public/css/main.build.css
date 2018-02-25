@@ -3,7 +3,7 @@
 * {
   font-family: 'Nunito Sans', sans-serif; }
 
-.hero__img__content .code, .markdown-body a code,
+.hero__img__content .code, .hero__img__content .code__copied--success, .markdown-body a code,
 .markdown-body li code,
 .markdown-body h1 code,
 .markdown-body h2 code,
@@ -35,13 +35,14 @@
     .l-navigablecontent {
       margin-top: 60px; } }
   .l-navigablecontent .wrapper > div, .l-navigablecontent .footer__wrapper > div, .l-navigablecontent .hero__wrapper > div, .l-navigablecontent .highlight__wrapper > div, .l-navigablecontent .sponsor__wrapper > div, .l-navigablecontent .newsletter__wrapper > div {
-    margin-bottom: calc(1rem + $fixed-header-size);
-    margin-left: 0; }
+    margin: 0 auto;
+    padding-bottom: calc(2rem + $fixed-header-size);
+    margin-bottom: calc(2rem + 60px); }
     @media only screen and (min-width: 641px) {
       .l-navigablecontent .wrapper > div, .l-navigablecontent .footer__wrapper > div, .l-navigablecontent .hero__wrapper > div, .l-navigablecontent .highlight__wrapper > div, .l-navigablecontent .sponsor__wrapper > div, .l-navigablecontent .newsletter__wrapper > div {
-        margin-bottom: 4rem;
+        margin-bottom: 2rem;
         margin-left: 300px;
-        max-width: 978px; } }
+        max-width: 768px; } }
   .l-navigablecontent__nav {
     background-color: #fff;
     border-bottom: 0;
@@ -395,6 +396,47 @@
           height: 1.6rem;
           vertical-align: middle;
           width: 10px; }
+        .hero__img__content .code span {
+          display: inline-block;
+          font-family: monospace;
+          font-size: 1.1rem;
+          font-weight: 300;
+          vertical-align: middle; }
+          @media only screen and (min-width: 481px) {
+            .hero__img__content .code span {
+              font-size: 1.3rem; } }
+        .hero__img__content .code__value {
+          background-color: transparent;
+          border: 0;
+          color: #fff;
+          display: inline-block;
+          font-family: monospace;
+          font-size: 1.1rem;
+          font-weight: 300;
+          -webkit-user-select: text;
+             -moz-user-select: text;
+              -ms-user-select: text;
+                  user-select: text;
+          vertical-align: middle; }
+          @media only screen and (min-width: 481px) {
+            .hero__img__content .code__value {
+              font-size: 1.3rem; } }
+        .hero__img__content .code__copied {
+          display: none; }
+          .hero__img__content .code__copied img {
+            height: 16px;
+            position: relative;
+            vertical-align: middle; }
+            @media only screen and (min-width: 481px) {
+              .hero__img__content .code__copied img {
+                font-size: 1.3rem; } }
+          .hero__img__content .code__copied--success {
+            background-color: #eecd09;
+            border-radius: 5px;
+            display: inline-block;
+            font-size: 14px;
+            padding: 3px;
+            vertical-align: top; }
 
 @-webkit-keyframes flash {
   from, 50%, to {
@@ -711,17 +753,18 @@
     text-overflow: ellipsis;
     white-space: nowrap; }
     .docs-detail .docs-nav ul .nav-item.indent-1 {
-      padding-left: 1rem; }
+      padding-left: 1.5rem; }
     .docs-detail .docs-nav ul .nav-item.indent-2 {
-      padding-left: 2rem; }
+      padding-left: 2.5rem; }
     .docs-detail .docs-nav ul .nav-item.indent-3 {
-      padding-left: 3rem; }
+      padding-left: 3.5rem; }
     .docs-detail .docs-nav ul .nav-item.indent-4 {
-      padding-left: 4rem; }
+      padding-left: 4.5rem; }
     .docs-detail .docs-nav ul .nav-item.indent-5, .docs-detail .docs-nav ul .nav-item.indent-6 {
-      padding-left: 5rem; }
+      padding-left: 5.5rem; }
     .docs-detail .docs-nav ul .nav-item code {
-      color: #333; }
+      color: #333;
+      font-size: 100%; }
     .docs-detail .docs-nav ul .nav-item.navbar-active {
       border-left: 4px solid #ec870b;
       color: #ec870b;
@@ -729,23 +772,6 @@
     .docs-detail .docs-nav ul .nav-item:hover {
       background-color: #ec870b;
       color: #fff; }
-      .docs-detail .docs-nav ul .nav-item:hover::before {
-        background-image: url("/public/img/hapi-bolt.svg");
-        opacity: 1; }
-    .docs-detail .docs-nav ul .nav-item::before {
-      background-position: center;
-      background-size: cover;
-      content: '';
-      display: inline-block;
-      height: 10px;
-      margin-right: 10px;
-      opacity: 0;
-      -webkit-transition: linear opacity .1s;
-      transition: linear opacity .1s;
-      -webkit-transition-delay: .05s;
-              transition-delay: .05s;
-      vertical-align: middle;
-      width: 20px; }
 
 .docs-detail .docs-nav .package-list {
   border-top: 1px solid #e2e2e2;
