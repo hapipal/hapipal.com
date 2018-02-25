@@ -383,16 +383,16 @@
         color: #ec870b;
         text-decoration: underline; }
     .highlight__grid__item__img {
-      background-position: 0 0, 150px 0, 300px 0;
+      background-position: 0 0, 200px 0, 400px 0;
       background-repeat: no-repeat;
       background-size: cover;
-      height: 150px;
+      height: 200px;
       margin: 0 auto;
-      width: 150px; }
+      width: 200px; }
       .highlight__grid__item__img:hover {
-        background-position: -150px 0, 0 0, 150px 0; }
+        background-position: -200px 0, 0 0, 200px 0; }
       .highlight__grid__item__img:active {
-        background-position: -300px 0, -150px 0, 0 0; }
+        background-position: -400px 0, -200px 0, 0 0; }
       .highlight__grid__item__img.orange {
         background-image: url("/public/img/orange-link.png"), url("/public/img/orange-link-hover.png"), url("/public/img/orange-link-alt.png"); }
       .highlight__grid__item__img.green {

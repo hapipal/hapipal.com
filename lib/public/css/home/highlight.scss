@@ -53,19 +53,19 @@
       }
 
       &__img {
-        background-position: 0 0, 150px 0, 300px 0;
+        background-position: 0 0, 200px 0, 400px 0;
         background-repeat: no-repeat;
         background-size: cover;
-        height: 150px;
+        height: 200px;
         margin: 0 auto;
-        width: 150px;
+        width: 200px;
 
         &:hover {
-          background-position: -150px 0, 0 0, 150px 0;
+          background-position: -200px 0, 0 0, 200px 0;
         }
 
         &:active {
-          background-position: -300px 0, -150px 0, 0 0;
+          background-position: -400px 0, -200px 0, 0 0;
         }
 
         &.orange {
