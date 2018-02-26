@@ -29,7 +29,7 @@
 
   &__grid {
 
-    @media #{$small-up} {
+    @media #{$large-up} {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       margin-top: 2rem;
@@ -102,7 +102,7 @@
         display: block;
       }
 
-      @media #{$small-up} {
+      @media #{$large-up} {
         display: block;
       }
 

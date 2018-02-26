@@ -369,7 +369,7 @@
     @media only screen and (min-width: 481px) {
       .highlight__wrapper {
         border-bottom: solid 1px #e2e2e2; } }
-  @media only screen and (min-width: 481px) {
+  @media only screen and (min-width: 1025px) {
     .highlight__grid {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
@@ -409,7 +409,7 @@
       margin: 1rem; }
     .highlight__grid__item:first-of-type {
       display: block; }
-    @media only screen and (min-width: 481px) {
+    @media only screen and (min-width: 1025px) {
       .highlight__grid__item {
         display: block; } }
   .highlight__action {
