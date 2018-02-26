@@ -588,8 +588,11 @@
       color: #444;
       text-decoration: none; }
       .highlight__grid__item a:hover h5 {
-        color: #ec870b;
-        text-decoration: underline; }
+        color: #ec870b; }
+      .highlight__grid__item a:hover .highlight__grid__item__img {
+        background-position: -200px 0, 0 0, 200px 0; }
+      .highlight__grid__item a:active .highlight__grid__item__img {
+        background-position: -400px 0, -200px 0, 0 0; }
     .highlight__grid__item__img {
       background-position: 0 0, 200px 0, 400px 0;
       background-repeat: no-repeat;

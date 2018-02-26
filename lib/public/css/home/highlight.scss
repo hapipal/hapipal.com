@@ -47,7 +47,17 @@
 
           h5 {
             color: $orange;
-            text-decoration: underline;
+          }
+
+          .highlight__grid__item__img {
+            background-position: -200px 0, 0 0, 200px 0;
+          }
+        }
+
+        &:active {
+
+          .highlight__grid__item__img {
+            background-position: -400px 0, -200px 0, 0 0;
           }
         }
       }
