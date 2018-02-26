@@ -1,11 +1,31 @@
-{{#> layout title=title }}
+{{#> layout title="Best Practices Detail" }}
 
     {{#*inline "content"}}
-        <div class="main best-practices-detail">
-            <div class="nav"></div>
-            <div class="wrapper">
-                {{{html}}}
-            </div>
+        <div class="main l-navigablecontent">
+          <nav class="l-navigablecontent__nav sidenav">
+            <div class="sidenav__target"><!-- replaced with nav by js/docs-nav.js --></div>
+            <ul class="sidenav__others">
+                {{#each bestPractices as |bestPractice|}}
+                    <li class="sidenav__other-item {{#equals bestPractice.slug ../bp.slug}}sidenav__other-item--active{{/equals}}">
+                      <a href="/best-practices/{{bestPractice.slug}}">
+                        <img src="/public/img/hapi-bolt{{#equals bestPractice.slug ../bp.slug}}-gold{{/equals}}.svg" />
+                        {{bestPractice.title}}
+                      </a>
+                    </li>
+                {{/each}}
+            </ul>
+          </nav>
+          <div class="l-navigablecontent__mobile-controls">
+            <button class="l-navigablecontent__control-item l-navigablecontent__control-item--left">
+                <img src="/public/img/menu-icon.svg" />
+            </button>
+            <button class="l-navigablecontent__control-item l-navigablecontent__control-item--right">
+                <img src="/public/img/arrow-up.svg" />
+            </button>
+          </div>
+          <div class="wrapper">
+              <div class="markdown-body">{{{html}}}</div>
+          </div>
         </div>
     {{/inline}}
 
