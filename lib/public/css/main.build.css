@@ -1290,9 +1290,7 @@
   border-top: 0; }
 
 body {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  min-height: 100vh;
   margin: 0;
   display: -webkit-box;
   display: -ms-flexbox;
