@@ -10,7 +10,7 @@
 
   h2 {
     font-size: $h2-font-size;
-    font-weight: 500;
+    font-weight: 600;
   }
 
   p {
@@ -22,17 +22,17 @@
     padding: 1rem 0;
 
     @media #{$small-up} {
-      border-bottom: solid 2px $light-gray;
+      border-bottom: solid 1px $light-gray;
     }
 
   }
 
   &__grid {
 
-    @media #{$small-up} {
+    @media #{$large-up} {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
-      margin-top: 4rem;
+      margin-top: 2rem;
     }
 
     &__item {
@@ -42,18 +42,42 @@
       a {
         color: $gray;
         text-decoration: none;
+
+        &:hover {
+
+          h5 {
+            color: $orange;
+            text-decoration: underline;
+          }
+        }
       }
 
       &__img {
-        backface-visibility: hidden;
-        border-radius: 50%;
+        background-position: 0 0, 200px 0, 400px 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 200px;
         margin: 0 auto;
-        position: relative;
-        transition: .6s ease box-shadow, .3s ease transform;
+        width: 200px;
 
         &:hover {
-          box-shadow: 0 0 0 8px $dark-orange;
-          transform: scale(.9);
+          background-position: -200px 0, 0 0, 200px 0;
+        }
+
+        &:active {
+          background-position: -400px 0, -200px 0, 0 0;
+        }
+
+        &.orange {
+          background-image: url('/public/img/orange-link.png'), url('/public/img/orange-link-hover.png'), url('/public/img/orange-link-alt.png');
+        }
+
+        &.green {
+          background-image: url('/public/img/green-link.png'), url('/public/img/green-link-hover.png'), url('/public/img/green-link-alt.png');
+        }
+
+        &.blue {
+          background-image: url('/public/img/blue-link.png'), url('/public/img/blue-link-hover.png'), url('/public/img/blue-link-alt.png');
         }
 
       }
@@ -67,7 +91,7 @@
         }
 
         h6 {
-          font-size: 1.2rem;
+          font-size: 1rem;
           font-weight: 400;
           margin: 1rem;
         }
@@ -78,7 +102,7 @@
         display: block;
       }
 
-      @media #{$small-up} {
+      @media #{$large-up} {
         display: block;
       }
 

@@ -64,7 +64,7 @@
 
         &:hover {
           background-color: $gray;
-          transform: translateY(-2px) scale(1.01);
+          transform: translateY(-2px);
 
           + .code__shadow {
             opacity: .4;
@@ -139,7 +139,7 @@
 
           &--success {
             @extend %inconsolata;
-            background-color: $yellow;
+            background-color: $dark-orange;
             border-radius: 5px;
             display: inline-block;
             font-size: 14px;
