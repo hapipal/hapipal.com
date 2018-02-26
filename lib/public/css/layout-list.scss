@@ -1,4 +1,4 @@
-.docs-list {
+.layout-list {
   align-items: center;
   background-color: $white;
   color: $gray;
@@ -10,10 +10,15 @@
     margin: 1rem;
   }
 
+  h2 {
+    font-size: 3rem;
+    margin: .25rem 0;
+  }
+
   a {
     color: $lightest-orange;
     display: block;
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     font-weight: 600;
     letter-spacing: 1.25px;
     list-style: none;
@@ -40,7 +45,7 @@
       font-size: 14px;
       font-weight: 500;
       letter-spacing: .25px;
-      margin: 0 0 .75rem 30px;
+      margin: 0 0 1rem 30px;
     }
 
     .img {
@@ -56,4 +61,12 @@
 
   }
 
+}
+
+.best-practices-list {
+
+  h2 {
+    line-height: 1;
+    margin-bottom: 16px;
+  }
 }

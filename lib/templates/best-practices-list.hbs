@@ -1,15 +1,16 @@
 {{#> layout title="Best Practices" }}
 
     {{#*inline "content"}}
-        <div class="main best-practices-list">
+        <div class="main layout-list best-practices-list">
             <div class="wrapper">
-                <ul>
-                    {{#each bestPractices}}
-                        <li>
-                            <a href="/best-practices/{{this.slug}}">{{this.title}}</a>
-                        </li>
-                    {{/each}}
-                </ul>
+                <h1>Best Practices</h1>
+                {{#each bestPractices}}
+                    <a href="/best-practices/{{this.slug}}">
+                      <h2>{{this.title}}</h2>
+                      <div class="img"></div>
+                      <p>{{this.subtitle}}</p>
+                    </a>
+                {{/each}}
             </div>
         </div>
     {{/inline}}
