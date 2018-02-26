@@ -1,4 +1,5 @@
 .hero {
+  background-color: $orange-red;
   background-image: url('/public/img/home-header-background.jpg');
   background-position: top;
   background-size: cover;
@@ -53,7 +54,7 @@
 
       .code {
         @extend %inconsolata;
-        background-color: #000;
+        background-color: $black;
         border-radius: 5px;
         font-size: 1.4rem;
         font-weight: 300;
@@ -63,12 +64,13 @@
 
         &:hover {
           background-color: $gray;
-          transform: translateY(-2px) scale(1.01);
-        }
+          transform: translateY(-2px);
 
-        &:hover + .code__shadow {
-          opacity: .4;
-          transform: translateY(4px);
+          + .code__shadow {
+            opacity: .4;
+            transform: translateY(4px);
+          }
+
         }
 
         &__shadow {
@@ -82,8 +84,8 @@
         &__cursor {
           animation: flash;
           animation-duration: 2.5s;
-          animation-iteration-count: infinite;
           animation-fill-mode: both;
+          animation-iteration-count: infinite;
           background: $yellow;
           display: inline-block;
           height: 1.6rem;
@@ -91,7 +93,64 @@
           width: 10px;
         }
 
+        span {
+          display: inline-block;
+          font-family: monospace;
+          font-size: 1.1rem;
+          font-weight: 300;
+          vertical-align: middle;
+
+          @media #{$small-up} {
+            font-size: 1.3rem;
+          }
+
+        }
+
+        &__value {
+          background-color: transparent;
+          border: 0;
+          color: $white;
+          display: inline-block;
+          font-family: monospace;
+          font-size: 1.1rem;
+          font-weight: 300;
+          user-select: text;
+          vertical-align: middle;
+
+          @media #{$small-up} {
+            font-size: 1.3rem;
+          }
+
+        }
+
+        &__copied {
+          display: none;
+
+          img {
+            height: 16px;
+            position: relative;
+            vertical-align: middle;
+
+            @media #{$small-up} {
+              font-size: 1.3rem;
+            }
+
+          }
+
+          &--success {
+            @extend %inconsolata;
+            background-color: $dark-orange;
+            border-radius: 5px;
+            display: inline-block;
+            font-size: 14px;
+            padding: 3px;
+            vertical-align: top;
+          }
+
+        }
+
         @keyframes flash {
+
           from, 50%, to {
             opacity: 1;
           }
@@ -99,6 +158,7 @@
           25%, 75% {
             opacity: 0;
           }
+
         }
 
       }

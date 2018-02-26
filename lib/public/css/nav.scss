@@ -4,9 +4,10 @@
   border-bottom: 1px solid $tan;
   display: flex;
   width: 100%;
+  box-sizing: border-box;
 
   @media #{$small-up} {
-    height: 60px;
+    height: $fixed-header-size;
   }
 
   &__wrapper {
@@ -21,7 +22,10 @@
   &__logo {
     height: 2.5rem;
     margin: .5rem;
-    padding-left: .5rem;
+
+    @media #{$small-up} {
+      margin-left: 1.25rem;
+    }
 
     &__wrapper {
       align-items: center;
@@ -38,14 +42,14 @@
   }
 
   &__icon {
-    margin-left: 1rem;
     display: inline-block;
+    margin-left: 1rem;
     top: -10px;
     width: 2rem;
 
     @media #{$small-up} {
+      margin: 0 1rem;
       position: relative;
-      margin: 0 2rem;
       top: 5px;
     }
 
@@ -66,18 +70,17 @@
     font-weight: 500;
     height: 100%;
     letter-spacing: .25px;
-    margin-left: 1rem;
     padding: .5rem;
     position: relative;
     text-decoration: none;
 
     @media #{$small-up} {
-      margin-left: 2rem;
+      margin: 0 1rem;
       padding: .5rem .5rem 0 0;
     }
 
     @media #{$large-up} {
-      padding: .5rem 1rem 0 0;
+      padding: .5rem .5rem 0;
     }
 
     // https://stackoverflow.com/questions/18485378/vertically-centering-text-within-an-inline-block
@@ -132,7 +135,7 @@
 
 }
 
-.docs-detail-page {
+.docs-detail-page, .best-practices-detail-page {
   .nav {
     left: 0;
     right: 0;

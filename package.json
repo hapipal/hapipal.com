@@ -25,6 +25,7 @@
     "confidence": "3.x.x",
     "dotenv": "4.x.x",
     "glue": "5.x.x",
+    "hammerjs": "^2.0.8",
     "handlebars": "4.x.x",
     "hapi": "17.x.x",
     "haute-couture": "3.x.x",
