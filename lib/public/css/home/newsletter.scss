@@ -1,6 +1,6 @@
 .newsletter {
   background-image: url('../img/newsletter-bg-alt.jpg');
-  background-position: center;
+  background-position: bottom;
   background-size: cover;
   color: $white;
 
@@ -32,10 +32,13 @@
   }
 
   &__form {
+    margin: 0 auto;
+    max-width: 400px;
 
     @media #{$large-up} {
       display: inline-block;
       margin-left: 2rem;
+      max-width: 100%;
       vertical-align: top;
       width: calc(80% - 4rem);
     }
