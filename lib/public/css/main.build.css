@@ -716,10 +716,15 @@
       font-size: 1rem;
       font-weight: 600;
       text-decoration: none; }
+      .sponsor__content__action a:hover .sponsor__content__action__icon {
+        -webkit-transform: translateX(3px);
+                transform: translateX(3px); }
     .sponsor__content__action__icon {
       display: inline-block;
       height: 16px;
       margin-left: 3px;
+      -webkit-transition: linear transform .1s;
+      transition: linear transform .1s;
       vertical-align: middle; }
 
 .newsletter {
