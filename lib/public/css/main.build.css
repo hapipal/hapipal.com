@@ -885,11 +885,12 @@
     border-right: 5px solid transparent;
     border-top: 5px solid #eb830f;
     left: -20px;
-    position: relative; }
+    position: relative;
+    pointer-events: none; }
   .docs-detail-page .sidenav .select-version select {
     -moz-appearance: none;
     -webkit-appearance: none;
-    background-color: #fff;
+    background-color: transparent;
     border: 1px solid #e2e2e2;
     border-radius: 0;
     -webkit-box-sizing: border-box;

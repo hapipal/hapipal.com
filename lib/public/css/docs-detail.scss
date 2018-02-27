@@ -18,12 +18,13 @@
         border-top: 5px solid $dark-orange;
         left: -20px;
         position: relative;
+        pointer-events: none;
       }
 
       select {
         -moz-appearance: none;
         -webkit-appearance: none;
-        background-color: $white;
+        background-color: transparent;
         border: 1px solid $light-gray;
         border-radius: 0;
         box-sizing: border-box;
