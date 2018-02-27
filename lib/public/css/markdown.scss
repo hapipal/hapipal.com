@@ -98,7 +98,7 @@
   .pl {
 
     &-c {
-      color: $md-dark-gray;
+      color: $md-medium-gray;
       font-style: italic;
     }
 
@@ -115,6 +115,16 @@
 
     &-en {
       color: $md-blue;
+    }
+
+    &-mi1 {
+      color: $md-diffplus-dark;
+      background-color: $md-diffplus-light;
+    }
+
+    &-md {
+      color: $md-diffminus-dark;
+      background-color: $md-diffminus-light;
     }
 
   }
