@@ -718,8 +718,8 @@
       text-decoration: none; }
     .sponsor__content__action__icon {
       display: inline-block;
-      height: 1.3rem;
-      margin-left: 5px;
+      height: 16px;
+      margin-left: 3px;
       vertical-align: middle; }
 
 .newsletter {
@@ -875,6 +875,12 @@
           justify-content: center; }
   .docs-detail-page .sidenav .select-version p {
     font-weight: bold; }
+  .docs-detail-page .sidenav .select-version__arrow {
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #eb830f;
+    left: -20px;
+    position: relative; }
   .docs-detail-page .sidenav .select-version select {
     -moz-appearance: none;
     -webkit-appearance: none;
@@ -891,20 +897,15 @@
     padding: .5em 3em .5em 1em;
     -webkit-transition: ease-in-out border .02s;
     transition: ease-in-out border .02s; }
-    .docs-detail-page .sidenav .select-version select.version {
-      background-image: linear-gradient(45deg, transparent 50%, #ec870b 50%), linear-gradient(135deg, #ec870b 50%, transparent 50%);
-      background-position: calc(100% - 11px) calc(9px), calc(100% - 6px) calc(9px), calc(100% - 1em) 0;
+    .docs-detail-page .sidenav .select-version select.version:focus {
       background-repeat: no-repeat;
-      background-size: 5px 5px, 5px 5px, 1px 1.5em; }
-      .docs-detail-page .sidenav .select-version select.version:focus {
-        background-repeat: no-repeat;
-        background-size: 5px 5px, 5px 5px, 1px 1.5em;
-        outline: 0; }
-      .docs-detail-page .sidenav .select-version select.version:-moz-focusring {
-        color: transparent;
-        text-shadow: 0; }
-      .docs-detail-page .sidenav .select-version select.version:hover {
-        border: 1px solid #ffae41; }
+      background-size: 5px 5px, 5px 5px, 1px 1.5em;
+      outline: 0; }
+    .docs-detail-page .sidenav .select-version select.version:-moz-focusring {
+      color: transparent;
+      text-shadow: 0; }
+    .docs-detail-page .sidenav .select-version select.version:hover {
+      border: 1px solid #ffae41; }
 
 .markdown-body {
   max-width: 978px;
