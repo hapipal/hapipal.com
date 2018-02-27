@@ -14,7 +14,8 @@
       font-size: 14px;
       font-weight: 400;
       overflow: hidden;
-      padding: .75rem 1.5rem .75rem .25rem;
+      padding: .75rem 0 .75rem .25rem;
+      border-right: 1.5rem solid transparent; // Ensures inline <code> blocks don't bleed the edge
       text-decoration: none;
       text-overflow: ellipsis;
       white-space: nowrap;
