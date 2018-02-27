@@ -589,8 +589,11 @@
       color: #444;
       text-decoration: none; }
       .highlight__grid__item a:hover h5 {
-        color: #ec870b;
-        text-decoration: underline; }
+        color: #ec870b; }
+      .highlight__grid__item a:hover .highlight__grid__item__img {
+        background-position: -200px 0, 0 0, 200px 0; }
+      .highlight__grid__item a:active .highlight__grid__item__img {
+        background-position: -400px 0, -200px 0, 0 0; }
     .highlight__grid__item__img {
       background-position: 0 0, 200px 0, 400px 0;
       background-repeat: no-repeat;
@@ -766,7 +769,7 @@
           margin-left: 1rem;
           width: auto; } }
 
-.docs-list {
+.layout-list {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -776,34 +779,37 @@
   display: -ms-flexbox;
   display: flex;
   padding: 2rem 0 6rem; }
-  .docs-list h1 {
+  .layout-list h1 {
     border-bottom: 1px solid #e2e2e2;
     margin: 1rem; }
-  .docs-list a {
+  .layout-list h2 {
+    font-size: 3rem;
+    margin: .25rem 0; }
+  .layout-list a {
     color: #fd8b25;
     display: block;
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     font-weight: 600;
     letter-spacing: 1.25px;
     list-style: none;
     padding: .5rem 1rem;
     text-decoration: none; }
-    .docs-list a:hover {
+    .layout-list a:hover {
       background-color: #fd8b25;
       color: #fff;
       -webkit-transition: linear background-color color .03s;
       transition: linear background-color color .03s; }
-      .docs-list a:hover p {
+      .layout-list a:hover p {
         color: #fff; }
-      .docs-list a:hover .img {
+      .layout-list a:hover .img {
         background-image: url("/public/img/hapi-bolt.svg"); }
-    .docs-list a p {
+    .layout-list a p {
       color: #444;
       font-size: 14px;
       font-weight: 500;
       letter-spacing: .25px;
-      margin: 0 0 .75rem 30px; }
-    .docs-list a .img {
+      margin: 0 0 1rem 30px; }
+    .layout-list a .img {
       background-image: url("/public/img/hapi-bolt-gold.svg");
       background-size: cover;
       height: 10px;
@@ -814,6 +820,10 @@
       -webkit-transition-delay: .05s;
               transition-delay: .05s;
       width: 20px; }
+
+.best-practices-list h2 {
+  line-height: 1;
+  margin-bottom: 16px; }
 
 .docs-detail-page .sidenav .select-version {
   -webkit-box-align: center;
