@@ -3,6 +3,7 @@
   background-size: cover;
   border-bottom: 1px solid $tan;
   display: flex;
+  padding: 0 .5rem;
   width: 100%;
   box-sizing: border-box;
 
@@ -20,8 +21,9 @@
   }
 
   &__logo {
-    height: 2.5rem;
+    height: 40px;
     margin: .5rem;
+    width: auto;
 
     @media #{$small-up} {
       margin-left: 1.25rem;
@@ -43,9 +45,10 @@
 
   &__icon {
     display: inline-block;
+    height: auto;
     margin-left: 1rem;
     top: -10px;
-    width: 2rem;
+    width: 25px;
 
     @media #{$small-up} {
       margin: 0 1rem;

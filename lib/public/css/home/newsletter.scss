@@ -66,14 +66,24 @@
       width: 60%;
     }
 
+    &:focus {
+      outline-color: $dark-orange;
+    }
+
     &--invalid {
       outline-color: $red;
       outline-style: auto;
       outline-width: 5px;
+
+      &:focus {
+        outline-color: $red;
+        outline-style: auto;
+      }
+
     }
 
     &__button {
-      background: transparent;
+      background-color: transparent;
       border: 2px solid $white;
       border-radius: 2px;
       color: $white;
@@ -82,12 +92,26 @@
       height: 3rem;
       margin: 1rem 0 0;
       padding: 0 2rem;
+      transition: linear all .1s;
       vertical-align: bottom;
       width: 100%;
 
       @media #{$large-up} {
         margin-left: 1rem;
         width: auto;
+      }
+
+      &:hover {
+        background-color: $white;
+        color: $dark-orange;
+      }
+
+      &:active {
+        box-shadow: 0 0 10px $white;
+      }
+
+      &:focus {
+        outline: none;
       }
 
     }

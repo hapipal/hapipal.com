@@ -86,6 +86,7 @@
       font-size: 1rem;
       font-weight: 700;
       padding-bottom: 1rem;
+      padding-left: .3rem;
     }
 
     &__item {
@@ -94,12 +95,19 @@
       font-size: .9rem;
       font-weight: 400;
       letter-spacing: 1px;
-      padding: .5rem 0;
+      padding: .25rem .3rem;
       position: relative;
       text-decoration: none;
+      transition: ease-in-out all .2s;
+      width: fit-content;
 
       &--active {
         border: 0;
+      }
+
+      &:hover {
+        background: $dark-orange;
+        color: $white;
       }
 
     }
