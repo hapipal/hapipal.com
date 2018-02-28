@@ -73,12 +73,20 @@
         font-size: 1rem;
         font-weight: 600;
         text-decoration: none;
+
+        &:hover {
+
+          .sponsor__content__action__icon {
+            transform: translateX(3px);
+          }
+        }
       }
 
       &__icon {
         display: inline-block;
-        height: 1.3rem;
-        margin-left: 5px;
+        height: 16px;
+        margin-left: 3px;
+        transition: linear transform .1s;
         vertical-align: middle;
       }
 
