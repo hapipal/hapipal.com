@@ -36,6 +36,7 @@
   &__img {
     align-self: center;
     justify-self: right;
+    max-width: 250px;
     width: 50%;
 
     @media #{$large-up} {
