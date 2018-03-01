@@ -15,6 +15,8 @@
 
   p {
     font-size: $paragraph-font-size;
+    max-width: 800px;
+    margin: 1rem auto;
   }
 
   &__wrapper {
@@ -45,12 +47,28 @@
 
         &:hover {
 
-          h5 {
-            color: $orange;
-          }
 
           .highlight__grid__item__img {
             background-position: -200px 0, 0 0, 200px 0;
+          }
+
+          .highlight__grid__item__content {
+
+            &.orange {
+              h5 {
+                color: $dark-orange;
+              }
+            }
+            &.blue {
+              h5 {
+                color: #5d7ed2;
+              }
+            }
+            &.green {
+              h5 {
+                color: #0ec300;
+              }
+            }
           }
         }
 
@@ -96,7 +114,7 @@
 
         h5 {
           font-size: 2rem;
-          font-weight: 400;
+          font-weight: 600;
           margin: 0;
         }
 
@@ -106,6 +124,12 @@
           margin: 1rem;
         }
 
+      }
+
+      h6 {
+        font-size: 1rem;
+        font-weight: 400;
+        margin: 1rem;
       }
 
       &:first-of-type() {
