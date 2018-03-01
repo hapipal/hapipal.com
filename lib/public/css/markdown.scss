@@ -8,15 +8,25 @@
   }
 
   &.entry-content {
+
     a {
+      color: $dark-orange;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
       code {
         color: $dark-orange;
 
         &:hover {
           text-decoration: underline;
         }
+
       }
+
     }
+
   }
 
   a,

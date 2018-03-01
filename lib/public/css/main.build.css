@@ -304,7 +304,7 @@
 .sidenav .sidenav__others {
   border-top: 1px solid #e2e2e2;
   margin: 0;
-  padding: .5rem 0; }
+  padding: .5rem 0 1rem; }
   .sidenav .sidenav__others .sidenav__other-item img {
     margin: 0 1rem;
     opacity: 0;
@@ -929,10 +929,14 @@
   .markdown-body a {
     color: #f6901d;
     padding: 0 .2rem; }
-  .markdown-body.entry-content a code {
+  .markdown-body.entry-content a {
     color: #eb830f; }
-    .markdown-body.entry-content a code:hover {
+    .markdown-body.entry-content a:hover {
       text-decoration: underline; }
+    .markdown-body.entry-content a code {
+      color: #eb830f; }
+      .markdown-body.entry-content a code:hover {
+        text-decoration: underline; }
   .markdown-body a,
   .markdown-body li,
   .markdown-body h1,
@@ -1372,7 +1376,10 @@ body {
   body .main {
     -webkit-box-flex: 1;
         -ms-flex: 1;
-            flex: 1; }
+            flex: 1;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start; }
   body .footer {
     -webkit-box-flex: 0;
         -ms-flex: 0;
