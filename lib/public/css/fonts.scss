@@ -13,6 +13,7 @@
   @extend %nunito-sans;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 $paragraph-font-size: 1.2rem;

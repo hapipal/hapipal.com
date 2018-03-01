@@ -47,9 +47,18 @@
       padding-bottom: 2rem;
 
       p {
-        font-size: 1.6rem;
+        font-size: 1.2rem;
         font-weight: 300;
         text-align: center;
+
+        @media #{$small-up} {
+          font-size: 1.3rem;
+        }
+
+        @media #{$medium-up} {
+          font-size: 1.4rem;
+        }
+
       }
 
       .code {
