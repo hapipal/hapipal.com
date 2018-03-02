@@ -304,7 +304,7 @@
 .sidenav .sidenav__others {
   border-top: 1px solid #e2e2e2;
   margin: 0;
-  padding: .5rem 0 1rem; }
+  padding: .5rem 0 1.5rem; }
   .sidenav .sidenav__others .sidenav__other-item img {
     margin: 0 1rem;
     opacity: 0;
@@ -343,7 +343,7 @@
       background-image: url("/public/img/hapi-pal-footer.svg");
       background-position: 85% 100%;
       background-repeat: no-repeat;
-      background-size: 25%; } }
+      background-size: 35%; } }
   .footer__flex {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -488,7 +488,7 @@
           .hero__img__content p {
             font-size: 1.4rem; } }
       .hero__img__content .code {
-        background-color: #000;
+        background-color: #1c1c20;
         border-radius: 5px;
         font-size: 1.4rem;
         font-weight: 300;
@@ -497,7 +497,7 @@
         -webkit-transition: ease .6s all;
         transition: ease .6s all; }
         .hero__img__content .code:hover {
-          background-color: #444;
+          background-color: #111114;
           -webkit-transform: translateY(-2px);
                   transform: translateY(-2px); }
           .hero__img__content .code:hover + .code__shadow {
@@ -522,9 +522,9 @@
                   animation-iteration-count: infinite;
           background: #eecd09;
           display: inline-block;
-          height: 1.6rem;
+          height: 1.3rem;
           vertical-align: middle;
-          width: 10px; }
+          width: 11px; }
         .hero__img__content .code span {
           display: inline-block;
           font-family: monospace;
@@ -560,12 +560,13 @@
               .hero__img__content .code__copied img {
                 font-size: 1.3rem; } }
           .hero__img__content .code__copied--success {
-            background-color: #eb830f;
+            background-color: transparent;
             border-radius: 5px;
             display: inline-block;
             font-size: 14px;
             padding: 3px;
-            vertical-align: top; }
+            vertical-align: middle;
+            float: right; }
 
 @-webkit-keyframes flash {
   from, 50%, to {
@@ -589,9 +590,9 @@
       border-bottom: solid 2px #e2e2e2; } }
   .highlight h2 {
     font-size: 2.1rem;
-    font-weight: 600; }
+    font-weight: 400; }
   .highlight p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     max-width: 800px;
     margin: 1rem auto; }
   .highlight__wrapper {
@@ -642,11 +643,11 @@
       .highlight__grid__item__img:active {
         background-position: -400px 0, -200px 0, 0 0; }
       .highlight__grid__item__img.orange {
-        background-image: url("/public/img/orange-link.png"), url("/public/img/orange-link-hover.png"), url("/public/img/orange-link-alt.png"); }
+        background-image: url("/public/img/orange-link-alt.png"), url("/public/img/orange-link-hover.png"), url("/public/img/orange-link.png"); }
       .highlight__grid__item__img.green {
-        background-image: url("/public/img/green-link.png"), url("/public/img/green-link-hover.png"), url("/public/img/green-link-alt.png"); }
+        background-image: url("/public/img/green-link-alt.png"), url("/public/img/green-link-hover.png"), url("/public/img/green-link.png"); }
       .highlight__grid__item__img.blue {
-        background-image: url("/public/img/blue-link.png"), url("/public/img/blue-link-hover.png"), url("/public/img/blue-link-alt.png"); }
+        background-image: url("/public/img/blue-link-alt.png"), url("/public/img/blue-link-hover.png"), url("/public/img/blue-link.png"); }
     .highlight__grid__item__content h5 {
       font-size: 2rem;
       font-weight: 600;
@@ -669,12 +670,27 @@
           -ms-flex-pack: center;
               justify-content: center;
       text-decoration: none; }
+      .highlight__action a:hover span {
+        color: #eb830f; }
+      .highlight__action a:hover .highlight__action__icon {
+        background-image: url("/public/img/button-orange.svg");
+        -webkit-transform: rotate(180deg);
+                transform: rotate(180deg); }
+      .highlight__action a:active .highlight__action__icon {
+        background-image: url("/public/img/button.svg");
+        -webkit-transform: rotate(360deg);
+                transform: rotate(360deg); }
     .highlight__action__icon {
-      width: 3rem; }
+      background-image: url("/public/img/button.svg");
+      background-size: cover;
+      -webkit-transition: ease-in-out all .2s;
+      transition: ease-in-out all .2s;
+      height: 2rem;
+      width: 2rem; }
     .highlight__action span {
       font-size: 1.6rem;
       font-weight: 400;
-      margin-left: 1rem; }
+      margin-left: .7rem; }
 
 .sponsor {
   background: #fff;
@@ -691,7 +707,7 @@
       width: 85%; } }
   .sponsor h3 {
     color: #e2e2e2;
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     font-weight: 500;
     margin-top: 0; }
     @media only screen and (min-width: 1025px) {
@@ -710,7 +726,7 @@
   .sponsor__border {
     border-right: 0; }
   .sponsor__content p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 300; }
     @media only screen and (min-width: 1025px) {
       .sponsor__content p {
@@ -731,7 +747,7 @@
                 transform: translateX(3px); }
     .sponsor__content__action__icon {
       display: inline-block;
-      height: 16px;
+      height: 14px;
       margin-left: 3px;
       -webkit-transition: linear transform .1s;
       transition: linear transform .1s;
@@ -874,7 +890,6 @@
       width: 20px; }
 
 .best-practices-list h2 {
-  line-height: 1;
   margin-bottom: 16px; }
 
 .docs-detail-page .sidenav .select-version {

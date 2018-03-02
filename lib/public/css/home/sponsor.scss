@@ -22,7 +22,7 @@
 
   h3 {
     color: $light-gray;
-    font-size: $h3-font-size;
+    font-size: 1.2rem;
     font-weight: 500;
     margin-top: 0;
 
@@ -52,7 +52,7 @@
   &__content {
 
     p {
-      font-size: 1.2rem;
+      font-size: 1rem;
       font-weight: 300;
 
       @media #{$large-up} {
@@ -85,7 +85,7 @@
 
       &__icon {
         display: inline-block;
-        height: 16px;
+        height: 14px;
         margin-left: 3px;
         transition: linear transform .1s;
         vertical-align: middle;

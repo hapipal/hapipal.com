@@ -10,11 +10,11 @@
 
   h2 {
     font-size: $h2-font-size;
-    font-weight: 600;
+    font-weight: 400;
   }
 
   p {
-    font-size: $paragraph-font-size;
+    font-size: 1rem;
     max-width: 800px;
     margin: 1rem auto;
   }
@@ -116,15 +116,15 @@
         }
 
         &.orange {
-          background-image: url('/public/img/orange-link.png'), url('/public/img/orange-link-hover.png'), url('/public/img/orange-link-alt.png');
+          background-image: url('/public/img/orange-link-alt.png'), url('/public/img/orange-link-hover.png'), url('/public/img/orange-link.png');
         }
 
         &.green {
-          background-image: url('/public/img/green-link.png'), url('/public/img/green-link-hover.png'), url('/public/img/green-link-alt.png');
+          background-image: url('/public/img/green-link-alt.png'), url('/public/img/green-link-hover.png'), url('/public/img/green-link.png');
         }
 
         &.blue {
-          background-image: url('/public/img/blue-link.png'), url('/public/img/blue-link-hover.png'), url('/public/img/blue-link-alt.png');
+          background-image: url('/public/img/blue-link-alt.png'), url('/public/img/blue-link-hover.png'), url('/public/img/blue-link.png');
         }
 
       }
@@ -158,16 +158,39 @@
       display: flex;
       justify-content: center;
       text-decoration: none;
+
+      &:hover {
+
+        span {
+          color: $dark-orange;
+        }
+
+        .highlight__action__icon {
+          background-image: url('/public/img/button-orange.svg');
+          transform: rotate(180deg);
+        }
+      }
+
+      &:active {
+        .highlight__action__icon {
+          background-image: url('/public/img/button.svg');
+          transform: rotate(360deg);
+        }
+      }
     }
 
     &__icon {
-      width: 3rem;
+      background-image: url('/public/img/button.svg');
+      background-size: cover;
+      transition: ease-in-out all .2s;
+      height: 2rem;
+      width: 2rem;
     }
 
     span {
       font-size: 1.6rem;
       font-weight: 400;
-      margin-left: 1rem;
+      margin-left: .7rem;
     }
 
   }
