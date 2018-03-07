@@ -629,10 +629,10 @@
       grid-template-columns: 1fr 1fr 1fr; } }
   .highlight__grid__item {
     display: none; }
-    .highlight__grid__item:first-of-type {
+    .highlight__grid__item:nth-of-type(2) {
       display: block; }
     @media only screen and (min-width: 641px) {
-      .highlight__grid__item:nth-of-type(2) {
+      .highlight__grid__item:first-of-type {
         display: block; } }
     @media only screen and (min-width: 1025px) {
       .highlight__grid__item {

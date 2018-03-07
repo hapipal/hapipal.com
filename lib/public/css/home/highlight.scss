@@ -44,12 +44,12 @@
     &__item {
       display: none;
 
-      &:first-of-type() {
+      &:nth-of-type(2) {
         display: block;
       }
 
       @media #{$medium-up} {
-        &:nth-of-type(2){
+        &:first-of-type() {
           display: block;
         }
       }
