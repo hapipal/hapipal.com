@@ -23,7 +23,7 @@
     display: inline-block;
     opacity: 0;
     position: relative;
-    transition: linear opacity .3s;
+    transition: linear opacity 1s;
   }
 
   &__text {

@@ -118,6 +118,7 @@
           background-color: transparent;
           border-radius: 0 5px 5px 0;
           color: $white;
+          cursor: pointer;
           display: none;
           height: 100%;
           padding: 0 1rem;
@@ -133,18 +134,18 @@
           &:hover {
 
             .code__copy__img {
-              background-position: -20px 0, 0 0;
+              background-position: -18px 0, 0 0;
             }
           }
 
           &__img {
             align-self: center;
             background-image: url('/public/img/copy-link.svg'), url('/public/img/copy-link-hover.svg');
-            background-position: 0 0, -20px 0;
+            background-position: 0 0, -18px 0;
             background-repeat: no-repeat;
             background-size: cover;
-            height: 24px;
-            width: 20px;
+            height: 22px;
+            width: 18px;
           }
         }
 

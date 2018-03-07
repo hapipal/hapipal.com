@@ -185,7 +185,7 @@
         position: relative;
         top: 5px; } }
   .nav__dropdown {
-    background-color: #f6901d;
+    background-color: #f87f1e;
     display: none;
     font-size: 1rem;
     margin-left: .5rem; }
@@ -294,11 +294,11 @@
       color: #333;
       font-size: 100%; }
     .sidenav .sidenav__sections .sidenav__section-item--active {
-      border-left: 4px solid #f6901d;
-      color: #f6901d;
+      border-left: 4px solid #f87f1e;
+      color: #f87f1e;
       font-weight: bold; }
     .sidenav .sidenav__sections .sidenav__section-item:hover {
-      background-color: #f6901d;
+      background-color: #f87f1e;
       color: #fff; }
 
 .sidenav .sidenav__others {
@@ -316,7 +316,7 @@
   .sidenav .sidenav__others .sidenav__other-item--active img {
     opacity: 1; }
   .sidenav .sidenav__others .sidenav__other-item a {
-    color: #f6901d;
+    color: #f87f1e;
     display: block;
     font-size: 15px;
     font-weight: 600;
@@ -327,7 +327,7 @@
     white-space: nowrap;
     overflow: hidden; }
     .sidenav .sidenav__others .sidenav__other-item a:hover {
-      background-color: #f6901d;
+      background-color: #f87f1e;
       color: #fff; }
       .sidenav .sidenav__others .sidenav__other-item a:hover img {
         opacity: 1; }
@@ -437,7 +437,7 @@
       .footer__nav__item--active {
         border: 0; }
       .footer__nav__item:hover {
-        background: #f6901d;
+        background: #f87f1e;
         color: #fff; }
 
 .docs-detail-page .footer,
@@ -537,6 +537,7 @@
           background-color: transparent;
           border-radius: 0 5px 5px 0;
           color: #fff;
+          cursor: pointer;
           display: none;
           height: 100%;
           padding: 0 1rem;
@@ -551,16 +552,16 @@
               display: -ms-flexbox;
               display: flex; } }
           .hero__img__content .code__copy:hover .code__copy__img {
-            background-position: -20px 0, 0 0; }
+            background-position: -18px 0, 0 0; }
           .hero__img__content .code__copy__img {
             -ms-flex-item-align: center;
                 align-self: center;
             background-image: url("/public/img/copy-link.svg"), url("/public/img/copy-link-hover.svg");
-            background-position: 0 0, -20px 0;
+            background-position: 0 0, -18px 0;
             background-repeat: no-repeat;
             background-size: cover;
-            height: 24px;
-            width: 20px; }
+            height: 22px;
+            width: 18px; }
         .hero__img__content .code span {
           display: inline-block;
           font-family: monospace;
@@ -643,7 +644,7 @@
       .highlight__grid__item a:hover .highlight__grid__item__img {
         background-position: -200px 0, 0 0, 200px 0; }
       .highlight__grid__item a:hover .highlight__grid__item__content.orange h5 {
-        color: #f6901d; }
+        color: #f87f1e; }
       .highlight__grid__item a:hover .highlight__grid__item__content.blue h5 {
         color: #5d7ed2; }
       .highlight__grid__item a:hover .highlight__grid__item__content.green h5 {
@@ -690,7 +691,7 @@
               justify-content: center;
       text-decoration: none; }
       .highlight__action a:hover span {
-        color: #f6901d; }
+        color: #f87f1e; }
       .highlight__action a:hover .highlight__action__icon {
         background-image: url("/public/img/button-orange.svg");
         -webkit-transform: rotate(45deg);
@@ -757,7 +758,7 @@
       .sponsor__content__action {
         text-align: left; } }
     .sponsor__content__action a {
-      color: #f6901d;
+      color: #f87f1e;
       font-size: 1rem;
       font-weight: 600;
       text-decoration: none; }
@@ -821,7 +822,7 @@
         max-width: 450px;
         width: 60%; } }
     .newsletter__input:focus {
-      outline-color: #f6901d; }
+      outline-color: #f87f1e; }
     .newsletter__input--invalid {
       outline-color: #af0505;
       outline-style: auto;
@@ -849,7 +850,7 @@
           width: auto; } }
       .newsletter__input__button:hover {
         background-color: #fff;
-        color: #f6901d; }
+        color: #f87f1e; }
       .newsletter__input__button:active {
         -webkit-box-shadow: 0 0 10px #fff;
                 box-shadow: 0 0 10px #fff; }
@@ -873,7 +874,7 @@
     font-size: 3rem;
     margin: .25rem 0; }
   .layout-list a {
-    color: #f6901d;
+    color: #f87f1e;
     display: block;
     font-size: 2.5rem;
     font-weight: 600;
@@ -882,7 +883,7 @@
     padding: .5rem 1rem;
     text-decoration: none; }
     .layout-list a:hover {
-      background-color: #f6901d;
+      background-color: #f87f1e;
       color: #fff;
       -webkit-transition: linear background-color color .03s;
       transition: linear background-color color .03s; }
@@ -927,7 +928,7 @@
   .docs-detail-page .sidenav .select-version__arrow {
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
-    border-top: 5px solid #f6901d;
+    border-top: 5px solid #f87f1e;
     left: -20px;
     position: relative;
     pointer-events: none; }
@@ -955,20 +956,20 @@
       color: transparent;
       text-shadow: 0; }
     .docs-detail-page .sidenav .select-version select.version:hover {
-      border: 1px solid #f6901d; }
+      border: 1px solid #f87f1e; }
 
 .markdown-body {
   max-width: 978px;
   padding: 1rem 0; }
   .markdown-body a {
-    color: #f6901d;
+    color: #f87f1e;
     padding: 0 .2rem; }
   .markdown-body.entry-content a {
-    color: #f6901d; }
+    color: #f87f1e; }
     .markdown-body.entry-content a:hover {
       text-decoration: underline; }
     .markdown-body.entry-content a code {
-      color: #f6901d; }
+      color: #f87f1e; }
       .markdown-body.entry-content a code:hover {
         text-decoration: underline; }
   .markdown-body a,
@@ -1007,7 +1008,7 @@
     .markdown-body li code {
       padding: .2rem .4rem; }
   .markdown-body blockquote {
-    border-left: 4px solid #f6901d !important;
+    border-left: 4px solid #f87f1e !important;
     margin: 0;
     margin: 1.5rem 0 !important; }
     .markdown-body blockquote p {
@@ -1410,8 +1411,8 @@
   display: inline-block;
   opacity: 0;
   position: relative;
-  -webkit-transition: linear opacity .3s;
-  transition: linear opacity .3s; }
+  -webkit-transition: linear opacity 1s;
+  transition: linear opacity 1s; }
 
 .tooltip__text {
   background-color: #000;
