@@ -16,7 +16,7 @@
   }
 
   a {
-    color: $lightest-orange;
+    color: $orange;
     display: block;
     font-size: 2.5rem;
     font-weight: 600;
@@ -26,7 +26,7 @@
     text-decoration: none;
 
     &:hover {
-      background-color: $lightest-orange;
+      background-color: $orange;
       color: $white;
       transition: linear background-color color .03s;
 

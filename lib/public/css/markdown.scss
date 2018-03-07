@@ -3,21 +3,21 @@
   padding: 1rem 0;
 
   a {
-    color: $md-orange;
+    color: $orange;
     padding: 0 .2rem;
   }
 
   &.entry-content {
 
     a {
-      color: $dark-orange;
+      color: $orange;
 
       &:hover {
         text-decoration: underline;
       }
 
       code {
-        color: $dark-orange;
+        color: $orange;
 
         &:hover {
           text-decoration: underline;
@@ -77,7 +77,7 @@
   }
 
   blockquote {
-    border-left: 4px solid $md-orange !important;
+    border-left: 4px solid $orange !important;
     margin: 0;
     margin: 1.5rem 0 !important;
 

@@ -15,7 +15,7 @@
       &__arrow {
         border-left: 5px solid transparent;
         border-right: 5px solid transparent;
-        border-top: 5px solid $dark-orange;
+        border-top: 5px solid $orange;
         left: -20px;
         position: relative;
         pointer-events: none;
@@ -50,7 +50,7 @@
           }
 
           &:hover {
-            border: 1px solid $lighter-orange;
+            border: 1px solid $orange;
           }
 
         }

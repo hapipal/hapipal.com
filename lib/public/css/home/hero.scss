@@ -5,6 +5,7 @@
   background-size: cover;
   color: $white;
   padding-top: 125px;
+  height: auto;
 
   @media #{$small-up} {
     padding-top: 82px;
@@ -12,7 +13,7 @@
 
   &__wrapper {
     @extend .wrapper;
-    padding: 2rem 0;
+    padding: 1.2rem 0;
   }
 
   &__img {
@@ -20,7 +21,6 @@
     margin: 0 auto;
 
     &--mobile {
-      margin-top: 1rem;
       width: 50vw;
 
       @media #{$small-up} {
@@ -47,15 +47,19 @@
       padding-bottom: 2rem;
 
       p {
-        font-size: 1.2rem;
-        font-weight: 300;
+        font-size: 1.1rem;
+        font-weight: 400;
         text-align: center;
 
         @media #{$small-up} {
-          font-size: 1.3rem;
+          font-size: 1.2rem;
         }
 
         @media #{$medium-up} {
+          font-size: 1.3rem;
+        }
+
+        @media #{$large-up} {
           font-size: 1.4rem;
         }
 
@@ -65,11 +69,20 @@
         @extend %inconsolata;
         background-color: $dark-black;
         border-radius: 5px;
-        font-size: 1.4rem;
+        font-size: 1rem;
         font-weight: 300;
         padding: 1rem;
+        position: relative;
         text-align: left;
         transition: ease .6s all;
+
+        @media #{$small-up} {
+          font-size: 1.1rem;
+        }
+
+        @media #{$medium-up} {
+          font-size: 1.2rem;
+        }
 
         &:hover {
           background-color: $hover-black;
@@ -102,15 +115,42 @@
           width: 11px;
         }
 
+        &__copy {
+          background-color: transparent;
+          color: $white;
+          height: 100%;
+          width: 30px;
+          display: none;
+          padding: 0 1rem;
+          position: absolute;
+          border-radius: 0 5px 5px 0;
+          top: 0;
+          transition: linear background-color .02s;
+          right: 0;
+
+          @media #{$small-up} {
+            display: flex;
+          }
+
+          &:active {
+            background-color: $orange;
+          }
+
+          img {
+
+            width: 24px;
+          }
+        }
+
         span {
           display: inline-block;
           font-family: monospace;
-          font-size: 1.1rem;
+          font-size: 1rem;
           font-weight: 300;
           vertical-align: middle;
 
           @media #{$small-up} {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
           }
 
         }
@@ -128,33 +168,6 @@
 
           @media #{$small-up} {
             font-size: 1.3rem;
-          }
-
-        }
-
-        &__copied {
-          display: none;
-
-          img {
-            height: 16px;
-            position: relative;
-            vertical-align: middle;
-
-            @media #{$small-up} {
-              font-size: 1.3rem;
-            }
-
-          }
-
-          &--success {
-            @extend %inconsolata;
-            background-color: transparent;
-            border-radius: 5px;
-            display: inline-block;
-            font-size: 14px;
-            padding: 3px;
-            vertical-align: middle;
-            float: right;
           }
 
         }

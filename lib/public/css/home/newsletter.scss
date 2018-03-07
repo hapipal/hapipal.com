@@ -67,7 +67,7 @@
     }
 
     &:focus {
-      outline-color: $dark-orange;
+      outline-color: $orange;
     }
 
     &--invalid {
@@ -103,7 +103,7 @@
 
       &:hover {
         background-color: $white;
-        color: $dark-orange;
+        color: $orange;
       }
 
       &:active {
