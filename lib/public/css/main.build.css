@@ -507,9 +507,7 @@
           .hero__img__content .code {
             font-size: 1.2rem; } }
         .hero__img__content .code:hover {
-          background-color: #111114;
-          -webkit-transform: translateY(-2px);
-                  transform: translateY(-2px); }
+          background-color: #111114; }
           .hero__img__content .code:hover + .code__shadow {
             opacity: .4;
             -webkit-transform: translateY(4px);
