@@ -4,8 +4,8 @@
   background-position: top;
   background-size: cover;
   color: $white;
-  padding-top: 125px;
   height: auto;
+  padding-top: 125px;
 
   @media #{$small-up} {
     padding-top: 82px;
@@ -117,27 +117,22 @@
 
         &__copy {
           background-color: transparent;
+          border-radius: 0 5px 5px 0;
           color: $white;
-          height: 100%;
-          width: 30px;
           display: none;
+          height: 100%;
           padding: 0 1rem;
           position: absolute;
-          border-radius: 0 5px 5px 0;
+          right: 0;
           top: 0;
           transition: linear background-color .02s;
-          right: 0;
+          width: 30px;
 
           @media #{$small-up} {
             display: flex;
           }
 
-          &:active {
-            background-color: $orange;
-          }
-
           img {
-
             width: 24px;
           }
         }

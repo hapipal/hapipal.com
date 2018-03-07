@@ -450,8 +450,8 @@
   background-position: top;
   background-size: cover;
   color: #fff;
-  padding-top: 125px;
-  height: auto; }
+  height: auto;
+  padding-top: 125px; }
   @media only screen and (min-width: 481px) {
     .hero {
       padding-top: 82px; } }
@@ -537,24 +537,22 @@
           width: 11px; }
         .hero__img__content .code__copy {
           background-color: transparent;
+          border-radius: 0 5px 5px 0;
           color: #fff;
-          height: 100%;
-          width: 30px;
           display: none;
+          height: 100%;
           padding: 0 1rem;
           position: absolute;
-          border-radius: 0 5px 5px 0;
+          right: 0;
           top: 0;
           -webkit-transition: linear background-color .02s;
           transition: linear background-color .02s;
-          right: 0; }
+          width: 30px; }
           @media only screen and (min-width: 481px) {
             .hero__img__content .code__copy {
               display: -webkit-box;
               display: -ms-flexbox;
               display: flex; } }
-          .hero__img__content .code__copy:active {
-            background-color: #f6901d; }
           .hero__img__content .code__copy img {
             width: 24px; }
         .hero__img__content .code span {
@@ -628,7 +626,7 @@
     .highlight__grid__item:first-of-type {
       display: block; }
     @media only screen and (min-width: 641px) {
-      .highlight__grid__item:last-of-type {
+      .highlight__grid__item:nth-of-type(2) {
         display: block; } }
     @media only screen and (min-width: 1025px) {
       .highlight__grid__item {
@@ -689,12 +687,12 @@
         color: #f6901d; }
       .highlight__action a:hover .highlight__action__icon {
         background-image: url("/public/img/button-orange.svg");
-        -webkit-transform: rotate(180deg);
-                transform: rotate(180deg); }
+        -webkit-transform: rotate(45deg);
+                transform: rotate(45deg); }
       .highlight__action a:active .highlight__action__icon {
         background-image: url("/public/img/button.svg");
-        -webkit-transform: rotate(360deg);
-                transform: rotate(360deg); }
+        -webkit-transform: rotate(90deg);
+                transform: rotate(90deg); }
     .highlight__action__icon {
       background-image: url("/public/img/button.svg");
       background-size: cover;
@@ -1406,8 +1404,8 @@
   display: inline-block;
   opacity: 0;
   position: relative;
-  -webkit-transition: opacity 1s;
-  transition: opacity 1s; }
+  -webkit-transition: linear opacity .3s;
+  transition: linear opacity .3s; }
 
 .tooltip__text {
   background-color: #000;

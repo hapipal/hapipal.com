@@ -3,6 +3,7 @@
   &:hover {
 
     .tooltip {
+
       &__container {
         opacity: 1;
         visibility: visible;
@@ -12,7 +13,9 @@
         opacity: 1;
         visibility: visible;
       }
+
     }
+
   }
 
   &__container {
@@ -20,7 +23,7 @@
     display: inline-block;
     opacity: 0;
     position: relative;
-    transition: opacity 1s;
+    transition: linear opacity .3s;
   }
 
   &__text {

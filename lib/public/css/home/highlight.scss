@@ -49,7 +49,7 @@
       }
 
       @media #{$medium-up} {
-        &:last-of-type() {
+        &:nth-of-type(2){
           display: block;
         }
       }
@@ -167,14 +167,14 @@
 
         .highlight__action__icon {
           background-image: url('/public/img/button-orange.svg');
-          transform: rotate(180deg);
+          transform: rotate(45deg);
         }
       }
 
       &:active {
         .highlight__action__icon {
           background-image: url('/public/img/button.svg');
-          transform: rotate(360deg);
+          transform: rotate(90deg);
         }
       }
     }
