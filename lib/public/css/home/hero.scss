@@ -126,14 +126,26 @@
           right: 0;
           top: 0;
           transition: linear background-color .02s;
-          width: 30px;
 
           @media #{$small-up} {
             display: flex;
           }
 
-          img {
-            width: 24px;
+          &:hover {
+
+            .code__copy__img {
+              background-position: -20px 0, 0 0;
+            }
+          }
+
+          &__img {
+            align-self: center;
+            background-image: url('/public/img/copy-link.svg'), url('/public/img/copy-link-hover.svg');
+            background-position: 0 0, -20px 0;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 24px;
+            width: 20px;
           }
         }
 
