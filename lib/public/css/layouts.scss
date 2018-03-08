@@ -1,4 +1,4 @@
-$fixed-header-size: 65px;
+$fixed-header-size: 64px;
 
 .l-navigablecontent {
 
@@ -9,10 +9,9 @@ $fixed-header-size: 65px;
   }
 
   .wrapper > div {
-
     margin: 0 auto;
-    padding-bottom: calc(2rem + $fixed-header-size);
     margin-bottom: calc(2rem + 60px); // 60px is size of bottom mobile controls
+    padding-bottom: calc(2rem + $fixed-header-size);
 
     @media #{$medium-up} {
       margin-bottom: 2rem;
@@ -46,7 +45,7 @@ $fixed-header-size: 65px;
     }
 
     &--open {
-      box-shadow: 0 0 5px $black-opaque;
+      box-shadow: 0 0 20px $black-opaque;
       opacity: 1;
       width: 90%;
 

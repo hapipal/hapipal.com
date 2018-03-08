@@ -9,13 +9,13 @@
 
     .sidenav__section-item {
       border-left: 4px solid transparent;
+      border-right: 1.5rem solid transparent; // Ensures inline <code> blocks don't bleed the edge
       color: inherit;
       display: block;
       font-size: 14px;
       font-weight: 400;
       overflow: hidden;
       padding: .75rem 0 .75rem .25rem;
-      border-right: 1.5rem solid transparent; // Ensures inline <code> blocks don't bleed the edge
       text-decoration: none;
       text-overflow: ellipsis;
       white-space: nowrap;
