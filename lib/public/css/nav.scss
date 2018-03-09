@@ -1,6 +1,7 @@
 .nav {
   background-image: url('/public/img/header-background.jpg');
   background-size: cover;
+  border-bottom: 1px solid transparent;
   box-sizing: border-box;
   display: flex;
   padding: 0 .5rem;
@@ -43,10 +44,12 @@
   }
 
   &__icon {
+    align-self: center;
     display: inline-block;
-    height: auto;
+    height: 25px;
     margin-left: 1rem;
-    top: -10px;
+    margin-top: -8px;
+    position: relative;
     width: 25px;
 
     @media #{$small-up} {
@@ -72,7 +75,7 @@
     font-weight: 500;
     height: 100%;
     letter-spacing: .25px;
-    padding: .5rem;
+    padding: 0 .5rem;
     position: relative;
     text-decoration: none;
 
@@ -95,14 +98,16 @@
 
     &::after {
       border-bottom: solid 5px transparent;
+      bottom: -1px;
       content: '';
       display: block;
       position: relative;
-      top: 8px;
+      margin-top: 5px;
       transition: ease-in-out border-bottom .1s;
 
       @media #{$small-up} {
-        top: -5px;
+        margin-top: 0;
+        top: -4px;
       }
     }
 
@@ -120,14 +125,16 @@
     }
 
     &__wrapper {
-      align-items: center;
+      align-items: flex-end;
       display: flex;
       flex: auto;
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: center;
+      min-height: 30px;
 
       @media #{$small-up} {
+        align-items: center;
         justify-content: flex-end;
       }
 
@@ -157,6 +164,9 @@
 
     &__item {
       &::after {
+
+        bottom: 0;
+
         @media #{$small-up}{
           top: -5px;
         }
