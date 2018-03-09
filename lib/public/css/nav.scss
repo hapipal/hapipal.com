@@ -7,7 +7,6 @@
   width: 100%;
 
   @media #{$small-up} {
-    border-bottom: 1px solid transparent;
     height: $fixed-header-size;
   }
 
@@ -103,7 +102,7 @@
       transition: ease-in-out border-bottom .1s;
 
       @media #{$small-up} {
-        top: -4px;
+        top: -5px;
       }
     }
 
@@ -159,7 +158,7 @@
     &__item {
       &::after {
         @media #{$small-up}{
-          top: -4px;
+          top: -6px;
         }
       }
     }

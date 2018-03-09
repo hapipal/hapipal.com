@@ -179,7 +179,7 @@
         .highlight {
           &__action {
             &__icon {
-              background-image: url('/public/img/button-orange.svg');
+              background-image: url('/public/img/button-orange.svg'), url('/public/img/button.svg');
               transform: rotate(45deg);
             }
           }
@@ -190,7 +190,6 @@
         .highlight {
           &__action {
             &__icon {
-              background-image: url('/public/img/button.svg');
               transform: rotate(90deg);
             }
           }
@@ -199,12 +198,12 @@
     }
 
     &__icon {
-      background-image: url('/public/img/button.svg');
-      background-position: center;
+      background-image: url('/public/img/button.svg'), url('/public/img/button-orange.svg');
+      background-position: 0 0, 0 -30px;
       background-size: cover;
       height: 30px;
       margin-right: 10px;
-      transition: ease-in-out all .1s;
+      transition: ease-in-out transform .1s;
       width: 30px;
     }
 
