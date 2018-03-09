@@ -1,14 +1,13 @@
 $fixed-header-size: 64px;
 
 .l-navigablecontent {
-
   padding-top: 40px;
 
   @media #{$small-up} {
     margin-top: $fixed-header-size;
   }
 
-  .wrapper {
+  .wrapper > div {
     margin: 0 auto;
     margin-bottom: calc(2rem + 60px); // 60px is size of bottom mobile controls
     padding-bottom: calc(2rem + $fixed-header-size);
@@ -18,6 +17,10 @@ $fixed-header-size: 64px;
       margin-left: 300px;
       max-width: 768px;
     }
+
+  }
+
+  .wrapper {
 
     &--disabled {
       &::before {

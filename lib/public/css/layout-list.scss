@@ -11,8 +11,12 @@
   }
 
   h2 {
-    font-size: 3rem;
+    font-size: 2rem;
     margin: .25rem 0;
+
+    @media #{$small-up} {
+      font-size: 2rem;
+    }
   }
 
   a {

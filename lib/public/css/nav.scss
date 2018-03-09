@@ -46,9 +46,8 @@
   &__icon {
     align-self: center;
     display: inline-block;
-    height: 25px;
+    height: 35px;
     margin-left: 1rem;
-    margin-top: -8px;
     position: relative;
     width: 25px;
 
@@ -102,7 +101,7 @@
       content: '';
       display: block;
       position: relative;
-      margin-top: 5px;
+      margin-top: 7px;
       transition: ease-in-out border-bottom .1s;
 
       @media #{$small-up} {
@@ -164,7 +163,6 @@
 
     &__item {
       &::after {
-
         bottom: 0;
 
         @media #{$small-up}{
