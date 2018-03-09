@@ -278,7 +278,7 @@
   position: absolute; }
   @media only screen and (min-width: 481px) {
     .home-page .nav__item::after {
-      top: -6px; } }
+      top: -5px; } }
 
 .sidenav .sidenav__sections {
   padding: .75rem 0; }

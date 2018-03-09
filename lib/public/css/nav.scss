@@ -158,7 +158,7 @@
     &__item {
       &::after {
         @media #{$small-up}{
-          top: -6px;
+          top: -5px;
         }
       }
     }
