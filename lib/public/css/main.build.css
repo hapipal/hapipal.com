@@ -909,7 +909,7 @@
     margin: .25rem 0; }
     @media only screen and (min-width: 481px) {
       .layout-list h2 {
-        font-size: 2rem; } }
+        font-size: 3rem; } }
   .layout-list a {
     color: #f87f1e;
     display: block;
