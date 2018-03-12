@@ -100,14 +100,15 @@
       bottom: -1px;
       content: '';
       display: block;
-      position: relative;
       margin-top: 7px;
+      position: relative;
       transition: ease-in-out border-bottom .1s;
 
       @media #{$small-up} {
         margin-top: 0;
         top: -4px;
       }
+
     }
 
     &--active,
@@ -145,6 +146,7 @@
 
 .docs-detail-page,
 .best-practices-detail-page {
+
   .nav {
     left: 0;
     right: 0;
@@ -152,23 +154,31 @@
     @media #{$small-up}{
       position: fixed;
     }
+
   }
+
 }
 
 .home-page {
+
   .nav {
     background: transparent;
     border-bottom: 1px solid $tan;
     position: absolute;
 
     &__item {
+
       &::after {
         bottom: 0;
 
         @media #{$small-up}{
           top: -5px;
         }
+
       }
+
     }
+
   }
+
 }

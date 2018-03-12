@@ -17,6 +17,7 @@
     @media #{$small-up} {
       font-size: 3rem;
     }
+
   }
 
   a {
@@ -39,7 +40,7 @@
       }
 
       .img {
-        background-image: url('/public/img/hapi-bolt.svg');
+        background-image: url('/public/img/hapi-bolt.svg'), url('/public/img/hapi-bolt-gold.svg');
       }
 
     }
@@ -53,7 +54,8 @@
     }
 
     .img {
-      background-image: url('/public/img/hapi-bolt-gold.svg');
+      background-image: url('/public/img/hapi-bolt-gold.svg'), url('/public/img/hapi-bolt.svg');
+      background-position: 0 0, 0 -20px;
       background-size: cover;
       height: 10px;
       margin-top: 5px;
@@ -72,4 +74,5 @@
   h2 {
     margin-bottom: 16px;
   }
+
 }

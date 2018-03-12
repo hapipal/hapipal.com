@@ -64,44 +64,60 @@
 
         &:hover {
 
+          .highlight {
 
-          .highlight__grid__item__img {
-            background-position: -200px 0, 0 0, 200px 0;
+            &__grid {
+
+              &__item {
+
+                &__img {
+                  background-position: -200px 0, 0 0, 200px 0;
+                }
+
+                &__content {
+
+                  &.orange h5 {
+                    color: $orange;
+                  }
+
+                  &.blue h5 {
+                    color: $blue;
+                  }
+
+                  &.green h5 {
+                    color: $light-green;
+                  }
+
+                }
+
+              }
+
+            }
+
           }
 
-          .highlight__grid__item__content {
-
-            &.orange {
-              h5 {
-                color: $orange;
-              }
-            }
-
-            &.blue {
-              h5 {
-                color: $blue;
-              }
-            }
-
-            &.green {
-              h5 {
-                color: $light-green;
-              }
-            }
-          }
         }
 
         &:active {
+
           .highlight {
+
             &__grid {
+
               &__item {
+
                 &__img {
                   background-position: -400px 0, -200px 0, 0 0;
                 }
+
               }
+
             }
+
           }
+
         }
+
       }
 
       &__img {
@@ -177,24 +193,36 @@
         color: $orange;
 
         .highlight {
+
           &__action {
+
             &__icon {
               background-image: url('/public/img/button-orange.svg'), url('/public/img/button.svg');
               transform: rotate(45deg);
             }
+
           }
+
         }
+
       }
 
       &:active {
+
         .highlight {
+
           &__action {
+
             &__icon {
               transform: rotate(90deg);
             }
+
           }
+
         }
+
       }
+
     }
 
     &__icon {

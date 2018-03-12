@@ -23,6 +23,7 @@ $fixed-header-size: 64px;
     }
 
     &--disabled {
+
       &::before {
         background: $black-opaque;
         bottom: 0;
@@ -39,8 +40,11 @@ $fixed-header-size: 64px;
         @media #{$medium-up}{
           display: none;
         }
+
       }
+
     }
+
   }
 
   &__nav {
@@ -58,7 +62,6 @@ $fixed-header-size: 64px;
     z-index: 2;
 
     @media #{$medium-up}{
-      bottom: 0;
       border-right: 1px solid $light-gray;
       top: $fixed-header-size;
       width: 300px;

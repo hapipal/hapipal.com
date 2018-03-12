@@ -77,10 +77,24 @@
 
         &:hover {
 
-          .sponsor__content__action__icon {
-            transform: translateX(3px);
+          .sponsor {
+
+            &__content {
+
+              &__action {
+
+                &__icon {
+                  transform: translateX(3px);
+                }
+
+              }
+
+            }
+
           }
+
         }
+
       }
 
       &__icon {

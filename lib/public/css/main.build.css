@@ -77,7 +77,6 @@
     z-index: 2; }
     @media only screen and (min-width: 641px) {
       .l-navigablecontent__nav {
-        bottom: 0;
         border-right: 1px solid #e2e2e2;
         top: 64px;
         width: 300px; } }
@@ -234,8 +233,8 @@
       bottom: -1px;
       content: '';
       display: block;
-      position: relative;
       margin-top: 7px;
+      position: relative;
       -webkit-transition: ease-in-out border-bottom .1s;
       transition: ease-in-out border-bottom .1s; }
       @media only screen and (min-width: 481px) {
@@ -375,16 +374,16 @@
       background-repeat: no-repeat;
       background-size: 35%; } }
   .footer__flex {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center; }
+            flex-direction: column; }
     @media only screen and (min-width: 641px) {
       .footer__flex {
         -webkit-box-align: start;
@@ -929,7 +928,7 @@
       .layout-list a:hover p {
         color: #fff; }
       .layout-list a:hover .img {
-        background-image: url("/public/img/hapi-bolt.svg"); }
+        background-image: url("/public/img/hapi-bolt.svg"), url("/public/img/hapi-bolt-gold.svg"); }
     .layout-list a p {
       color: #444;
       font-size: 14px;
@@ -937,7 +936,8 @@
       letter-spacing: .25px;
       margin: 0 0 1rem 30px; }
     .layout-list a .img {
-      background-image: url("/public/img/hapi-bolt-gold.svg");
+      background-image: url("/public/img/hapi-bolt-gold.svg"), url("/public/img/hapi-bolt.svg");
+      background-position: 0 0, 0 -20px;
       background-size: cover;
       height: 10px;
       margin-top: 5px;
@@ -969,8 +969,8 @@
     border-right: 5px solid transparent;
     border-top: 5px solid #f87f1e;
     left: -20px;
-    position: relative;
-    pointer-events: none; }
+    pointer-events: none;
+    position: relative; }
   .docs-detail-page .sidenav .select-version select {
     -moz-appearance: none;
     -webkit-appearance: none;
@@ -1065,9 +1065,9 @@
     margin: 0;
     text-align: left;
     white-space: pre;
+    width: auto;
     word-break: break-all;
-    word-wrap: break-word;
-    width: auto; }
+    word-wrap: break-word; }
     @media only screen and (min-width: 1025px) {
       .markdown-body .highlight pre,
       .markdown-body .highlight pre > code {
@@ -1082,14 +1082,14 @@
   .markdown-body .pl-en {
     color: #618aff; }
   .markdown-body .pl-mi1 {
-    color: #1b692b;
-    background-color: #d1ffda; }
+    background-color: #d1ffda;
+    color: #1b692b; }
   .markdown-body .pl-md {
-    color: #c32828;
-    background-color: #ffe6e4; }
+    background-color: #ffe6e4;
+    color: #c32828; }
   .markdown-body span.octicon.octicon-link {
-    display: inline-block;
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"/></svg>');
+    display: inline-block;
     height: 16px;
     width: 16px; }
 
@@ -1482,22 +1482,22 @@
     position: absolute; }
 
 body {
-  min-height: 100vh;
-  margin: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
-          flex-direction: column; }
+          flex-direction: column;
+  margin: 0;
+  min-height: 100vh; }
   body .main {
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
     -webkit-box-align: start;
         -ms-flex-align: start;
-            align-items: flex-start; }
+            align-items: flex-start;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1; }
   body .footer {
     -webkit-box-flex: 0;
         -ms-flex: 0;
