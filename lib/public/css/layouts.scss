@@ -7,20 +7,20 @@ $fixed-header-size: 64px;
     margin-top: $fixed-header-size;
   }
 
-  .wrapper > div {
-    margin: 0 auto;
-    margin-bottom: calc(2rem + 60px); // 60px is size of bottom mobile controls
-    padding-bottom: calc(2rem + $fixed-header-size);
-
-    @media #{$medium-up} {
-      margin-bottom: 2rem;
-      margin-left: 300px;
-      max-width: 768px;
-    }
-
-  }
-
   .wrapper {
+
+    > div {
+      margin: 0 auto;
+      margin-bottom: calc(2rem + 60px); // 60px is size of bottom mobile controls
+      padding-bottom: calc(2rem + $fixed-header-size);
+
+      @media #{$medium-up} {
+        margin-bottom: 2rem;
+        margin-left: 300px;
+        max-width: 768px;
+      }
+
+    }
 
     &--disabled {
       &::before {
@@ -35,6 +35,10 @@ $fixed-header-size: 64px;
         top: 0;
         width: 100%;
         z-index: 1;
+
+        @media #{$medium-up}{
+          display: none;
+        }
       }
     }
   }
@@ -46,28 +50,26 @@ $fixed-header-size: 64px;
     bottom: 0;
     flex: 1;
     left: 0;
-    opacity: 0;
     overflow-x: hidden;
     overflow-y: auto;
     position: fixed;
     top: 0;
-    transition: ease-in-out all .02s;
+    transition: ease-in-out width .1s;
     width: 0;
     z-index: 2;
 
     @media #{$medium-up}{
       bottom: 0;
-      opacity: 1;
       top: $fixed-header-size;
       width: 300px;
     }
 
     &--open {
       box-shadow: 0 0 15px $black-opaque-50;
-      opacity: 1;
       width: 90%;
 
       @media #{$medium-up}{
+        box-shadow: none;
         width: 300px;
       }
 
