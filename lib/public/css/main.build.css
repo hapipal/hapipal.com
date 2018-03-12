@@ -62,7 +62,6 @@
   .l-navigablecontent__nav {
     background-color: #fff;
     border-bottom: 0;
-    border-right: 1px solid #e2e2e2;
     bottom: 0;
     -webkit-box-flex: 1;
         -ms-flex: 1;
@@ -79,6 +78,7 @@
     @media only screen and (min-width: 641px) {
       .l-navigablecontent__nav {
         bottom: 0;
+        border-right: 1px solid #e2e2e2;
         top: 64px;
         width: 300px; } }
     .l-navigablecontent__nav--open {

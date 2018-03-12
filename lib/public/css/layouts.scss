@@ -46,7 +46,6 @@ $fixed-header-size: 64px;
   &__nav {
     background-color: $white;
     border-bottom: 0;
-    border-right: 1px solid $light-gray;
     bottom: 0;
     flex: 1;
     left: 0;
@@ -60,6 +59,7 @@ $fixed-header-size: 64px;
 
     @media #{$medium-up}{
       bottom: 0;
+      border-right: 1px solid $light-gray;
       top: $fixed-header-size;
       width: 300px;
     }
