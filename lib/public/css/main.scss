@@ -31,6 +31,11 @@ body {
 
     &--noscroll {
       overflow: hidden;
+
+      @media #{$medium-up} {
+        overflow: auto;
+      }
+
     }
 
   }
@@ -38,9 +43,11 @@ body {
 }
 
 span {
+
   &.maybe-break {
     display: inline-block;
   }
+
 }
 
 .container {

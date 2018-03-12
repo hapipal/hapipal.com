@@ -58,7 +58,8 @@
     z-index: 1; }
     @media only screen and (min-width: 641px) {
       .l-navigablecontent .wrapper--disabled::before {
-        display: none; } }
+        display: none;
+        visibility: hidden; } }
   .l-navigablecontent__nav {
     background-color: #fff;
     border-bottom: 0;
@@ -350,11 +351,11 @@
     font-size: 15px;
     font-weight: 600;
     list-style: none;
+    overflow: hidden;
     padding: .5rem 1.5rem .5rem .25rem;
     text-decoration: none;
     text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden; }
+    white-space: nowrap; }
     .sidenav .sidenav__others .sidenav__other-item a:hover {
       background-color: #f87f1e;
       color: #fff; }
@@ -1504,6 +1505,9 @@ body {
             flex: 0; }
   body.body--noscroll {
     overflow: hidden; }
+    @media only screen and (min-width: 641px) {
+      body.body--noscroll {
+        overflow: auto; } }
 
 span.maybe-break {
   display: inline-block; }

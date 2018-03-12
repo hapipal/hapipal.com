@@ -39,6 +39,7 @@ $fixed-header-size: 64px;
 
         @media #{$medium-up}{
           display: none;
+          visibility: hidden;
         }
 
       }

@@ -94,11 +94,11 @@
         font-size: 15px;
         font-weight: 600;
         list-style: none;
+        overflow: hidden;
         padding: .5rem 1.5rem .5rem .25rem;
         text-decoration: none;
         text-overflow: ellipsis;
         white-space: nowrap;
-        overflow: hidden;
 
         &:hover {
           background-color: $orange;
