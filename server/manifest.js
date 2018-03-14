@@ -26,7 +26,8 @@ module.exports = new Confidence.Store({
                 options: {
                     developmentMode: (process.env.NODE_ENV !== 'production'),
                     githubToken: process.env.GITHUB_TOKEN,
-                    mailchimpApiKey: process.env.MAILCHIMP_API_KEY
+                    mailchimpApiKey: process.env.MAILCHIMP_API_KEY,
+                    mailchimpListId: process.env.MAILCHIMP_LIST_ID
                 }
             }
         ]
