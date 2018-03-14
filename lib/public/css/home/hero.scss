@@ -63,7 +63,7 @@
 
       .code {
         @extend %inconsolata;
-        background-color: $black;
+        background-color: $dark-black;
         border-radius: 5px;
         font-size: 1.4rem;
         font-weight: 300;
@@ -72,7 +72,7 @@
         transition: ease .6s all;
 
         &:hover {
-          background-color: $gray;
+          background-color: $hover-black;
           transform: translateY(-2px);
 
           + .code__shadow {
@@ -97,9 +97,9 @@
           animation-iteration-count: infinite;
           background: $yellow;
           display: inline-block;
-          height: 1.6rem;
+          height: 1.3rem;
           vertical-align: middle;
-          width: 10px;
+          width: 11px;
         }
 
         span {
@@ -148,12 +148,13 @@
 
           &--success {
             @extend %inconsolata;
-            background-color: $dark-orange;
+            background-color: transparent;
             border-radius: 5px;
             display: inline-block;
             font-size: 14px;
             padding: 3px;
-            vertical-align: top;
+            vertical-align: middle;
+            float: right;
           }
 
         }
