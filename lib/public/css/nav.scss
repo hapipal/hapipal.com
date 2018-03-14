@@ -1,11 +1,11 @@
 .nav {
   background-image: url('/public/img/header-background.jpg');
   background-size: cover;
-  border-bottom: 1px solid $tan;
+  border-bottom: 1px solid transparent;
+  box-sizing: border-box;
   display: flex;
   padding: 0 .5rem;
   width: 100%;
-  box-sizing: border-box;
 
   @media #{$small-up} {
     height: $fixed-header-size;
@@ -44,10 +44,11 @@
   }
 
   &__icon {
+    align-self: center;
     display: inline-block;
-    height: auto;
+    height: 35px;
     margin-left: 1rem;
-    top: -10px;
+    position: relative;
     width: 25px;
 
     @media #{$small-up} {
@@ -59,7 +60,7 @@
   }
 
   &__dropdown {
-    background-color: $dark-orange;
+    background-color: $orange;
     display: none;
     font-size: 1rem;
     margin-left: .5rem;
@@ -73,7 +74,7 @@
     font-weight: 500;
     height: 100%;
     letter-spacing: .25px;
-    padding: .5rem;
+    padding: 0 .5rem;
     position: relative;
     text-decoration: none;
 
@@ -96,15 +97,18 @@
 
     &::after {
       border-bottom: solid 5px transparent;
+      bottom: -1px;
       content: '';
       display: block;
+      margin-top: 7px;
       position: relative;
-      top: 8px;
       transition: ease-in-out border-bottom .1s;
 
       @media #{$small-up} {
-        top: -5px;
+        margin-top: 0;
+        top: -4px;
       }
+
     }
 
     &--active,
@@ -121,14 +125,16 @@
     }
 
     &__wrapper {
-      align-items: center;
+      align-items: flex-end;
       display: flex;
       flex: auto;
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: center;
+      min-height: 30px;
 
       @media #{$small-up} {
+        align-items: center;
         justify-content: flex-end;
       }
 
@@ -138,7 +144,9 @@
 
 }
 
-.docs-detail-page, .best-practices-detail-page {
+.docs-detail-page,
+.best-practices-detail-page {
+
   .nav {
     left: 0;
     right: 0;
@@ -146,12 +154,31 @@
     @media #{$small-up}{
       position: fixed;
     }
+
   }
+
 }
 
 .home-page {
+
   .nav {
     background: transparent;
+    border-bottom: 1px solid $tan;
     position: absolute;
+
+    &__item {
+
+      &::after {
+        bottom: 0;
+
+        @media #{$small-up}{
+          top: -5px;
+        }
+
+      }
+
+    }
+
   }
+
 }

@@ -10,29 +10,44 @@
 @import 'docs-detail';
 @import 'markdown';
 @import 'primer-markdown/index';
+@import 'tooltip';
 
 body {
-  min-height: 100vh;
-  margin: 0;
   display: flex;
   flex-direction: column;
+  margin: 0;
+  min-height: 100vh;
 
   .main {
-    flex: 1;
     align-items: flex-start;
+    flex: 1;
   }
 
   .footer {
     flex: 0;
   }
 
-  &.body--noscroll {
-    overflow: hidden;
+  &.body {
+
+    &--noscroll {
+      overflow: hidden;
+
+      @media #{$medium-up} {
+        overflow: auto;
+      }
+
+    }
+
   }
+
 }
 
-span.maybe-break {
-  display: inline-block;
+span {
+
+  &.maybe-break {
+    display: inline-block;
+  }
+
 }
 
 .container {

@@ -9,13 +9,13 @@
 
     .sidenav__section-item {
       border-left: 4px solid transparent;
+      border-right: 1.5rem solid transparent; // Ensures inline <code> blocks don't bleed the edge
       color: inherit;
       display: block;
       font-size: 14px;
       font-weight: 400;
       overflow: hidden;
       padding: .75rem 0 .75rem .25rem;
-      border-right: 1.5rem solid transparent; // Ensures inline <code> blocks don't bleed the edge
       text-decoration: none;
       text-overflow: ellipsis;
       white-space: nowrap;
@@ -68,7 +68,7 @@
   .sidenav__others {
     border-top: 1px solid $light-gray;
     margin: 0;
-    padding: .5rem 0 1.5rem;
+    padding: .5rem 0 3.5rem;
 
     .sidenav__other-item {
 
@@ -89,16 +89,16 @@
       }
 
       a {
-        color: $md-orange;
+        color: $orange;
         display: block;
         font-size: 15px;
         font-weight: 600;
         list-style: none;
+        overflow: hidden;
         padding: .5rem 1.5rem .5rem .25rem;
         text-decoration: none;
         text-overflow: ellipsis;
         white-space: nowrap;
-        overflow: hidden;
 
         &:hover {
           background-color: $orange;

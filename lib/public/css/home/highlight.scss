@@ -15,8 +15,8 @@
 
   p {
     font-size: 1rem;
-    max-width: 800px;
     margin: 1rem auto;
+    max-width: 800px;
   }
 
   &__wrapper {
@@ -44,12 +44,12 @@
     &__item {
       display: none;
 
-      &:first-of-type() {
+      &:nth-of-type(2) {
         display: block;
       }
 
       @media #{$medium-up} {
-        &:last-of-type() {
+        &:first-of-type() {
           display: block;
         }
       }
@@ -64,39 +64,60 @@
 
         &:hover {
 
+          .highlight {
 
-          .highlight__grid__item__img {
-            background-position: -200px 0, 0 0, 200px 0;
+            &__grid {
+
+              &__item {
+
+                &__img {
+                  background-position: -200px 0, 0 0, 200px 0;
+                }
+
+                &__content {
+
+                  &.orange h5 {
+                    color: $orange;
+                  }
+
+                  &.blue h5 {
+                    color: $blue;
+                  }
+
+                  &.green h5 {
+                    color: $light-green;
+                  }
+
+                }
+
+              }
+
+            }
+
           }
 
-          .highlight__grid__item__content {
-
-            &.orange {
-              h5 {
-                color: $dark-orange;
-              }
-            }
-
-            &.blue {
-              h5 {
-                color: $blue;
-              }
-            }
-
-            &.green {
-              h5 {
-                color: $light-green;
-              }
-            }
-          }
         }
 
         &:active {
 
-          .highlight__grid__item__img {
-            background-position: -400px 0, -200px 0, 0 0;
+          .highlight {
+
+            &__grid {
+
+              &__item {
+
+                &__img {
+                  background-position: -400px 0, -200px 0, 0 0;
+                }
+
+              }
+
+            }
+
           }
+
         }
+
       }
 
       &__img {
@@ -150,47 +171,68 @@
   }
 
   &__action {
+    align-items: center;
+    display: flex;
+    justify-content: center;
     margin: 4rem 0 3rem;
 
     a {
       align-items: center;
       color: $gray;
       display: flex;
-      justify-content: center;
+      font-size: 1.4rem;
+      font-weight: 400;
       text-decoration: none;
+
+      @media #{$small-up} {
+        font-size: 1.6rem;
+      }
 
       &:hover {
 
-        span {
-          color: $dark-orange;
+        color: $orange;
+
+        .highlight {
+
+          &__action {
+
+            &__icon {
+              background-image: url('/public/img/button-orange.svg'), url('/public/img/button.svg');
+              transform: rotate(45deg);
+            }
+
+          }
+
         }
 
-        .highlight__action__icon {
-          background-image: url('/public/img/button-orange.svg');
-          transform: rotate(180deg);
-        }
       }
 
       &:active {
-        .highlight__action__icon {
-          background-image: url('/public/img/button.svg');
-          transform: rotate(360deg);
+
+        .highlight {
+
+          &__action {
+
+            &__icon {
+              transform: rotate(90deg);
+            }
+
+          }
+
         }
+
       }
+
     }
 
     &__icon {
-      background-image: url('/public/img/button.svg');
+      background-image: url('/public/img/button.svg'), url('/public/img/button-orange.svg');
+      background-position: 0 0, 0 -30px;
       background-size: cover;
-      transition: ease-in-out all .2s;
-      height: 2rem;
-      width: 2rem;
-    }
-
-    span {
-      font-size: 1.6rem;
-      font-weight: 400;
-      margin-left: .7rem;
+      height: 30px;
+      margin-right: 10px;
+      transition: ease-in-out transform .1s;
+      width: 30px;
     }
 
   }

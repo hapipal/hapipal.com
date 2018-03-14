@@ -1,23 +1,49 @@
-$fixed-header-size: 65px;
+$fixed-header-size: 64px;
 
 .l-navigablecontent {
-
   padding-top: 40px;
 
   @media #{$small-up} {
     margin-top: $fixed-header-size;
   }
 
-  .wrapper > div {
+  .wrapper {
 
-    margin: 0 auto;
-    padding-bottom: calc(2rem + $fixed-header-size);
-    margin-bottom: calc(2rem + 60px); // 60px is size of bottom mobile controls
+    > div {
+      margin: 0 auto;
+      margin-bottom: calc(2rem + 60px); // 60px is size of bottom mobile controls
+      padding-bottom: calc(2rem + $fixed-header-size);
 
-    @media #{$medium-up} {
-      margin-bottom: 2rem;
-      margin-left: 300px;
-      max-width: 768px;
+      @media #{$medium-up} {
+        margin-bottom: 2rem;
+        margin-left: 300px;
+        max-width: 768px;
+      }
+
+    }
+
+    &--disabled {
+
+      &::before {
+        background: $black-opaque;
+        bottom: 0;
+        content: '';
+        display: block;
+        height: 100%;
+        left: 0;
+        position: fixed;
+        right: 0;
+        top: 0;
+        width: 100%;
+        z-index: 1;
+
+        @media #{$medium-up}{
+          display: none;
+          visibility: hidden;
+        }
+
+      }
+
     }
 
   }
@@ -25,32 +51,29 @@ $fixed-header-size: 65px;
   &__nav {
     background-color: $white;
     border-bottom: 0;
-    border-right: 1px solid $light-gray;
     bottom: 0;
     flex: 1;
     left: 0;
-    opacity: 0;
     overflow-x: hidden;
     overflow-y: auto;
     position: fixed;
     top: 0;
-    transition: ease-in-out all .02s;
+    transition: ease-in-out width .1s;
     width: 0;
     z-index: 2;
 
     @media #{$medium-up}{
-      bottom: 0;
-      opacity: 1;
+      border-right: 1px solid $light-gray;
       top: $fixed-header-size;
       width: 300px;
     }
 
     &--open {
-      box-shadow: 0 0 5px $black-opaque;
-      opacity: 1;
+      box-shadow: 0 0 15px $black-opaque-50;
       width: 90%;
 
       @media #{$medium-up}{
+        box-shadow: none;
         width: 300px;
       }
 
