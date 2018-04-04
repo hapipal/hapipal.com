@@ -643,6 +643,13 @@
     font-size: 1rem;
     margin: 1rem auto;
     max-width: 800px; }
+    .highlight p:first-of-type {
+      font-size: 1.25rem;
+      color: #777777; }
+  .highlight a {
+    text-decoration: none; }
+    .highlight a:hover {
+      text-decoration: underline; }
   .highlight__wrapper {
     padding: 1rem 0; }
     @media only screen and (min-width: 481px) {
@@ -658,27 +665,30 @@
       grid-template-columns: 1fr 1fr 1fr; } }
   .highlight__grid__item {
     display: none; }
-    .highlight__grid__item:nth-of-type(2) {
+    .highlight__grid__item.orange {
       display: block; }
     @media only screen and (min-width: 641px) {
-      .highlight__grid__item:first-of-type {
+      .highlight__grid__item.green {
         display: block; } }
     @media only screen and (min-width: 1025px) {
       .highlight__grid__item {
         display: block; } }
-    .highlight__grid__item a {
-      color: #444;
-      text-decoration: none; }
-      .highlight__grid__item a:hover .highlight__grid__item__img {
-        background-position: -200px 0, 0 0, 200px 0; }
-      .highlight__grid__item a:hover .highlight__grid__item__content.orange h5 {
-        color: #f87f1e; }
-      .highlight__grid__item a:hover .highlight__grid__item__content.blue h5 {
-        color: #5d7ed2; }
-      .highlight__grid__item a:hover .highlight__grid__item__content.green h5 {
-        color: #0ec300; }
-      .highlight__grid__item a:active .highlight__grid__item__img {
+    .highlight__grid__item > a {
+      color: #444; }
+      .highlight__grid__item > a:hover {
+        text-decoration: none; }
+        .highlight__grid__item > a:hover .highlight__grid__item__img {
+          background-position: -200px 0, 0 0, 200px 0; }
+        .highlight__grid__item > a:hover .highlight__grid__item__content.orange h5 {
+          color: #f87f1e; }
+        .highlight__grid__item > a:hover .highlight__grid__item__content.blue h5 {
+          color: #5d7ed2; }
+        .highlight__grid__item > a:hover .highlight__grid__item__content.green h5 {
+          color: #0ec300; }
+      .highlight__grid__item > a:active .highlight__grid__item__img {
         background-position: -400px 0, -200px 0, 0 0; }
+    .highlight__grid__item.blue h6 a {
+      color: #5d7ed2; }
     .highlight__grid__item__img {
       background-position: 0 0, 200px 0, 400px 0;
       background-repeat: no-repeat;
@@ -704,6 +714,16 @@
       font-size: 1rem;
       font-weight: 400;
       margin: 1rem; }
+  .highlight__subtext {
+    margin: 3rem 0; }
+    .highlight__subtext a {
+      color: #f87f1e; }
+    @media only screen and (min-width: 641px) {
+      .highlight__subtext span.green {
+        display: none; } }
+    @media only screen and (min-width: 1025px) {
+      .highlight__subtext span.blue {
+        display: none; } }
   .highlight__action {
     -webkit-box-align: center;
         -ms-flex-align: center;
@@ -730,6 +750,7 @@
         .highlight__action a {
           font-size: 1.6rem; } }
       .highlight__action a:hover {
+        text-decoration: none;
         color: #f87f1e; }
         .highlight__action a:hover .highlight__action__icon {
           background-image: url("/public/img/button-orange.svg"), url("/public/img/button.svg");
@@ -770,14 +791,15 @@
       .sponsor h3 {
         margin-left: 2rem;
         text-align: left; } }
-  .sponsor__img {
+  .sponsor__img-link {
+    display: inline-block;
     -ms-flex-item-align: center;
         align-self: center;
     justify-self: right;
     max-width: 250px;
     width: 50%; }
     @media only screen and (min-width: 1025px) {
-      .sponsor__img {
+      .sponsor__img-link {
         margin-right: 3rem; } }
   .sponsor__border {
     border-right: 0; }

@@ -39,17 +39,17 @@
                         Rather than perpetually seeking the mythical "silver bullet" web framework, we've invested years of energy in reliable tooling, best practices, and sensible conventions that make fully utilizing hapijs feel organic and approachable.
                     </p>
                     <div class="highlight__grid">
-                        <div class="highlight__grid__item">
-                            <a href="https://github.com/devinivy/haute-couture" target="_blank">
-                                <div class="highlight__grid__item__img green" alt="hapi pal"></div>
+                        <div class="highlight__grid__item green">
+                            <a href="https://github.com/hapipal/hpal" target="_blank">
+                                <div class="highlight__grid__item__img green" alt="hpal"></div>
                                 <div class="highlight__grid__item__content green">
                                     <h5>hpal</h5>
                                 </div>
                             </a>
-                            <h6>A CLI to help you create new projects, scaffold existing projects, and search documentation</h6>
+                            <h6>A CLI to help you scaffold projects, author and run custom commands, and search docs</h6>
                         </div>
-                        <div class="highlight__grid__item">
-                            <a href="https://github.com/hapipal" target="_blank">
+                        <div class="highlight__grid__item orange">
+                            <a href="https://github.com/hapipal/boilerplate" target="_blank">
                                 <div class="highlight__grid__item__img orange" alt="boilerplate"></div>
                                 <div class="highlight__grid__item__content orange">
                                     <h5>boilerplate</h5>
@@ -57,18 +57,27 @@
                             </a>
                             <h6>A friendly, proven starting place for your next hapi project based on 12-factor principles</h6>
                         </div>
-                        <div class="highlight__grid__item">
-                            <a href="https://github.com/bigroomstudios/schwifty" target="_blank">
-                                <div class="highlight__grid__item__img blue" alt="hapi pal"></div>
+                        <div class="highlight__grid__item blue">
+                            <a href="https://github.com/hapipal/schwifty" target="_blank">
+                                <div class="highlight__grid__item__img blue" alt="schwifty"></div>
                                 <div class="highlight__grid__item__content blue">
                                     <h5>schwifty</h5>
                                 </div>
                             </a>
-                            <h6>A model layer integrating Objection ORM, designed to play nice with hapi and joi</h6>
+                            <h6>A model layer integrating <a href="https://github.com/Vincit/objection.js" target="_blank">Objection ORM</a>, designed to play nice with hapi and joi</h6>
                         </div>
                     </div>
+                    <div class="highlight__subtext">
+                        And there's <b>a lot</b> more to explore, including
+                        <span class="highlight__subtext-item green">a <a href="https://github.com/hapipal/hpal"><b>CLI tool</b></a> to scaffold projects and search docs,</span>
+                        <span class="highlight__subtext-item blue">a <a href="https://github.com/hapipal/schwifty"><b>model layer</b></a> integrating <a href="https://github.com/Vincit/objection.js" target="_blank">Objection ORM</a>,</span>
+                        an <a href="https://github.com/hapipal/underdog"><b>HTTP/2 server-push</b></a> plugin,
+                        a tool to <a href="https://github.com/hapipal/hecks"><b>interop with express</b></a> for migrating to hapi or unifying deployments,
+                        a <a href="https://github.com/hapipal/schmervice"><b>service layer</b></a> that integrates with hapi caching,
+                        and a <a href="https://github.com/hapipal/toys"><b>suite of utilities</b></a> that speak to common hapi patterns.
+                    </div>
                     <div class="highlight__action">
-                        <a href="" target="_blank">
+                        <a href="/docs">
                             <div class="highlight__action__icon"></div>
                             View all modules
                         </a>
@@ -80,7 +89,9 @@
                 <div class="sponsor__wrapper">
                     <h3>Sponsored by</h3>
                     <div class="sponsor__grid">
-                        <img class="sponsor__img" src="/public/img/big-room-studios.svg" alt="Big Room Studios">
+                        <a class="sponsor__img-link" href="https://www.bigroomstudios.com" target="_blank">
+                            <img src="/public/img/big-room-studios.svg" alt="Big Room Studios" />
+                        </a>
                         <div class="sponsor__border"></div>
                         <div class="sponsor__content">
                           <p>
@@ -91,7 +102,7 @@
                           </p>
                           <div class="sponsor__content__action">
                               <a href="https://www.bigroomstudios.com" target="_blank"> Learn more about our services
-                                  <img class="sponsor__content__action__icon" src="/public/img/arrow-right.svg" alt="services">
+                                  <img class="sponsor__content__action__icon" src="/public/img/arrow-right.svg" alt="Go to services">
                               </a>
                           </div>
                         </div>
@@ -103,10 +114,9 @@
                 <div class="newsletter__wrapper">
                     <img class="newsletter__img" src="/public/img/pal.svg" alt="Big Room Studios">
                     <div class="newsletter__form">
-                        <p>Subscribe to our newsletter to get the latest hapi-pal updates,
-                        along with occasional tips on being a better pal.</p>
+                        <p>Subscribe to our newsletter to get the latest hapi pal updates, along with occasional tips on being a better pal.</p>
                         <form id="newsletterForm" method="post">
-                            <input type="email" value="" name="email" placeholder="pal@hapipal.com" id="newsletterEmail" class="newsletter__input" required>
+                            <input type="email" value="" name="email" placeholder="you@domain.com" id="newsletterEmail" class="newsletter__input" required>
                             <input type="submit" value="Subscribe" name="subscribe" class="newsletter__input__button">
                         </form>
                         <div id="newsletterMessage" class="newsletter__message">Working...</div>

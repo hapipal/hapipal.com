@@ -33,7 +33,8 @@
 
   }
 
-  &__img {
+  &__img-link {
+    display: inline-block;
     align-self: center;
     justify-self: right;
     max-width: 250px;
