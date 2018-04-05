@@ -202,7 +202,9 @@ Okay, we've covered two cases,
 
 One case remains: what do we do when we have a registration-time dependency on a plugin that _does_ take options?  This is by far the yuckiest case of all!  Assuming that there's no way to re-envision the implementation of the dependencies, the only option is really to manage plugin registration order.  It's not ideal, but it's also not very common.  It's a responsibility of plugins to play nice with their dependents—look for an article on this topic in the future, and in the interim feel free to ask questions on [hapijs/discuss](https://github.com/hapijs/discuss).
 
-If you have a lot of dependencies like this to handle, [hodgepodge](https://github.com/devinivy/hodgepodge) is a pal module that can help with these plugin dependency woes by respecting your plugins' `dependencies` properties while a group of sibling plugins are being registered.  However, it does not always work organically with plugin- and server- composers such as [haute-couture](https://github.com/devinivy/haute-couture) and [glue](https://github.com/hapijs/glue).  There's room for improvement here in userland—let us know if you have any good ideas!
+If you have a lot of dependencies like this to handle, [hodgepodge](https://github.com/hapipal/hodgepodge) is a pal module that can help with these plugin dependency woes by respecting your plugins' `dependencies` properties while a group of sibling plugins are being registered.  However, it does not always work organically with plugin- and server- composers such as [haute-couture](https://github.com/hapipal/haute-couture) and [glue](https://github.com/hapijs/glue).  There's room for improvement here in userland—let us know if you have any good ideas!
+
+If you hit this case, ensure that it's really necessary to have a registration-time dependency that takes options—there may be a better way, like turning it into a run-time dependency.  [Hodgepodge](https://github.com/hapipal/hodgepodge) exists for completeness or to tame existing code that already has this problem, and needn't be the first solution to reach for.
 
 ## The flowchart you've been waiting for
 This is the decision tree you should be keeping in your head while handling plugin dependencies.
@@ -234,7 +236,7 @@ This is the decision tree you should be keeping in your head while handling plug
                    ║                    ║              │
                    ║ Manage plugin      ║              No
                    ║ registration order ║              │
-                   ║ (See hodgepodge)   ║              ▾
+                   ║ (See hodgepodge)²  ║              ▾
                    ║                    ║   ╔════════════════════╗
                    ╚════════════════════╝   ║                    ║
                                             ║  Does it have the  ║
@@ -255,4 +257,5 @@ This is the decision tree you should be keeping in your head while handling plug
                                                  ╚═════════════════════╝
 
 ¹ Or equivalently use the plugin "dependencies" property
+² If you hit this case, ensure that it's really necessary to have a registration-time dependency that takes options—there may be a better way, like turning it into a run-time dependency.
 ```
