@@ -61,4 +61,21 @@
 
   }
 
+  div.docs-detail__pkg-links {
+    text-align: right;
+    margin-bottom: 0;
+    height: 0;
+    color: $mid-light-gray;
+
+    a {
+      color: $orange;
+      text-decoration:none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+  }
+
 }

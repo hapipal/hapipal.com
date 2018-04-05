@@ -1020,6 +1020,17 @@
     .docs-detail-page .sidenav .select-version select.version:hover {
       border: 1px solid #f87f1e; }
 
+.docs-detail-page div.docs-detail__pkg-links {
+  text-align: right;
+  margin-bottom: 0;
+  height: 0;
+  color: #cacaca; }
+  .docs-detail-page div.docs-detail__pkg-links a {
+    color: #f87f1e;
+    text-decoration: none; }
+    .docs-detail-page div.docs-detail__pkg-links a:hover {
+      text-decoration: underline; }
+
 .markdown-body {
   max-width: 978px;
   padding: 1rem 0; }
