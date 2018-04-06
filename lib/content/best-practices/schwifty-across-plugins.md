@@ -29,7 +29,7 @@ const AppPlugin = require('./app-plugin');
 
 (async () => {
 
-    const server = new Hapi.server();
+    const server = Hapi.server();
 
     await server.register([
         AppPlugin,
