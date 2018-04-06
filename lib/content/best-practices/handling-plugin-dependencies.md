@@ -200,7 +200,7 @@ Okay, we've covered two cases,
   1. When there's a run-time dependency, declare those dependencies in your plugin using `server.dependency(deps, [after])`.  Provide an `after` callback if there are run-time duties you'd like to perform during server initialization/start after `deps` have performed their own run-time duties.
   2. When there's a registration-time dependency on a plugin that doesn't take options, use `server.register()` in your plugin to register the dependency while utilizing the `once` plugin property or registration option.
 
-One case remains: what do we do when we have a registration-time dependency on a plugin that _does_ take options?  This is by far the yuckiest case of all!  Assuming that there's no way to re-envision the implementation of the dependencies, the only option is really to manage plugin registration order.  It's not ideal, but it's also not very common.  It's a responsibility of plugins to play nice with their dependents—look for an article on this topic in the future, and in the interim feel free to ask questions on [hapijs/discuss](https://github.com/hapijs/discuss).
+One case remains: what do we do when we have a registration-time dependency on a plugin that _does_ take options?  This is by far the yuckiest case of all!  Assuming that there's no way to re-envision the implementation of the dependencies, the only option is really to manage plugin registration order.  It's not ideal, but it's also not very common.  It's a responsibility of plugins to play nice with their dependents—look for an article on this topic in the future, and in the interim feel free to ask questions on [hapipal/discuss](https://github.com/hapipal/discuss).
 
 If you have a lot of dependencies like this to handle, [hodgepodge](https://github.com/hapipal/hodgepodge) is a pal module that can help with these plugin dependency woes by respecting your plugins' `dependencies` properties while a group of sibling plugins are being registered.  However, it does not always work organically with plugin- and server- composers such as [haute-couture](https://github.com/hapipal/haute-couture) and [glue](https://github.com/hapijs/glue).  There's room for improvement here in userland—let us know if you have any good ideas!
 
@@ -209,53 +209,4 @@ If you hit this case, ensure that it's really necessary to have a registration-t
 ## The flowchart you've been waiting for
 This is the decision tree you should be keeping in your head while handling plugin dependencies.
 
-```
-                     ╔═══════════════╗
-                     ║               ║
-                     ║  I depend on  ║
-                     ║  plugin X     ║
-                     ║               ║
-                     ╚═══════════════╝
-                             │
-                             │ Cool!
-                             │
-                   ╔════════════════════╗
-        ┌──────────║ Which kind of dep? ║─────────┐
-        │          ╚════════════════════╝         │
-        │                                         │
-    Run-time                              Registration-time
-        ▾                                         ▾
-★══════════════════╗                   ╔═══════════════════╗
-║                  ║                   ║                   ║
-║ Declare it using ║                   ║  Does it take     ║
-║ srv.dependency()¹║         ┌─────────║  plugin options?  ║
-║                  ║         │         ║                   ║
-╚══════════════════╝        Yes        ╚═══════════════════╝
-                             ▾                         │
-                   ★════════════════════╗              │
-                   ║                    ║              │
-                   ║ Manage plugin      ║              No
-                   ║ registration order ║              │
-                   ║ (See hodgepodge)²  ║              ▾
-                   ║                    ║   ╔════════════════════╗
-                   ╚════════════════════╝   ║                    ║
-                                            ║  Does it have the  ║
-                                            ║  "once" plugin     ║
-                                  ┌─────────║  property?         ║
-                                  │         ║                    ║
-                                  No        ╚════════════════════╝
-                                  ▾                          │
-                       ★═════════════════════╗               │
-                       ║                     ║              Yes
-                       ║  Register it,       ║               │
-                       ║  srv.register(X, {  ║               ▾
-                       ║    once: true       ║   ★═════════════════════╗
-                       ║  })                 ║   ║                     ║
-                       ║                     ║   ║  Register it,       ║
-                       ╚═════════════════════╝   ║  srv.register(X)    ║
-                                                 ║                     ║
-                                                 ╚═════════════════════╝
-
-¹ Or equivalently use the plugin "dependencies" property
-² If you hit this case, ensure that it's really necessary to have a registration-time dependency that takes options—there may be a better way, like turning it into a run-time dependency.
-```
+![Handling plugin dependencies decision tree](/public/img/handling-dependencies-decision-tree.png)
