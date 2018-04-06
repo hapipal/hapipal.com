@@ -2,7 +2,8 @@
   "dotenv": "server/.env",
   "files": [
     "lib",
-    "server/**/!(.env)"
+    "server/index.js",
+    "server/manifest.js"
   ],
   "env": {
     "NODE_ENV": "production"

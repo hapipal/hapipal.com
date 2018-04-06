@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
 
-        {{#if options.gaTrackingId}}
+        {{#if (and options.gaTrackingId (not options.developmentMode))}}
             <!-- Global site tag (gtag.js) - Google Analytics -->
             <script async src="https://www.googletagmanager.com/gtag/js?id={{options.gaTrackingId}}"></script>
             <script>
