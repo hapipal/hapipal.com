@@ -1,5 +1,7 @@
 # Handling plugin dependencies
 
+> **In celebration of hapi plugin boundaries, here we offer a concrete approach to taming inter-plugin dependencies.**
+>
 > While it's ideal to minimize dependencies, let's face it—sometimes your plugin is going to depend on another plugin in order to work.  This article takes an in-depth look at managing dependencies across plugins.  We will characterize different types of dependencies and determine the best way to handle each type.  Luckily there are only three!
 
 ## A common misconception

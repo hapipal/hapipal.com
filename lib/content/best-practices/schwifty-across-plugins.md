@@ -1,8 +1,8 @@
 # Extending schwifty models across plugins
 
-> [Schwifty](https://github.com/hapipal/schwifty) is a hapi plugin to integrate [Objection ORM](https://github.com/Vincit/objection.js) into hapi.  One of its strengths is associating models and migrations with hapi plugins.  When writing reusable plugins that declare models, it becomes desirable to be able to extend those models in application-level plugins.
+> **This example of creating a general-purpose "users" plugin demonstrates that, with the help of schwifty, it's possible to create highly reusable, data-oriented hapi plugins.**
 >
-> This cookbook will outline a useful pattern to extend schwifty models across hapi plugins.
+> [Schwifty](https://github.com/hapipal/schwifty) is a hapi plugin to integrate [Objection ORM](https://github.com/Vincit/objection.js) into hapi.  One of its strengths is associating models and migrations with hapi plugins.  When writing reusable plugins that declare models, it becomes desirable to be able to extend those models in application-level plugins.
 
 > **Note**
 >

@@ -1,4 +1,7 @@
 # The joys of server / plugin separation
+
+> **The joyful act of decoupling your application plugin from its deployment will make your hapi app more portable and simpler to test.**
+>
 > hapi offers a rich API for splitting your application into plugins.  If the first piece of advice to someone getting started with hapi is, "implement your application in a plugin" then the second would have to be "keep your plugins and your server separate."  Why, you ask?  Read on to find out!
 
 ## What's so great about plugins?
@@ -95,10 +98,10 @@ An example of making this adjustment can be seen below.  Observe that the plugin
              handler: async (request) => {
 
                  await mailer.sendMail({
- -                   from: Config.email.from,
- -                   to: Config.email.worldLeader,
- +                   from: options.from,
- +                   to: options.worldLeader,
+-                    from: Config.email.from,
+-                    to: Config.email.worldLeader,
++                    from: options.from,
++                    to: options.worldLeader,
                      subject: 'We have some thoughts for you!',
                      text: request.payload.text
                  });
@@ -162,4 +165,4 @@ While mitigating inter-plugin dependencies is beyond the scope of this article, 
 hapi pal offers a [boilerplate](https://github.com/hapipal/boilerplate) with a strong separation of server and plugin.  It's a great way to author a plugin that is deployable and testable on its own, but prepared to be integrated into a larger application when the time comes.  See the [`server/`](https://github.com/hapipal/boilerplate/tree/pal/server) directory for all things "deployment" and the [`lib/`](https://github.com/hapipal/boilerplate/tree/pal/lib) directory for all things "plugin."  It also provides [flavors](https://github.com/hapipal/boilerplate/tree/pal#flavors) that maintain this separation while sharing resources, such as a textbook integration with [Objection ORM](https://github.com/Vincit/objection.js), incorporation of [Swagger](https://github.com/glennjones/hapi-swagger), and a fancy templated site using [browserify](http://browserify.org/) and [SASS](https://sass-lang.com/).
 
 ## Conclusion
-Once you've started writing your applications in terms of hapi plugins, do yourself a favor and take advantage of the wonderful benefits of pluginization: flexibility of deployment, tidy separation of your application's concerns, reusable server functionality, and a clear path to service-oriented architecture and microservices.  The first step is to ensure you don't couple your server with its deployment.  And it's really not so hard—you primarily want to separate deployment configuration and plugin configuration by utilizing plugin options liberally.  We covered some examples of that, and several techniques to share resources among the plugins that comprise your application.  Have fun plugin-izing!
+Once you've started writing your applications in terms of hapi plugins, do yourself a favor and take advantage of the wonderful benefits of pluginization: flexibility of deployment, simpler testing, tidy separation of your application's concerns, reusable server functionality, and a clear path to service-oriented architecture and microservices.  The first step is to ensure you don't couple your server with its deployment.  And it's really not so hard—you primarily want to separate deployment configuration and plugin configuration by utilizing plugin options liberally.  We covered some examples of that, and several techniques to share resources among the plugins that comprise your application.  Have fun plugin-izing!
