@@ -6,9 +6,9 @@ Lead Maintainer - [Jared Donisvitch](https://github.com/jdonisvitch)
 ## About
 This website is built on the [pal boilerplate](https://github.com/hapipal/boilerplate)!  More specifically, it based upon the [fancy templated site flavor](https://github.com/hapipal/boilerplate#fancy-templated-site) utilizing Handlebars, Browserify, Babel, Sass, Browsersync, and some others as part of an easy-to-use/no-config frontend toolchain.
 
-This repo contains the content of all Best Practices articles in [`lib/content/best-practices/`](https://github.com/hapipal/hapipal.com/tree/master/lib/content/best-practices), but API docs are rendered from the relevant repo's `API.md` file.
+This repo contains the content of all Best Practices articles in [`lib/content/best-practices/`](lib/content/best-practices), but API docs are rendered from the relevant repo's `API.md` file.
 
-We utilize the [schmervice](https://github.com/hapipal/schmervice) plugin as a service layer (see [`lib/services/`](https://github.com/hapipal/hapipal.com/tree/master/lib/services)) where we implement ([cacheable](https://github.com/devinivy/hapipal.com/blob/master/lib/services/github.js#L50-L62)) integration points with npm, Github, and Mailchimp, and also provide a common interface for route handlers to get information about the Best Practices articles and packages featured in the API Docs section.  Static files are served using [inert](https://github.com/hapijs/inert), and Handlebars templates are served/cached through [vision](https://github.com/hapijs/vision).
+We utilize the [schmervice](https://github.com/hapipal/schmervice) plugin as a service layer (see [`lib/services/`](lib/services)) where we implement ([cacheable](lib/services/github.js#L50-L62)) integration points with npm, Github, and Mailchimp, and also provide a common interface for route handlers to get information about the Best Practices articles and packages featured in the API Docs section.  Static files are served using [inert](https://github.com/hapijs/inert), and Handlebars templates are served/cached through [vision](https://github.com/hapijs/vision).
 
 ### Running the site
 ```bash
