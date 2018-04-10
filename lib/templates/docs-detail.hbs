@@ -3,15 +3,17 @@
     {{#*inline "content"}}
         <div class="main docs-detail l-navigablecontent">
           <nav class="l-navigablecontent__nav sidenav">
-            <div class="select-version">
-              <p>Reference Version: </p>
-              <select id="version" class="version">
-                {{#each versions as |ver|}}
-                <option value="{{ver}}"{{#equals ver ../version}} selected="selected"{{/equals}}>v{{ver}}</option>
-                {{/each}}
-              </select>
-              <div class="select-version__arrow"></div>
-            </div>
+            {{#if versions}}
+              <div class="select-version">
+                <p>Reference Version: </p>
+                <select id="version" class="version">
+                  {{#each versions as |ver|}}
+                  <option value="{{ver}}"{{#equals ver ../version}} selected="selected"{{/equals}}>v{{ver}}</option>
+                  {{/each}}
+                </select>
+                <div class="select-version__arrow"></div>
+              </div>
+            {{/if}}
             <div class="sidenav__target"><!-- replaced with nav by js/docs-nav.js --></div>
             <ul class="sidenav__others">
                 {{#each packages as |package|}}
