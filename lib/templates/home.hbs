@@ -1,5 +1,10 @@
 {{#> layout title="Home" }}
 
+    {{#*inline "head-block"}}
+        <link rel="preload" href="/public/img/home-header-background.jpg" as="image">
+        <link rel="prefetch" href="/public/img/header-background.jpg">
+    {{/inline}}
+
     {{#*inline "content"}}
 
         <div class="main container">
