@@ -24,6 +24,7 @@
   }
 
   a {
+    color: $orange;
     text-decoration: none;
     &:hover {
       text-decoration: underline;
@@ -187,9 +188,6 @@
 
   &__subtext {
     margin: 3rem 0;
-    a {
-      color: $orange;
-    }
 
     @media #{$medium-up} {
       span.green {

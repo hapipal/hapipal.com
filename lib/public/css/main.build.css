@@ -565,6 +565,7 @@
       font-size: 1.25rem;
       color: #777777; }
   .highlight a {
+    color: #f87f1e;
     text-decoration: none; }
     .highlight a:hover {
       text-decoration: underline; }
@@ -634,8 +635,6 @@
       margin: 1rem; }
   .highlight__subtext {
     margin: 3rem 0; }
-    .highlight__subtext a {
-      color: #f87f1e; }
     @media only screen and (min-width: 641px) {
       .highlight__subtext span.green {
         display: none; } }
