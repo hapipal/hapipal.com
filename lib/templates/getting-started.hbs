@@ -1,0 +1,22 @@
+{{#> layout title="Getting Started" }}
+
+    {{#*inline "content"}}
+        <div class="main l-navigablecontent">
+          <nav class="l-navigablecontent__nav sidenav">
+            <div class="sidenav__target"><!-- replaced with nav by js/docs-nav.js --></div>
+          </nav>
+          <div class="l-navigablecontent__mobile-controls">
+            <button class="l-navigablecontent__control-item l-navigablecontent__control-item--left">
+                <img src="/public/img/menu-icon.svg" />
+            </button>
+            <button class="l-navigablecontent__control-item l-navigablecontent__control-item--right">
+                <img src="/public/img/arrow-up.svg" />
+            </button>
+          </div>
+          <div class="wrapper">
+              <div class="markdown-body entry-content">{{{html}}}</div>
+          </div>
+        </div>
+    {{/inline}}
+
+{{/layout}}

@@ -226,11 +226,13 @@
           align-items: center;
           justify-content: flex-end; } }
 
+.getting-started-page .nav,
 .docs-detail-page .nav,
 .best-practices-detail-page .nav {
   left: 0;
   right: 0; }
   @media only screen and (min-width: 481px) {
+    .getting-started-page .nav,
     .docs-detail-page .nav,
     .best-practices-detail-page .nav {
       position: fixed; } }
