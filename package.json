@@ -36,6 +36,7 @@
     "require-dir": "1.x.x",
     "schmervice": "1.x.x",
     "semver": "5.x.x",
+    "toys": ">=2.2.0 <3",
     "vision": "5.x.x",
     "wreck": "14.x.x"
   },
