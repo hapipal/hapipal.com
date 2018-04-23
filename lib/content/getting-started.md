@@ -346,7 +346,7 @@ Batching lint errors in this way provides you a quick and clear punchlist of lin
 
 Many modern IDEs have eslint plugins that will detect any eslint configuration files in your project and shout out as you break whatever rules you've setup as you code.
 
-If you don't mind the near-constant noise, this can be a helpful way to stay on top of linting errors, if you prefer that approach instead of batching.
+If you don't mind the near-constant noise, this can be a helpful way to stay on top of linting errors.
 
 Take a peek at this [list of editors with eslint integrations](https://eslint.org/docs/user-guide/integrations#editors).
 
@@ -360,7 +360,7 @@ In each of our routes, we did some work to set and move around our hard-coded ri
 
 Pal has assembled a few packets of additional tooling and functionality that we refer to as flavors: these are things that you can apply to the baseline pal boilerplate to help build out specific types of projects.
 
-Flavors are really just tagged commits that you can `git cherry-pick`. They're intentionally small, a couple of short configuration files / file modifications and a few new dependencies, tops. Just like the basic pal setup, we give you just the scaffolding—tooling and directory structure—to get started, guiding you to writing actual code quickly.
+Flavors are really just tagged commits that you can `git cherry-pick`. They're intentionally small, a couple of short configuration files / file modifications and a few new dependencies, tops. Just like the basic pal setup, we give you just the scaffolding—tooling and directory structure—to get started, guiding you to writing your own code quickly.
 
 hapi pal's tool of choice for database management and querying is [Objection ORM](https://github.com/Vincit/objection.js), which we've integrated with hapi via the [schwifty](https://github.com/hapipal/schwifty) plugin.
 
@@ -375,7 +375,7 @@ git cherry-pick objection
 npm install
 ```
 
-If you just cloned our the pal repo (rather than using `npx hpal new ...`), you'll need to fetch the tagged commits first:
+If you just cloned the pal repo (rather than using `npx hpal new ...`), you'll need to fetch the tagged commits first:
 
 ```sh
 git fetch pal --tags
@@ -521,7 +521,7 @@ npx knex migrate:make add-riddles
 
 Things to know:
  - the `knex` CLI is installed with the main knex package.
- - `migrate:make` is describe in the knex docs [here](http://knexjs.org/#Migrations-CLI).
+ - `migrate:make` is described in the knex docs [here](http://knexjs.org/#Migrations-CLI).
  - `add-riddles` is just the base name of the migration file; try to describe what this migration does to make reviewing migration history mildly easier.
 
 If everything's going okay, you should see something like:
@@ -666,7 +666,7 @@ Thankfully, we can address this issue post-haste with another flavor.
 git cherry-pick swagger
 ```
 
-This sets up a [Swagger interface](https://swagger.io/) for our application, courtesy a fantastic hapi plugin named [hapi-swagger](https://github.com/glennjones/hapi-swagger). Now, if we mark our routes appropriately, they will appear at `/documentation`, where we'll see a set of forms for each route where we can hit our routes and enter data directly without manually formatting it.
+This sets up a [Swagger interface](https://swagger.io/) for our application, courtesy of a fantastic hapi plugin named [hapi-swagger](https://github.com/glennjones/hapi-swagger). Now, if we mark our routes appropriately, they will appear at `/documentation`, where we'll see a set of forms for each route where we can hit our routes and enter data directly without manually formatting it.
 
 To mark our routes, add the following `tags` entry to each route config:
 
@@ -721,7 +721,7 @@ Moving on!
 
 ## Post-DB Integration Cleanup and Refactoring
 
-Having made Paldo's Riddles a bit more flexible and dynamic, let's clear out our hardcoded work we put into place earlier. We can delete the `lib/data.js` file altogether, since we'll be storing new riddle in the database by making calls to `POST /riddles`.
+Having made Paldo's Riddles a bit more flexible and dynamic, let's clear out our hardcoded work we put into place earlier. We can delete the `lib/data.js` file altogether, since we'll be storing new riddles in the database by making calls to `POST /riddles`.
 
 In fact, let's delete our `riddle-answer` route too, replacing it with a route for getting all details about a specific Riddle. We do that to move this to a simpler interface, which allows interaction with entire resources, not just pieces of them.
 
@@ -795,7 +795,7 @@ module.exports = {
                 throw Boom.notFound('Looks like we don\'t have any riddles. Sorry!');
             }
 
-            // Use the total riddle count determine a random offset
+            // Use the total riddle count to determine a random offset
             const randomOffset = Math.floor(Math.random() * count);
 
             // Grab the Riddle at that random offset
