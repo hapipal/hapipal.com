@@ -51,6 +51,12 @@
     position: relative;
     width: 25px;
 
+    @media #{$xxsmall-only} {
+      height: 30px;
+      margin-left: .5rem;
+      width: 20px;
+    }
+
     @media #{$small-up} {
       margin: 0 1rem;
       position: relative;
@@ -77,6 +83,10 @@
     padding: 0 .5rem;
     position: relative;
     text-decoration: none;
+
+    @media #{$xxsmall-only} {
+      font-size: .9rem;
+    }
 
     @media #{$small-up} {
       margin: 0 1rem;

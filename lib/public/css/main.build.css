@@ -164,6 +164,11 @@
     margin-left: 1rem;
     position: relative;
     width: 25px; }
+    @media only screen and (max-width: 360px) {
+      .nav__icon {
+        height: 30px;
+        margin-left: .5rem;
+        width: 20px; } }
     @media only screen and (min-width: 481px) {
       .nav__icon {
         margin: 0 1rem;
@@ -185,6 +190,9 @@
     padding: 0 .5rem;
     position: relative;
     text-decoration: none; }
+    @media only screen and (max-width: 360px) {
+      .nav__item {
+        font-size: .9rem; } }
     @media only screen and (min-width: 481px) {
       .nav__item {
         margin: 0 1rem;
@@ -553,7 +561,7 @@
   color: #444;
   margin: 0;
   text-align: center; }
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 360px), only screen and (min-width: 361px) and (max-width: 480px) {
     .highlight {
       border-bottom: solid 2px #e2e2e2; } }
   .highlight h2 {

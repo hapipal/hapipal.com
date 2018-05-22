@@ -4,7 +4,7 @@
   margin: 0;
   text-align: center;
 
-  @media #{$xsmall-only} {
+  @media #{$xxsmall-only}, #{$xsmall-only} {
     border-bottom: solid 2px $light-gray;
   }
 

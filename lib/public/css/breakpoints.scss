@@ -1,6 +1,7 @@
 // Idea from https://gist.github.com/rizkysyazuli/b83d378a44bb97ef82d1
 
-$xsmall-range: (0, 480px);
+$xxsmall-range: (0, 360px);
+$xsmall-range: (361px, 480px);
 $small-range: (481px, 640px);
 $medium-range: (641px, 1024px);
 $large-range: (1025px, 1440px);
@@ -27,8 +28,11 @@ $screen: 'only screen';
 $landscape: '#{$screen} and (orientation: landscape)';
 $portrait: '#{$screen} and (orientation: portrait)';
 
-$xsmall-up: $screen;
-$xsmall-only: '#{$screen} and (max-width: #{upper-bound($xsmall-range)})';
+$xxsmall-up: $screen;
+$xxsmall-only: '#{$screen} and (max-width: #{upper-bound($xxsmall-range)})';
+
+$xsmall-up: '#{$screen} and (min-width:#{lower-bound($xsmall-range)})';
+$xsmall-only: '#{$screen} and (min-width:#{lower-bound($xsmall-range)}) and (max-width:#{upper-bound($xsmall-range)})';
 
 $small-up: '#{$screen} and (min-width:#{lower-bound($small-range)})';
 $small-only: '#{$screen} and (min-width:#{lower-bound($small-range)}) and (max-width:#{upper-bound($small-range)})';
