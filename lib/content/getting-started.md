@@ -460,6 +460,8 @@ const Joi = require('joi'); // hapi's package for data validation
 
 // Schwifty models are based on Objection's, but outfitted to use Joi
 
+// Make sure to update "ModelName" to your model's name—
+// this is how you will reference it throughout your application.
 module.exports = class ModelName extends Schwifty.Model {
 
     static get tableName() {
@@ -478,7 +480,9 @@ module.exports = class ModelName extends Schwifty.Model {
 };
 ```
 
-To fill this out properly, it requires some understanding of [Joi](https://github.com/hapijs/joi), hapi's library for validation.  Joi is extremely expressive, as you can probably tell from its extensive [API documentation](https://github.com/hapijs/joi/blob/master/API.md).  hapi route payload, query, and path parameters [are also typically validated using Joi](https://github.com/hapijs/hapi/blob/master/API.md#route.options.validate), which is why we integrated it into Schwifty's `Model` class.  After looking at some Joi examples, let's fill that in, then:
+First thing's first: make sure to change your model class's name from `ModelName` to `Riddles`, which is how we'll reference the model throughout the application (e.g. in route handlers).  Similarly, set the `tableName` to whichever table you'd like to store riddles in your database, most likely just `'Riddles'`.
+
+To continue to fill this out properly, it requires some understanding of [Joi](https://github.com/hapijs/joi), hapi's library for validation.  Joi is extremely expressive, as you can probably tell from its extensive [API documentation](https://github.com/hapijs/joi/blob/master/API.md).  hapi route payload, query, and path parameters [are also typically validated using Joi](https://github.com/hapijs/hapi/blob/master/API.md#route.options.validate), which is why we integrated it into Schwifty's `Model` class.  After looking at some Joi examples, let's fill that in, then:
 
 ```js
 // lib/models/Riddles.js
@@ -632,7 +636,7 @@ A bunch of familiar route setup, but we've also got a few new things going on he
 
  - `const { Riddles } = request.models()`
 
- The [`request.models()`](https://github.com/hapipal/schwifty/blob/master/API.md#requestmodelsall) method is a request decoration added by schwifty. It allows you to access the models registered by your plugin so that we can make queries against them.
+ The [`request.models()`](https://github.com/hapipal/schwifty/blob/master/API.md#requestmodelsall) method is a request decoration added by schwifty. It allows you to access the models registered by your plugin so that we can make queries against them.  Just ensure that the name used here matches your model class's name: `class Riddles extends Schwifty.Model {}`.
 
  - `await Riddles.query().insertAndFetch(riddle)`
 
@@ -788,7 +792,7 @@ module.exports = {
             const { Riddles } = request.models();
 
             // Count all Riddles
-            const { count } = await Riddles.query().count('* as count').first();
+            const count = await Riddles.query().resultSize();
 
             // The only case that we can't find a riddle is if there aren't any in the DB
             if (count === 0) {
