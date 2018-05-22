@@ -404,6 +404,7 @@
         color: #fff; }
 
 .docs-detail-page .footer,
+.getting-started-page .footer,
 .best-practices-detail-page .footer {
   display: none; }
 
