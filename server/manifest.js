@@ -2,6 +2,7 @@
 
 const Dotenv = require('dotenv');
 const Confidence = require('confidence');
+const Toys = require('toys');
 
 // Pull .env into process.env
 Dotenv.config({ path: `${__dirname}/.env` });
@@ -30,6 +31,13 @@ module.exports = new Confidence.Store({
                     mailchimpListId: process.env.MAILCHIMP_LIST_ID,
                     gaTrackingId: process.env.GA_TRACKING_ID,
                     isGlitchDeploy: !!(process.env.PROJECT_ID && process.env.PROJECT_INVITE_TOKEN)
+                }
+            },
+            {
+                plugin: {
+                    $filter: 'NODE_ENV',
+                    $default: 'hpal-debug',
+                    production: Toys.noop
                 }
             }
         ]
