@@ -9,7 +9,7 @@
 @import 'layout-list';
 @import 'docs-detail';
 @import 'markdown';
-@import 'primer-markdown/index';
+@import '@primer/css/markdown/index.scss';
 @import 'tooltip';
 
 body {

@@ -115,7 +115,7 @@ An example of making this adjustment can be seen below.  Observe that the plugin
 
 ##### `server.js`
 ```diff
- const Hapi = require('hapi');
+ const Hapi = require('@hapi/hapi');
  const EmailPlugin = require('./email-plugin');
  const Config = require('./config');
 

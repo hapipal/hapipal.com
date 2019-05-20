@@ -17,7 +17,7 @@ Suppose that your plugin needs to use [`server.views()`](https://github.com/hapi
 
 ##### `server.js`
 ```js
-const Vision = require('vision');
+const Vision = require('@hapi/vision');
 const MyAppPlugin = require('./plugin');
 
 (async () => {
@@ -41,7 +41,7 @@ module.exports = {
     name: 'my-app-plugin',
     register: (server, options) => {
 
-        server.dependency('vision');
+        server.dependency('@hapi/vision');
 
         server.views({
             engines: { html: require('handlebars') },
@@ -75,10 +75,10 @@ This happens because vision has not been registered by the time my-app-plugin is
 
 The order the plugins are listed reflects the order in which they will be registered.  Despite my-app-plugin declaring a dependency on vision, my-app-plugin will still be registered first!  The same would be the case if my-app-plugin used its plugin properties to declare vision as a dependency; the `dependencies` plugin property and `server.dependency()` have identical meanings.
 ```js
-// Same as calling server.dependency('vision')
+// Same as calling server.dependency('@hapi/vision')
 module.exports = {
     name: 'my-app-plugin',
-    dependencies: 'vision',
+    dependencies: '@hapi/vision',
     // register: ...
 };
 ```
@@ -128,7 +128,7 @@ You can see that the `after` is brilliant for run-time dependencies, but doesn't
 We found that the example above was wrong because vision was treated like a run-time dependency when really it is a registration-time dependency.  So, how should this registration-time dependency have been handled?
 
 #### The `once` flag
-Wouldn't it be ideal if our plugin could just ensure on its own that its dependencies are available at registration time?  In many cases our plugin actually can do just that.  In fact, just about any plugin _that does not receive options_ can be ensured directly by its dependents.  hapi provides an option—declarable by a plugin or when registering a plugin—that ensures the given plugin will only be registered one time even when it appears in multiple calls to [`server.register()`](https://github.com/hapijs/hapi/blob/master/API.md#serverregisterplugins-options-callback).  This basically allows our application plugin to `server.register(Vision)` without worrying about duplicate registrations of vision, which hapi would otherwise complain to us about.  The option is called `once`.  In other words, the first time a plugin is registered with `once` it is processed normally by hapi, but subsequent registrations are simply ignored; hapi's default behavior is to complain when a plugin is registered more than one time.  In the case of vision, it has the `once` flag specified [as a plugin property](https://github.com/hapijs/vision/blob/v4.1.1/lib/index.js#L62)* ([docs](https://github.com/hapijs/hapi/blob/master/API.md#plugins)), so we don't need to take any special care.  Below is a corrected version of the [anti-pattern above](#registration-order-anti-pattern).
+Wouldn't it be ideal if our plugin could just ensure on its own that its dependencies are available at registration time?  In many cases our plugin actually can do just that.  In fact, just about any plugin _that does not receive options_ can be ensured directly by its dependents.  hapi provides an option—declarable by a plugin or when registering a plugin—that ensures the given plugin will only be registered one time even when it appears in multiple calls to [`server.register()`](https://github.com/hapijs/hapi/blob/master/API.md#server.register()).  This basically allows our application plugin to `server.register(Vision)` without worrying about duplicate registrations of vision, which hapi would otherwise complain to us about.  The option is called `once`.  In other words, the first time a plugin is registered with `once` it is processed normally by hapi, but subsequent registrations are simply ignored; hapi's default behavior is to complain when a plugin is registered more than one time.  In the case of vision, it has the `once` flag specified [as a plugin property](https://github.com/hapijs/vision/blob/v4.1.1/lib/index.js#L62)* ([docs](https://github.com/hapijs/hapi/blob/master/API.md#plugins)), so we don't need to take any special care.  Below is a corrected version of the [anti-pattern above](#registration-order-anti-pattern).
 
 <sup>* The current version of vision actually uses a slightly more advanced plugin property called `multiple`.  The `multiple` property just offers a greater level of control as to which plugin code in vision re-runs each time the plugin is registered, but it is in the same spirit as `once`, and the code example below remains a good illustration of how to use vision.  The inert plugin still offers [a good example of `once`](https://github.com/hapijs/inert/blob/v5.1.0/lib/index.js#L39).</sup>
 
@@ -152,7 +152,7 @@ const MyAppPlugin = require('./plugin');
 
 ##### `plugin.js`
 ```js
-const Vision = require('vision');
+const Vision = require('@hapi/vision');
 
 module.exports = {
     name: 'my-app-plugin',

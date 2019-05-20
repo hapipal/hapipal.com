@@ -12,7 +12,7 @@ $fixed-header-size: 64px;
     > div {
       margin: 0 auto;
       margin-bottom: calc(2rem + 60px); // 60px is size of bottom mobile controls
-      padding-bottom: calc(2rem + $fixed-header-size);
+      padding-bottom: calc(2rem + #{$fixed-header-size});
 
       @media #{$medium-up} {
         margin-bottom: 2rem;
