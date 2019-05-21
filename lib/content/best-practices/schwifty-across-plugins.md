@@ -23,7 +23,7 @@ Okay, time for some code.  Here's our app before the user plugin is properly gen
 #### The server
 ##### `server.js`
 ```js
-const Hapi = require('hapi');
+const Hapi = require('@hapi/hapi');
 const Schwifty = require('schwifty');
 const AppPlugin = require('./app-plugin');
 
@@ -102,7 +102,7 @@ exports.plugin = {
 
 ##### `user-plugin/model.js`
 ```js
-const Joi = require('joi');
+const Joi = require('@hapi/joi');
 const Schwifty = require('schwifty');
 
 // A user model only with an id and name
@@ -153,7 +153,7 @@ Now the app plugin has access to the user plugin's model and may extend it howev
 #### The app plugin
 ##### `app-plugin/user-model.js` (new file)
 ```js
-const Joi = require('joi');
+const Joi = require('@hapi/joi');
 const UserPlugin = require('../user-plugin');
 
 module.exports = class User extends UserPlugin.Model {

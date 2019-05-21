@@ -297,7 +297,7 @@ And now, our new route:
 'use strict';
 
 // Boom builds Error objects for hapi that represent HTTP errors
-const Boom = require('boom');
+const Boom = require('@hapi/boom');
 const Data = require('../data');
 
 module.exports = {
@@ -456,7 +456,7 @@ Let's break that file down:
 'use strict';
 
 const Schwifty = require('schwifty');
-const Joi = require('joi'); // hapi's package for data validation
+const Joi = require('@hapi/joi'); // hapi's package for data validation
 
 // Schwifty models are based on Objection's, but outfitted to use Joi
 
@@ -489,7 +489,7 @@ To continue to fill this out properly, it requires some understanding of [Joi](h
 'use strict';
 
 const Schwifty = require('schwifty');
-const Joi = require('joi');
+const Joi = require('@hapi/joi');
 
 module.exports = class Riddles extends Schwifty.Model {
 
@@ -597,7 +597,7 @@ Then fill in the route template as follows:
 // lib/routes/riddle-create.js
 'use strict';
 
-const Joi = require('joi');
+const Joi = require('@hapi/joi');
 
 module.exports = {
     method: 'POST',
@@ -742,8 +742,8 @@ We end up with this:
 // lib/routes/riddle-by-id.js
 'use strict';
 
-const Boom = require('boom');
-const Joi = require('joi');
+const Boom = require('@hapi/boom');
+const Joi = require('@hapi/joi');
 
 module.exports = {
     method: 'GET',
@@ -780,7 +780,7 @@ Finally, we'll need to refactor our `riddle-random` route, so it doesn't depend 
 // lib/routes/riddle-random.js
 'use strict';
 
-const Boom = require('boom');
+const Boom = require('@hapi/boom');
 
 module.exports = {
     method: 'GET',

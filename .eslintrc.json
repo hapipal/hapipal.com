@@ -1,9 +1,6 @@
 {
-  "extends": "eslint-config-hapi",
+  "extends": "@hapi/eslint-config-hapi",
   "parserOptions": {
-    "ecmaVersion": 8,
-    "ecmaFeatures": {
-      "experimentalObjectRestSpread": true
-    }
+    "ecmaVersion": 2019
   }
 }

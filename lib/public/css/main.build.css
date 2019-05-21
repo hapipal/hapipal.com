@@ -38,7 +38,7 @@
   .l-navigablecontent .wrapper > div, .l-navigablecontent .footer__wrapper > div, .l-navigablecontent .hero__wrapper > div, .l-navigablecontent .highlight__wrapper > div, .l-navigablecontent .sponsor__wrapper > div, .l-navigablecontent .newsletter__wrapper > div {
     margin: 0 auto;
     margin-bottom: calc(2rem + 60px);
-    padding-bottom: calc(2rem + $fixed-header-size); }
+    padding-bottom: calc(2rem + 64px); }
     @media only screen and (min-width: 641px) {
       .l-navigablecontent .wrapper > div, .l-navigablecontent .footer__wrapper > div, .l-navigablecontent .hero__wrapper > div, .l-navigablecontent .highlight__wrapper > div, .l-navigablecontent .sponsor__wrapper > div, .l-navigablecontent .newsletter__wrapper > div {
         margin-bottom: 2rem;
@@ -1059,7 +1059,8 @@
   .markdown-body ol,
   .markdown-body dl,
   .markdown-body table,
-  .markdown-body pre {
+  .markdown-body pre,
+  .markdown-body details {
     margin-top: 0;
     margin-bottom: 16px; }
   .markdown-body hr {
