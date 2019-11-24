@@ -20,8 +20,7 @@
     "build:css": "postcss lib/public/css/main.build.css -o lib/public/css/main.build.min.css --use cssnano --no-map",
     "prebuild:js": "browserify lib/public/js/main.js -o lib/public/js/main.build.js -d -t [ babelify --presets [ @babel/preset-env ] ]",
     "build:js": "uglifyjs lib/public/js/main.build.js -o lib/public/js/main.build.min.js",
-    "build": "npm run build:css && npm run build:js",
-    "now-build": "echo 'Skip build for now'"
+    "build": "npm run build:css && npm run build:js"
   },
   "dependencies": {
     "@hapi/boom": "8.x.x",
