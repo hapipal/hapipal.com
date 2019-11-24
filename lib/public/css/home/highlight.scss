@@ -11,12 +11,14 @@
   h2 {
     font-size: $h2-font-size;
     font-weight: 400;
+    margin-bottom: .5em;
   }
 
   p {
     &:first-of-type {
       font-size: 1.25rem;
       color: lighten($gray, 20);
+      max-width: 500px;
     }
     font-size: 1rem;
     margin: 1rem auto;

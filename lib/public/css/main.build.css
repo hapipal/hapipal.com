@@ -609,14 +609,16 @@
       border-bottom: solid 2px #e2e2e2; } }
   .highlight h2 {
     font-size: 2.1rem;
-    font-weight: 400; }
+    font-weight: 400;
+    margin-bottom: .5em; }
   .highlight p {
     font-size: 1rem;
     margin: 1rem auto;
     max-width: 800px; }
     .highlight p:first-of-type {
       font-size: 1.25rem;
-      color: #777777; }
+      color: #777777;
+      max-width: 500px; }
   .highlight a {
     color: #f87f1e;
     text-decoration: none; }
