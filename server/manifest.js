@@ -29,8 +29,7 @@ module.exports = new Confidence.Store({
                     githubToken: process.env.GITHUB_TOKEN,
                     mailchimpApiKey: process.env.MAILCHIMP_API_KEY,
                     mailchimpListId: process.env.MAILCHIMP_LIST_ID,
-                    gaTrackingId: process.env.GA_TRACKING_ID,
-                    isGlitchDeploy: !!(process.env.PROJECT_ID && process.env.PROJECT_INVITE_TOKEN)
+                    gaTrackingId: process.env.GA_TRACKING_ID
                 }
             },
             {
