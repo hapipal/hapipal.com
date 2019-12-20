@@ -2,6 +2,10 @@
 
 Welcome! Thanks for trying out hapi pal. Today, we're going to show you how to start a project with pal, explaining the component parts and a bit of the theory behind them along the way.
 
+## Common-Mistakes
+
+This is where we can add common mistakes.
+
 ## Who is this guide for?
 
 We assume intermediate JavaScript experience, with at least a basic grasp of working with nodejs, and familiarity with server-side web development (e.g. routing, models, database management, etc.). We won't cover these concepts here, just how to implement them.
