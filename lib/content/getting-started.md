@@ -11,7 +11,7 @@ That assumed, this guide is likely, though not exclusively, most useful for:
  - Someone familiar with hapi, looking to improve their architecture or sharpen their tools
  - Someone with zero experience with hapi who'd like a gentle introduction to working with the framework, for example to vet it as their next project's web server framework
 
-If you're here and you've read this far, you're probably at least a little bit interested in some of this, so we encourage you to read on—you might still find the below interesting, if not useful.  
+If you're here and you've read this far, you're probably at least a little bit interested in some of this, so we encourage you to read on—you might still find the below interesting, if not useful.
 
 ## What is hapi pal?
 > A friendly, proven starting place for your next hapi plugin or deployment
@@ -605,11 +605,11 @@ module.exports = {
     options: {
         validate: {
             // Check that the POST'd data complies with our model's schema
-            payload: {
+            payload: Joi.object({
                 slug: Joi.string().required(),
                 question: Joi.string().required(),
                 answer: Joi.string().required()
-            }
+            })
         },
         // Our db query is asynchronous, so we keep async around this time
         handler: async (request) => {
@@ -751,9 +751,9 @@ module.exports = {
     options: {
         tags: ['api'],
         validate: {
-            params: {
+            params: Joi.object({
                 id: Joi.number().integer()
-            }
+            })
         },
         handler: async (request) => {
 
