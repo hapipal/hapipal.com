@@ -197,18 +197,18 @@
     box-sizing: border-box;
     color: #fff;
     display: inline-block;
-    font-size: 1rem;
+    font-size: .9rem;
     font-weight: 500;
     height: 100%;
     letter-spacing: .25px;
     padding: 0 .5rem;
     position: relative;
     text-decoration: none; }
-    @media only screen and (max-width: 360px) {
-      .nav__item {
-        font-size: .9rem; } }
+    .nav__item:first-of-type {
+      padding-left: 0; }
     @media only screen and (min-width: 481px) {
       .nav__item {
+        font-size: 1rem;
         margin: 0 1rem;
         padding: .5rem .5rem 0 0; } }
     @media only screen and (min-width: 1025px) {
