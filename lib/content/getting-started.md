@@ -89,10 +89,10 @@ You should see:
 > paldo-riddles@1.0.0 start /your/local/path/paldo-riddles
 > node server
 
-Server started at http://0.0.0.0:3000
+Server started at http://localhost:3000
 ```
 
-If you then visit that address in your browser or cURL it (`curl http://0.0.0.0:3000`), you should receive the following:
+If you then visit that address in your browser or cURL it (`curl http://localhost:3000`), you should receive the following:
 
 ```json
 {
@@ -131,28 +131,32 @@ A simple example:
 We can add the following to our `.env` file:
 
 ```env
-NODE_ENV=development
+PORT=4000
 ```
 
 Now, let's take a look at our manifest. Near the top, we see:
 
 ```js
     //...
-    debug: {
-        $filter: 'NODE_ENV',
-        development: {
-            log: ['error', 'implementation', 'internal'],
-            request: ['error', 'implementation', 'internal']
-        }
-    }
+    port: {
+        $env: 'PORT',
+        $coerce: 'number',
+        $default: 3000
+    },
     // ...
 ```
 
-The `$filter` Confidence directive uses the specified environment variable, `process.env.NODE_ENV`, to filter the value set to the current property, `debug` (which, following the specification of a [Glue manifest](https://github.com/hapijs/glue/blob/master/API.md#await-composemanifest-options), represents the [server.options.debug](https://github.com/hapijs/hapi/blob/master/API.md#server.options.debug) hapi server option).
+The `$env` Confidence directive uses the specified environment variable, `process.env.PORT`, to determine the value set to the current property, `port` (which, following the specification of a [Glue manifest](https://github.com/hapijs/glue/blob/master/API.md#await-composemanifest-options), represents the [server.options.port](https://github.com/hapijs/hapi/blob/master/API.md#server.options.port) hapi server option).  When `process.env.PORT` isn't set Confidence brings the `$default` of `3000` into play: that's why the first time we started the server we saw it running on port 3000 ("Server started at http://localhost:3000").  Finally, because environment variables are always technically strings, Confidence allows us to `$coerce` the value to a number so that it becomes valid hapi configuration for a port, as hapi wouldn't accept a string here.
 
-To translate: because we configured `NODE_ENV` as `development` in the `server/.env` file, our server is now configured to log errors to the console.
+To translate: because we configured `PORT` as `4000` in the `server/.env` file, our server is now configured to serve requests on port `4000` rather than the default of `3000`.
 
-There's more to Confidence, but the gist is that the hapi pal configuration setup allows us to not just set configuration in the environment, but conditionalize our hapi server configuration based upon the environment with minimal overhead.  As with everything else we gloss over here, we encourage you to [read more](https://github.com/hapijs/confidence) if you're still curious.
+Let's change our `.env` again to set things back to normal:
+
+```env
+PORT=3000
+```
+
+There's more to Confidence, but the gist is that the hapi pal configuration setup allows us to not just set configuration in the environment, but conditionalize our hapi server configuration based upon the environment with minimal overhead.  As with everything else we gloss over here, we encourage you to [read more](https://github.com/hapipal/confidence) if you're still curious.
 
 ## Creating your first routes
 
@@ -164,12 +168,11 @@ The simplest way to do all this? A couple of quick and easy routes.
 
 `hpal` helps us out here, too. It can generate a route template we can simply fill in.
 
-Now, instead of running pal's CLI from the registry, we'll add it to our project and run it from there. This step isn't strictly necessary, but at least makes explicit our dependency on the tool for project scaffolding tasks, rather than counting on the project maintainer's familiarity with the pal-verse to know `hpal` is available.  `npx hpal` will first look wherever `npm bin` thinks your local npm executable directory is, which in our case should be `paldo-riddles/node_modules/.bin`, and if `hpal` isn't found there it will be installed then run from the npm registry.
+Going forward, instead of running pal's CLI from the registry, we'll run the version installed locally to our project.  `npx hpal` will first look wherever `npm bin` thinks your local npm executable directory is, which in our case should be `paldo-riddles/node_modules/.bin`, and if `hpal` isn't found there it will be installed then run from the npm registry.  Because the boilerplate includes `hpal` as a `devDependency`, `npx` should always be able to find it while you're working on your project.
 
 > Alternatively you may install it globally, then run `hpal` directly without using `npx`.
 
 ```sh
-npm install --save-dev hpal
 npx hpal make route riddle-random
 ```
 
@@ -228,7 +231,7 @@ module.exports = {
 
 Be sure to restart your server in order to pick-up this new code.
 
-If you cURL our new route (`curl http://0.0.0.0:3000/riddle-random`) or visit it in your browser, you'll see one of Paldo's riddles. We're up and running!
+If you cURL our new route (`curl http://localhost:3000/riddle-random`) or visit it in your browser, you'll see one of Paldo's riddles. We're up and running!
 
 Now, let's setup letting people get answers if (well, when :)), they get stumped. We'll rely on Paldo's friends supplying the `slug` of the riddle they're stuck on (for now) to know which answer to supply.
 
@@ -456,7 +459,7 @@ Let's break that file down:
 'use strict';
 
 const Schwifty = require('schwifty');
-const Joi = require('@hapi/joi'); // hapi's package for data validation
+const Joi = require('joi'); // hapi's preferred package for data validation
 
 // Schwifty models are based on Objection's, but outfitted to use Joi
 
@@ -482,14 +485,14 @@ module.exports = class ModelName extends Schwifty.Model {
 
 First thing's first: make sure to change your model class's name from `ModelName` to `Riddles`, which is how we'll reference the model throughout the application (e.g. in route handlers).  Similarly, set the `tableName` to whichever table you'd like to store riddles in your database, most likely just `'Riddles'`.
 
-To continue to fill this out properly, it requires some understanding of [Joi](https://github.com/hapijs/joi), hapi's library for validation.  Joi is extremely expressive, as you can probably tell from its extensive [API documentation](https://github.com/hapijs/joi/blob/master/API.md).  hapi route payload, query, and path parameters [are also typically validated using Joi](https://github.com/hapijs/hapi/blob/master/API.md#route.options.validate), which is why we integrated it into Schwifty's `Model` class.  After looking at some Joi examples, let's fill that in, then:
+To continue to fill this out properly, it requires some understanding of [Joi](https://github.com/sideway/joi), hapi's library for validation.  Joi is extremely expressive, as you can probably tell from its extensive [API documentation](https://joi.dev/api/).  hapi route payload, query, and path parameters [are also typically validated using Joi](https://github.com/hapijs/hapi/blob/master/API.md#route.options.validate), which is why we integrated it into Schwifty's `Model` class.  After looking at some Joi examples, let's fill that in, then:
 
 ```js
 // lib/models/Riddles.js
 'use strict';
 
 const Schwifty = require('schwifty');
-const Joi = require('@hapi/joi');
+const Joi = require('joi');
 
 module.exports = class Riddles extends Schwifty.Model {
 
@@ -541,9 +544,9 @@ That creates just the scaffold of a migration file. Here's our filled-in version
 ```js
 'use strict';
 
-exports.up = (knex, Promise) => {
+exports.up = async (knex) => {
 
-    return knex.schema.createTable('Riddles', (table) => {
+    await knex.schema.createTable('Riddles', (table) => {
 
         table.increments('id').primary();
         table.string('slug').notNullable();
@@ -552,9 +555,9 @@ exports.up = (knex, Promise) => {
     });
 };
 
-exports.down = (knex, Promise) => {
+exports.down = async (knex) => {
 
-    return knex.schema.dropTable('Riddles');
+    await knex.schema.dropTable('Riddles');
 };
 ```
 
@@ -597,7 +600,7 @@ Then fill in the route template as follows:
 // lib/routes/riddle-create.js
 'use strict';
 
-const Joi = require('@hapi/joi');
+const Joi = require('joi');
 
 module.exports = {
     method: 'POST',
@@ -649,7 +652,7 @@ A bunch of familiar route setup, but we've also got a few new things going on he
 Now, if we start our server and hit our new route...
 
 ```sh
-$ curl -H "Content-Type: application/json" -X POST -d '{"slug": "see-saw", "question": "We see it once in a year, twice in a week, but never in a day. What is it?", "answer": "The letter E"}' http://0.0.0.0:3000/riddle
+$ curl -H "Content-Type: application/json" -X POST -d '{"slug": "see-saw", "question": "We see it once in a year, twice in a week, but never in a day. What is it?", "answer": "The letter E"}' http://localhost:3000/riddle
 ```
 
 ...we hopefully see our new model, sent right back to us with the `id` property set on it by our database, per the primary key in our migrations file:
@@ -688,40 +691,7 @@ module.exports = {
 };
 ```
 
-Now, if we start up our server and go to [http://0.0.0.0:3000/documentation](http://0.0.0.0:3000/documentation), we can see all our routes and can test them from there, as an alternative to cURLing. This is totally a nice-to-have, just simplifies our testing live a bit.
-
-> **Note**
->
-> The Swagger UI will come up if you visit [http://localhost:3000/documentation](http://localhost:3000/documentation). However, any requests sent through it will fail near-silently, saying something like "no response from server". This is due to a CORS issue: our server, as specified in our manifest, lives on host `0.0.0.0`, which is what our Swagger manifest claims.  We're on `localhost`, which is a different host than `0.0.0.0`, so the browser blocks the request.
->
-> **We suggest that you ensure you visit /documentation on the host `0.0.0.0` rather than `localhost` to avoid this CORS issue.**
-
-If you feel like dipping your toes in CORS with hapi, feel free to add the following to `server/manifest.js`.
-
-```diff
- server: {
-     host: '0.0.0.0',
-     port: process.env.PORT || 3000,
-     debug: {
-         $filter: 'NODE_ENV',
-         development: {
-             log: ['error', 'implementation', 'internal'],
-             request: ['error', 'implementation', 'internal']
-         }
-     },
-+    routes: {
-+        cors: {
-+            $filter: 'NODE_ENV',
-+            development: true
-+        }
-+    }
-```
-
-This block sets all routes registered on our server to permissively allow cross-origin requests by default. For more information on configuring CORS in hapi: [`route.options.cors`](https://github.com/hapijs/hapi/blob/master/API.md#route.options.cors).
-
-We set this configuration only in development because, for security reasons, we may want to control who we accept requests from in production. Not so important here, but to simply illustrate a best practice.
-
-Moving on!
+Now, if we start up our server and go to [http://localhost:3000/documentation](http://localhost:3000/documentation), we can see all our routes and can test them from there, as an alternative to cURLing. This is totally a nice-to-have, just simplifies our testing live a bit.
 
 ## Post-DB Integration Cleanup and Refactoring
 
@@ -743,7 +713,7 @@ We end up with this:
 'use strict';
 
 const Boom = require('@hapi/boom');
-const Joi = require('@hapi/joi');
+const Joi = require('joi');
 
 module.exports = {
     method: 'GET',

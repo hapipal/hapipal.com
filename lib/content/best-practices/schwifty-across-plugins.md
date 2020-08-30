@@ -102,7 +102,7 @@ exports.plugin = {
 
 ##### `user-plugin/model.js`
 ```js
-const Joi = require('@hapi/joi');
+const Joi = require('joi');
 const Schwifty = require('schwifty');
 
 // A user model only with an id and name
@@ -153,7 +153,7 @@ Now the app plugin has access to the user plugin's model and may extend it howev
 #### The app plugin
 ##### `app-plugin/user-model.js` (new file)
 ```js
-const Joi = require('@hapi/joi');
+const Joi = require('joi');
 const UserPlugin = require('../user-plugin');
 
 module.exports = class User extends UserPlugin.Model {
