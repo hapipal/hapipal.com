@@ -6,7 +6,7 @@
   "license": "MIT",
   "main": "lib/index.js",
   "engines": {
-    "node": "12.x.x"
+    "node": ">=12 <15"
   },
   "directories": {
     "lib": "lib",
@@ -23,19 +23,19 @@
     "build": "npm run build:css && npm run build:js"
   },
   "dependencies": {
-    "@hapi/boom": "8.x.x",
-    "@hapi/bounce": "1.x.x",
-    "@hapi/glue": "6.x.x",
-    "@hapi/hapi": "19.x.x",
-    "@hapi/inert": "5.x.x",
-    "@hapi/joi": "16.x.x",
-    "@hapi/somever": "2.x.x",
-    "@hapi/vision": "5.x.x",
-    "@hapi/wreck": "16.x.x",
+    "@hapi/boom": "9.x.x",
+    "@hapi/bounce": "2.x.x",
+    "@hapi/glue": "8.x.x",
+    "@hapi/hapi": "20.x.x",
+    "@hapi/inert": "6.x.x",
+    "@hapi/somever": "3.x.x",
+    "@hapi/vision": "6.x.x",
+    "@hapi/wreck": "17.x.x",
     "confidence": "4.x.x",
     "dotenv": "8.x.x",
     "handlebars": ">=4.7.6 <5",
     "haute-couture": "3.x.x",
+    "joi": "17.x.x",
     "require-dir": "1.x.x",
     "schmervice": "1.x.x",
     "toys": ">=2.2.0 <3"
@@ -43,23 +43,23 @@
   "devDependencies": {
     "@babel/core": "7.x.x",
     "@babel/preset-env": "7.x.x",
-    "@hapi/code": "7.x.x",
-    "@hapi/eslint-config-hapi": "12.x.x",
+    "@hapi/code": "8.x.x",
+    "@hapi/eslint-config-hapi": "13.x.x",
     "@hapi/eslint-plugin-hapi": "4.x.x",
-    "@hapi/lab": "21.x.x",
-    "@primer/css": "13.x.x",
+    "@hapi/lab": "23.x.x",
+    "@primer/css": "15.x.x",
     "autoprefixer": "9.x.x",
     "babelify": "10.x.x",
-    "browser-sync": "^2.26.7",
+    "browser-sync": "2.x.x",
     "browserify": "16.x.x",
     "cssnano": "4.x.x",
-    "eslint": "6.x.x",
+    "eslint": "7.x.x",
     "hammerjs": "2.x.x",
-    "hpal": "^2.2.1",
+    "hpal": "2.x.x",
     "hpal-debug": "1.x.x",
     "node-sass": ">=4.14.1 <5",
     "postcss": "7.x.x",
-    "postcss-cli": "6.x.x",
+    "postcss-cli": "7.x.x",
     "scroll-into-view-if-needed": "2.x.x"
   }
 }

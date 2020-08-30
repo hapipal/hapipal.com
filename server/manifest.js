@@ -11,12 +11,19 @@ Dotenv.config({ path: `${__dirname}/.env` });
 module.exports = new Confidence.Store({
     server: {
         host: '0.0.0.0',
-        port: process.env.PORT || 3000,
+        port: {
+            $env: 'PORT',
+            $coerce: 'number',
+            $default: 3000
+        },
         debug: {
-            $filter: 'NODE_ENV',
-            development: {
-                log: ['error', 'implementation', 'internal'],
-                request: ['error', 'implementation', 'internal']
+            $filter: { $env: 'NODE_ENV' },
+            $default: {
+                log: ['error'],
+                request: ['error']
+            },
+            production: {
+                request: ['implementation']
             }
         }
     },
