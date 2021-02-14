@@ -979,9 +979,13 @@
     .docs-detail-page .sidenav .select-version select.version:hover {
       border: 1px solid #f87f1e; }
 
+.docs-detail-page .md:not(:last-child) {
+  padding-bottom: 0; }
+
 .docs-detail-page div.docs-detail__pkg-links {
   text-align: right;
   margin-bottom: 0;
+  padding-bottom: 0;
   height: 0;
   color: #cacaca; }
   .docs-detail-page div.docs-detail__pkg-links a {
@@ -1101,7 +1105,7 @@
     background-color: #fafbfc;
     border: solid 1px #d1d5da;
     border-bottom-color: #d1d5da;
-    border-radius: 3px;
+    border-radius: 6px;
     box-shadow: inset 0 -1px 0 #d1d5da; }
   .markdown-body::before {
     display: table;
@@ -1260,6 +1264,10 @@
 .markdown-body table {
   display: block;
   width: 100%;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  max-width: 100%;
   overflow: auto; }
   .markdown-body table th {
     font-weight: 600; }
@@ -1360,7 +1368,7 @@
   margin: 0;
   font-size: 85%;
   background-color: rgba(0, 0, 0, 0.05);
-  border-radius: 3px; }
+  border-radius: 6px; }
   .markdown-body code br,
   .markdown-body tt br {
     display: none; }
@@ -1392,7 +1400,7 @@
   font-size: 85%;
   line-height: 1.45;
   background-color: #f6f8fa;
-  border-radius: 3px; }
+  border-radius: 6px; }
 
 .markdown-body pre code,
 .markdown-body pre tt {

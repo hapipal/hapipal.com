@@ -61,9 +61,14 @@
 
   }
 
+  .md:not(:last-child) {
+    padding-bottom: 0;
+  }
+
   div.docs-detail__pkg-links {
     text-align: right;
     margin-bottom: 0;
+    padding-bottom: 0;
     height: 0;
     color: $mid-light-gray;
 
