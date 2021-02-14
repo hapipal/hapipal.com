@@ -467,19 +467,13 @@ const Joi = require('joi'); // hapi's preferred package for data validation
 // this is how you will reference it throughout your application.
 module.exports = class ModelName extends Schwifty.Model {
 
-    static get tableName() {
-
-        return '';
-    }
+    static tableName = '';
 
     // Here we'll define a joi schema to describe a valid Riddle.
     // Schwifty will then use this to ensure that the data we try to use
     // to create/update our riddles complies with our definition of a Riddle.
 
-    static get joiSchema() {
-
-        return Joi.object({});
-    }
+    static joiSchema = Joi.object({});
 };
 ```
 
@@ -496,20 +490,14 @@ const Joi = require('joi');
 
 module.exports = class Riddles extends Schwifty.Model {
 
-    static get tableName() {
+    static tableName = 'Riddles';
 
-        return 'Riddles';
-    }
-
-    static get joiSchema() {
-
-        return Joi.object({
-            id: Joi.number().integer(),
-            slug: Joi.string(),
-            question: Joi.string(),
-            answer: Joi.string()
-        });
-    }
+    static joiSchema = Joi.object({
+        id: Joi.number().integer(),
+        slug: Joi.string(),
+        question: Joi.string(),
+        answer: Joi.string()
+    });
 };
 ```
 
