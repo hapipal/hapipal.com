@@ -397,9 +397,9 @@ Most of what just got pulled in is relatively simple, but worth a quick review:
  - [`knexfile.js`](http://knexjs.org/#knexfile) is a configuration file that the [knex CLI](http://knexjs.org/#Migrations-CLI) will use to know how to connect to our database.  We use the knex CLI to create new migrations and manually run migrations.
  - `lib/migrations/` and `lib/models/` are where we keep our database migration files and models, respectively; we'll write some in just a minute! As with most things in pal, just put those resources in the folders created for them and haute-couture takes care of the rest.
 
-We left off the slightly more nuanced point: `lib/plugins/schwifty.js` vs. the `schwifty` plugin added to `server/manifest.js`.
+We left off the slightly more nuanced point: `lib/plugins/@hapipal.schwifty.js` vs. the `@hapipal/schwifty` plugin added to `server/manifest.js`.
 
-The difference, to keep things simple here, is a matter of scope.  Our application is implemented as a hapi plugin in `lib/`.  That plugin depends on schwifty in order to define some models, so it registers schwifty by placing the file `lib/plugins/schwifty.js`.  Our hapi server is located in `server/`, which is where all the nitty-gritty configuration concerning our deployment should live.  In particular, our database configuration can be specified there by registering schwifty in `server/manifest.js`.
+The difference, to keep things simple here, is a matter of scope.  Our application is implemented as a hapi plugin in `lib/`.  That plugin depends on schwifty in order to define some models, so it registers schwifty by placing the file `lib/plugins/@hapipal.schwifty.js`.  Our hapi server is located in `server/`, which is where all the nitty-gritty configuration concerning our deployment should live.  In particular, our database configuration can be specified there by registering schwifty in `server/manifest.js`.
 
 In this way, our plugin (`lib/`) can travel around to different servers if it needs to, and never worry about all the hairy deployment details, such as database credentials: schwifty will ensure our plugin finds the relevant database connection provided by knex, and bind it to our models.  On the flip side, we can also set plugin-specific configuration like `migrationsDir`—used by knex to determine which directory to check for the plugin's migration files—out of our deployment's configuration.  Nice!
 
@@ -458,7 +458,7 @@ Let's break that file down:
 // lib/models/Riddles.js
 'use strict';
 
-const Schwifty = require('schwifty');
+const Schwifty = require('@hapipal/schwifty');
 const Joi = require('joi'); // hapi's preferred package for data validation
 
 // Schwifty models are based on Objection's, but outfitted to use Joi
@@ -491,7 +491,7 @@ To continue to fill this out properly, it requires some understanding of [Joi](h
 // lib/models/Riddles.js
 'use strict';
 
-const Schwifty = require('schwifty');
+const Schwifty = require('@hapipal/schwifty');
 const Joi = require('joi');
 
 module.exports = class Riddles extends Schwifty.Model {
