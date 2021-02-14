@@ -50,16 +50,16 @@
     "@hapipal/hpal": "3.x.x",
     "@hapipal/hpal-debug": "2.x.x",
     "@primer/css": "15.x.x",
-    "autoprefixer": "9.x.x",
+    "autoprefixer": "10.x.x",
     "babelify": "10.x.x",
     "browser-sync": "^2.26.14",
-    "browserify": "16.x.x",
+    "browserify": "17.x.x",
     "cssnano": "4.x.x",
     "eslint": "7.x.x",
     "hammerjs": "2.x.x",
     "node-sass": ">=4.14.1 <5",
-    "postcss": "7.x.x",
-    "postcss-cli": "7.x.x",
+    "postcss": "8.x.x",
+    "postcss-cli": "8.x.x",
     "scroll-into-view-if-needed": "2.x.x"
   }
 }
