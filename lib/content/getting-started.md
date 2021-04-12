@@ -89,7 +89,8 @@ You should see:
 > paldo-riddles@1.0.0 start /your/local/path/paldo-riddles
 > node server
 
-Server started at http://localhost:3000
+Debug: start
+    Server started at http://localhost:3000
 ```
 
 If you then visit that address in your browser or cURL it (`curl http://localhost:3000`), you should receive the following:
@@ -139,14 +140,14 @@ Now, let's take a look at our manifest. Near the top, we see:
 ```js
     //...
     port: {
-        $env: 'PORT',
+        $param: 'PORT',
         $coerce: 'number',
         $default: 3000
     },
     // ...
 ```
 
-The `$env` Confidence directive uses the specified environment variable, `process.env.PORT`, to determine the value set to the current property, `port` (which, following the specification of a [Glue manifest](https://github.com/hapijs/glue/blob/master/API.md#await-composemanifest-options), represents the [server.options.port](https://github.com/hapijs/hapi/blob/master/API.md#server.options.port) hapi server option).  When `process.env.PORT` isn't set Confidence brings the `$default` of `3000` into play: that's why the first time we started the server we saw it running on port 3000 ("Server started at http://localhost:3000").  Finally, because environment variables are always technically strings, Confidence allows us to `$coerce` the value to a number so that it becomes valid hapi configuration for a port, as hapi wouldn't accept a string here.
+The `$param` Confidence directive uses the parameters passed to the manifest within `server/index.js`, which in this case is `process.env` (i.e. `Manifest.get('/', process.env)`).  In other words, we're pulling in `process.env.PORT` to determine the value set to the current property, `port`— which, following the specification of a [Glue manifest](https://github.com/hapijs/glue/blob/master/API.md#await-composemanifest-options), represents the [server.options.port](https://github.com/hapijs/hapi/blob/master/API.md#server.options.port) hapi server option.  When `process.env.PORT` isn't set Confidence brings the `$default` of `3000` into play: that's why the first time we started the server we saw it running on port 3000 ("Server started at http://localhost:3000").  Finally, because environment variables are always technically strings, Confidence allows us to `$coerce` the value to a number so that it becomes valid hapi configuration for a port, as hapi wouldn't accept a string here.
 
 To translate: because we configured `PORT` as `4000` in the `server/.env` file, our server is now configured to serve requests on port `4000` rather than the default of `3000`.
 
@@ -397,9 +398,9 @@ Most of what just got pulled in is relatively simple, but worth a quick review:
  - [`knexfile.js`](http://knexjs.org/#knexfile) is a configuration file that the [knex CLI](http://knexjs.org/#Migrations-CLI) will use to know how to connect to our database.  We use the knex CLI to create new migrations and manually run migrations.
  - `lib/migrations/` and `lib/models/` are where we keep our database migration files and models, respectively; we'll write some in just a minute! As with most things in pal, just put those resources in the folders created for them and haute-couture takes care of the rest.
 
-We left off the slightly more nuanced point: `lib/plugins/schwifty.js` vs. the `schwifty` plugin added to `server/manifest.js`.
+We left off the slightly more nuanced point: `lib/plugins/@hapipal.schwifty.js` vs. the `@hapipal/schwifty` plugin added to `server/manifest.js`.
 
-The difference, to keep things simple here, is a matter of scope.  Our application is implemented as a hapi plugin in `lib/`.  That plugin depends on schwifty in order to define some models, so it registers schwifty by placing the file `lib/plugins/schwifty.js`.  Our hapi server is located in `server/`, which is where all the nitty-gritty configuration concerning our deployment should live.  In particular, our database configuration can be specified there by registering schwifty in `server/manifest.js`.
+The difference, to keep things simple here, is a matter of scope.  Our application is implemented as a hapi plugin in `lib/`.  That plugin depends on schwifty in order to define some models, so it registers schwifty by placing the file `lib/plugins/@hapipal.schwifty.js`.  Our hapi server is located in `server/`, which is where all the nitty-gritty configuration concerning our deployment should live.  In particular, our database configuration can be specified there by registering schwifty in `server/manifest.js`.
 
 In this way, our plugin (`lib/`) can travel around to different servers if it needs to, and never worry about all the hairy deployment details, such as database credentials: schwifty will ensure our plugin finds the relevant database connection provided by knex, and bind it to our models.  On the flip side, we can also set plugin-specific configuration like `migrationsDir`—used by knex to determine which directory to check for the plugin's migration files—out of our deployment's configuration.  Nice!
 
@@ -458,7 +459,7 @@ Let's break that file down:
 // lib/models/Riddles.js
 'use strict';
 
-const Schwifty = require('schwifty');
+const Schwifty = require('@hapipal/schwifty');
 const Joi = require('joi'); // hapi's preferred package for data validation
 
 // Schwifty models are based on Objection's, but outfitted to use Joi
@@ -467,19 +468,13 @@ const Joi = require('joi'); // hapi's preferred package for data validation
 // this is how you will reference it throughout your application.
 module.exports = class ModelName extends Schwifty.Model {
 
-    static get tableName() {
-
-        return '';
-    }
+    static tableName = '';
 
     // Here we'll define a joi schema to describe a valid Riddle.
     // Schwifty will then use this to ensure that the data we try to use
     // to create/update our riddles complies with our definition of a Riddle.
 
-    static get joiSchema() {
-
-        return Joi.object({});
-    }
+    static joiSchema = Joi.object({});
 };
 ```
 
@@ -491,25 +486,19 @@ To continue to fill this out properly, it requires some understanding of [Joi](h
 // lib/models/Riddles.js
 'use strict';
 
-const Schwifty = require('schwifty');
+const Schwifty = require('@hapipal/schwifty');
 const Joi = require('joi');
 
 module.exports = class Riddles extends Schwifty.Model {
 
-    static get tableName() {
+    static tableName = 'Riddles';
 
-        return 'Riddles';
-    }
-
-    static get joiSchema() {
-
-        return Joi.object({
-            id: Joi.number().integer(),
-            slug: Joi.string(),
-            question: Joi.string(),
-            answer: Joi.string()
-        });
-    }
+    static joiSchema = Joi.object({
+        id: Joi.number().integer(),
+        slug: Joi.string(),
+        question: Joi.string(),
+        answer: Joi.string()
+    });
 };
 ```
 

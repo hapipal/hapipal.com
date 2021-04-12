@@ -1,8 +1,8 @@
 'use strict';
 
 const Dotenv = require('dotenv');
-const Confidence = require('confidence');
-const Toys = require('toys');
+const Confidence = require('@hapipal/confidence');
+const Toys = require('@hapipal/toys');
 
 // Pull .env into process.env
 Dotenv.config({ path: `${__dirname}/.env` });
@@ -12,12 +12,12 @@ module.exports = new Confidence.Store({
     server: {
         host: '0.0.0.0',
         port: {
-            $env: 'PORT',
+            $param: 'PORT',
             $coerce: 'number',
             $default: 3000
         },
         debug: {
-            $filter: { $env: 'NODE_ENV' },
+            $filter: 'NODE_ENV',
             $default: {
                 log: ['error'],
                 request: ['error']
@@ -32,17 +32,21 @@ module.exports = new Confidence.Store({
             {
                 plugin: '../lib', // Main plugin
                 options: {
-                    developmentMode: (process.env.NODE_ENV !== 'production'),
-                    githubToken: process.env.GITHUB_TOKEN,
-                    mailchimpApiKey: process.env.MAILCHIMP_API_KEY,
-                    mailchimpListId: process.env.MAILCHIMP_LIST_ID,
-                    gaTrackingId: process.env.GA_TRACKING_ID
+                    githubToken: { $param: 'GITHUB_TOKEN' },
+                    mailchimpApiKey: { $param: 'MAILCHIMP_API_KEY' },
+                    mailchimpListId: { $param: 'MAILCHIMP_LIST_ID' },
+                    gaTrackingId: { $param: 'GA_TRACKING_ID' },
+                    developmentMode: {
+                        $filter: 'NODE_ENV',
+                        $default: true,
+                        production: false
+                    }
                 }
             },
             {
                 plugin: {
                     $filter: 'NODE_ENV',
-                    $default: 'hpal-debug',
+                    $default: '@hapipal/hpal-debug',
                     production: Toys.noop
                 }
             }

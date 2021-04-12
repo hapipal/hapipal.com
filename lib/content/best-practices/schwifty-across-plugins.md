@@ -24,7 +24,7 @@ Okay, time for some code.  Here's our app before the user plugin is properly gen
 ##### `server.js`
 ```js
 const Hapi = require('@hapi/hapi');
-const Schwifty = require('schwifty');
+const Schwifty = require('@hapipal/schwifty');
 const AppPlugin = require('./app-plugin');
 
 (async () => {
@@ -73,7 +73,7 @@ exports.plugin = {
 #### The user plugin
 ##### `user-plugin/index.js`
 ```js
-const Schwifty = require('schwifty');
+const Schwifty = require('@hapipal/schwifty');
 const UserModel = require('./user-model');
 
 exports.plugin = {
@@ -103,7 +103,7 @@ exports.plugin = {
 ##### `user-plugin/model.js`
 ```js
 const Joi = require('joi');
-const Schwifty = require('schwifty');
+const Schwifty = require('@hapipal/schwifty');
 
 // A user model only with an id and name
 module.exports = class User extends Schwifty.Model {
@@ -137,7 +137,7 @@ Exposing the user plugin's model will allow the app plugin to extend it.
 #### The user plugin
 ##### `user-plugin/index.js`
 ```diff
- const Schwifty = require('schwifty');
+ const Schwifty = require('@hapipal/schwifty');
  const UserModel = require('./user-model');
 
 +exports.Model = UserModel;
