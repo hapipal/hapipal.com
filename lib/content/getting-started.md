@@ -89,7 +89,8 @@ You should see:
 > paldo-riddles@1.0.0 start /your/local/path/paldo-riddles
 > node server
 
-Server started at http://localhost:3000
+Debug: start
+    Server started at http://localhost:3000
 ```
 
 If you then visit that address in your browser or cURL it (`curl http://localhost:3000`), you should receive the following:
@@ -139,14 +140,14 @@ Now, let's take a look at our manifest. Near the top, we see:
 ```js
     //...
     port: {
-        $env: 'PORT',
+        $param: 'PORT',
         $coerce: 'number',
         $default: 3000
     },
     // ...
 ```
 
-The `$env` Confidence directive uses the specified environment variable, `process.env.PORT`, to determine the value set to the current property, `port` (which, following the specification of a [Glue manifest](https://github.com/hapijs/glue/blob/master/API.md#await-composemanifest-options), represents the [server.options.port](https://github.com/hapijs/hapi/blob/master/API.md#server.options.port) hapi server option).  When `process.env.PORT` isn't set Confidence brings the `$default` of `3000` into play: that's why the first time we started the server we saw it running on port 3000 ("Server started at http://localhost:3000").  Finally, because environment variables are always technically strings, Confidence allows us to `$coerce` the value to a number so that it becomes valid hapi configuration for a port, as hapi wouldn't accept a string here.
+The `$param` Confidence directive uses the parameters passed to the manifest within `server/index.js`, which in this case is `process.env` (i.e. `Manifest.get('/', process.env)`).  In other words, we're pulling in `process.env.PORT` to determine the value set to the current property, `port`— which, following the specification of a [Glue manifest](https://github.com/hapijs/glue/blob/master/API.md#await-composemanifest-options), represents the [server.options.port](https://github.com/hapijs/hapi/blob/master/API.md#server.options.port) hapi server option.  When `process.env.PORT` isn't set Confidence brings the `$default` of `3000` into play: that's why the first time we started the server we saw it running on port 3000 ("Server started at http://localhost:3000").  Finally, because environment variables are always technically strings, Confidence allows us to `$coerce` the value to a number so that it becomes valid hapi configuration for a port, as hapi wouldn't accept a string here.
 
 To translate: because we configured `PORT` as `4000` in the `server/.env` file, our server is now configured to serve requests on port `4000` rather than the default of `3000`.
 
