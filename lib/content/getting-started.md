@@ -38,17 +38,17 @@ First things first, we need to setup a base pal project. Run the following:
 npx hpal new paldo-riddles
 cd paldo-riddles
 npm install
+
+# make your first commit to init project history
+git add --all
+git commit -m "Initial commit"
 ```
 
-You'll be prompted with the [`npm init`](https://docs.npmjs.com/cli/init) dialog, where you can enter details about your project that will go into its `package.json` file.  Feel free to take the time to fill-out the details, or just "enter" all the way through—either is fine for the purposes of this tutorial.
+On running `npx hpal new paldo-riddles`, you'll be prompted with the [`npm init`](https://docs.npmjs.com/cli/init) dialog, where you can enter details about your project that will go into its `package.json` file.  Feel free to take the time to fill-out the details, or just "enter" all the way through—either is fine for the purposes of this tutorial.
 
 You now have a base pal project directory ready to go!
 
-`npx hpal new paldo-riddles` calls hapi pal's command line utility [hpal](https://www.npmjs.com/package/hpal) to bootstrap a new project in a directory titled `paldo-riddles` in our current working directory (the argument to `new` is just a path). `npx`, shipping with npm as of v5.2, allows us to:
- - run package commands straight from the npm registry as one-offs
- - execute package commands installed locally to your project without specifying the path to the package
-
-<sup>[There's more to npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b), if you're curious.</sup>
+`npx hpal new paldo-riddles` calls hapi pal's command line utility [hpal](https://www.npmjs.com/package/hpal) to bootstrap a new project in a directory titled `paldo-riddles` in our current working directory (the argument to `new` is a path).
 
 We'll cover more on `hpal` in just a bit.
 
@@ -151,12 +151,6 @@ The `$param` Confidence directive uses the parameters passed to the manifest wit
 
 To translate: because we configured `PORT` as `4000` in the `server/.env` file, our server is now configured to serve requests on port `4000` rather than the default of `3000`.
 
-Let's change our `.env` again to set things back to normal:
-
-```env
-PORT=3000
-```
-
 There's more to Confidence, but the gist is that the hapi pal configuration setup allows us to not just set configuration in the environment, but conditionalize our hapi server configuration based upon the environment with minimal overhead.  As with everything else we gloss over here, we encourage you to [read more](https://github.com/hapipal/confidence) if you're still curious.
 
 ## Creating your first routes
@@ -169,15 +163,11 @@ The simplest way to do all this? A couple of quick and easy routes.
 
 `hpal` helps us out here, too. It can generate a route template we can simply fill in.
 
-Going forward, instead of running pal's CLI from the registry, we'll run the version installed locally to our project.  `npx hpal` will first look wherever `npm bin` thinks your local npm executable directory is, which in our case should be `paldo-riddles/node_modules/.bin`, and if `hpal` isn't found there it will be installed then run from the npm registry.  Because the boilerplate includes `hpal` as a `devDependency`, `npx` should always be able to find it while you're working on your project.
-
-> Alternatively you may install it globally, then run `hpal` directly without using `npx`.
-
 ```sh
 npx hpal make route riddle-random
 ```
 
-You should see `Wrote lib/routes/riddle-random.js`. That file now exists in our project. It should contain this basic route template:
+You should see `Wrote lib/routes/riddle-random.js` printed back. That file now exists in our project. It should contain this basic route template:
 
 ```js
 'use strict';
@@ -193,7 +183,7 @@ module.exports = {
 
 The file exports a hapi [route configuration object](https://github.com/hapijs/hapi/blob/master/API.md#server.route()) (or may export an array of them).  hapi pal's directory and file structure is governed by a tool called [haute-couture](https://github.com/hapipal/haute-couture), which you can see is used in your project at `lib/index.js`.  When you place a file in the `routes/` directory, as hpal did for us here, it will automatically be added to your application plugin because haute-couture will make the call to [`server.route()`](https://github.com/hapijs/hapi/blob/master/API.md#server.route()) for you!  The same can be said for other plugin functionality—you'll find that models go in `models/`, authentication strategies go in `auth/strategies/`, etc.
 
-But for now we just need to outfit this file so it allows Paldo to broadcast a riddle, chosen at random from the complete archives, to any friends interested in a brain-teaser.
+But for now we need to outfit `lib/routes/riddle-random.js` so it allows Paldo to broadcast a riddle, chosen at random from the complete archives, to any friends interested in a brain-teaser.
 
 That might look like the following:
 
@@ -201,14 +191,14 @@ That might look like the following:
 'use strict';
 
 module.exports = {
-    method: 'GET',
+    method: 'get',
     path: '/riddle-random',
     options: {
         // Our handler doesn't need to do anything asynchronous or use the
         // response toolkit, so the route handler's signature appears a little simpler than before
         handler: (request) => {
 
-            // We define some riddles, just hardcoded for now
+            // We define some riddles, hardcoded for now
 
             const riddles = [
                 {
@@ -232,7 +222,7 @@ module.exports = {
 
 Be sure to restart your server in order to pick-up this new code.
 
-If you cURL our new route (`curl http://localhost:3000/riddle-random`) or visit it in your browser, you'll see one of Paldo's riddles. We're up and running!
+If you cURL our new route (`curl http://localhost:3000/riddle-random`) or visit it [in your browser](http://localhost:3000/riddle-random), you'll see one of Paldo's riddles. We're up and running!
 
 Now, let's setup letting people get answers if (well, when :)), they get stumped. We'll rely on Paldo's friends supplying the `slug` of the riddle they're stuck on (for now) to know which answer to supply.
 
@@ -248,7 +238,7 @@ Moving on!
 
 Immediately, we see that our strategy of hardcoding our riddles within our first route's handler is, although expedient, unworkable. Our other routes will need to know about that data (let alone any other pieces of our riddle-sharing application we build later). So, let's centralize it.
 
-There's a whole slew of ways you handle this. A simple one: we just create a file called `data` under `lib` and set it up to export our riddles.
+Though there's a whole slew of ways you handle this, we'll create a file called `data` under `lib` and set it up to export our riddles.
 
 ```js
 // lib/data.js
@@ -271,7 +261,7 @@ exports.riddles = [
 ];
 ```
 
-Now, we just require this file in any route that needs to know about our riddles. Our first route now becomes much simpler.
+Now, we require this file in any route that needs to know about our riddles. Our first route now becomes much simpler.
 
 ```js
 // lib/routes/riddle-random.js
@@ -280,7 +270,7 @@ Now, we just require this file in any route that needs to know about our riddles
 const Data = require('../data');
 
 module.exports = {
-    method: 'GET',
+    method: 'get',
     path: '/riddle-random',
     options: {
         handler: (request) => {
@@ -305,7 +295,7 @@ const Boom = require('@hapi/boom');
 const Data = require('../data');
 
 module.exports = {
-    method: 'GET',
+    method: 'get',
     path: '/riddle-answer/{slug}',
     options: {
         handler: (request) => {
@@ -342,7 +332,7 @@ We can take advantage of this in a couple of ways.
 
 ### Manually
 
-Just run `npm run lint`—this executes eslint with our config on all files not ignored by npm (see the project's standard `.npmignore`)—and then fix whatever warnings and errors it spits out.
+Run `npm run lint`—this executes eslint with our config on all files not ignored by npm (see the project's standard `.npmignore`)—and then fix whatever warnings and errors it spits out (or if you prefer eslint's automatic fixing: `npm run lint -- --fix`).
 
 Batching lint errors in this way provides you a quick and clear punchlist of lines to clean-up before committing and pushing your code.
 
@@ -372,21 +362,20 @@ Objection ORM is an impressive SQL query-builder with a fantastic community, bui
 
 So, let's pull in our [Objection flavor](https://github.com/hapipal/boilerplate/commit/objection).
 
-If you used the hpal CLI to start your project as described above, just run:
+If you used the hpal CLI to start your project as described above, run:
 
 ```sh
 git cherry-pick objection
-npm install
 ```
 
-If you just cloned the pal repo (rather than using `npx hpal new ...`), you'll need to fetch the tagged commits first:
+If you cloned the pal repo (rather than using `npx hpal new ...`), you'll need to fetch the tagged commits first:
 
 ```sh
 git fetch pal --tags
 git cherry-pick objection
 ```
 
-Expect to resolve small merge conflicts when pulling flavors in, typically just in `package.json` having to do with overlapping dependencies in HEAD and the flavor.
+Expect to resolve small merge conflicts when pulling flavors in, typically just in `package.json`  and `server/manifest.js` having to do with overlapping dependencies in HEAD and the flavor.
 
 Most of what just got pulled in is relatively simple, but worth a quick review:
 
@@ -396,7 +385,7 @@ Most of what just got pulled in is relatively simple, but worth a quick review:
    - `knex` handles database connections and provides the core query-building functionality to Objection.
    - `schwifty` is the hapi plugin described above, allowing knex, Objection, and hapi to all play nice together.
  - [`knexfile.js`](http://knexjs.org/#knexfile) is a configuration file that the [knex CLI](http://knexjs.org/#Migrations-CLI) will use to know how to connect to our database.  We use the knex CLI to create new migrations and manually run migrations.
- - `lib/migrations/` and `lib/models/` are where we keep our database migration files and models, respectively; we'll write some in just a minute! As with most things in pal, just put those resources in the folders created for them and haute-couture takes care of the rest.
+ - `lib/migrations/` and `lib/models/` are where we keep our database migration files and models, respectively; we'll write some in just a minute! As with most things in pal, put those resources in the folders created for them and haute-couture takes care of the rest.
 
 We left off the slightly more nuanced point: `lib/plugins/@hapipal.schwifty.js` vs. the `@hapipal/schwifty` plugin added to `server/manifest.js`.
 
@@ -420,6 +409,9 @@ One final point on `server/manifest.js`—let's quickly peruse how we've configu
             useNullAsDefault: true,         // Suggested for sqlite3
             connection: {
                 filename: ':memory:'        // You may specify a file here if you want persistence
+            },
+            migrations: {
+                stub: Schwifty.migrationsStubPath
             }
         }
     }
@@ -428,7 +420,7 @@ One final point on `server/manifest.js`—let's quickly peruse how we've configu
 
 The main takeaway from here is that, out of the box, we get an in-memory database. This is just fine for our purposes as our data doesn't matter too much here (sorry, Paldo!), so it's okay for it to disappear every time our server shuts down.  Just be aware to not expect any of the data we setup in the rest of the tutorial to hang around. In our examples, we'll act as if our data is reliable and persistent.  If you'd like to use a persistent data store, you may set an actual `filename` for SQLite3 to store data rather than `':memory:'`, or configure knex to use a PostgreSQL connection, for example.
 
-Phew! That was a pile of words and theory! Sorry about that. Let's first just check everything's still working:
+Phew! That was a pile of words and theory! Sorry about that. Let's first check everything's still working:
 
 ```sh
 # bring in our new dependencies
@@ -478,7 +470,7 @@ module.exports = class ModelName extends Schwifty.Model {
 };
 ```
 
-First thing's first: make sure to change your model class's name from `ModelName` to `Riddles`, which is how we'll reference the model throughout the application (e.g. in route handlers).  Similarly, set the `tableName` to whichever table you'd like to store riddles in your database, most likely just `'Riddles'`.
+First thing's first: make sure to change your model class's name from `ModelName` to `Riddles`, which is how we'll reference the model throughout the application (e.g. in route handlers).  Similarly, set the `tableName` to whichever table you'd like to store riddles in your database e.g. `'Riddles'`.
 
 To continue to fill this out properly, it requires some understanding of [Joi](https://github.com/sideway/joi), hapi's library for validation.  Joi is extremely expressive, as you can probably tell from its extensive [API documentation](https://joi.dev/api/).  hapi route payload, query, and path parameters [are also typically validated using Joi](https://github.com/hapijs/hapi/blob/master/API.md#route.options.validate), which is why we integrated it into Schwifty's `Model` class.  After looking at some Joi examples, let's fill that in, then:
 
@@ -518,7 +510,7 @@ npx knex migrate:make add-riddles
 Things to know:
  - the `knex` CLI is installed with the main knex package.
  - `migrate:make` is described in the knex docs [here](http://knexjs.org/#Migrations-CLI).
- - `add-riddles` is just the base name of the migration file; try to describe what this migration does to make reviewing migration history mildly easier.
+ - `add-riddles` is the base name of the migration file; try to describe what this migration does to make reviewing migration history mildly easier.
 
 If everything's going okay, you should see something like:
 
@@ -592,7 +584,7 @@ Then fill in the route template as follows:
 const Joi = require('joi');
 
 module.exports = {
-    method: 'POST',
+    method: 'post',
     path: '/riddle',
     options: {
         validate: {
@@ -628,7 +620,7 @@ A bunch of familiar route setup, but we've also got a few new things going on he
 
  - `const { Riddles } = request.models()`
 
- The [`request.models()`](https://github.com/hapipal/schwifty/blob/master/API.md#requestmodelsall) method is a request decoration added by schwifty. It allows you to access the models registered by your plugin so that we can make queries against them.  Just ensure that the name used here matches your model class's name: `class Riddles extends Schwifty.Model {}`.
+ The [`request.models()`](https://github.com/hapipal/schwifty/blob/master/API.md#requestmodelsall) method is a [request decoration](https://github.com/hapijs/hapi/blob/master/API.md#server.decorate()) added by schwifty. It allows you to access the models registered by your plugin so that we can make queries against them.  Just ensure that the name used here matches your model class's name: `class Riddles extends Schwifty.Model {}`.
 
  - `await Riddles.query().insertAndFetch(riddle)`
 
@@ -641,7 +633,7 @@ A bunch of familiar route setup, but we've also got a few new things going on he
 Now, if we start our server and hit our new route...
 
 ```sh
-$ curl -H "Content-Type: application/json" -X POST -d '{"slug": "see-saw", "question": "We see it once in a year, twice in a week, but never in a day. What is it?", "answer": "The letter E"}' http://localhost:3000/riddle
+curl -H "Content-Type: application/json" -X POST -d '{"slug": "see-saw", "question": "We see it once in a year, twice in a week, but never in a day. What is it?", "answer": "The letter E"}' http://localhost:3000/riddle
 ```
 
 ...we hopefully see our new model, sent right back to us with the `id` property set on it by our database, per the primary key in our migrations file:
@@ -659,7 +651,9 @@ We have a lot of love for cURL. Still, manually prodding our endpoints puts the 
 Thankfully, we can address this issue post-haste with another flavor.
 
 ```sh
-git cherry-pick swagger
+git cherry-pick swagger 
+# As noted earlier, you might first have to resolve small merge conflicts when pulling in flavors, typically in `package.json`  and `server/manifest.js`
+npm install
 ```
 
 This sets up a [Swagger interface](https://swagger.io/) for our application, courtesy of a fantastic hapi plugin named [hapi-swagger](https://github.com/glennjones/hapi-swagger). Now, if we mark our routes appropriately, they will appear at `/documentation`, where we'll see a set of forms for each route where we can hit our routes and enter data directly without manually formatting it.
@@ -668,7 +662,7 @@ To mark our routes, add the following `tags` entry to each route config:
 
 ```js
 module.exports = {
-    method: 'POST',
+    method: 'post',
     path: '/riddle',
     options: {
         // Swagger looks for the 'api' tag
@@ -705,7 +699,7 @@ const Boom = require('@hapi/boom');
 const Joi = require('joi');
 
 module.exports = {
-    method: 'GET',
+    method: 'get',
     path: '/riddle/{id}',
     options: {
         tags: ['api'],
@@ -742,7 +736,7 @@ Finally, we'll need to refactor our `riddle-random` route, so it doesn't depend 
 const Boom = require('@hapi/boom');
 
 module.exports = {
-    method: 'GET',
+    method: 'get',
     path: '/riddle-random',
     options: {
         tags: ['api'],
@@ -782,7 +776,7 @@ Hey, this is a pretty good start for Paldo—good work!  As you can see, there's
 - [the pal boilerplate](https://hapipal.com/docs/boilerplate) - this is the baseline setup for pal projects, including a nice setup deployment, testing, linting, and pluginization of your application.  It also offers a handful of "flavors", which helped us more easily integrate Swagger documentation and a SQL-backed model layer.
 - [hpal](https://hapipal.com/docs/hpal) - this is the command line tool we used to start a new project, create routes in `routes/`, and models in `models/`.  It does much more too—you can also search documentation with it from the command line, for example: `hpal docs:schwifty request.models`.
 - [haute-couture](https://hapipal.com/docs/haute-couture) - this is used by the pal boilerplate to enforce the directory structure for your hapi plugin (everything in `lib/`).
-- [joi](https://github.com/hapijs/joi/blob/master/API.md) - this is the validation library of choice for hapi projects, since it integrates nicely into hapi itself.
+- [joi](https://github.com/sideway) - this is the validation library of choice for hapi projects, since it integrates nicely into hapi itself.
 - [schwifty](https://hapipal.com/docs/schwifty) - this is the hapi plugin that helps you easily use a SQL database in your project.
   - [Objection ORM](http://vincit.github.io/objection.js/) - this is the ORM supported by schwifty.  We love it because it's a powerful SQL query builder that enables us to express queries in a natural way, and has a wonderful community.
   - [knex](http://knexjs.org/) - this provides database connections to Objection models, governs database migrations, and has a useful CLI utility.
