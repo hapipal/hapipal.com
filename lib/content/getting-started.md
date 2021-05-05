@@ -113,7 +113,7 @@ We won't do anything too complex with configuring our server here, but pal comes
 
  - **The server manifest** (`server/manifest.js`)
 
-   This is a document describing the options we apply to our hapi server, including the various hapi plugins we register on it. Technically it represents a [Glue](https://github.com/hapijs/glue) manifest, which will be used to compose our server based upon server, connection, and hapi plugin configurations.  It utilizes hapi's [Confidence](https://github.com/hapijs/confidence) package, essentially a dynamic, filterable configuration document format, in order to cleanly adjust the server's configuration based upon environment variables.
+   This is a document describing the options we apply to our hapi server, including the various hapi plugins we register on it. Technically it represents a [Glue](https://hapi.dev/module/glue/) manifest, which will be used to compose our server based upon server, connection, and hapi plugin configurations.  It utilizes hapi's [Confidence](https://hapipal.com/docs/confidence) package, essentially a dynamic, filterable configuration document format, in order to cleanly adjust the server's configuration based upon environment variables.
 
  - **The environment file** (`server/.env`)
 
@@ -147,9 +147,11 @@ Now, let's take a look at our manifest. Near the top, we see:
     // ...
 ```
 
-The `$param` Confidence directive uses the parameters passed to the manifest within `server/index.js`, which in this case is `process.env` (i.e. `Manifest.get('/', process.env)`).  In other words, we're pulling in `process.env.PORT` to determine the value set to the current property, `port`— which, following the specification of a [Glue manifest](https://github.com/hapijs/glue/blob/master/API.md#await-composemanifest-options), represents the [server.options.port](https://github.com/hapijs/hapi/blob/master/API.md#server.options.port) hapi server option.  When `process.env.PORT` isn't set Confidence brings the `$default` of `3000` into play: that's why the first time we started the server we saw it running on port 3000 ("Server started at http://localhost:3000").  Finally, because environment variables are always technically strings, Confidence allows us to `$coerce` the value to a number so that it becomes valid hapi configuration for a port, as hapi wouldn't accept a string here.
+The `$param` Confidence directive uses the parameters passed to the manifest within `server/index.js`, which in this case is `process.env` (i.e. `Manifest.get('/', process.env)`).  In other words, we're pulling in `process.env.PORT` to determine the value set to the current property, `port`— which, following the specification of a [Glue manifest](https://hapi.dev/module/glue/api/#await-composemanifest-options), represents the [server.options.port](https://hapi.dev/api/#-serveroptionsport) hapi server option.  When `process.env.PORT` isn't set Confidence brings the `$default` of `3000` into play: that's why the first time we started the server we saw it running on port 3000 ("Server started at http://localhost:3000").  Finally, because environment variables are always technically strings, Confidence allows us to `$coerce` the value to a number so that it becomes valid hapi configuration for a port, as hapi wouldn't accept a string here.
 
 To translate: because we configured `PORT` as `4000` in the `server/.env` file, our server is now configured to serve requests on port `4000` rather than the default of `3000`.
+
+For the rest of this tutorial, we'll switch back to the default port 3000 (deleting the `.env` file or commenting out the `PORT` setting therein), but you're welcome to keep your server configured as-is.
 
 There's more to Confidence, but the gist is that the hapi pal configuration setup allows us to not just set configuration in the environment, but conditionalize our hapi server configuration based upon the environment with minimal overhead.  As with everything else we gloss over here, we encourage you to [read more](https://github.com/hapipal/confidence) if you're still curious.
 
@@ -181,7 +183,7 @@ module.exports = {
 };
 ```
 
-The file exports a hapi [route configuration object](https://github.com/hapijs/hapi/blob/master/API.md#server.route()) (or may export an array of them).  hapi pal's directory and file structure is governed by a tool called [haute-couture](https://github.com/hapipal/haute-couture), which you can see is used in your project at `lib/index.js`.  When you place a file in the `routes/` directory, as hpal did for us here, it will automatically be added to your application plugin because haute-couture will make the call to [`server.route()`](https://github.com/hapijs/hapi/blob/master/API.md#server.route()) for you!  The same can be said for other plugin functionality—you'll find that models go in `models/`, authentication strategies go in `auth/strategies/`, etc.
+The file exports a hapi [route configuration object](https://hapi.dev/api/#-serverrouteroute) (or may export an array of them).  hapi pal's directory and file structure is governed by a tool called [haute-couture](https://github.com/hapipal/haute-couture), which you can see is used in your project at `lib/index.js`.  When you place a file in the `routes/` directory, as hpal did for us here, it will automatically be added to your application plugin because haute-couture will make the call to [`server.route()`](https://hapi.dev/api/#-serverrouteroute) for you!  The same can be said for other plugin functionality—you'll find that models go in `models/`, authentication strategies go in `auth/strategies/`, etc.
 
 But for now we need to outfit `lib/routes/riddle-random.js` so it allows Paldo to broadcast a riddle, chosen at random from the complete archives, to any friends interested in a brain-teaser.
 
@@ -232,7 +234,7 @@ First, we setup the route:
 npx hpal make route riddle-answer
 ```
 
-Alternatively, you can convert our first route's export to an array of route objects since hapi's [server.route()](https://github.com/hapijs/hapi/blob/master/API.md#server.route()) accepts both a single route object or an array. In this tutorial, we'll store one route per file, but we encourage you to experiment with what organization works for you. We do find that 1. it's convenient to have the handler inline with the rest of the route config and 2. it becomes cumbersome to maintain multiple handlers in the same file, which leads us to typically have a single route config and handler per file.
+Alternatively, you can convert our first route's export to an array of route objects since hapi's [server.route()](https://hapi.dev/api/#-serverrouteroute) accepts both a single route object or an array. In this tutorial, we'll store one route per file, but we encourage you to experiment with what organization works for you. We do find that 1. it's convenient to have the handler inline with the rest of the route config and 2. it becomes cumbersome to maintain multiple handlers in the same file, which leads us to typically have a single route config and handler per file.
 
 Moving on!
 
@@ -418,7 +420,35 @@ One final point on `server/manifest.js`—let's quickly peruse how we've configu
     // ...
 ```
 
-The main takeaway from here is that, out of the box, we get an in-memory database. This is just fine for our purposes as our data doesn't matter too much here (sorry, Paldo!), so it's okay for it to disappear every time our server shuts down.  Just be aware to not expect any of the data we setup in the rest of the tutorial to hang around. In our examples, we'll act as if our data is reliable and persistent.  If you'd like to use a persistent data store, you may set an actual `filename` for SQLite3 to store data rather than `':memory:'`, or configure knex to use a PostgreSQL connection, for example.
+The main takeaway from here is that, out of the box, we get an in-memory database. This is just fine for our purposes as our data doesn't particularly matter (sorry, Paldo!), so it's okay for it to disappear every time our server shuts down.  Just be aware to not expect any of the data we setup in the rest of the tutorial to hang around. In our examples, we'll act as if our data is reliable and persistent.
+
+
+> If you'd rather not keep recreating riddles, you may set `filename` to a path to a file to which SQLite3 will write your data. 
+>
+> Create a file with extension `.db` (the extension doesn't matter to SQLite; `.db` is just a common convention). We'll call ours `riddles.db`. Then, update your manifest as follows:
+>
+> ```js
+> //...
+> $base: {
+>     migrateOnStart: true,
+>     knex: {
+>         client: 'sqlite3',
+>         useNullAsDefault: true,
+>         connection: {
+>             filename: 'riddles.db' // relative path to a sqlite database file (relative to the directory in which you run the command to start the server)
+>         },
+>         migrations: {
+>             stub: Schwifty.migrationsStubPath
+>         }
+>     }
+> }
+>
+> ```
+>
+> In fact, there's already a sqlite database, prepopulated with a handful of riddles, [available in the example application repo](https://github.com/hapipal/examples/blob/master/paldo-riddles/riddles.db). As an exercise for the reader, try setting `filename` with an environment variable (as would usually be done in a production deployment (and how the examples repo is setup))
+>
+
+
 
 Phew! That was a pile of words and theory! Sorry about that. Let's first check everything's still working:
 
@@ -472,7 +502,7 @@ module.exports = class ModelName extends Schwifty.Model {
 
 First thing's first: make sure to change your model class's name from `ModelName` to `Riddles`, which is how we'll reference the model throughout the application (e.g. in route handlers).  Similarly, set the `tableName` to whichever table you'd like to store riddles in your database e.g. `'Riddles'`.
 
-To continue to fill this out properly, it requires some understanding of [Joi](https://github.com/sideway/joi), hapi's library for validation.  Joi is extremely expressive, as you can probably tell from its extensive [API documentation](https://joi.dev/api/).  hapi route payload, query, and path parameters [are also typically validated using Joi](https://github.com/hapijs/hapi/blob/master/API.md#route.options.validate), which is why we integrated it into Schwifty's `Model` class.  After looking at some Joi examples, let's fill that in, then:
+To continue to fill this out properly, it requires some understanding of [Joi](https://joi.dev/), hapi's preferred data validation library.  Joi is extremely expressive, as you can probably tell from its extensive [API documentation](https://joi.dev/api/).  hapi route payload, query, and path parameters [are also typically validated using Joi](https://hapi.dev/api/#-routeoptionsvalidate), which is why we integrated it into Schwifty's `Model` class.  After looking at some Joi examples, let's fill that in, then:
 
 ```js
 // lib/models/Riddles.js
@@ -615,12 +645,12 @@ module.exports = {
 
 A bunch of familiar route setup, but we've also got a few new things going on here. Let's step through them:
 
- - [`options.validate`](https://github.com/hapijs/hapi/blob/master/API.md#-routeoptionsvalidate) — where you place input validation rules; hapi allows various properties here for the different types of input you might allow. In our case, with a `POST`, we're looking at [`payload` validation](https://github.com/hapijs/hapi/blob/master/API.md#-routeoptionsvalidatepayload), which, just like our model, uses Joi to validate its input. hapi expects some sort of Joi schema: a plain object with properties containing Joi validations as seen above, or a full Joi schema object, like in our model (if we use a plain object, hapi will compile that object into a Joi schema for us).
-   - Note that we have to call `.required()` on each key in this version of our schema. All Joi rules are [optional by default](https://github.com/hapijs/joi/blob/master/API.md#anyoptional). If we didn't require these values, they'd pass into our query, which would then fail due to a constraint violation, specifically that all of our riddle's schema's values are not allowed to be null in the database (per the `notNullable()` calls we made in our migration file).
+ - [`options.validate`](https://hapi.dev/api/#-routeoptionsvalidate) — where you place input validation rules; hapi allows various properties here for the different types of input you might allow. In our case, with a `POST`, we're looking at [`payload` validation](https://hapi.dev/api/#-routeoptionsvalidatepayload), which, just like our model, uses Joi to validate its input. hapi expects some sort of Joi schema: a plain object with properties containing Joi validations as seen above, or a full Joi schema object, like in our model (if we use a plain object, hapi will compile that object into a Joi schema for us).
+   - Note that we have to call `.required()` on each key in this version of our schema. All Joi rules are [optional by default](https://joi.dev/api/#anyoptional). If we didn't require these values, they'd pass into our query, which would then fail due to a constraint violation, specifically that all of our riddle's schema's values are not allowed to be null in the database (per the `notNullable()` calls we made in our migration file).
 
  - `const { Riddles } = request.models()`
 
- The [`request.models()`](https://github.com/hapipal/schwifty/blob/master/API.md#requestmodelsall) method is a [request decoration](https://github.com/hapijs/hapi/blob/master/API.md#server.decorate()) added by schwifty. It allows you to access the models registered by your plugin so that we can make queries against them.  Just ensure that the name used here matches your model class's name: `class Riddles extends Schwifty.Model {}`.
+ The [`request.models()`](https://hapipal.com/docs/schwifty#requestmodelsall) method is a [request decoration](https://hapi.dev/api/#-serverdecoratetype-property-method-options) added by schwifty. It allows you to access the models registered by your plugin so that we can make queries against them.  Just ensure that the name used here matches your model class's name: `class Riddles extends Schwifty.Model {}`.
 
  - `await Riddles.query().insertAndFetch(riddle)`
 
@@ -666,7 +696,7 @@ module.exports = {
     path: '/riddle',
     options: {
         // Swagger looks for the 'api' tag
-        // (see https://github.com/hapijs/hapi/blob/master/API.md#route.options.tags)
+        // (see https://hapi.dev/api/#-routeoptionstags)
         tags: ['api'],
         validate: { ... }
     }
@@ -725,7 +755,7 @@ module.exports = {
 };
 ```
 
-The only new thing is really that we're now validating [path parameters](https://github.com/hapijs/hapi/blob/master/API.md#path-parameters) instead of a payload, but the core ideas are essentially the same.
+The only new thing is really that we're now validating [path parameters](https://hapi.dev/api/#path-parameters) instead of a payload, but the core ideas are essentially the same.
 
 Finally, we'll need to refactor our `riddle-random` route, so it doesn't depend on our defunct `lib/data.js`. This ends up being a bit more complex than originally, given that we no longer trivially know how many riddles comprise the range of our random selection.
 
@@ -772,7 +802,7 @@ Hey, this is a pretty good start for Paldo—good work!  As you can see, there's
 
 ### Resources
 
-- [hapi](https://hapijs.com/api) - the hapi API docs are an amazing resource worth keeping nearby.
+- [hapi](https://hapi.dev/api) - the hapi API docs are an amazing resource worth keeping nearby.
 - [the pal boilerplate](https://hapipal.com/docs/boilerplate) - this is the baseline setup for pal projects, including a nice setup deployment, testing, linting, and pluginization of your application.  It also offers a handful of "flavors", which helped us more easily integrate Swagger documentation and a SQL-backed model layer.
 - [hpal](https://hapipal.com/docs/hpal) - this is the command line tool we used to start a new project, create routes in `routes/`, and models in `models/`.  It does much more too—you can also search documentation with it from the command line, for example: `hpal docs:schwifty request.models`.
 - [haute-couture](https://hapipal.com/docs/haute-couture) - this is used by the pal boilerplate to enforce the directory structure for your hapi plugin (everything in `lib/`).

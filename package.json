@@ -35,13 +35,11 @@
     "@hapipal/haute-couture": "4.x.x",
     "@hapipal/schmervice": "2.x.x",
     "@hapipal/toys": "3.x.x",
-    "concat-stream": "2.x.x",
     "dotenv": "8.x.x",
     "exiting": "6.x.x",
     "handlebars": ">=4.7.6 <5",
     "joi": "17.x.x",
-    "require-dir": "1.x.x",
-    "trumpet": "1.x.x"
+    "require-dir": "1.x.x"
   },
   "devDependencies": {
     "@babel/core": "7.x.x",
