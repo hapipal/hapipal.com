@@ -35,7 +35,7 @@ We'll help Paldo build out and grow a project—conveniently for us, a web serve
 First things first, we need to setup a base pal project. Run the following:
 
 ```sh
-npx hpal new paldo-riddles
+npm init @hapipal paldo-riddles
 cd paldo-riddles
 npm install
 
@@ -48,7 +48,7 @@ On running `npx hpal new paldo-riddles`, you'll be prompted with the [`npm init`
 
 You now have a base pal project directory ready to go!
 
-`npx hpal new paldo-riddles` calls hapi pal's command line utility [hpal](https://www.npmjs.com/package/hpal) to bootstrap a new project in a directory titled `paldo-riddles` in our current working directory (the argument to `new` is a path).
+`npx hpal new paldo-riddles` calls hapi pal's command line utility [hpal](https://www.npmjs.com/package/@hapipal/hpal) to bootstrap a new project in a directory titled `paldo-riddles` in our current working directory (the argument to `new` is a path).
 
 We'll cover more on `hpal` in just a bit.
 
@@ -238,7 +238,7 @@ Moving on!
 
 Immediately, we see that our strategy of hardcoding our riddles within our first route's handler is, although expedient, unworkable. Our other routes will need to know about that data (let alone any other pieces of our riddle-sharing application we build later). So, let's centralize it.
 
-Though there's a whole slew of ways you handle this, we'll create a file called `data` under `lib` and set it up to export our riddles.
+For our purposes, we'll create a file called `data` under `lib` and set it up to export our riddles.
 
 ```js
 // lib/data.js
@@ -776,7 +776,7 @@ Hey, this is a pretty good start for Paldo—good work!  As you can see, there's
 - [the pal boilerplate](https://hapipal.com/docs/boilerplate) - this is the baseline setup for pal projects, including a nice setup deployment, testing, linting, and pluginization of your application.  It also offers a handful of "flavors", which helped us more easily integrate Swagger documentation and a SQL-backed model layer.
 - [hpal](https://hapipal.com/docs/hpal) - this is the command line tool we used to start a new project, create routes in `routes/`, and models in `models/`.  It does much more too—you can also search documentation with it from the command line, for example: `hpal docs:schwifty request.models`.
 - [haute-couture](https://hapipal.com/docs/haute-couture) - this is used by the pal boilerplate to enforce the directory structure for your hapi plugin (everything in `lib/`).
-- [joi](https://github.com/sideway) - this is the validation library of choice for hapi projects, since it integrates nicely into hapi itself.
+- [joi](https://joi.dev/) - this is the validation library of choice for hapi projects, since it integrates nicely into hapi itself.
 - [schwifty](https://hapipal.com/docs/schwifty) - this is the hapi plugin that helps you easily use a SQL database in your project.
   - [Objection ORM](http://vincit.github.io/objection.js/) - this is the ORM supported by schwifty.  We love it because it's a powerful SQL query builder that enables us to express queries in a natural way, and has a wonderful community.
   - [knex](http://knexjs.org/) - this provides database connections to Objection models, governs database migrations, and has a useful CLI utility.
