@@ -585,7 +585,6 @@ If all's gone well, you should see:
 
 ```sh
 Batch 1 run: 1 migrations
-/your/local/path/paldo-riddles/lib/migrations/20180226173134_add-riddles.js
 ```
 
 At long last, we're ready to start working with our data.
