@@ -443,6 +443,7 @@ The main takeaway from here is that, out of the box, we get an in-memory databas
 >
 > In fact, there's already a sqlite database, prepopulated with a handful of riddles, [available in the example application repo](https://github.com/hapipal/examples/blob/master/paldo-riddles/riddles.db). As an exercise for the reader, try setting `filename` with an environment variable (as would usually be done in a production deployment (and how the examples repo is setup))
 >
+> NOTE: using the prepopulated database may error because the migration scripts likely don't exist.
 
 
 
