@@ -207,8 +207,8 @@ module.exports = {
                     slug: 'no-body',
                     question: 'I have a head & no body, but I do have a tail. What am I?',
                     answer: 'A coin'
-                },
-               // etc.
+                }
+                // etc.
             ];
 
             // And we reply randomly
