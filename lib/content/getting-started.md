@@ -44,11 +44,11 @@ git add --all
 git commit -m "Initial commit"
 ```
 
-On running `npx hpal new paldo-riddles`, you'll be prompted with the [`npm init`](https://docs.npmjs.com/cli/init) dialog, where you can enter details about your project that will go into its `package.json` file.  Feel free to take the time to fill-out the details, or just "enter" all the way through—either is fine for the purposes of this tutorial.
+On running `npm init @hapipal paldo-riddles`, you'll be prompted with the [`npm init`](https://docs.npmjs.com/cli/init) dialog, where you can enter details about your project that will go into its `package.json` file.  Feel free to take the time to fill-out the details, or just "enter" all the way through—either is fine for the purposes of this tutorial.
 
 You now have a base pal project directory ready to go!
 
-`npx hpal new paldo-riddles` calls hapi pal's command line utility [hpal](https://www.npmjs.com/package/@hapipal/hpal) to bootstrap a new project in a directory titled `paldo-riddles` in our current working directory (the argument to `new` is a path).
+`npm init @hapipal paldo-riddles` calls hapi pal's command line utility [hpal](https://www.npmjs.com/package/@hapipal/hpal) to bootstrap a new project in a directory titled `paldo-riddles` in our current working directory (the argument to `new` is a path).
 
 We'll cover more on `hpal` in just a bit.
 
@@ -370,7 +370,7 @@ If you used the hpal CLI to start your project as described above, run:
 git cherry-pick objection
 ```
 
-If you cloned the pal repo (rather than using `npx hpal new ...`), you'll need to fetch the tagged commits first:
+If you cloned the pal repo (rather than using `npm init @hapipal paldo-riddles`), you'll need to fetch the tagged commits first:
 
 ```sh
 git fetch pal --tags
