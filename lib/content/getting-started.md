@@ -93,7 +93,7 @@ Debug: start
     Server started at http://localhost:3000
 ```
 
-If you then visit that address in your browser or cURL it (`curl http://localhost:3000`), you should receive the following:
+If you then visit that address [in your browser](http://localhost:3000) or cURL it (`curl http://localhost:3000`), you should receive the following:
 
 ```json
 {
@@ -224,7 +224,7 @@ module.exports = {
 
 Be sure to restart your server in order to pick-up this new code.
 
-If you cURL our new route (`curl http://localhost:3000/riddle-random`) or visit it [in your browser](http://localhost:3000/riddle-random), you'll see one of Paldo's riddles. We're up and running!
+If you cURL our new route (`curl http://localhost:3000/riddle-random`) or visit it [in your browser](http://localhost:3000/riddle-random), we'll see one of Paldo's riddles. We're up and running!
 
 Now, let's setup letting people get answers if (well, when :)), they get stumped. We'll rely on Paldo's friends supplying the `slug` of the riddle they're stuck on (for now) to know which answer to supply.
 
@@ -318,11 +318,7 @@ module.exports = {
 };
 ```
 
-Now, passing any riddle's `slug`s here returns its answer.
-```sh
-# Use a slug from your project
-curl http://localhost:3000/riddle-answer/no-body
-```
+After restarting your server, we may cURL our new route with a `slug` (`curl http://localhost:3000/riddle-answer/no-body`) or visit it [in your browser](http://localhost:3000/riddle-answer/no-body) and we'll see the answer associated with the `slug`.
 
 ## Aside: Linting
 
