@@ -44,11 +44,11 @@ git add --all
 git commit -m "Initial commit"
 ```
 
-On running `npx hpal new paldo-riddles`, you'll be prompted with the [`npm init`](https://docs.npmjs.com/cli/init) dialog, where you can enter details about your project that will go into its `package.json` file.  Feel free to take the time to fill-out the details, or just "enter" all the way through—either is fine for the purposes of this tutorial.
+On running `npm init @hapipal paldo-riddles`, you'll be prompted with the [`npm init`](https://docs.npmjs.com/cli/init) dialog, where you can enter details about your project that will go into its `package.json` file.  Feel free to take the time to fill-out the details, or just "enter" all the way through—either is fine for the purposes of this tutorial.
 
 You now have a base pal project directory ready to go!
 
-`npx hpal new paldo-riddles` calls hapi pal's command line utility [hpal](https://www.npmjs.com/package/@hapipal/hpal) to bootstrap a new project in a directory titled `paldo-riddles` in our current working directory (the argument to `new` is a path).
+`npm init @hapipal paldo-riddles` calls hapi pal's command line utility [hpal](https://www.npmjs.com/package/@hapipal/hpal) to bootstrap a new project in a directory titled `paldo-riddles` in our current working directory (the argument to `new` is a path).
 
 We'll cover more on `hpal` in just a bit.
 
@@ -93,7 +93,7 @@ Debug: start
     Server started at http://localhost:3000
 ```
 
-If you then visit that address in your browser or cURL it (`curl http://localhost:3000`), you should receive the following:
+If you then visit that address [in your browser](http://localhost:3000) or cURL it (`curl http://localhost:3000`), you should receive the following:
 
 ```json
 {
@@ -207,8 +207,8 @@ module.exports = {
                     slug: 'no-body',
                     question: 'I have a head & no body, but I do have a tail. What am I?',
                     answer: 'A coin'
-                },
-               // etc.
+                }
+                // etc.
             ];
 
             // And we reply randomly
@@ -224,7 +224,7 @@ module.exports = {
 
 Be sure to restart your server in order to pick-up this new code.
 
-If you cURL our new route (`curl http://localhost:3000/riddle-random`) or visit it [in your browser](http://localhost:3000/riddle-random), you'll see one of Paldo's riddles. We're up and running!
+If you cURL our new route (`curl http://localhost:3000/riddle-random`) or visit it [in your browser](http://localhost:3000/riddle-random), we'll see one of Paldo's riddles. We're up and running!
 
 Now, let's setup letting people get answers if (well, when :)), they get stumped. We'll rely on Paldo's friends supplying the `slug` of the riddle they're stuck on (for now) to know which answer to supply.
 
@@ -318,11 +318,7 @@ module.exports = {
 };
 ```
 
-Now, passing any riddle's `slug`s here returns its answer.
-```sh
-# Use a slug from your project
-curl http://localhost:3000/riddle-answer/no-body
-```
+After restarting your server, we may cURL our new route with a `slug` (`curl http://localhost:3000/riddle-answer/no-body`) or visit it [in your browser](http://localhost:3000/riddle-answer/no-body) and we'll see the answer associated with the `slug`.
 
 ## Aside: Linting
 
@@ -370,7 +366,7 @@ If you used the hpal CLI to start your project as described above, run:
 git cherry-pick objection
 ```
 
-If you cloned the pal repo (rather than using `npx hpal new ...`), you'll need to fetch the tagged commits first:
+If you cloned the pal repo (rather than using `npm init @hapipal paldo-riddles`), you'll need to fetch the tagged commits first:
 
 ```sh
 git fetch pal --tags
@@ -447,6 +443,7 @@ The main takeaway from here is that, out of the box, we get an in-memory databas
 >
 > In fact, there's already a sqlite database, prepopulated with a handful of riddles, [available in the example application repo](https://github.com/hapipal/examples/blob/master/paldo-riddles/riddles.db). As an exercise for the reader, try setting `filename` with an environment variable (as would usually be done in a production deployment (and how the examples repo is setup))
 >
+> NOTE: using the prepopulated database may error because the migration scripts likely don't exist.
 
 
 
@@ -588,7 +585,6 @@ If all's gone well, you should see:
 
 ```sh
 Batch 1 run: 1 migrations
-/your/local/path/paldo-riddles/lib/migrations/20180226173134_add-riddles.js
 ```
 
 At long last, we're ready to start working with our data.
