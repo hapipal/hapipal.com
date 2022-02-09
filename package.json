@@ -58,7 +58,7 @@
     "cssnano": "4.x.x",
     "eslint": "7.x.x",
     "hammerjs": "2.x.x",
-    "node-sass": ">=4.14.1 <5",
+    "node-sass": ">=4.14.1 <8",
     "postcss": "8.x.x",
     "postcss-cli": "8.x.x",
     "scroll-into-view-if-needed": "2.x.x"
