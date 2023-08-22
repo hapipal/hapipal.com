@@ -61,6 +61,6 @@
     "postcss": "8.x.x",
     "postcss-cli": "8.x.x",
     "sass": "^1.66.1",
-    "scroll-into-view-if-needed": "2.x.x"
+    "scroll-into-view-if-needed": "^3.0.10"
   }
 }
