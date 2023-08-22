@@ -16,7 +16,7 @@
     "start": "node server",
     "test": "lab -a @hapi/code -L",
     "lint": "eslint .",
-    "prebuild:css": "node-sass lib/public/css/main.scss lib/public/css/main.build.css --source-map true --include-path node_modules && postcss lib/public/css/main.build.css --replace --use autoprefixer --map",
+    "prebuild:css": "sass lib/public/css/main.scss lib/public/css/main.build.css --load-path=node_modules && postcss lib/public/css/main.build.css --replace --use autoprefixer --map",
     "build:css": "postcss lib/public/css/main.build.css -o lib/public/css/main.build.min.css --use cssnano --no-map",
     "prebuild:js": "browserify lib/public/js/main.js -o lib/public/js/main.build.js -d -t [ babelify --presets [ @babel/preset-env ] ]",
     "build:js": "uglifyjs lib/public/js/main.build.js -o lib/public/js/main.build.min.js",
@@ -58,9 +58,9 @@
     "cssnano": "4.x.x",
     "eslint": "7.x.x",
     "hammerjs": "2.x.x",
-    "node-sass": ">=4.14.1 <5",
     "postcss": "8.x.x",
     "postcss-cli": "8.x.x",
-    "scroll-into-view-if-needed": "2.x.x"
+    "sass": "^1.66.1",
+    "scroll-into-view-if-needed": "^3.0.10"
   }
 }
