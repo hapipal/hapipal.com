@@ -1,2 +1,4 @@
 *.min.js
 *.build.js
+lib/public/js/vendor/
+node_modules/
